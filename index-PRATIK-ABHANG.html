@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./assets/profile-pic2.png" />
+    <title>Pratik Abhang</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Pratik Abhang</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Pratik Abhang</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+    <section id="profile">
+      <div class="section__pic-container">
+        <img
+          src="./assets/profile-pic2.png"
+          alt="Pratik Abhang profile picture"
+        />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1 class="title">Pratik Abhang</h1>
+        <p class="section__text__p2">
+          Bachelor of Engineering in Computer Science
+        </p>
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('./assets/PAResume.pdf')"
+          >
+            Download CV
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+            Contact Info
+          </button>
+        </div>
+        <div id="socials-container">
+          <img
+            src="./assets/link.png"
+            alt="My LinkedIn profile"
+            class="icon"
+            onclick="location.href='https://www.linkedin.com/in/pratikabhang/'"
+          />
+          <img
+            src="./assets/github.png"
+            alt="My Github profile"
+            class="icon"
+            onclick="location.href='https://www.github.com/pratikabhang/'"
+          />
+          <img
+            src="./assets/insta.png"
+            alt="My Instagram profile"
+            class="icon"
+            onclick="location.href=' https://www.instagram.com/pratikabhang_/'"
+          />
+          <img
+            src="./assets/webs.png"
+            alt="My Bio profile"
+            class="icon"
+            onclick="location.href='https://www.heylink.me/pratikabhang/'"
+          />
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <p class="section__text__p1">Get To Know More</p>
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img
+            src="./assets/about-pic.jpg"
+            alt="Profile picture"
+            class="about-pic"
+          />
+        </div>
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img
+                src="./assets/experience.png"
+                alt="Experience icon"
+                class="icon"
+              />
+              <h3>Experience</h3>
+              <p>Fresher</p>
+            </div>
+            <div class="details-container">
+              <img
+                src="./assets/educations.png"
+                alt="Education icon"
+                class="icon"
+              />
+              <h3>Education</h3>
+              <p>
+                Bachelor of Engineering in Computer Science (SPPU)<br />
+                HSC Maharashtra Board (MSBSHSE)<br />
+                SSC Maharashtra Board (MSBSHSE)
+              </p>
+            </div>
+          </div>
+          <div class="text-container">
+            <p>
+              Hello Folks! I am Pratik, As an ambitious and driven individual, I
+              am currently pursuing a Bachelor's degree in Computer Engineering
+              from Savitribai Phule Pune University. With a passion for
+              technology and an innate curiosity to discover new solutions. I
+              take pride in staying up-to-date with the latest trends in
+              Technology and IT industry.
+            </p>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#experience'"
+      />
+    </section>
+    <section id="experience">
+      <p class="section__text__p1">Explore My Skills</p>
+      <h1 class="title">Technologies</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <h2 class="experience-sub-title">Frontend</h2>
+            <div class="article-container">
+              <ul align="center">
+                <img
+                  src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"
+                  alt="HTML5 Logo"
+                /><br /><img
+                  src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white"
+                  alt="CSS3 Logo"
+                />
+                <br /><img
+                  src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"
+                  alt="JavaScript Logo"
+                />
+                <br /><img
+                  src="https://img.shields.io/badge/apache-%23D42029.svg?style=for-the-badge&logo=apache&logoColor=white"
+                  alt="Apache Logo"
+                />
+                <br /><img
+                  src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB"
+                  alt="React Logo"
+                />
+                <br /><img
+                  src="https://img.shields.io/badge/angular.js-%23E23237.svg?style=for-the-badge&logo=angularjs&logoColor=white"
+                  alt="Angular.js Logo"
+                />
+              </ul>
+            </div>
+          </div>
+
+          <div class="details-container">
+            <h2 class="experience-sub-title">Backend</h2>
+            <div class="article-container">
+              <ul align="center">
+                <img
+                  src="https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white"
+                  alt="PHP Logo"
+                />
+                <br />
+                <img
+                  src="https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white"
+                  alt="C++ Logo"
+                />
+                <br />
+                <img
+                  src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white"
+                  alt="Java Logo"
+                />
+                <br />
+                <img
+                  src="https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7"
+                  alt="Netlify Logo"
+                />
+              </ul>
+            </div>
+          </div>
+
+          <div class="details-container">
+            <h2 class="experience-sub-title">Database</h2>
+            <div class="article-container">
+              <ul align="center">
+                <img
+                  src="https://img.shields.io/badge/mysql-%2300000f.svg?style=for-the-badge&logo=mysql&logoColor=white"
+                  alt="MySQL Logo"
+                />
+                <br />
+                <img
+                  src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white"
+                  alt="MongoDB Logo"
+                />
+                <br />
+                <img
+                  src="https://img.shields.io/badge/OracleDB-F80000?style=for-the-badge&logo=oracle&logoColor=white"
+                  alt="OracleDB Logo"
+                />
+              </ul>
+            </div>
+          </div>
+          <div class="details-container">
+            <h2 class="experience-sub-title">Workspace</h2>
+            <div class="article-container">
+              <ul align="center">
+                <img
+                  src="https://img.shields.io/badge/hp%20laptop-0096D6?style=for-the-badge&logo=hp&logoColor=white"
+                  alt="HP Laptop Logo"
+                />
+                <br />
+                <img
+                  src="https://img.shields.io/badge/Windows_OS-0078D6?style=for-the-badge&logo=windows&logoColor=white"
+                  alt="Windows OS Logo"
+                />
+                <br />
+                <img
+                  src="https://img.shields.io/badge/Intel%20Core_i7_12th-0071C5?style=for-the-badge&logo=intel&logoColor=white"
+                  alt="Intel Core i7 12th Logo"
+                />
+                <br />
+                <img
+                  src="https://img.shields.io/badge/Google-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white"
+                  alt="Google Logo"
+                />
+
+                <br />
+                <img
+                  src="https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white"
+                  alt="VSCode Logo"
+                />
+                <br /><img
+                  src="https://img.shields.io/badge/GitHub-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"
+                  alt="GitHub Logo"
+                />
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#projects'"
+      />
+    </section>
+    <section id="projects">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Projects</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/pa.jpg"
+                alt="Password Generator"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">
+              Password Generator
+            </h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/pratikabhang/PASSWORD-GENERATOR'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://pratikabhang-passwordgenerator.netlify.app'"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/todo.jpg"
+                alt="To Do List"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">To Do List</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/pratikabhang/TO-DO-LIST'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://pratikabhang-todolist.netlify.app'"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/qr.jpg"
+                alt="QR Code Generator"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">
+              QR Code Generator
+            </h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/pratikabhang/QR-CODE-GENERATOR'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://pratikabhang-qrcodegenerator.netlify.app'"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#contact'"
+      />
+    </section>
+
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="LinkedIn icon"
+            class="icon contact-icon"
+          />
+          <p>
+            <a href="https://www.linkedin.com/in/pratikabhang/">LinkedIn</a>
+          </p>
+        </div>
+
+        <div class="contact-info-container">
+          <img
+            src="./assets/email.png"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          />
+          <p>
+            <a href="mailto:pratiksunilabhang@gmail.com">Email</a>
+          </p>
+        </div>
+
+        <div class="contact-info-container">
+          <img
+            src="./assets/phone.png"
+            alt="Phone icon"
+            class="icon contact-icon"
+          />
+          <p>
+            <a href="tel:+91 8766854678">Mobile</a>
+          </p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2024 Pratik Abhang. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
