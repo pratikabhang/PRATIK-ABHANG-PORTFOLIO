@@ -1,3 +1,5 @@
+/* GENERAL */
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
 * {
@@ -57,7 +59,7 @@ a:hover {
 }
 
 .logo {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .logo:hover {
@@ -401,7 +403,7 @@ article .icon {
 .contact-info-container {
   display: flex;
   align-items: center;
-justify-content: center;  
+  justify-content: center;
   gap: 0.5rem;
   margin: 1rem;
 }
