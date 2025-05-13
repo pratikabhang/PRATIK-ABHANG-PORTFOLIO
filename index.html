@@ -1,375 +1,766 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pratik Abhang</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-  
-  </head>
-  <body>
-  
+
+<head>
+  <!-- Basic page setup -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Page Title -->
+  <title>PRATIK ABHANG</title>
+
+  <!-- Favicon (Icon displayed in browser tab) -->
+  <link rel="icon" href="./files/favicon.ico" type="image/x-icon">
+
+  <!-- External CSS for styling -->
+  <link rel="stylesheet" href="src/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Google Fonts for better typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Load Font Awesome -->
+
+
+
+</head>
+
+<body>
+  <!-- Desktop Navigation Bar -->
+  <header>
     <nav id="desktop-nav">
-      <div class="logo">Pratik Abhang</div>
+      <!-- Website logo or name -->
+      <div class="logo">&lt;pratik abhang/&gt;</div>
+
+      <!-- Navigation links (visible on desktop) -->
       <div>
         <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#home"><i class="fas fa-house"></i> Home</a></li>
+          <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+          <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+          <li><a href="#skills"><i class="fas fa-lightbulb"></i> Skills</a></li>
+          <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+          <li><a href="#projects"><i class="fa-solid fa-diagram-project"></i> Projects</a></li>
+          <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
         </ul>
       </div>
     </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">Pratik Abhang</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
+  </header>
+
+  <!-- Mobile Navigation (Hamburger Menu) -->
+  <nav id="hamburger-nav">
+    <div class="logo">Pratik Abhang</div>
+
+    <div class="hamburger-menu">
+      <!-- Hamburger icon -->
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Dropdown links -->
+      <ul class="menu-links" id="menuLinks">
+        <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#education" onclick="toggleMenu()">Education</a></li>
+        <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Profile Section -->
+  <section id="home">
+    <div class="profile__container">
+      <!-- Social Links Vertical -->
+      <div class="socials__vertical">
+        <!-- Portfolio link -->
+        <div class="social-icon portfolio" onclick="window.open('https://pratikabhang.github.io')">
+          <i class="fas fa-globe"></i>
         </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        <!-- LinkedIn link -->
+        <div class="social-icon linkedin" onclick="window.open('https://linkedin.com/in/pratik-abhang')">
+          <i class="fab fa-linkedin-in"></i>
+        </div>
+        <!-- GitHub link -->
+        <div class="social-icon github" onclick="window.open('https://github.com/pratikabhang')">
+          <i class="fab fa-github"></i>
+        </div>
+        <!-- Instagram link -->
+        <div class="social-icon instagram" onclick="window.open('https://www.instagram.com/pratik_abhang')">
+          <i class="fab fa-instagram"></i>
+        </div>
+        <!-- HackerRank link -->
+        <div class="social-icon hackerrank" onclick="window.open('https://www.hackerrank.com/pratikabhang')">
+          <i class="fab fa-hackerrank"></i>
         </div>
       </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/about-pic.png" alt="Pratik Abhang profile picture" />
-      </div>
+
+      <!-- Center Section: Introduction Text -->
       <div class="section__text">
+        <!-- Introductory Text -->
         <p class="section__text__p1">Hello, I'm</p>
         <h1 class="title">Pratik Abhang</h1>
-        <p class="section__text__p2">I am a Developer👨‍🎓, Engineer👨‍💻, Designer😃...</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/Resume.pdf')"
-          >
-            Download CV
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/pratikabhang/'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://www.github.com/pratikabhang/'"
-          />
-          <img
-          src="./assets/instagram.svg"
-          alt="My Instagram profile"
-          class="icon"
-          onclick="location.href='https://www.instagram.com/pratiksabhang/'"
-        />
-        <img
-        src="./assets/x.svg"
-        alt="My X profile"
-        class="icon"
-        onclick="location.href='https://x.com/pratiksabhang/'"
-      />
-      <img
-        src="./assets/yt.png"
-        alt="My YouTube profile"
-        class="icon"
-        onclick="location.href='https://youtube.com/@pratikabhang/'"
-      />
-      <img
-        src="./assets/web.png"
-        alt="My Social Media"
-        class="icon"
-        onclick="location.href='https://heylink.me/pratikabhang/'"
-      />
-        </div>
-      </div>
-    </section>
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>Bachelor of Engineering in Computer<br /> Higher Secondary Certificate Board (12th)<br/> Secondary School Certificate Board (10th)</p>
-            </div>
-          </div>
-          <div class="text-container">
-            <p>
-              I am an ambitious and driven professional with a passion for technology and a curiosity for innovative solutions. I stay current with IT trends and prioritize continuous learning and growth. Eager to contribute to organizational success, I take initiative and embrace new responsibilities.
-            </p>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
-    </section>
-    <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Technology</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Java</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>MySQL</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Python</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>CSS</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JavaScript</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>PHP</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Bootstrap</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Node.js</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>MongoDB</h3>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
-    </section>
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-1.png"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project One</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-2.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project Two</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-3.png"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project Three</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
-    </section>
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:work.pratikabhang@gmail.com">Email</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/mobile.png"
-            alt="Mobile icon"
-            class="icon contact-icon"
-          />
-          <p><a href="tel:+918766854678">Mobile</a></p>
-        </div>
+        <p class="section__text__p2"><span id="typed-text"></span></p>
         
-      </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+        <!-- Buttons for Resume and Hire Me -->
+        <div class="btn-container">
+          <!-- Resume button (opens PDF in new tab) -->
+          <button class="btn btn-color-2" onclick="window.open('./files/resume.pdf')">
+            <i class="fa-solid fa-download"></i> My Resume
+          </button>
+
+          <!-- Hire Me button (scrolls to contact section) -->
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+            <i class="fa-solid fa-briefcase"></i> Hire Me
+          </button>
         </div>
-      </nav>
-      <div style="text-align: center; margin-top: 20px;">
-        Copyright &copy; <a href="https://heylink.me/pratikabhang"> Pratik Abhang</a>. All Rights Reserved.
       </div>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+
+      <!-- Right Side: Profile Image -->
+      <div class="section__pic-container">
+        <img src="./files/profile.jpg" alt="Pratik Abhang Profile" class="profile-img" />
+      </div>
+
+    </div>
+
+    <!-- Mouse Scrolling Icon to navigate to About section -->
+    <div class="mouse-container-right" onclick="location.href='./#about'">
+      <i class="fa-regular fa-circle-down"></i>
+    </div>
+  </section>
+
+<!-- About Me Section -->
+<section id="about">
+  <!-- Section Title -->
+  <p class="section__text__p1">Get To Know More</p>
+  <h1 class="title">About Me</h1>
+
+  <div class="experience-container">
+
+    <!-- About Me Description -->
+    <div class="experience-category">
+      <div class="experience-card">
+        <div class="experience-header">
+          <p>
+            Passionate Computer Engineer with expertise in Full Stack Development and Data Science. I specialize in building responsive, user-friendly web applications using modern technologies. With a strong foundation in algorithms and problem-solving, I enjoy tackling complex challenges and creating efficient solutions. My experience includes working with startups and contributing to open-source projects.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Personal Details -->
+    <div class="certifications-grid">
+      <!-- Personal Details 1 -->
+      <div class="experience-card">
+        <div class="experience-company">
+          <i class="fas fa-phone-alt"></i> 
+          <a href="tel:+911234567890">Mobile No: +91 1234567890</a>
+        </div>
+        <div class="experience-company">
+          <i class="fas fa-envelope"></i> 
+          <a href="mailto:pratik@example.com">Email: pratik@example.com</a>
+        </div>
+        <div class="experience-company">
+          <i class="fas fa-map-marker-alt"></i> Location: Pune, India
+        </div>
+        <div class="experience-company">
+          <i class="fas fa-flag"></i> Nationality: Indian
+        </div>
+        <div class="experience-company">
+          <i class="fas fa-language"></i> Language: English, Marathi
+        </div>
+      </div>
+
+      <!-- Personal Details 2 -->
+      <div class="experience-card">
+        <div class="experience-company">
+          <i class="fa-solid fa-cake-candles"></i></i> Date of Birth: 21 November 2003
+        </div>
+        <div class="experience-company">
+          <i class="fa-solid fa-venus-mars"></i></i> Gender: Male
+        </div>
+        <div class="experience-company">
+          <i class="fas fa-calendar-day"></i> <span id="age">Age: </span>
+        </div>
+        <div class="experience-company">
+          <i class="fas fa-heart"></i> Marital Status: Single
+        </div>
+        <div class="experience-company">
+          <i class="fas fa-running"></i> Interests: Music, Gaming, Photography
+        </div>
+      </div>
+    </div> <!-- End certifications-grid -->
+
+    <!-- Education Section -->
+    <div class="experience-category">
+      <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+      <!-- Bachelor's Degree -->
+      <div class="experience-card">
+        <div class="experience-header">
+          <h4>Bachelor of Engineering in Computer</h4>
+          <div class="experience-meta">
+            <span class="experience-date"><i class="fa-solid fa-calendar-days"></i> 2025</span>
+          </div>
+        </div>
+        <div class="experience-company">
+          <i class="fa-solid fa-graduation-cap"></i> STES, Sinhgad Institute of Technology and Science (SPPU), Pune, Maharashtra
+        </div>
+        <div class="experience-company">
+          <i class="fa-solid fa-location-dot"></i> Pune, Maharashtra
+        </div>
+        <div class="experience-company">
+          <strong>CGPA:</strong> 8.0 / 10
+        </div>
+      </div>
+
+      <!-- 12th Grade -->
+      <div class="experience-card">
+        <div class="experience-header">
+          <h4>Higher Secondary Certificate (12th)</h4>
+          <div class="experience-meta">
+            <span class="experience-date"><i class="fa-solid fa-calendar-days"></i> 2021</span>
+          </div>
+        </div>
+        <div class="experience-company">
+          <i class="fa-solid fa-building"></i> RSS, R.B. Narayanrao Borawake College (MSBSHSE), Pune, Maharashtra
+        </div>
+        <div class="experience-company">
+          <i class="fa-solid fa-location-dot"></i> Shrirampur, Maharashtra
+        </div>
+        <div class="experience-company">
+          <strong>Percentage:</strong> 82.17 / 100
+        </div>
+      </div>
+
+      <!-- 10th Grade -->
+      <div class="experience-card">
+        <div class="experience-header">
+          <h4>Secondary School Certificate (10th)</h4>
+          <div class="experience-meta">
+            <span class="experience-date"><i class="fa-solid fa-calendar-days"></i> 2019</span>
+          </div>
+        </div>
+        <div class="experience-company">
+          <i class="fa-solid fa-school"></i> VMSS, De Paul English Medium High School (MSBSHSE)
+        </div>
+        <div class="experience-company">
+          <i class="fa-solid fa-location-dot"></i> Shrirampur, Maharashtra
+        </div>
+        <div class="experience-company">
+          <strong>Percentage:</strong> 72.20 / 100
+        </div>
+      </div>
+    </div>
+
+    <!-- Certifications Section -->
+    <div class="experience-category">
+      <h3><i class="fas fa-certificate"></i> Certifications</h3>
+      <div class="certifications-grid">
+        <div class="experience-card">
+          <div class="experience-header">
+            <h4>AWS Networking Basics</h4>
+            <div class="experience-meta">
+              <span class="experience-date"><i class="fa-solid fa-calendar-day"></i> OCTOBER 2024</span>
+            </div>
+          </div>
+          <div class="experience-company">
+            <i class="fa-solid fa-chalkboard-user"></i> Simplilearn
+          </div>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-header">
+            <h4>Software Conceptual Design</h4>
+            <div class="experience-meta">
+              <span class="experience-date"><i class="fa-solid fa-calendar-day"></i> SEPTEMBER 2024</span>
+            </div>
+          </div>
+          <div class="experience-company">
+            <i class="fa-solid fa-chalkboard-user"></i> NPTEL
+          </div>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-header">
+            <h4>Cybersecurity</h4>
+            <div class="experience-meta">
+              <span class="experience-date"><i class="fa-solid fa-calendar-day"></i> AUGUST 2024</span>
+            </div>
+          </div>
+          <div class="experience-company">
+            <i class="fa-solid fa-chalkboard-user"></i> NSDC
+          </div>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-header">
+            <h4>Testing Fundamentals</h4>
+            <div class="experience-meta">
+              <span class="experience-date"><i class="fa-solid fa-calendar-day"></i> AUGUST 2024</span>
+            </div>
+          </div>
+          <div class="experience-company">
+            <i class="fa-solid fa-chalkboard-user"></i> Infosys Springboard
+          </div>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-header">
+            <h4>Web Development</h4>
+            <div class="experience-meta">
+              <span class="experience-date"><i class="fa-solid fa-calendar-day"></i> AUGUST 2023</span>
+            </div>
+          </div>
+          <div class="experience-company">
+            <i class="fa-solid fa-chalkboard-user"></i> Internshala
+          </div>
+        </div>
+      </div> <!-- End of certifications-grid -->
+    </div>
+  </div>
+
+  <!-- Navigation Icons -->
+  <div class="mouse-container-left" onclick="location.href='./#skills'">
+    <i class="fa-regular fa-circle-up"></i>
+  </div>
+  <div class="mouse-container-right" onclick="location.href='./#projects'">
+    <i class="fa-regular fa-circle-down"></i>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills">
+  <p class="section__text__p1">Explore My</p>
+  <h1 class="title">Skills</h1>
+
+  <div class="skills-container">
+    
+    <!-- Technical Skills -->
+    <div class="skills-category">
+      <h3><i class="fas fa-code"></i> Technical Skills</h3>
+      <div class="skills-grid">
+        <div class="skill-card"><i class="fab fa-java"></i><p>Java</p></div>
+        <div class="skill-card"><i class="fas fa-database"></i><p>MySQL</p></div>
+        <div class="skill-card"><i class="fab fa-html5"></i><p>HTML</p></div>
+        <div class="skill-card"><i class="fab fa-css3-alt"></i><p>CSS</p></div>
+        <div class="skill-card"><i class="fab fa-js"></i><p>JavaScript</p></div>
+        <div class="skill-card"><i class="fab fa-php"></i><p>PHP</p></div>
+        <div class="skill-card"><i class="fab fa-bootstrap"></i><p>Bootstrap</p></div>
+        <div class="skill-card"><i class="fab fa-react"></i><p>React.js</p></div>
+        <div class="skill-card"><i class="fab fa-node-js"></i><p>Node.js</p></div>
+        <div class="skill-card"><i class="fab fa-git-alt"></i><p>Git</p></div>
+      </div>
+    </div>
+
+    <!-- Soft Skills -->
+    <div class="skills-category">
+      <h3><i class="fas fa-users"></i> Soft Skills</h3>
+      <div class="skills-grid">
+        <div class="skill-card"><i class="fa-solid fa-comments"></i><p>Communication</p></div>
+        <div class="skill-card"><i class="fa-solid fa-people-group"></i><p>Teamwork</p></div>
+        <div class="skill-card"><i class="fa-solid fa-circle-exclamation"></i><p>Problem Solving</p></div>
+        <div class="skill-card"><i class="fa-solid fa-list-check"></i><p>Project Management</p></div>
+        <div class="skill-card"><i class="fa-solid fa-lightbulb"></i><p>Creativity</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="mouse-container-left" onclick="location.href='./#education'"><i class="fa-regular fa-circle-up"></i></div>
+  <div class="mouse-container-right" onclick="location.href='./#experience'"><i class="fa-regular fa-circle-down"></i></div>
+
+</section>
+
+
+<!-- Experience Section -->
+<section id="experience">
+  <p class="section__text__p1">Explore My</p>
+  <h1 class="title">Experience</h1>
+
+  <div class="experience-container">
+    <!-- Internships -->
+    <div class="experience-category">
+      <h3><i class="fas fa-user-graduate"></i> Internships</h3>
+
+      <!-- Software Developer Intern - Cognifyz Technologies -->
+      <div class="experience-card">
+        <div class="experience-header">
+          <h4>Software Developer Intern</h4>
+          <div class="experience-meta">
+            <span class="experience-date">Oct 2024 - Nov 2024</span>
+
+          </div>
+        </div>
+        <div class="experience-company">
+          <i class="fas fa-building"></i> Cognifyz Technologies | <i class="fa-solid fa-location-dot"></i> Virtual
+        </div>
+        <ul class="experience-details">
+          <li>Gained knowledge of the Software Development Life Cycle (SDLC) and its types</li>
+          <li>Enhanced project management skills by effectively managing tasks and meeting deadlines</li>
+        </ul>
+      </div>
+
+      <!-- Web Developer Intern - Elite Softwares -->
+      <div class="experience-card">
+        <div class="experience-header">
+          <h4>Web Developer Intern</h4>
+          <div class="experience-meta">
+            <span class="experience-date">Dec 2023 - Jan 2024</span>
+          </div>
+        </div>
+        <div class="experience-company">
+          <i class="fas fa-building"></i> Elite Softwares | <i class="fa-solid fa-location-dot"></i> Virtual
+        </div>
+        <ul class="experience-details">
+          <li>Learned website hosting and understood various domain types and their uses</li>
+          <li>Applied technologies such as HTML, CSS, JavaScript, MySQL, and PHP to create dynamic websites</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Icons -->
+  <div class="mouse-container-left" onclick="location.href='./#skills'">
+    <i class="fa-regular fa-circle-up"></i>
+  </div>
+  <div class="mouse-container-right" onclick="location.href='./#projects'">
+    <i class="fa-regular fa-circle-down"></i>
+  </div>
+</section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <p class="section__text__p1">Browse My Recent</p>
+    <h1 class="title">Projects</h1>
+    
+    <div class="projects-container">
+      <!-- Project 1 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="./files/about-pic.png" alt="E-Commerce Platform" />
+        </div>
+        <div class="project-details">
+          <h3>E-Commerce Platform</h3>
+          <p class="project-tech">React | Node.js | MongoDB | Stripe API</p>
+          <p class="project-desc">
+            Full-featured e-commerce platform with user authentication, product catalog, 
+            shopping cart, and payment processing. Implemented admin dashboard for inventory 
+            management and order tracking.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/pratikabhang/ecommerce-platform" target="_blank">
+              <i class="fab fa-github"></i> Code
+            </a>
+            <a href="https://ecommerce-demo.pratikabhang.com" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <!-- Top "Up" icon -->
+    <div class="mouse-container-left" onclick="location.href='./#experience'">
+      <i class="fa-regular fa-circle-up"></i>
+    </div>
+
+    <!-- Bottom "Down" icon -->
+    <div class="mouse-container-right" onclick="location.href='./#contact'">
+      <i class="fa-regular fa-circle-down"></i>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Contact Section -->
+<section id="contact">
+  <p class="section__text__p1">Get in Touch</p>
+  <h1 class="title">Contact Me</h1>
+
+  <div class="contact-container">
+    <!-- Contact Information -->
+    <div class="contact-info">
+      <!-- Phone -->
+      <div class="contact-info-item">
+        <i class="fas fa-phone"></i>
+        <div>
+          <h4>Phone</h4>
+          <p><a href="tel:+8766854678">+91 87668 54678</a></p>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="contact-info-item">
+        <i class="fas fa-envelope"></i>
+        <div>
+          <h4>Email</h4>
+          <p><a href="mailto:work.pratikabhang@gmail.com">work.pratikabhang@gmail.com</a></p>
+        </div>
+      </div>
+
+      <!-- LinkedIn -->
+      <div class="contact-info-item">
+        <i class="fab fa-linkedin"></i>
+        <div>
+          <h4>LinkedIn</h4>
+          <p><a href="https://linkedin.com/in/pratikabhang" target="_blank">in/pratikabhang</a></p>
+        </div>
+      </div>
+
+      <!-- Instagram -->
+      <div class="contact-info-item">
+        <i class="fab fa-instagram"></i>
+        <div>
+          <h4>Instagram</h4>
+          <p><a href="https://www.instagram.com/pratikabhang1" target="_blank">@pratikabhang1</a></p>
+        </div>
+      </div>
+
+      <!-- Location -->
+      <div class="contact-info-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <div>
+          <h4>Location</h4>
+          <p>
+            <a href="https://www.google.com/maps/place/Pune,+Maharashtra" target="_blank">
+              Pune, Maharashtra
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+      <!-- Name Field -->
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Your Name" required />
+      </div>
+
+      <!-- Email Field -->
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Your Email" required />
+      </div>
+
+      <!-- Message Field -->
+      <div class="form-group">
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      </div>
+
+<!-- Submit Button -->
+<div class="button-container">
+  <button type="submit" class="btn btn-color-1">
+    <i class="fas fa-paper-plane"></i> Send Message
+  </button>
+</div>
+
+</section>
+
+
+
+  <!-- Footer Section -->
+  <footer>
+    <p class="footer__copy">
+      <span id="current-time"></span> | All Rights Reserved &copy; <span id="year"></span> Pratik Abhang | <span id="current-date"></span>
+    </p>
+  </footer>
+
+  <!-- JavaScript Files -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("form-status");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const action = form.action;
+
+    try {
+      const response = await fetch(action, {
+        method: "POST",
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        status.innerHTML = "<span style='color: green;'>Thanks! Your message has been sent.</span>";
+        form.reset();
+      } else {
+        const result = await response.json();
+        if (result.errors) {
+          status.innerHTML = "<span style='color: red;'>Error: " + result.errors.map(error => error.message).join(", ") + "</span>";
+        } else {
+          status.innerHTML = "<span style='color: red;'>Oops! There was a problem submitting your form.</span>";
+        }
+      }
+    } catch (error) {
+      status.innerHTML = "<span style='color: red;'>Oops! Something went wrong.</span>";
+    }
+  });
+
+    // Typed.js initialization for animated text
+    document.addEventListener('DOMContentLoaded', function() {
+      var typed = new Typed("#typed-text", {
+        strings: [
+          "Computer Engineer",
+          "Full Stack Developer",
+          "Web Developer",
+          "Software Engineer",
+          "Data Analyst",
+          "Designer"
+        ],
+        typeSpeed: 80,
+        backSpeed: 40,
+        backDelay: 800,
+        startDelay: 400,
+        loop: true,
+        showCursor: true,
+        cursorChar: "|",
+      });
+
+      // Update date and time in footer
+      function updateDateTime() {
+        const currentDate = new Date();
+        document.getElementById("current-date").textContent = currentDate.toLocaleDateString('en-GB', {
+          day: '2-digit', month: 'long', year: 'numeric'
+        });
+        document.getElementById("current-time").textContent = currentDate.toLocaleTimeString();
+        document.getElementById("year").textContent = currentDate.getFullYear();
+      }
+
+      setInterval(updateDateTime, 1000);
+      updateDateTime();
+
+      // Toggle mobile menu
+      function toggleMenu() {
+        const menu = document.querySelector(".menu-links");
+        const icon = document.querySelector(".hamburger-icon");
+        menu.classList.toggle("open");
+        icon.classList.toggle("open");
+      }
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+
+      // Form submission handling
+      const form = document.getElementById('contactForm');
+      const formStatus = document.getElementById('form-status');
+      
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const formData = new FormData(form);
+          
+          fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          })
+          .then(response => {
+            if (response.ok) {
+              formStatus.innerHTML = 'Message sent successfully!';
+              formStatus.style.color = 'green';
+              form.reset();
+            } else {
+              throw new Error('Network response was not ok');
+            }
+          })
+          .catch(error => {
+            formStatus.innerHTML = 'Oops! There was a problem sending your message.';
+            formStatus.style.color = 'red';
+            console.error('Error:', error);
+          });
+        });
+      }
+
+      // Animation on scroll
+      const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.timeline-item, .project-card, .experience-card, .skill-card');
+        
+        elements.forEach(element => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          
+          if (elementPosition < windowHeight - 100) {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+          }
+        });
+      };
+
+
+function calculateAge(birthDate) {
+      const today = new Date();
+      let ageYears = today.getFullYear() - birthDate.getFullYear();
+      let ageMonths = today.getMonth() - birthDate.getMonth();
+      let ageDays = today.getDate() - birthDate.getDate();
+
+      if (ageDays < 0) {
+        ageMonths--;
+        ageDays += new Date(today.getFullYear(), today.getMonth(), 0).getDate(); // Get the number of days in the previous month
+      }
+
+      if (ageMonths < 0) {
+        ageYears--;
+        ageMonths += 12;
+      }
+
+      return {
+        years: ageYears,
+        months: ageMonths,
+        days: ageDays
+      };
+    }
+
+    // Update the age on the webpage
+    window.onload = function() {
+      const birthDate = new Date('2003-11-21');
+      const age = calculateAge(birthDate);
+      document.getElementById('age').textContent = `Age: ${age.years} years, ${age.months} months, ${age.days} days`;
+    };
+
+      // Initialize elements with hidden state
+      document.querySelectorAll('.timeline-item, .project-card, .experience-card, .skill-card').forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      });
+
+      // Run once on load
+      animateOnScroll();
+      
+      // Then run on scroll
+      window.addEventListener('scroll', animateOnScroll);
+    });
+  </script>
+</body>
+
 </html>
