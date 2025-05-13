@@ -1186,28 +1186,6 @@ footer {
 .mouse-container-right {
   animation: float 3s ease-in-out infinite;
 }
-.button-container {
-  width: 100%;
-  margin-top: 20px;
-}
-
-.btn.btn-color-1 {
-  width: 100%;
-  padding: 14px 0;
-  font-size: 18px;
-  border: none;
-  border-radius: 8px;
-  background-color: #000000; /* Customize color */
-  color: white;
-  cursor: pointer;
-  display: block;
-  transition: background-color 0.3s ease;
-}
-
-.btn.btn-color-1:hover {
-  background-color: #5e5e5e;
-}
-
 
 @keyframes fadeInUp {
   from {
