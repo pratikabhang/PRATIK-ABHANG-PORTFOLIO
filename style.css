@@ -234,7 +234,6 @@ section {
 }
 
 /* HOME SECTION */
-
 .section__pic-container {
   display: flex;
   justify-content: center;
@@ -247,7 +246,7 @@ section {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.3s ease;
   opacity: 0;
-  animation: fadeIn 1s ease forwards 0.7s, float 6s ease-in-out infinite;
+  animation: fadeIn 1s ease forwards 0.7s, smoothFloat 6s ease-in-out infinite;
 }
 
 .section__pic-container:hover {
@@ -262,9 +261,28 @@ section {
   transition: transform 0.3s ease;
 }
 
+@keyframes smoothFloat {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .section__pic-container:hover .profile-img {
   transform: scale(1.08);
 }
+
 
 .section__text {
   flex: 1;
@@ -1317,7 +1335,7 @@ nav {
   top: 0;
   left: 0;
   z-index: 1000;
-  padding: 0 2rem;
+  padding: 0 3rem;
 }
 
 /* Ensure space below the fixed nav is visible */
