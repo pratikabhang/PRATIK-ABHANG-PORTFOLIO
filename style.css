@@ -630,6 +630,7 @@ nav {
 /* Year on Timeline Line */
 .timeline-year {
   position: absolute;
+  top: 0;
   left: 100%;
   transform: translateX(-50%);
   top: 15px;
@@ -641,7 +642,8 @@ nav {
   padding: 5px 0;
   border-radius: 20px;
   z-index: 2;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  background-color: white; /* default if class not set */
 }
 
 /* Individual Education Styles */
