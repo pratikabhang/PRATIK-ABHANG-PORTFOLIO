@@ -15,9 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
       "Computer Engineer",
       "Full Stack Developer",
       "Web Developer",
-      "Software Engineer",
-      "Data Analyst",
-      "Designer"
+      "Software Developer",
+      "Data Analyst"
     ],
     typeSpeed: 80,
     backSpeed: 40,
@@ -169,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Update the age on the webpage
   const birthDate = new Date('2003-11-21');
   const age = calculateAge(birthDate);
-  document.getElementById('age').textContent = `Age: ${age.years} years`;
+  document.getElementById('age').textContent = `${age.years} years, ${age.months} months, ${age.days} days Old`;
 
   // Animation on scroll
   function animateOnScroll() {
