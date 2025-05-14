@@ -43,7 +43,7 @@ nav {
 }
 
 .nav-links {
-  gap: 1.8rem;
+  gap: 2rem;
   list-style: none;
   font-size: 1.2rem;
 }
@@ -59,7 +59,7 @@ nav {
 .nav-links li a {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
 a {
@@ -294,7 +294,7 @@ section {
 .btn-container {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
   margin-top: 2rem;
 }
 
@@ -346,7 +346,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   margin: 20px 0;
 }
 
@@ -524,6 +524,14 @@ section {
   color: #555;
 }
 
+.experience-companybio {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
 .experience-company i {
   font-size: 1rem;
 }
@@ -543,8 +551,8 @@ section {
 .certifications-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 33px;
-  grid-row-gap: 1px;
+  gap: 30px;
+  grid-row-gap: 3px;
 }
 
 
@@ -578,14 +586,14 @@ section {
   padding: 0 2rem;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 5px;
 }
 
 /* Skills Grid */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
+  gap: 1rem;
   justify-items: center;
   align-items: center;
   padding: 0 1rem;
@@ -706,7 +714,7 @@ section {
   }
 
   .skills-grid {
-    gap: 1.2rem;
+    gap: 1rem;
   }
 }
 
