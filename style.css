@@ -435,6 +435,9 @@ section {
 .details-container h3 {
   margin-bottom: 0.5rem;
   color: #333;
+        align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .details-container p {
@@ -473,6 +476,9 @@ section {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+        align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .experience-card {
@@ -540,6 +546,8 @@ section {
   gap: 33px;
   grid-row-gap: 1px;
 }
+
+
 /* SKILLS SECTION */
 #skills {
   padding: 50px 0;
@@ -554,13 +562,13 @@ section {
 
 .title {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 3.3rem;
   color: #111;
   margin-bottom: 50px;
   display: flex;
-  justify-content: center; /* Centers title horizontally */
-  align-items: center; /* Vertically aligns title if it's in a flex container */
-  gap: 0.5rem; /* Adds a small gap if you have an icon or extra content */
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 /* Skills Container */
@@ -576,8 +584,8 @@ section {
 /* Skills Grid */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* Exactly 5 cards per row */
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
   justify-items: center;
   align-items: center;
   padding: 0 1rem;
@@ -589,27 +597,26 @@ section {
 }
 
 .skills-category h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 30px;
   color: #333;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
   text-align: center;
 }
 
 /* Skill Card */
 .skill-card {
   width: 100%;
-  max-width: 150px; /* Card width */
-  height: 150px; /* Card height */
-  background-color: transparent; /* Removed background */
+  max-width: 150px;
+  height: 150px;
+  background-color: transparent;
   border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 10px; /* Reduced padding */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, color 0.3s ease;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -621,73 +628,40 @@ section {
 }
 
 .skill-card i {
-  font-size: 36px; /* Increased icon size */
-  margin-bottom: 8px;
-  transition: color 0.3s ease, font-size 0.3s ease;
+  font-size: 40px;
+  margin-bottom: 10px;
+  transition: transform 0.6s ease, color 0.3s ease;
 }
 
 .skill-card p {
-  font-size: 1rem; /* Increased text size */
+  font-size: 1rem;
   font-weight: 500;
   transition: font-size 0.3s ease;
 }
 
 /* Hover Effects */
 .skill-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .skill-card:hover i {
-  font-size: 42px; /* Increased icon size on hover */
+  animation: floatIcon 1.5s ease-in-out infinite;
+  transform: scale(1.2);
 }
 
 .skill-card:hover p {
-  font-size: 1.1rem; /* Increased text size on hover */
+  font-size: 1.1rem;
 }
 
-/* Sample icon color classes (assign these dynamically in HTML) */
-.skill-html {
-  color: #e44d26;
+/* Floating Icon Animation */
+@keyframes floatIcon {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
 }
 
-.skill-css {
-  color: #264de4;
-}
-
-.skill-js {
-  color: #f0db4f;
-}
-
-.skill-react {
-  color: #61dafb;
-}
-
-.skill-node {
-  color: #3c873a;
-}
-
-/* Apply hover color changes for icons */
-.skill-html:hover i {
-  color: #e44d26;
-}
-
-.skill-css:hover i {
-  color: #264de4;
-}
-
-.skill-js:hover i {
-  color: #f0db4f;
-}
-
-.skill-react:hover i {
-  color: #61dafb;
-}
-
-.skill-node:hover i {
-  color: #3c873a;
-}
-
-/* Animation */
+/* Fade-in Animation */
 @keyframes fadeInUp {
   to {
     opacity: 1;
@@ -695,18 +669,79 @@ section {
   }
 }
 
-/* Responsive Design for smaller screens */
+/* Icon Colors on Hover by Technology */
+.skill-card.java:hover i {
+  color: orange;
+}
+.skill-card.html:hover i {
+  color: orange;
+}
+.skill-card.css:hover i {
+  color: #007bff;
+}
+.skill-card.nodejs:hover i {
+  color: green;
+}
+.skill-card.react:hover i {
+  color: skyblue;
+}
+.skill-card.bootstrap:hover i {
+  color: purple;
+}
+.skill-card.teamwork i {
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.skill-card.teamwork:hover i {
+  animation: floatIcon 1.5s ease-in-out infinite;
+  transform: scale(1.2);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1024px) {
+  .skill-card {
+    max-width: 140px;
+    height: 140px;
+  }
+
+  .skills-grid {
+    gap: 1.2rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .skills-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on smaller screens */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .skill-card {
+    max-width: 130px;
+    height: 130px;
+  }
+
+  .skill-card i {
+    font-size: 36px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .skills-grid {
-    grid-template-columns: 1fr; /* 1 card per row on mobile */
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .skill-card {
+    max-width: 120px;
+    height: 120px;
+  }
+
+  .skill-card i {
+    font-size: 32px;
   }
 }
+
 
 /* Navigation Arrows */
 .mouse-container-left,
@@ -745,6 +780,9 @@ section {
 
   .skills-category h3 {
     font-size: 1.5rem;
+      align-items: center;
+  justify-content: center;
+  text-align: center;
   }
 }
 
@@ -794,6 +832,7 @@ section {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   color: #333;
+  
 }
 
 .project-tech {
@@ -961,12 +1000,12 @@ footer {
 
 .mouse-container-left {
   left: -7rem;
-  bottom: 7rem;
+  bottom: 0rem;
 }
 
 .mouse-container-right {
   right: -7rem;
-  bottom: 7rem;
+  bottom: 0rem;
 }
 
 /* ANIMATIONS */

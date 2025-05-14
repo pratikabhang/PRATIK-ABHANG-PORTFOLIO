@@ -32,7 +32,6 @@
         <ul class="nav-links">
           <li><a href="#"><i class="fas fa-house"></i> Home</a></li>
           <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-          <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
           <li><a href="#skills"><i class="fas fa-lightbulb"></i> Skills</a></li>
           <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
           <li><a href="#projects"><i class="fa-solid fa-diagram-project"></i> Projects</a></li>
@@ -54,7 +53,6 @@
       <ul class="menu-links" id="menuLinks">
         <li><a href="#" onclick="toggleMenu()">Home</a></li>
         <li><a href="#about" onclick="toggleMenu()">About</a></li>
-        <li><a href="#education" onclick="toggleMenu()">Education</a></li>
         <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
         <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
         <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
@@ -108,8 +106,8 @@
       </div>
     </div>
     <!-- Navigation Icons -->
-    <div class="mouse-container-left" onclick="location.href='./#about'">
-      <i class="fa-regular fa-circle-up"></i>
+    <div class="mouse-container-right" onclick="location.href='./#about'">
+      <i class="fa-regular fa-circle-down"></i>
     </div>
   </section>
 
@@ -174,7 +172,7 @@
 
       <!-- Education -->
       <div class="experience-category">
-        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+        <h3>Education</h3>
         <!-- Bachelor's Degree -->
         <div class="experience-card">
           <div class="experience-header">
@@ -235,7 +233,7 @@
 
       <!-- Certifications -->
       <div class="experience-category">
-        <h3><i class="fas fa-certificate"></i> Certifications</h3>
+        <h3>Certifications</h3>
         <div class="certifications-grid">
           <div class="experience-card">
             <div class="experience-header">
@@ -309,46 +307,51 @@
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills">
-    <p class="section__text__p1">Explore My</p>
-    <h1 class="title">Skills</h1>
+<!-- Skills Section -->
+<section id="skills">
+  <p class="section__text__p1">Explore My</p>
+  <h1 class="title">Skills</h1>
 
-    <div class="skills-container">
-      <!-- Technical Skills -->
-      <div class="skills-category">
-        <h3><i class="fas fa-code"></i> Technical Skills</h3>
-        <div class="skills-grid technical">
-          <div class="skill-card"><i class="fab fa-java"></i><p>Java</p></div>
-          <div class="skill-card"><i class="fas fa-database"></i><p>MySQL</p></div>
-          <div class="skill-card"><i class="fab fa-html5"></i><p>HTML</p></div>
-          <div class="skill-card"><i class="fab fa-css3-alt"></i><p>CSS</p></div>
-          <div class="skill-card"><i class="fab fa-js"></i><p>JavaScript</p></div>
-          <div class="skill-card"><i class="fab fa-php"></i><p>PHP</p></div>
-          <div class="skill-card"><i class="fab fa-bootstrap"></i><p>Bootstrap</p></div>
-          <div class="skill-card"><i class="fab fa-react"></i><p>React.js</p></div>
-          <div class="skill-card"><i class="fab fa-node-js"></i><p>Node.js</p></div>
-          <div class="skill-card"><i class="fab fa-git-alt"></i><p>Git</p></div>
-        </div>
-      </div>
-
-      <!-- Soft Skills -->
-      <div class="skills-category">
-        <h3><i class="fas fa-users"></i> Soft Skills</h3>
-        <div class="skills-grid soft">
-          <div class="skill-card"><i class="fa-solid fa-comments"></i><p>Communication</p></div>
-          <div class="skill-card"><i class="fa-solid fa-people-group"></i><p>Teamwork</p></div>
-          <div class="skill-card"><i class="fa-solid fa-circle-exclamation"></i><p>Problem Solving</p></div>
-          <div class="skill-card"><i class="fa-solid fa-list-check"></i><p>Project Management</p></div>
-          <div class="skill-card"><i class="fa-solid fa-lightbulb"></i><p>Creativity</p></div>
-        </div>
+  <div class="skills-container">
+    <!-- Technical Skills -->
+    <div class="skills-category">
+      <h3>Technical</h3>
+      <div class="skills-grid technical">
+        <div class="skill-card java"><i class="fab fa-java"></i><p>Java</p></div>
+        <div class="skill-card"><i class="fas fa-database"></i><p>MySQL</p></div>
+        <div class="skill-card html"><i class="fab fa-html5"></i><p>HTML</p></div>
+        <div class="skill-card css"><i class="fab fa-css3-alt"></i><p>CSS</p></div>
+        <div class="skill-card"><i class="fab fa-js"></i><p>JavaScript</p></div>
+        <div class="skill-card"><i class="fab fa-php"></i><p>PHP</p></div>
+        <div class="skill-card bootstrap"><i class="fab fa-bootstrap"></i><p>Bootstrap</p></div>
+        <div class="skill-card react"><i class="fab fa-react"></i><p>React.js</p></div>
+        <div class="skill-card nodejs"><i class="fab fa-node-js"></i><p>Node.js</p></div>
+        <div class="skill-card"><i class="fab fa-git-alt"></i><p>Git</p></div>
       </div>
     </div>
 
-    <!-- Navigation Icons -->
-    <div class="mouse-container-left" onclick="location.href='./#about'"><i class="fa-regular fa-circle-up"></i></div>
-    <div class="mouse-container-right" onclick="location.href='./#experience'"><i class="fa-regular fa-circle-down"></i></div>
-  </section>
+    <!-- Soft Skills -->
+    <div class="skills-category">
+      <h3>Soft</h3>
+      <div class="skills-grid soft">
+        <div class="skill-card"><i class="fa-solid fa-comments"></i><p>Communication</p></div>
+        <div class="skill-card teamwork"><i class="fa-solid fa-people-group"></i><p>Teamwork</p></div>
+        <div class="skill-card"><i class="fa-solid fa-circle-exclamation"></i><p>Problem Solving</p></div>
+        <div class="skill-card"><i class="fa-solid fa-list-check"></i><p>Project Management</p></div>
+        <div class="skill-card"><i class="fa-solid fa-lightbulb"></i><p>Creativity</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Icons -->
+  <div class="mouse-container-left" onclick="location.href='./#about'">
+    <i class="fa-regular fa-circle-up"></i>
+  </div>
+  <div class="mouse-container-right" onclick="location.href='./#experience'">
+    <i class="fa-regular fa-circle-down"></i>
+  </div>
+</section>
+
 
   <!-- Experience Section -->
   <section id="experience">
@@ -358,7 +361,7 @@
     <div class="experience-container">
       <!-- Internships -->
       <div class="experience-category">
-        <h3><i class="fas fa-user-graduate"></i> Internships</h3>
+        <h3>Internships</h3>
 
         <!-- Software Developer Intern -->
         <div class="experience-card">
