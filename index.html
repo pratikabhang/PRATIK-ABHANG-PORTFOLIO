@@ -30,7 +30,7 @@
       <div class="logo">&lt;pratik abhang/&gt;</div>
       <div>
         <ul class="nav-links">
-          <li><a href="#home"><i class="fas fa-house"></i> Home</a></li>
+          <li><a href="#"><i class="fas fa-house"></i> Home</a></li>
           <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
           <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
           <li><a href="#skills"><i class="fas fa-lightbulb"></i> Skills</a></li>
@@ -52,7 +52,7 @@
         <span></span>
       </div>
       <ul class="menu-links" id="menuLinks">
-        <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+        <li><a href="#" onclick="toggleMenu()">Home</a></li>
         <li><a href="#about" onclick="toggleMenu()">About</a></li>
         <li><a href="#education" onclick="toggleMenu()">Education</a></li>
         <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
@@ -107,10 +107,9 @@
         <img src="./files/profile.jpg" alt="Pratik Abhang Profile" class="profile-img" />
       </div>
     </div>
-
-    <!-- Scroll Down Icon -->
-    <div class="mouse-container-right" onclick="location.href='./#about'">
-      <i class="fa-regular fa-circle-down"></i>
+    <!-- Navigation Icons -->
+    <div class="mouse-container-left" onclick="location.href='./#about'">
+      <i class="fa-regular fa-circle-up"></i>
     </div>
   </section>
 
@@ -302,10 +301,10 @@
     </div>
 
     <!-- Navigation Icons -->
-    <div class="mouse-container-left" onclick="location.href='./#skills'">
+    <div class="mouse-container-left" onclick="location.href='./#'">
       <i class="fa-regular fa-circle-up"></i>
     </div>
-    <div class="mouse-container-right" onclick="location.href='./#projects'">
+    <div class="mouse-container-right" onclick="location.href='./#skills'">
       <i class="fa-regular fa-circle-down"></i>
     </div>
   </section>
@@ -319,7 +318,7 @@
       <!-- Technical Skills -->
       <div class="skills-category">
         <h3><i class="fas fa-code"></i> Technical Skills</h3>
-        <div class="skills-grid">
+        <div class="skills-grid technical">
           <div class="skill-card"><i class="fab fa-java"></i><p>Java</p></div>
           <div class="skill-card"><i class="fas fa-database"></i><p>MySQL</p></div>
           <div class="skill-card"><i class="fab fa-html5"></i><p>HTML</p></div>
@@ -336,7 +335,7 @@
       <!-- Soft Skills -->
       <div class="skills-category">
         <h3><i class="fas fa-users"></i> Soft Skills</h3>
-        <div class="skills-grid">
+        <div class="skills-grid soft">
           <div class="skill-card"><i class="fa-solid fa-comments"></i><p>Communication</p></div>
           <div class="skill-card"><i class="fa-solid fa-people-group"></i><p>Teamwork</p></div>
           <div class="skill-card"><i class="fa-solid fa-circle-exclamation"></i><p>Problem Solving</p></div>
@@ -347,7 +346,7 @@
     </div>
 
     <!-- Navigation Icons -->
-    <div class="mouse-container-left" onclick="location.href='./#education'"><i class="fa-regular fa-circle-up"></i></div>
+    <div class="mouse-container-left" onclick="location.href='./#about'"><i class="fa-regular fa-circle-up"></i></div>
     <div class="mouse-container-right" onclick="location.href='./#experience'"><i class="fa-regular fa-circle-down"></i></div>
   </section>
 
@@ -527,6 +526,10 @@
           </button>
         </div>
       </form>
+    </div>
+    <!-- Navigation Icons -->
+    <div class="mouse-container-left" onclick="location.href='./#'">
+      <i class="fa-regular fa-circle-up"></i>
     </div>
   </section>
 

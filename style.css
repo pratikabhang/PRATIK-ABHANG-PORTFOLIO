@@ -540,47 +540,76 @@ section {
   gap: 33px;
   grid-row-gap: 1px;
 }
-
 /* SKILLS SECTION */
 #skills {
   padding: 50px 0;
-  background-color: #f4f4f9;
 }
 
+.section__text__p1 {
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #111;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center; /* Centers title horizontally */
+  align-items: center; /* Vertically aligns title if it's in a flex container */
+  gap: 0.5rem; /* Adds a small gap if you have an icon or extra content */
+}
+
+/* Skills Container */
 .skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 50px;
-  max-width: 1200px;
-  margin: auto;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Exactly 5 cards per row */
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+/* Skills Category */
+.skills-category {
+  margin-bottom: 3rem;
 }
 
 .skills-category h3 {
   font-size: 2rem;
-  color: #333;
   margin-bottom: 30px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   text-align: center;
 }
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
-  grid-row-gap: 2px;
-  width: 100%;
-  justify-items: center;
-}
-
+/* Skill Card */
 .skill-card {
-  width: 100px;
-  height: 100px;
-  background-color: #fff;
+  width: 100%;
+  max-width: 150px; /* Card width */
+  height: 150px; /* Card height */
+  background-color: transparent; /* Removed background */
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  padding: 10px; /* Reduced padding */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, color 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -588,22 +617,135 @@ section {
   text-align: center;
   opacity: 0;
   transform: translateY(20px);
-}
-
-.skill-card:hover {
-  transform: scale(1.05) translateY(0) !important;
+  animation: fadeInUp 0.6s ease forwards;
 }
 
 .skill-card i {
-  font-size: 30px;
+  font-size: 36px; /* Increased icon size */
   margin-bottom: 8px;
-  color: #333;
+  transition: color 0.3s ease, font-size 0.3s ease;
 }
 
 .skill-card p {
-  font-size: 0.9rem;
+  font-size: 1rem; /* Increased text size */
   font-weight: 500;
-  color: #333;
+  transition: font-size 0.3s ease;
+}
+
+/* Hover Effects */
+.skill-card:hover {
+  transform: scale(1.05);
+}
+
+.skill-card:hover i {
+  font-size: 42px; /* Increased icon size on hover */
+}
+
+.skill-card:hover p {
+  font-size: 1.1rem; /* Increased text size on hover */
+}
+
+/* Sample icon color classes (assign these dynamically in HTML) */
+.skill-html {
+  color: #e44d26;
+}
+
+.skill-css {
+  color: #264de4;
+}
+
+.skill-js {
+  color: #f0db4f;
+}
+
+.skill-react {
+  color: #61dafb;
+}
+
+.skill-node {
+  color: #3c873a;
+}
+
+/* Apply hover color changes for icons */
+.skill-html:hover i {
+  color: #e44d26;
+}
+
+.skill-css:hover i {
+  color: #264de4;
+}
+
+.skill-js:hover i {
+  color: #f0db4f;
+}
+
+.skill-react:hover i {
+  color: #61dafb;
+}
+
+.skill-node:hover i {
+  color: #3c873a;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design for smaller screens */
+@media screen and (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on smaller screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: 1fr; /* 1 card per row on mobile */
+  }
+}
+
+/* Navigation Arrows */
+.mouse-container-left,
+.mouse-container-right {
+  position: absolute;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #555;
+}
+
+.mouse-container-left {
+  left: 20px;
+  bottom: 30px;
+}
+
+.mouse-container-right {
+  right: 20px;
+  bottom: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .skills-category h3 {
+    font-size: 1.5rem;
+  }
 }
 
 /* PROJECTS SECTION */
