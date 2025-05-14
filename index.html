@@ -1,59 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PRATIK ABHANG</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRATIK ABHANG - Portfolio</title>
   <link rel="icon" href="./files/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <!-- Desktop Navigation -->
-  <header>
-    <nav id="desktop-nav">
-      <div class="logo">&lt;pratik abhang/&gt;</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#"><i class="fas fa-house"></i> Home</a></li>
-          <li><a href="#about"><i class="fa-solid fa-user-tie"></i> About</a></li>
-          <li><a href="#skills"><i class="fa-solid fa-brain"></i>Skills</a></li>
-          <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
-          <li><a href="#projects"><i class="fa-solid fa-diagram-project"></i> Projects</a></li>
-          <li><a href="#contact"><i class="fa-solid fa-id-card"></i> Contact</a></li>
-        </ul>
+  <!-- Navigation -->
+          <header id="header">
+            <nav id="desktop-nav">
+              <div class="logo">&lt;pratik abhang/&gt;</div>
+              <div>
+                <ul class="nav-links">
+                  <li><a href="#home"><i class="fas fa-house"></i> Home</a></li>
+                  <li><a href="#about"><i class="fa-solid fa-user-tie"></i> About</a></li>
+                  <li><a href="#skills"><i class="fa-solid fa-brain"></i> Skills</a></li>
+                  <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+                  <li><a href="#projects"><i class="fa-solid fa-diagram-project"></i> Projects</a></li>
+                  <li><a href="#contact"><i class="fa-solid fa-id-card"></i> Contact</a></li>
+                </ul>
+              </div>
+            </nav>
+            <nav id="hamburger-nav">
+              <div class="logo">&lt;pratik/&gt;</div>
+              <div class="hamburger-menu">
+        <div class="hamburger-menu">
+          <div class="hamburger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="menu-links" id="menuLinks">
+            <ul>
+            <li>
+              <a href="#home" onclick="toggleMenu()">
+                <span><i class="fas fa-house"></i></span>
+                <span>Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="#about" onclick="toggleMenu()">
+                <span><i class="fas fa-user-tie"></i></span>
+                <span>About</span>
+              </a>
+            </li>
+            <li>
+              <a href="#skills" onclick="toggleMenu()">
+                <span><i class="fas fa-brain"></i></span>
+                <span>Skills</span>
+              </a>
+            </li>
+            <li>
+              <a href="#experience" onclick="toggleMenu()">
+                <span><i class="fas fa-briefcase"></i></span>
+                <span>Experience</span>
+              </a>
+            </li>
+            <li>
+              <a href="#projects" onclick="toggleMenu()">
+                <span><i class="fas fa-code"></i></span>
+                <span>Projects</span>
+              </a>
+            </li>
+            <li>
+              <a href="#contact" onclick="toggleMenu()">
+                <span><i class="fas fa-envelope"></i></span>
+                <span>Contact</span>
+              </a>
+            </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="menu-links" id="menuLinks">
+          <ul>
+          <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
   </header>
 
-  <!-- Mobile Navigation -->
-  <nav id="hamburger-nav">
-    <div class="logo">Pratik Abhang</div>
-    <div class="hamburger-menu">
-      <div class="hamburger-icon" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <ul class="menu-links" id="menuLinks">
-        <li><a href="#" onclick="toggleMenu()">Home</a></li>
-        <li><a href="#about" onclick="toggleMenu()">About</a></li>
-        <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
-        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
   <!-- Home Section -->
-  <section id="#">
+  <section id="home">
     <div class="profile__container">
       <!-- Social Links -->
       <div class="socials__vertical">
@@ -69,7 +107,7 @@
         <div class="social-icon instagram" onclick="window.open('https://www.instagram.com/pratikabhang1/')">
           <i class="fab fa-instagram"></i>
         </div>
-          <div class="social-icon x" onclick="window.open('https://twitter.com/pratikabhang11')">
+        <div class="social-icon x" onclick="window.open('https://twitter.com/pratikabhang11')">
           <i class="fa-brands fa-square-x-twitter"></i>
         </div>
         <div class="social-icon hackerrank" onclick="window.open('https://www.hackerrank.com/profile/pratikabhang/')">
@@ -99,7 +137,8 @@
         <img src="./files/profile.jpg" alt="Pratik Abhang Profile" class="profile-img" />
       </div>
     </div>
-    <!-- Navigation Icons -->
+    
+    <!-- Navigation Arrow -->
     <div class="mouse-container-right" onclick="location.href='./#about'">
       <i class="fa-regular fa-circle-down"></i>
     </div>
@@ -110,208 +149,191 @@
     <p class="section__text__p1">Get To Know More</p>
     <h1 class="title">About Me</h1>
 
-    <div class="experience-container">
+    <div class="about-container">
       <!-- About Description -->
-      <div class="experience-category">
-        <div class="experience-card">
-          <div class="experience-header">
-            <p>
-              Passionate Computer Engineer with expertise in Full Stack Development and Data Science. 
-              I specialize in building responsive, user-friendly web applications using modern technologies.
-            </p>
-          </div>
+      <div class="about-card">
+        <div class="about-content">
+          <p>
+            Passionate Computer Engineer with expertise in Full Stack Development and Data Science. 
+            I specialize in building responsive, user-friendly web applications using modern technologies.
+            With a strong foundation in computer science principles and hands-on experience in various
+            programming languages and frameworks, I create efficient and scalable solutions.
+          </p>
         </div>
       </div>
 
       <!-- Personal Details -->
-      <div class="certifications-grid">
-        <div class="experience-card">
-          <div class="experience-companybio">
+      <div class="details-grid">
+        <div class="details-card">
+          <div class="details-item">
             <i class="fas fa-phone-alt"></i> 
-            <a href="tel:+911234567890">Mobile No: +91 1234567890</a>
+            <a href="tel:+911234567890">+91 1234567890</a>
           </div>
-          <div class="experience-companybio">
+          <div class="details-item">
             <i class="fas fa-envelope"></i> 
-            <a href="mailto:pratik@example.com">Email: pratik@example.com</a>
+            <a href="mailto:work.pratikabhang@gmail.com">work.pratikabhang@gmail.com</a>
           </div>
-          <div class="experience-companybio">
-            <i class="fas fa-map-marker-alt"></i> Location: Pune, India
+          <div class="details-item">
+            <i class="fas fa-map-marker-alt"></i> Pune, India
           </div>
-          <div class="experience-companybio">
-            <i class="fas fa-flag"></i> Nationality: Indian
+          <div class="details-item">
+            <i class="fas fa-flag"></i> Indian
           </div>
-          <div class="experience-companybio">
-            <i class="fas fa-language"></i> Language: English, Marathi
+          <div class="details-item">
+            <i class="fas fa-language"></i> English, Marathi
           </div>
         </div>
 
-        <div class="experience-card">
-          <div class="experience-companybio">
-            <i class="fa-solid fa-cake-candles"></i> Date of Birth: 21 November
+        <div class="details-card">
+          <div class="details-item">
+            <i class="fa-solid fa-cake-candles"></i> 21 November
           </div>
-          <div class="experience-companybio">
-            <i class="fa-solid fa-venus-mars"></i> Gender: Male
+          <div class="details-item">
+            <i class="fa-solid fa-venus-mars"></i> Male
           </div>
-          <div class="experience-companybio">
+          <div class="details-item">
             <i class="fas fa-calendar-day"></i> <span id="age">Age: </span>
           </div>
-          <div class="experience-companybio">
-            <i class="fas fa-heart"></i> Marital Status: Single
+          <div class="details-item">
+            <i class="fas fa-heart"></i> Single
           </div>
-          <div class="experience-companybio">
-            <i class="fas fa-running"></i> Interests: Music, Gaming, Photography
+          <div class="details-item">
+            <i class="fas fa-running"></i> Music, Gaming, Photography
           </div>
         </div>
       </div>
 
-<!-- Education Timeline -->
-<div class="experience-category">
-  <h3>Education</h3>
-  <div class="timeline">
-    <!-- Timeline Dates -->
-    <div class="timeline-dates">
-      <div class="timeline-date"></div>
-      <div class="timeline-date"></div>
-      <div class="timeline-date"></div>
-    </div>
-
-    <!-- Bachelor's Degree -->
-    <div class="timeline-container left">
-      <div class="timeline-content">
-        <div class="timeline-dot"></div>
-        <div class="experience-header">
-          <h4>Bachelor of Engineering in Computer</h4>
-          <div class="experience-meta">
-            <span class="experience-date"><i class="fa-solid fa-calendar-days"></i> 2025</span>
+      <!-- Education Timeline -->
+      <div class="section-title">
+        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+      </div>
+      
+      <div class="timeline">
+        <!-- Bachelor's Degree -->
+        <div class="timeline-container left">
+          <div class="timeline-content">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <h4>Bachelor of Engineering in Computer</h4>
+              <div class="timeline-meta">
+                <span class="timeline-date"><i class="fa-solid fa-calendar-days"></i> 2025</span>
+              </div>
+            </div>
+            <div class="timeline-details">
+              <p><i class="fa-solid fa-graduation-cap"></i> STES, Sinhgad Institute of Technology and Science (SPPU)</p>
+              <p><i class="fa-solid fa-location-dot"></i> Pune, Maharashtra</p>
+              <p><strong>CGPA:</strong> 8.0 / 10</p>
+            </div>
           </div>
         </div>
-        <div class="experience-company">
-          <i class="fa-solid fa-graduation-cap"></i> STES, Sinhgad Institute of Technology and Science (SPPU), Pune, Maharashtra
-        </div>
-        <div class="experience-company">
-          <i class="fa-solid fa-location-dot"></i> Pune, Maharashtra
-        </div>
-        <div class="experience-company">
-          <strong>CGPA:</strong> 8.0 / 10
-        </div>
-      </div>
-    </div>
 
-    <!-- 12th Grade -->
-    <div class="timeline-container right">
-      <div class="timeline-content">
-        <div class="timeline-dot"></div>
-        <div class="experience-header">
-          <h4>Higher Secondary Certificate (12th)</h4>
-          <div class="experience-meta">
-            <span class="experience-date"><i class="fa-solid fa-calendar-days"></i> 2021</span>
+        <!-- 12th Grade -->
+        <div class="timeline-container right">
+          <div class="timeline-content">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <h4>Higher Secondary Certificate (12th)</h4>
+              <div class="timeline-meta">
+                <span class="timeline-date"><i class="fa-solid fa-calendar-days"></i> 2021</span>
+              </div>
+            </div>
+            <div class="timeline-details">
+              <p><i class="fa-solid fa-building"></i> RSS, R.B. Narayanrao Borawake College (MSBSHSE)</p>
+              <p><i class="fa-solid fa-location-dot"></i> Shrirampur, Maharashtra</p>
+              <p><strong>Percentage:</strong> 82.17 / 100</p>
+            </div>
           </div>
         </div>
-        <div class="experience-company">
-          <i class="fa-solid fa-building"></i> RSS, R.B. Narayanrao Borawake College (MSBSHSE), Pune, Maharashtra
-        </div>
-        <div class="experience-company">
-          <i class="fa-solid fa-location-dot"></i> Shrirampur, Maharashtra
-        </div>
-        <div class="experience-company">
-          <strong>Percentage:</strong> 82.17 / 100
-        </div>
-      </div>
-    </div>
 
-    <!-- 10th Grade -->
-    <div class="timeline-container left">
-      <div class="timeline-content">
-        <div class="timeline-dot"></div>
-        <div class="experience-header">
-          <h4>Secondary School Certificate (10th)</h4>
-          <div class="experience-meta">
-            <span class="experience-date"><i class="fa-solid fa-calendar-days"></i> 2019</span>
+        <!-- 10th Grade -->
+        <div class="timeline-container left">
+          <div class="timeline-content">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <h4>Secondary School Certificate (10th)</h4>
+              <div class="timeline-meta">
+                <span class="timeline-date"><i class="fa-solid fa-calendar-days"></i> 2019</span>
+              </div>
+            </div>
+            <div class="timeline-details">
+              <p><i class="fa-solid fa-school"></i> VMSS, De Paul English Medium High School (MSBSHSE)</p>
+              <p><i class="fa-solid fa-location-dot"></i> Shrirampur, Maharashtra</p>
+              <p><strong>Percentage:</strong> 72.20 / 100</p>
+            </div>
           </div>
         </div>
-        <div class="experience-company">
-          <i class="fa-solid fa-school"></i> VMSS, De Paul English Medium High School (MSBSHSE)
-        </div>
-        <div class="experience-company">
-          <i class="fa-solid fa-location-dot"></i> Shrirampur, Maharashtra
-        </div>
-        <div class="experience-company">
-          <strong>Percentage:</strong> 72.20 / 100
-        </div>
       </div>
-    </div>
-  </div>
-</div>
 
       <!-- Certifications -->
-      <div class="experience-category">
-        <h3>Certifications</h3>
-        <div class="certifications-grid">
-          <div class="experience-card">
-            <div class="experience-header">
-              <h4>AWS Networking Basics</h4>
-              <div class="experience-meta">
-                <span class="experience-date"><i class="fa-solid fa-calendar-day"></i> OCTOBER 2024</span>
-              </div>
-            </div>
-            <div class="experience-company">
-              <i class="fa-solid fa-chalkboard-user"></i> Simplilearn
+      <div class="section-title">
+        <h3><i class="fas fa-certificate"></i> Certifications</h3>
+      </div>
+      
+      <div class="certifications-grid">
+        <div class="certification-card">
+          <div class="certification-header">
+            <h4>AWS Networking Basics</h4>
+            <div class="certification-meta">
+              <span class="certification-date"><i class="fa-solid fa-calendar-day"></i> OCT 2024</span>
             </div>
           </div>
+          <div class="certification-provider">
+            <i class="fa-solid fa-chalkboard-user"></i> Simplilearn
+          </div>
+        </div>
 
-          <div class="experience-card">
-            <div class="experience-header">
-              <h4>Software Conceptual Design</h4>
-              <div class="experience-meta">
-                <span class="experience-date"><i class="fa-solid fa-calendar-day"></i> SEPTEMBER 2024</span>
-              </div>
-            </div>
-            <div class="experience-company">
-              <i class="fa-solid fa-chalkboard-user"></i> NPTEL
+        <div class="certification-card">
+          <div class="certification-header">
+            <h4>Software Conceptual Design</h4>
+            <div class="certification-meta">
+              <span class="certification-date"><i class="fa-solid fa-calendar-day"></i> SEP 2024</span>
             </div>
           </div>
+          <div class="certification-provider">
+            <i class="fa-solid fa-chalkboard-user"></i> NPTEL
+          </div>
+        </div>
 
-          <div class="experience-card">
-            <div class="experience-header">
-              <h4>Cybersecurity</h4>
-              <div class="experience-meta">
-                <span class="experience-date"><i class="fa-solid fa-calendar-day"></i> AUGUST 2024</span>
-              </div>
-            </div>
-            <div class="experience-company">
-              <i class="fa-solid fa-chalkboard-user"></i> NSDC
+        <div class="certification-card">
+          <div class="certification-header">
+            <h4>Cybersecurity</h4>
+            <div class="certification-meta">
+              <span class="certification-date"><i class="fa-solid fa-calendar-day"></i> AUG 2024</span>
             </div>
           </div>
+          <div class="certification-provider">
+            <i class="fa-solid fa-chalkboard-user"></i> NSDC
+          </div>
+        </div>
 
-          <div class="experience-card">
-            <div class="experience-header">
-              <h4>Testing Fundamentals</h4>
-              <div class="experience-meta">
-                <span class="experience-date"><i class="fa-solid fa-calendar-day"></i> AUGUST 2024</span>
-              </div>
-            </div>
-            <div class="experience-company">
-              <i class="fa-solid fa-chalkboard-user"></i> Infosys Springboard
+        <div class="certification-card">
+          <div class="certification-header">
+            <h4>Testing Fundamentals</h4>
+            <div class="certification-meta">
+              <span class="certification-date"><i class="fa-solid fa-calendar-day"></i> AUG 2024</span>
             </div>
           </div>
+          <div class="certification-provider">
+            <i class="fa-solid fa-chalkboard-user"></i> Infosys Springboard
+          </div>
+        </div>
 
-          <div class="experience-card">
-            <div class="experience-header">
-              <h4>Web Development</h4>
-              <div class="experience-meta">
-                <span class="experience-date"><i class="fa-solid fa-calendar-day"></i> AUGUST 2023</span>
-              </div>
+        <div class="certification-card">
+          <div class="certification-header">
+            <h4>Web Development</h4>
+            <div class="certification-meta">
+              <span class="certification-date"><i class="fa-solid fa-calendar-day"></i> AUG 2023</span>
             </div>
-            <div class="experience-company">
-              <i class="fa-solid fa-chalkboard-user"></i> Internshala
-            </div>
+          </div>
+          <div class="certification-provider">
+            <i class="fa-solid fa-chalkboard-user"></i> Internshala
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Navigation Icons -->
-    <div class="mouse-container-left" onclick="location.href='./#'">
+    <!-- Navigation Arrows -->
+    <div class="mouse-container-left" onclick="location.href='./#home'">
       <i class="fa-regular fa-circle-up"></i>
     </div>
     <div class="mouse-container-right" onclick="location.href='./#skills'">
@@ -324,30 +346,68 @@
     <p class="section__text__p1">Explore My</p>
     <h1 class="title">Skills</h1>
 
-<div class="skills-container">
-  <!-- Technical Skills -->
-  <div class="skills-category">
-    <h3>Technical</h3>
-    <div class="skills-grid technical">
-      <div class="skill-card java"><i class="fab fa-java"></i><p>Java</p></div>
-      <div class="skill-card mysql"><i class="fas fa-database"></i><p>MySQL</p></div>
-      <div class="skill-card html"><i class="fab fa-html5"></i><p>HTML</p></div>
-      <div class="skill-card css"><i class="fab fa-css3-alt"></i><p>CSS</p></div>
-      <div class="skill-card javascript"><i class="fab fa-js"></i><p>JavaScript</p></div>
-      <div class="skill-card php"><i class="fab fa-php"></i><p>PHP</p></div>
-      <div class="skill-card bootstrap"><i class="fab fa-bootstrap"></i><p>Bootstrap</p></div>
-      <div class="skill-card react"><i class="fab fa-react"></i><p>React.js</p></div>
-      <div class="skill-card nodejs"><i class="fab fa-node-js"></i><p>Node.js</p></div>
-      <div class="skill-card kotlin"><i class="fa-solid fa-k"></i><p>Kotlin</p></div>
-      <div class="skill-card mongodb"><i class="fa-brands fa-envira"></i>MongoDB</p></div>
-      <div class="skill-card google"><i class="fab fa-google"></i><p>Google</p></div>
-      <div class="skill-card microsoft"><i class="fab fa-microsoft"></i><p>Microsoft</p></div>
+    <div class="skills-container">
+      <!-- Technical Skills -->
+      <div class="skills-category">
+        <h3><i class="fas fa-code"></i> Technical</h3>
+        <div class="skills-grid">
+          <div class="skill-card" data-skill="java">
+            <i class="fab fa-java"></i>
+            <p>Java</p>
+          </div>
+          <div class="skill-card" data-skill="mysql">
+            <i class="fas fa-database"></i>
+            <p>MySQL</p>
+          </div>
+          <div class="skill-card" data-skill="html">
+            <i class="fab fa-html5"></i>
+            <p>HTML</p>
+          </div>
+          <div class="skill-card" data-skill="css">
+            <i class="fab fa-css3-alt"></i>
+            <p>CSS</p>
+          </div>
+          <div class="skill-card" data-skill="javascript">
+            <i class="fab fa-js"></i>
+            <p>JavaScript</p>
+          </div>
+          <div class="skill-card" data-skill="php">
+            <i class="fab fa-php"></i>
+            <p>PHP</p>
+          </div>
+          <div class="skill-card" data-skill="bootstrap">
+            <i class="fab fa-bootstrap"></i>
+            <p>Bootstrap</p>
+          </div>
+          <div class="skill-card" data-skill="react">
+            <i class="fab fa-react"></i>
+            <p>React.js</p>
+          </div>
+          <div class="skill-card" data-skill="nodejs">
+            <i class="fab fa-node-js"></i>
+            <p>Node.js</p>
+          </div>
+          <div class="skill-card" data-skill="kotlin">
+            <i class="fa-solid fa-k"></i>
+            <p>Kotlin</p>
+          </div>
+          <div class="skill-card" data-skill="mongodb">
+            <i class="fa-brands fa-envira"></i>
+            <p>MongoDB</p>
+          </div>
+          <div class="skill-card" data-skill="google">
+            <i class="fab fa-google"></i>
+            <p>Google Cloud</p>
+          </div>
+          <div class="skill-card" data-skill="microsoft">
+            <i class="fab fa-microsoft"></i>
+            <p>Microsoft Azure</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-
-    <!-- Navigation Icons -->s
+    <!-- Navigation Arrows -->
     <div class="mouse-container-left" onclick="location.href='./#about'">
       <i class="fa-regular fa-circle-up"></i>
     </div>
@@ -363,43 +423,44 @@
 
     <div class="experience-container">
       <!-- Internships -->
-      <div class="experience-category">
-        <h3>Internships</h3>
-        <div class="timeline">
-          <!-- Software Developer Intern -->
-          <div class="timeline-container left">
-            <div class="timeline-content">
-              <div class="timeline-dot"></div>
-              <div class="experience-header">
-                <h4>Software Developer Intern</h4>
-                <div class="experience-meta">
-                  <span class="experience-date">Oct 2024 - Nov 2024</span>
-                </div>
+      <div class="section-title">
+        <h3><i class="fas fa-briefcase"></i> Internships</h3>
+      </div>
+      
+      <div class="timeline">
+        <!-- Software Developer Intern -->
+        <div class="timeline-container left">
+          <div class="timeline-content">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <h4>Software Developer Intern</h4>
+              <div class="timeline-meta">
+                <span class="timeline-date"><i class="fa-solid fa-calendar-days"></i> Oct 2024 - Nov 2024</span>
               </div>
-              <div class="experience-company">
-                <i class="fas fa-building"></i> Cognifyz Technologies | <i class="fa-solid fa-location-dot"></i> Virtual
-              </div>
-              <ul class="experience-details">
+            </div>
+            <div class="timeline-details">
+              <p><i class="fas fa-building"></i> Cognifyz Technologies | <i class="fa-solid fa-location-dot"></i> Virtual</p>
+              <ul class="experience-list">
                 <li>Gained knowledge of the Software Development Life Cycle (SDLC) and its types</li>
                 <li>Enhanced project management skills by effectively managing tasks and meeting deadlines</li>
               </ul>
             </div>
           </div>
+        </div>
 
-          <!-- Web Developer Intern -->
-          <div class="timeline-container right">
-            <div class="timeline-content">
-              <div class="timeline-dot"></div>
-              <div class="experience-header">
-                <h4>Web Developer Intern</h4>
-                <div class="experience-meta">
-                  <span class="experience-date">Dec 2023 - Jan 2024</span>
-                </div>
+        <!-- Web Developer Intern -->
+        <div class="timeline-container right">
+          <div class="timeline-content">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <h4>Web Developer Intern</h4>
+              <div class="timeline-meta">
+                <span class="timeline-date"><i class="fa-solid fa-calendar-days"></i> Dec 2023 - Jan 2024</span>
               </div>
-              <div class="experience-company">
-                <i class="fas fa-building"></i> Elite Softwares | <i class="fa-solid fa-location-dot"></i> Virtual
-              </div>
-              <ul class="experience-details">
+            </div>
+            <div class="timeline-details">
+              <p><i class="fas fa-building"></i> Elite Softwares | <i class="fa-solid fa-location-dot"></i> Virtual</p>
+              <ul class="experience-list">
                 <li>Learned website hosting and understood various domain types and their uses</li>
                 <li>Applied technologies such as HTML, CSS, JavaScript, MySQL, and PHP to create dynamic websites</li>
               </ul>
@@ -409,7 +470,7 @@
       </div>
     </div>
 
-    <!-- Navigation Icons -->
+    <!-- Navigation Arrows -->
     <div class="mouse-container-left" onclick="location.href='./#skills'">
       <i class="fa-regular fa-circle-up"></i>
     </div>
@@ -434,7 +495,8 @@
           <p class="project-tech">React | Node.js | MongoDB | Stripe API</p>
           <p class="project-desc">
             Full-featured e-commerce platform with user authentication, product catalog, 
-            shopping cart, and payment processing.
+            shopping cart, and payment processing. Implemented responsive design and
+            secure payment gateway integration.
           </p>
           <div class="project-links">
             <a href="https://github.com/pratikabhang/ecommerce-platform" target="_blank">
@@ -446,9 +508,57 @@
           </div>
         </div>
       </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="./files/about-pic.png" alt="Task Management App" />
+        </div>
+        <div class="project-details">
+          <h3>Task Management App</h3>
+          <p class="project-tech">React | Firebase | Material UI</p>
+          <p class="project-desc">
+            Real-time task management application with drag-and-drop functionality,
+            team collaboration features, and deadline tracking. Uses Firebase for
+            authentication and real-time database.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/pratikabhang/task-manager" target="_blank">
+              <i class="fab fa-github"></i> Code
+            </a>
+            <a href="https://taskmanager.pratikabhang.com" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="./files/about-pic.png" alt="Weather Dashboard" />
+        </div>
+        <div class="project-details">
+          <h3>Weather Dashboard</h3>
+          <p class="project-tech">JavaScript | OpenWeather API | Chart.js</p>
+          <p class="project-desc">
+            Interactive weather dashboard that displays current conditions and
+            5-day forecast for any location. Features include temperature unit
+            conversion and historical weather data visualization.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/pratikabhang/weather-dashboard" target="_blank">
+              <i class="fab fa-github"></i> Code
+            </a>
+            <a href="https://weather.pratikabhang.com" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Navigation Icons -->
+    <!-- Navigation Arrows -->
     <div class="mouse-container-left" onclick="location.href='./#experience'">
       <i class="fa-regular fa-circle-up"></i>
     </div>
@@ -457,115 +567,116 @@
     </div>
   </section>
 
-<!-- Contact Section -->
-<section id="contact">
-  <p class="section__text__p1">Get in Touch</p>
-  <h1 class="title">Contact Me</h1>
+  <!-- Contact Section -->
+  <section id="contact">
+    <p class="section__text__p1">Get in Touch</p>
+    <h1 class="title">Contact Me</h1>
 
-  <div class="contact-container">
-    <!-- Contact Information -->
-    <div class="contact-info">
-      <!-- Phone -->
-      <div class="contact-info-item">
-        <a href="tel:+8766854678"><i class="fas fa-phone"></i></a>
-        <div>
-          <h4>Phone</h4>
-          <p><a href="tel:+8766854678">+91 87668 54678</a></p>
+    <div class="contact-container">
+      <!-- Contact Information -->
+      <div class="contact-info">
+        <div class="contact-info-item">
+          <div class="contact-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="contact-text">
+            <h4>Phone</h4>
+            <p><a href="tel:+911234567890">+91 1234567890</a></p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="contact-text">
+            <h4>Email</h4>
+            <p><a href="mailto:work.pratikabhang@gmail.com">work.pratikabhang@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-icon">
+            <i class="fab fa-linkedin"></i>
+          </div>
+          <div class="contact-text">
+            <h4>LinkedIn</h4>
+            <p><a href="https://linkedin.com/in/pratikabhang" target="_blank">in/pratikabhang</a></p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-icon">
+            <i class="fab fa-instagram"></i>
+          </div>
+          <div class="contact-text">
+            <h4>Instagram</h4>
+            <p><a href="https://www.instagram.com/pratikabhang1" target="_blank">@pratikabhang1</a></p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="contact-text">
+            <h4>Location</h4>
+            <p>
+              <a href="https://www.google.com/maps/place/Pune,+Maharashtra" target="_blank">
+                Pune, Maharashtra
+              </a>
+            </p>
+          </div>
         </div>
       </div>
 
-      <!-- Email -->
-      <div class="contact-info-item">
-        <a href="mailto:work.pratikabhang@gmail.com"><i class="fas fa-envelope"></i></a>
-        <div>
-          <h4>Email</h4>
-          <p><a href="mailto:work.pratikabhang@gmail.com">work.pratikabhang@gmail.com</a></p>
+      <!-- Contact Form -->
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your Name" required />
         </div>
-      </div>
 
-      <!-- LinkedIn -->
-      <div class="contact-info-item">
-        <a href="https://linkedin.com/in/pratikabhang" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <div>
-          <h4>LinkedIn</h4>
-          <p><a href="https://linkedin.com/in/pratikabhang" target="_blank">in/pratikabhang</a></p>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Your Email" required />
         </div>
-      </div>
 
-      <!-- Instagram -->
-      <div class="contact-info-item">
-        <a href="https://www.instagram.com/pratikabhang1" target="_blank"><i class="fab fa-instagram"></i></a>
-        <div>
-          <h4>Instagram</h4>
-          <p><a href="https://www.instagram.com/pratikabhang1" target="_blank">@pratikabhang1</a></p>
+        <div class="form-group">
+          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
         </div>
-      </div>
 
-      <!-- Location -->
-      <div class="contact-info-item">
-        <a href="https://www.google.com/maps/place/Pune,+Maharashtra" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
-        <div>
-          <h4>Location</h4>
-          <p>
-            <a href="https://www.google.com/maps/place/Pune,+Maharashtra" target="_blank">
-              Pune, Maharashtra
-            </a>
-          </p>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-color-1">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
         </div>
-      </div>
+      </form>
     </div>
 
-    <!-- Contact Form -->
-    <form class="contact-form" id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
-      <!-- Name Field -->
-      <div class="form-group">
-        <input type="text" name="name" placeholder="Your Name" required />
-      </div>
+    <!-- Navigation Arrow -->
+    <div class="mouse-container-left" onclick="location.href='./#'">
+      <i class="fa-regular fa-circle-up"></i>
+    </div>
+  </section>
 
-      <!-- Email Field -->
-      <div class="form-group">
-        <input type="email" name="email" placeholder="Your Email" required />
-      </div>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-navigation">
+      <ul class="footer-links">
+        <li><a href="#home"><i class="fas fa-house"></i> Home</a></li>
+        <li><a href="#about"><i class="fa-solid fa-user-tie"></i> About</a></li>
+        <li><a href="#skills"><i class="fa-solid fa-brain"></i> Skills</a></li>
+        <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+        <li><a href="#projects"><i class="fa-solid fa-diagram-project"></i> Projects</a></li>
+        <li><a href="#contact"><i class="fa-solid fa-id-card"></i> Contact</a></li>
+      </ul>
+    </div>
 
-      <!-- Message Field -->
-      <div class="form-group">
-        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-      </div>
+    <p class="footer-copy">
+      <span id="current-time"></span> | All Rights Reserved &copy; PRATIK ABHANG | <span id="current-date"></span>
+    </p>
+  </footer>
 
-      <!-- Submit Button -->
-      <div class="button-container">
-        <button type="submit" class="btn btn-color-1">
-          <i class="fas fa-paper-plane"></i> Send to Pratik
-        </button>
-      </div>
-    </form>
-  </div>
-
-  <!-- Navigation Icons -->
-  <div class="mouse-container-left" onclick="location.href='./#'">
-    <i class="fa-regular fa-circle-up"></i>
-  </div>
-</section>
-
-
-<footer>
-  <div class="fnavigation">
-    <ul class="fnav-links">
-      <li><a href="#"><i class="fas fa-house"></i> Home</a></li>
-      <li><a href="#about"><i class="fa-solid fa-user-tie"></i> About</a></li>
-      <li><a href="#skills"><i class="fa-solid fa-brain"></i> Skills</a></li>
-      <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
-      <li><a href="#projects"><i class="fa-solid fa-diagram-project"></i> Projects</a></li>
-      <li><a href="#contact"><i class="fa-solid fa-id-card"></i> Contact</a></li>
-    </ul>
-  </div>
-
-  <p class="footer__copy">
-    <span id="current-time"></span> | All Rights Reserved &copy; PRATIK ABHANG | <span id="current-date"></span>
-  </p>
-</footer>
-
-  <!-- External JavaScript -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="script.js"></script>
 </body>

@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Header scroll effect
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
   // Typed.js initialization for animated text
   var typed = new Typed("#typed-text", {
     strings: [
@@ -21,15 +31,26 @@ document.addEventListener('DOMContentLoaded', function() {
   // Update date and time in footer
   function updateDateTime() {
     const currentDate = new Date();
-    document.getElementById("current-date").textContent = currentDate.toLocaleDateString('en-GB', {
-      day: '2-digit', month: 'long', year: 'numeric'
+    
+    // Format date as "15 May 2023"
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    const formattedDate = currentDate.toLocaleDateString('en-GB', options);
+    
+    // Format time as "14:30:45"
+    const formattedTime = currentDate.toLocaleTimeString('en-GB', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
     });
-    document.getElementById("current-time").textContent = currentDate.toLocaleTimeString();
-    document.getElementById("year").textContent = currentDate.getFullYear();
+    
+    document.getElementById("current-date").textContent = formattedDate;
+    document.getElementById("current-time").textContent = formattedTime;
   }
 
-  setInterval(updateDateTime, 1000);
+  // Update immediately and then every second
   updateDateTime();
+  setInterval(updateDateTime, 1000);
 
   // Toggle mobile menu
   function toggleMenu() {
@@ -44,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
       const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
       
       // Close mobile menu if open
       const menu = document.querySelector(".menu-links");
@@ -54,20 +74,31 @@ document.addEventListener('DOMContentLoaded', function() {
         icon.classList.remove("open");
       }
       
-      targetElement.scrollIntoView({
-        behavior: 'smooth'
-      });
+      // Scroll to target
+      if (targetId !== '#') {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          const headerHeight = document.getElementById('header').offsetHeight;
+          const targetPosition = targetElement.offsetTop - headerHeight;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }
     });
   });
 
   // Form submission handling
   const form = document.getElementById('contactForm');
-  const formStatus = document.getElementById('form-status');
   
   if (form) {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       const formData = new FormData(form);
+      const formStatus = document.createElement('p');
+      formStatus.className = 'form-status';
       
       fetch(form.action, {
         method: 'POST',
@@ -78,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .then(response => {
         if (response.ok) {
-          formStatus.innerHTML = 'Message sent successfully!';
+          formStatus.textContent = 'Message sent successfully!';
           formStatus.style.color = 'green';
           form.reset();
         } else {
@@ -86,9 +117,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       })
       .catch(error => {
-        formStatus.innerHTML = 'Oops! There was a problem sending your message.';
+        formStatus.textContent = 'Oops! There was a problem sending your message.';
         formStatus.style.color = 'red';
         console.error('Error:', error);
+      })
+      .finally(() => {
+        // Remove any existing status messages
+        const existingStatus = form.querySelector('.form-status');
+        if (existingStatus) {
+          existingStatus.remove();
+        }
+        
+        // Add new status message
+        form.appendChild(formStatus);
+        
+        // Remove after 5 seconds
+        setTimeout(() => {
+          formStatus.style.opacity = '0';
+          setTimeout(() => {
+            formStatus.remove();
+          }, 500);
+        }, 5000);
       });
     });
   }
@@ -120,29 +169,37 @@ document.addEventListener('DOMContentLoaded', function() {
   // Update the age on the webpage
   const birthDate = new Date('2003-11-21');
   const age = calculateAge(birthDate);
-  document.getElementById('age').textContent = `Age: ${age.years} years, ${age.months} months, ${age.days} days`;
+  document.getElementById('age').textContent = `Age: ${age.years} years`;
 
   // Animation on scroll
-  const animateOnScroll = function() {
-    const elements = document.querySelectorAll('.experience-card, .project-card, .skill-card');
+  function animateOnScroll() {
+    const elements = document.querySelectorAll(
+      '.about-card, .details-card, .timeline-container, ' +
+      '.certification-card, .skill-card, .project-card, ' +
+      '.experience-card'
+    );
+    
     const windowHeight = window.innerHeight;
-    const scrollPosition = window.scrollY;
+    const scrollPosition = window.scrollY + windowHeight;
     
     elements.forEach((element, index) => {
-      const elementPosition = element.getBoundingClientRect().top + scrollPosition;
-      const elementOffset = elementPosition - windowHeight;
+      const elementPosition = element.offsetTop;
       
-      if (scrollPosition > elementOffset + 100 && !element.classList.contains('animate')) {
+      if (scrollPosition > elementPosition + 100 && !element.classList.contains('animate')) {
         // Stagger animations with different delays
         const delay = index * 0.1;
         element.style.animationDelay = `${delay}s`;
         element.classList.add('animate');
       }
     });
-  };
+  }
 
   // Initialize elements with hidden state
-  document.querySelectorAll('.experience-card, .project-card, .skill-card').forEach(element => {
+  document.querySelectorAll(
+    '.about-card, .details-card, .timeline-container, ' +
+    '.certification-card, .skill-card, .project-card, ' +
+    '.experience-card'
+  ).forEach(element => {
     element.style.opacity = '0';
     element.style.transform = 'translateY(20px)';
     element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
@@ -164,5 +221,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // Random floating duration for more natural effect
     const duration = 3 + Math.random() * 3;
     card.style.animationDuration = `${duration}s`;
+  });
+
+  // Add hover effect to skill cards
+  skillCards.forEach(card => {
+    const skill = card.getAttribute('data-skill');
+    const icon = card.querySelector('i');
+    
+    card.addEventListener('mouseenter', () => {
+      // Add class based on skill for color change
+      card.classList.add(`${skill}-hover`);
+      
+      // Add pulse animation to icon
+      icon.style.animation = 'floatIcon 1.5s ease-in-out infinite';
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      // Remove hover class
+      card.classList.remove(`${skill}-hover`);
+      
+      // Remove pulse animation
+      icon.style.animation = '';
+    });
   });
 });
