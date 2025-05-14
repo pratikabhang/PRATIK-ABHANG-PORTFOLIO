@@ -1,103 +1,206 @@
+/* RESPONSIVE DESIGN - MEDIA QUERIES */
+
+/* For screens up to 1400px */
 @media screen and (max-width: 1400px) {
-  #profile {
+  #home {
     height: 83vh;
     margin-bottom: 6rem;
   }
+  
   .about-containers {
     flex-wrap: wrap;
   }
+  
   #contact,
   #projects {
     height: fit-content;
   }
 }
 
+/* For screens up to 1200px */
 @media screen and (max-width: 1200px) {
   #desktop-nav {
     display: none;
   }
+  
   #hamburger-nav {
     display: flex;
   }
+  
   #experience,
   .experience-details-container {
     margin-top: 2rem;
   }
-  #profile,
+  
+  #home,
   .section-container {
     display: block;
   }
-  .arrow {
+  
+  .mouse-container-left,
+  .mouse-container-right {
     display: none;
   }
+  
   section,
   .section-container {
     height: fit-content;
   }
+  
   section {
     margin: 0 5%;
   }
+  
   .section__pic-container {
     width: 275px;
     height: 275px;
     margin: 0 auto 2rem;
   }
+  
   .about-containers {
     margin-top: 0;
   }
+  
+  /* Adjust skills grid for medium screens */
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
+/* For screens up to 800px */
+@media screen and (max-width: 800px) {
+  /* Adjust project card layout */
+  .project-card {
+    flex-direction: column;
+  }
+  
+  .project-image {
+    min-height: 200px;
+  }
+  
+  /* Adjust contact layout */
+  .contact-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  /* Adjust skills grid */
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* For screens up to 600px (mobile devices) */
 @media screen and (max-width: 600px) {
   #contact,
   footer {
     height: 40vh;
   }
-  #profile {
+  
+  #home {
     height: 83vh;
     margin-bottom: 0;
   }
+  
   article {
     font-size: 1rem;
   }
+  
   footer nav {
     height: fit-content;
     margin-bottom: 2rem;
   }
+  
   .about-containers,
   .contact-info-upper-container,
   .btn-container {
     flex-wrap: wrap;
   }
+  
   .contact-info-container {
     margin: 0;
   }
+  
   .contact-info-container p,
   .nav-links li a {
     font-size: 1rem;
   }
+  
   .experience-sub-title {
     font-size: 1.25rem;
   }
+  
   .logo {
     font-size: 1.5rem;
   }
+  
   .nav-links {
     flex-direction: column;
     gap: 0.5rem;
     text-align: center;
   }
+  
   .section__pic-container {
     width: auto;
     height: 46vw;
     justify-content: center;
   }
+  
   .section__text__p2 {
     font-size: 1.25rem;
   }
+  
   .title {
     font-size: 2rem;
   }
+  
   .text-container {
     text-align: justify;
+  }
+  
+  /* Adjust skills grid for small screens */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Adjust certifications grid */
+  .certifications-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Adjust experience cards */
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .experience-date {
+    margin-top: 0.5rem;
+  }
+}
+
+/* For very small screens up to 400px */
+@media screen and (max-width: 400px) {
+  .section__pic-container {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .section__text__p2 {
+    font-size: 1.1rem;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+  
+  /* Single column layout for smallest screens */
+  .skills-grid {
+    grid-template-columns: 1fr;
   }
 }
