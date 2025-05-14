@@ -43,7 +43,18 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      
+      // Close mobile menu if open
+      const menu = document.querySelector(".menu-links");
+      const icon = document.querySelector(".hamburger-icon");
+      if (menu.classList.contains("open")) {
+        menu.classList.remove("open");
+        icon.classList.remove("open");
+      }
+      
+      targetElement.scrollIntoView({
         behavior: 'smooth'
       });
     });
@@ -114,14 +125,18 @@ document.addEventListener('DOMContentLoaded', function() {
   // Animation on scroll
   const animateOnScroll = function() {
     const elements = document.querySelectorAll('.experience-card, .project-card, .skill-card');
+    const windowHeight = window.innerHeight;
+    const scrollPosition = window.scrollY;
     
-    elements.forEach(element => {
-      const elementPosition = element.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
+    elements.forEach((element, index) => {
+      const elementPosition = element.getBoundingClientRect().top + scrollPosition;
+      const elementOffset = elementPosition - windowHeight;
       
-      if (elementPosition < windowHeight - 100) {
-        element.style.opacity = '1';
-        element.style.transform = 'translateY(0)';
+      if (scrollPosition > elementOffset + 100 && !element.classList.contains('animate')) {
+        // Stagger animations with different delays
+        const delay = index * 0.1;
+        element.style.animationDelay = `${delay}s`;
+        element.classList.add('animate');
       }
     });
   };
@@ -138,4 +153,16 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Then run on scroll
   window.addEventListener('scroll', animateOnScroll);
+
+  // Add floating animation to skills
+  const skillCards = document.querySelectorAll('.skill-card');
+  skillCards.forEach((card, index) => {
+    // Random delay for floating effect
+    const delay = Math.random() * 2;
+    card.style.animationDelay = `${delay}s`;
+    
+    // Random floating duration for more natural effect
+    const duration = 3 + Math.random() * 3;
+    card.style.animationDuration = `${duration}s`;
+  });
 });
