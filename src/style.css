@@ -100,12 +100,7 @@ a:hover {
   transform: translateX(-50%);
   width: 0;
   height: 4px; /* Thicker underline */
-  background: linear-gradient(
-    90deg,
-    #ff0000, #ff7f00, #ffff00,
-    #00ff00, #0000ff, #4b0082, #8f00ff,
-    #ff1493, #1e90ff, #32cd32, #ffd700, white
-  );
+  background: rgb(68, 17, 17);
   background-size: 300% 100%;
   transition: width 0.4s ease-in-out;
 }
@@ -113,12 +108,7 @@ a:hover {
 /* Hover effect: animated rainbow for both text and underline */
 .logo:hover {
   transform: scale(1.05);
-  background: linear-gradient(
-    90deg,
-    #ff0000, #ff7f00, #ffff00,
-    #00ff00, #0000ff, #4b0082, #8f00ff,
-    #ff1493, #1e90ff, #32cd32, #ffd700, white
-  );
+  background: rgb(68, 17, 17);
   background-size: 300% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
