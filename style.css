@@ -270,9 +270,9 @@ section {
 /* Floating animation */
 @keyframes smoothFloat {
   0%   { transform: translateY(0); }
-  25%  { transform: translateY(-6px); }
+  25%  { transform: translateY(7px); }
   50%  { transform: translateY(0); }
-  75%  { transform: translateY(6px); }
+  75%  { transform: translateY(7px); }
   100% { transform: translateY(0); }
 }
 
@@ -429,6 +429,11 @@ section {
 .social-icon.portfolio:hover i {
   color: #6a0dad;
 }
+.social-icon.x:hover i {
+  color: #333;
+
+}
+
 
 /* ABOUT SECTION */
 
@@ -595,109 +600,125 @@ line-height: 1.6;
 }
 
 /* Timeline Styles */
+/* Timeline Styles */
 .timeline {
-position: relative;
-max-width: 1200px;
-margin: 0 auto;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .timeline::after {
-content: '';
-position: absolute;
-width: 6px;
-background-color: #333;
-top: 0;
-bottom: 0;
-left: 50%;
-margin-left: -3px;
-border-radius: 3px;
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #333;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+  border-radius: 3px;
 }
 
 .timeline-container {
-padding: 10px 40px;
-position: relative;
-background-color: inherit;
-width: 50%;
-opacity: 0;
-animation: fadeIn 0.6s ease forwards;
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
 }
 
+/* Remove the timeline dot and circle */
 .timeline-container::after {
-content: '';
-position: absolute;
-width: 25px;
-height: 25px;
-right: -17px;
-background-color: white;
-border: 4px solid #333;
-top: 15px;
-border-radius: 50%;
-z-index: 1;
+  content: none; /* Remove circle */
 }
 
+/* Content box inside the timeline */
 .timeline-content {
-padding: 20px 30px;
-background-color: white;
-position: relative;
-border-radius: 6px;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .timeline-content:hover {
-transform: translateY(-5px);
-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.timeline-dot {
-position: absolute;
-width: 20px;
-height: 20px;
-right: -10px;
-background-color: #333;
-border: 4px solid #333;
-top: 15px;
-border-radius: 50%;
-z-index: 1;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .left {
-left: 0;
+  left: 0;
 }
 
 .right {
-left: 50%;
+  left: 50%;
 }
 
 .left::before {
-content: " ";
-height: 0;
-position: absolute;
-top: 22px;
-width: 0;
-z-index: 1;
-right: 30px;
-border: medium solid white;
-border-width: 10px 0 10px 10px;
-border-color: transparent transparent transparent white;
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
 }
 
 .right::before {
-content: " ";
-height: 0;
-position: absolute;
-top: 22px;
-width: 0;
-z-index: 1;
-left: 30px;
-border: medium solid white;
-border-width: 10px 10px 10px 0;
-border-color: transparent white transparent transparent;
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
 }
 
 .right::after {
-left: -16px;
+  left: -16px;
 }
+
+/* Timeline Date Markers */
+.timeline-dates {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%; /* Ensure it spans the full height of the timeline */
+}
+
+.timeline-date {
+  position: absolute;
+  width: 2px;
+  height: 6px;
+  background-color: #333;
+  border-radius: 0;
+}
+
+.timeline-date:nth-child(1) {
+  top: 25%; /* Position the first date marker at 25% height of the timeline */
+}
+
+.timeline-date:nth-child(2) {
+  top: 50%; /* Position the second date marker at 50% height of the timeline */
+}
+
+.timeline-date:nth-child(3) {
+  top: 75%; /* Position the third date marker at 75% height of the timeline */
+}
+
+
 
 /* Certifications Grid */
 .certifications-grid {
@@ -709,184 +730,199 @@ grid-row-gap: 3px;
 
 /* SKILLS SECTION */
 .section__text__p1 {
-font-size: 1rem;
-color: #333;
-text-align: center;
-margin-bottom: 10px;
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .title {
-text-align: center;
-font-size: 3.8rem;
-color: #111;
-margin-bottom: 50px;
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 0.5rem;
+  text-align: center;
+  font-size: 3.8rem;
+  color: #111;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 /* Skills Container */
 .skills-container {
-max-width: 1200px;
-margin: 0 auto;
-padding: 0 2rem;
-display: flex;
-flex-direction: column;
-gap: 5px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 /* Skills Grid */
 .skills-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-gap: 1rem;
-justify-items: center;
-align-items: center;
-padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  align-items: center;
+  padding: 0 1rem;
 }
 
 /* Skills Category */
 .skills-category {
-margin-bottom: 3rem;
+  margin-bottom: 3rem;
 }
 
 .skills-category h3 {
-font-size: 1.5rem;
-margin-bottom: 30px;
-color: #333;
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 /* Skill Card */
 .skill-card {
-width: 100%;
-max-width: 150px;
-height: 150px;
-background-color: white;
-border: 1px solid #e0e0e0;
-border-radius: 10px;
-padding: 12px;
-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.05);
-transition: transform 0.4s ease, box-shadow 0.4s ease;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-text-align: center;
-opacity: 0;
-transform: translateY(20px);
-animation: fadeInUp 0.6s ease forwards;
-position: relative;
+  width: 100%;
+  max-width: 150px;
+  height: 150px;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+  position: relative;
 }
 
 .skill-card::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-border-radius: 10px;
-border: 2px solid transparent;
-transition: all 0.3s ease;
-pointer-events: none;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  pointer-events: none;
 }
 
 .skill-card:hover::before {
-border: 2px solid #333;
+  border: 2px solid #333;
 }
 
 .skill-card i {
-font-size: 50px;
-margin-bottom: 10px;
-transition: transform 0.6s ease, color 0.3s ease;
+  font-size: 50px;
+  margin-bottom: 10px;
+  transition: transform 0.6s ease, color 0.3s ease;
 }
 
 .skill-card p {
-font-size: 1.2rem;
-font-weight: 500;
-transition: font-size 0.3s ease;
-}
-
-/* Floating Animation */
-@keyframes float {
-0% {
-transform: translateY(0px);
-}
-50% {
-transform: translateY(-10px);
-}
-100% {
-transform: translateY(0px);
-}
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: font-size 0.3s ease;
 }
 
 /* Hover Effects */
 .skill-card:hover {
-transform: scale(1.1) translateY(-5px);
-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .skill-card:hover i {
-animation: floatIcon 1.5s ease-in-out infinite;
-transform: scale(1.2);
+  animation: floatIcon 1.5s ease-in-out infinite;
+  transform: scale(1.2);
 }
 
 .skill-card:hover p {
-font-size: 1.1rem;
-}
-
-/* Floating Icon Animation */
-@keyframes floatIcon {
-0% { transform: translateY(0); }
-50% { transform: translateY(-10px); }
-100% { transform: translateY(0); }
+  font-size: 1.1rem;
 }
 
 /* Fade-in Animation */
 @keyframes fadeInUp {
-from {
-opacity: 0;
-transform: translateY(20px);
-}
-to {
-opacity: 1;
-transform: translateY(0);
-}
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Icon Colors on Hover by Technology */
+/* Floating Icon Animation */
+@keyframes floatIcon {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Icon Color Hover Effects */
 .skill-card.java:hover i {
-color: orange;
+  color: #d39b00;
 }
+
+.skill-card.mysql:hover i {
+  color: #00758f;
+}
+
 .skill-card.html:hover i {
-color: #e34c26;
+  color: #e34c26;
 }
+
 .skill-card.css:hover i {
-color: #264de4;
+  color: #264de4;
 }
-.skill-card.nodejs:hover i {
-color: #68a063;
+
+.skill-card.javascript:hover i {
+  color: #dbbf0c;
 }
-.skill-card.react:hover i {
-color: #61dbfb;
+
+.skill-card.php:hover i {
+  color: #5f688f;
 }
+
 .skill-card.bootstrap:hover i {
-color: #563d7c;
+  color: #563d7c;
 }
-.skill-card.teamwork i {
-background: linear-gradient(45deg, #ff416c, #ff4b2b);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+
+.skill-card.react:hover i {
+  color: #61dbfb;
 }
-.skill-card.teamwork:hover i {
-animation: floatIcon 1.5s ease-in-out infinite;
-transform: scale(1.2);
+
+.skill-card.nodejs:hover i {
+  color: #68a063;
 }
+
+.skill-card.kotlin:hover i {
+  color: #7f52ff;
+}
+
+.skill-card.mongodb:hover i {
+  color: #47a248; /* Change the color on hover */
+}
+
+
+
+.skill-card.google:hover i {
+  color: #000000;
+}
+
+.skill-card.microsoft:hover i {
+  color: #000000; /* Ensure text remains transparent */
+}
+
+
 
 /* PROJECTS SECTION */
 .projects-container {
@@ -988,79 +1024,152 @@ font-size: 0.9rem;
 
 /* CONTACT SECTION */
 .contact-container {
-display: flex;
-max-width: 1200px;
-margin: 0 auto;
-padding: 0 2rem;
-gap: 3rem;
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  gap: 3rem;
+  flex-wrap: wrap; /* Allow wrapping for responsiveness */
 }
 
 .contact-info {
-flex: 1;
-background: white;
-border-radius: 0.5rem;
-padding: 2rem;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-opacity: 0;
-animation: fadeIn 1s ease forwards 0.3s;
+  flex: 1;
+  background: white;
+  border-radius: 0.75rem; /* Slightly rounded corners for a more polished look */
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+  opacity: 0;
+  animation: fadeIn 1s ease forwards 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition added for zoom and shadow */
 }
 
 .contact-info-item {
-display: flex;
-align-items: center;
-gap: 1rem;
-margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .contact-info-item i {
-font-size: 1.5rem;
-color: #333;
-width: 40px;
-height: 40px;
-background: #f0f0f0;
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-transition: all 0.3s ease;
+  font-size: 1.5rem;
+  color: #333;
+  width: 50px; /* Slightly larger icon size */
+  height: 50px;
+  background: #f0f0f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
 .contact-info-item:hover i {
-background: #333;
-color: white;
-transform: rotate(15deg);
+  background: #333;
+  color: white;
+  transform: scale(1.3); /* Increased zoom for the icon */
 }
 
 .contact-info-item h4 {
-font-size: 1.1rem;
-color: #333;
-margin-bottom: 0.2rem;
+  font-size: 1.2rem; /* Slightly larger text for headings */
+  color: #333;
+  margin-bottom: 0.2rem;
+  transition: color 0.3s ease;
 }
 
 .contact-info-item p {
-color: #555;
-font-size: 0.95rem;
+  color: #555;
+  font-size: 1rem; /* Larger font size for readability */
 }
 
 .contact-info-item a {
-color: #555;
-transition: color 0.3s ease;
+  color: #555;
+  transition: color 0.3s ease;
 }
 
 .contact-info-item a:hover {
-color: #333;
-text-decoration: underline;
+  color: #333;
+}
+
+.contact-info:hover {
+  transform: scale(1.05); /* Zoom effect for the entire card */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Larger shadow on hover for emphasis */
 }
 
 .contact-form {
-flex: 1;
-background: white;
-border-radius: 0.5rem;
-padding: 2rem;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-opacity: 0;
-animation: fadeIn 1s ease forwards 0.5s;
+  flex: 1;
+  background: white;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow for form card */
+  opacity: 0;
+  animation: fadeIn 1s ease forwards 0.5s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for zoom and shadow */
 }
+
+.contact-form h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: #555;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 0.5px solid #ddd;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+  box-sizing: border-box;
+  transition: border 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #333;
+  outline: none;
+}
+
+.contact-form button {
+  width: 100%; /* Make button same width as input fields */
+  padding: 0.8rem; /* Match the padding of input/textarea */
+  border: none;
+  background-color: #333;
+  color: white;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+.contact-form button:hover {
+  background-color: #555;
+}
+
+/* Optional Fade In Animation for the contact-info */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .form-group {
 margin-bottom: 1.5rem;
@@ -1092,17 +1201,6 @@ resize: vertical;
 .button-container {
 display: flex;
 justify-content: center;
-}
-
-/* FOOTER */
-footer {
-padding: 2rem 1rem;
-text-align: center;
-}
-
-.footer__copy {
-font-size: 0.9rem;
-margin-top: 1.5rem;
 }
 
 /* MOUSE CONTAINERS (NAVIGATION ARROWS) */
@@ -1361,4 +1459,54 @@ nav {
     gap: 3rem;
     text-align: center;
   }
+}
+
+
+
+
+/* FOOTER */
+footer {
+  padding: 2rem 1rem;
+  text-align: center;
+  background-color: #f5f5f5;
+}
+
+.fnavigation {
+  margin-bottom: 20px;
+}
+
+.fnav-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.fnav-links li {
+  display: inline-block;
+}
+
+.fnav-links a {
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.fnav-links a {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.fnav-links a:hover {
+  color: grey;
+  transform: scale(1.1);
+}
+
+
+.footer__copy {
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  color: #555;
 }
