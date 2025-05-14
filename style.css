@@ -636,18 +636,6 @@ nav {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.timeline-dot {
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  right: -17px;
-  background-color: white;
-  border: 4px solid #333;
-  border-radius: 50%;
-  z-index: 1;
-  top: 15px;
-}
-
 .timeline-header {
   margin-bottom: 1rem;
 }
@@ -679,6 +667,33 @@ nav {
   gap: 0.5rem;
   color: #555;
 }
+
+/* New Style for Year on the Timeline */
+.timeline-year {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  background-color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+  z-index: 1;
+}
+
+/* Adjust the Arrow to align properly with the year */
+.timeline-container::before {
+  content: '→';
+  font-size: 1.5rem;
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #333;
+}
+
 
 .experience-list {
   padding-left: 1.5rem;
