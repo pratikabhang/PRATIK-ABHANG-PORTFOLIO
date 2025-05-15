@@ -326,7 +326,6 @@ section {
 /* ========== THEME TOGGLE SWITCH ========== */
 /* Toggle Container */
 .theme-toggle {
-     border: 3px solid var(--border-color); /* Consistent border */
   position: relative;
   width: 44px;
   height: 80px;
