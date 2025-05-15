@@ -592,7 +592,6 @@ nav {
   color: transparent; /* Hide the original icon color */
 }
 
-/* Show the flag inside the icon */
 .details-item:hover i.fa-flag::before {
   content: '';
   position: absolute;
@@ -612,35 +611,43 @@ nav {
   z-index: 1;
 }
 
-/* Add Ashoka Chakra dot */
 .details-item:hover i.fa-flag::after {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 10px;
+  height: 10px;
   transform: translate(-50%, -50%);
-  width: 10px;                /* Increased width */
-  height: 10px;               /* Increased height */
-  background-color: #000080;  /* Navy Blue */
   border-radius: 50%;
+  border: 1px solid #000080; /* Outer ring */
+
+  /* Center dot */
+  background:
+    radial-gradient(circle at center, #000080 20%, transparent 21%),
+  
+    /* 12 spokes with thick center that fade towards edges */
+    repeating-conic-gradient(
+      from 0deg,
+      rgba(0, 0, 128, 0.9) 0deg 12deg,
+      rgba(0, 0, 128, 0.4) 12deg 15deg,
+      transparent 15deg 30deg
+    );
+  
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
   z-index: 2;
 }
 
 
-
 .details-item:hover i.fa-language {
   background: #ffe100; /* Language yellow */
-  color: rgb(70, 70, 70);
+  color: rgb(0, 0, 0);
 }
 
 .details-item:hover i.fa-cake-candles {
-background: linear-gradient(45deg, 
-  #fa9b9b 0%,     /* Light Red */
-  #e0eaa9 20%,    /* Soft Lime */
-  #95fe95 40%,    /* Light Green */
-  #9fd1e8 60%,    /* Soft Blue */
-  #a9a9ff 80%,    /* Light Blue */
-  #d5a9ff 100%    /* Light Purple */
+background: orange;
 );
 
   color: rgb(255, 255, 255);
