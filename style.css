@@ -610,7 +610,7 @@ nav {
   background: linear-gradient(to bottom, #3498db, #2ecc71, #e74c3c);
   top: 0;
   bottom: 0;
-  left: 50%;
+  left: 0%;
   margin-left: -2px;
   border-radius: 2px;
   z-index: 1;
@@ -618,9 +618,9 @@ nav {
 
 /* Timeline Container */
 .timeline-container {
-  padding: 10px 40px;
+  padding: 5px 10px;
   position: relative;
-  width: 50%;
+  width: auto;
   box-sizing: border-box;
   margin-bottom: 30px;
   opacity: 0;
@@ -773,28 +773,67 @@ nav {
 }
 
 
-/* Certifications */
+/* Certification Grid Layout */
 .certifications-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
 }
 
+/* Base Card Styles */
 .certification-card {
-  background: white;
+  background: #ffffff; /* white default */
   border-radius: 1rem;
   padding: 1.5rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease;
   opacity: 0;
   animation: fadeInUp 0.6s ease forwards;
 }
 
+/* Hover effect */
 .certification-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* Color Variants – border always shown */
+.certification-card.aws {
+  border: 3px solid #3498db;
+}
+.certification-card.aws:hover {
+  background: #f0f8ff;
+}
+
+.certification-card.software {
+  border: 3px solid #2ecc71;
+}
+.certification-card.software:hover {
+  background: #f6fef8;
+}
+
+.certification-card.cyber {
+  border: 3px solid #e74c3c;
+}
+.certification-card.cyber:hover {
+  background: #fef6f6;
+}
+
+.certification-card.testing {
+  border: 3px solid #9b59b6;
+}
+.certification-card.testing:hover {
+  background: #faf0fd;
+}
+
+.certification-card.webdev {
+  border: 3px solid #f39c12;
+}
+.certification-card.webdev:hover {
+  background: #fff9ec;
+}
+
+/* Inner Text Styling */
 .certification-header {
   margin-bottom: 0.5rem;
 }
@@ -826,6 +865,7 @@ nav {
   color: #555;
   font-size: 0.95rem;
 }
+
 
 /* Skills Section */
 .skills-container {
