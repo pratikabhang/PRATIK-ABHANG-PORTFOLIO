@@ -1074,13 +1074,11 @@ header.scrolled {
     opacity: 1;
     transform: translateY(0);
   }
-}
-/* Timeline Section */
-.timeline {
+}.timeline {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 60px 15px 60px;
 }
 
 .timeline::before {
@@ -1088,10 +1086,24 @@ header.scrolled {
   position: absolute;
   width: 2px;
   background-color: var(--primary-color);
-  top: 0;
-  bottom: 0;
+  top: 60px;
+  bottom: 60px;
   left: 50%;
   margin-left: -1px;
+}
+
+/* Added circle at bottom */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -10px;
+  z-index: 1;
 }
 
 .timeline-container {
@@ -1138,8 +1150,6 @@ header.scrolled {
   left: -30px;
 }
 
-/* Removed arrow styles by deleting the ::before pseudo-element rules */
-
 .timeline-content {
   padding: 20px;
   background-color: var(--card-bg);
@@ -1147,6 +1157,7 @@ header.scrolled {
   border-radius: 1rem;
   box-shadow: var(--card-shadow);
   transition: all 0.3s ease;
+  border: 2px solid var(--primary-color);
 }
 
 .timeline-content:hover {
@@ -1173,7 +1184,6 @@ header.scrolled {
   text-align: center;
 }
 
-/* Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -1185,10 +1195,14 @@ header.scrolled {
   }
 }
 
-/* Responsive adjustments */
 @media screen and (max-width: 768px) {
   .timeline::before {
     left: 31px;
+  }
+  
+  .timeline::after {
+    left: 31px;
+    margin-left: -10px;
   }
   
   .timeline-container {
@@ -1212,6 +1226,7 @@ header.scrolled {
     left: 0%;
   }
 }
+
 /* Container for entire skills section */
 .skills-container {
   max-width: 1200px;
@@ -1604,22 +1619,35 @@ header.scrolled {
 
 [data-theme="dark"] .skill-card:hover {
   background: rgba(255, 255, 255, 0.05);
+}:root {
+  /* Color Variables */
+  --border-color: #e0e0e0;        /* Light gray border */
+  --card-bg: #ffffff;             /* White card background */
+  --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  --text-color: #333333;          /* Dark gray text */
+  --icon-color: #666666;          /* Medium gray for secondary text */
+  --hover-color: #f0f0f0;         /* Light gray for button hover states */
+  --primary-color: #646cff;       /* Primary accent color (blue-ish) */
 }
+
 /* Projects Section */
 .projects-container {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 0.8rem;
+  background-color: var(--card-bg);
 }
 
 .project-card {
   display: flex;
   background: var(--card-bg);
+  border: 3px solid var(--border-color); /* Consistent border */
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: var(--card-shadow);
   margin-bottom: 3rem;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   opacity: 0;
   transform: translateY(20px);
 }
@@ -1631,12 +1659,14 @@ header.scrolled {
 .project-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-color); /* Accent border on hover */
 }
 
 .project-image {
   flex: 1;
-  min-height: 50px;
+  min-height: 300px;
   overflow: hidden;
+  border-right: 1px solid var(--border-color); /* Divider between image and content */
 }
 
 .project-image img {
@@ -1647,12 +1677,12 @@ header.scrolled {
 }
 
 .project-card:hover .project-image img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .project-details {
   flex: 1;
-  padding: 2rem;
+  padding: 2.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1665,8 +1695,11 @@ header.scrolled {
 }
 
 .project-tech {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
   color: var(--icon-color);
-  font-size: 1rem;
+  font-size: 0.95rem;
   margin-bottom: 1.5rem;
   font-style: italic;
 }
@@ -1679,28 +1712,60 @@ header.scrolled {
 
 .project-links {
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 .project-links a {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.8rem 1.5rem;
+  padding: 0.8rem 1.8rem;
   border-radius: 0.5rem;
   background: var(--hover-color);
   color: var(--text-color);
   font-weight: 500;
   transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
 }
 
 .project-links a:hover {
   background: var(--primary-color);
   color: white;
+  border-color: var(--primary-color);
 }
 
 .project-links a i {
-  font-size: 1rem;
+  font-size: 1.1rem;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-card {
+    flex-direction: column;
+  }
+  
+  .project-image {
+    min-height: 200px;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .projects-container {
+    padding: 1.5rem;
+    margin: 1rem auto;
+  }
 }
 
 /* Contact Section */
@@ -1710,10 +1775,12 @@ header.scrolled {
   margin: 0 auto;
   padding: 0 2rem;
   gap: 3rem;
+  
 }
 
 .contact-info {
   flex: 1;
+   border: 3px solid var(--border-color); /* Consistent border */
   background: var(--card-bg);
   border-radius: 1rem;
   padding: 2rem;
@@ -1743,7 +1810,7 @@ header.scrolled {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   transition: all 0.3s ease;
 }
 
@@ -1771,6 +1838,7 @@ header.scrolled {
 .contact-form {
   flex: 1;
   background: var(--card-bg);
+   border: 3px solid var(--border-color); /* Consistent border */
   border-radius: 1rem;
   padding: 2rem;
   box-shadow: var(--card-shadow);
@@ -2520,6 +2588,7 @@ footer {
 
 .about-card {
   background: var(--card-bg);
+   border: 3px solid var(--border-color); /* Consistent border */
   border-radius: 1rem;
   padding: 2rem;
   margin-bottom: 2rem;
@@ -2551,6 +2620,7 @@ footer {
 
 .details-card {
   background: var(--card-bg);
+   border: 3px solid var(--border-color); /* Consistent border */
   border-radius: 1rem;
   padding: 1.5rem;
   box-shadow: var(--card-shadow);
