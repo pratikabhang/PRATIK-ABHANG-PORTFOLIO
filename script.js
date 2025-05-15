@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Check for saved theme preference or use preferred color scheme
   const savedTheme = localStorage.getItem('theme') || 
                     (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-  const savedColor = localStorage.getItem('color') || 'blue';
+  const savedColor = localStorage.getItem('color') || 'black';
   
   // Apply the saved theme and color
   if (savedTheme === 'dark') {
