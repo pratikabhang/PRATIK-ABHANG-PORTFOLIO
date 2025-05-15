@@ -674,15 +674,19 @@ nav {
 
 /* Unique Card Styles */
 .bachelor-degree .timeline-content {
-  border-top: 3px solid #3498db;
+  border: 3px solid #3498db;
+  border-radius:8px; /* optional: for rounded corners */
 }
 
+ 
 .twelfth-grade .timeline-content {
-  border-top: 3px solid #2ecc71;
+  border: 3px solid #2ecc71;
+    border-radius:8px; /* optional: for rounded corners */
 }
 
 .tenth-grade .timeline-content {
-  border-top: 3px solid #e74c3c;
+  border: 3px solid #e74c3c;
+    border-radius:8px; /* optional: for rounded corners */
 }
 
 /* Hover Effects */
