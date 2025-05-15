@@ -565,9 +565,79 @@ nav {
   transition: all 0.3s ease;
 }
 
-
+/* Default hover for icons */
 .details-item:hover i {
   background: #333;
+  color: white;
+}
+
+/* Override icon hover colors for specific icons */
+.details-item:hover i.fa-phone-alt {
+  background: #000000; /* Phone blue */
+  color: white;
+}
+
+.details-item:hover i.fa-envelope {
+  background: #000000; /* Email blue */
+  color: white;
+}
+
+.details-item:hover i.fa-map-marker-alt {
+  background: #19b70e; /* Location red */
+  color: white;
+}
+
+.details-item:hover i.fa-flag {
+  background: linear-gradient(
+    to bottom,
+    #FF9933 33.33%,  /* Saffron */
+    #FFFFFF 33.33%,
+    #FFFFFF 66.66%,  /* White */
+    #138808 66.66%,   /* Green */
+    #138808 100%
+  );
+  color: #000080; /* Navy blue */
+  border-radius: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+
+
+.details-item:hover i.fa-language {
+  background: #F7DF1E; /* Language yellow */
+  color: black;
+}
+
+.details-item:hover i.fa-cake-candles {
+  background: linear-gradient(45deg, 
+    #fa9b9b,  /* Light Red */
+    #95fe95,  /* Light Green */
+    #a9a9ff   /* Light Blue */
+  );
+  color: rgb(31, 31, 31);
+  border-radius: 0.5rem;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+
+.details-item:hover i.fa-venus-mars {
+  background: #5ec9ff; /* Gender pink */
+  color: white;
+}
+
+.details-item:hover i.fa-calendar-days {
+  background: #6a5acd; /* Calendar slateblue */
+  color: white;
+}
+
+.details-item:hover i.fa-heart {
+  background: #ff1212; /* Heart orange-red */
+  color: white;
+}
+
+.details-item:hover i.fa-face-grin-hearts {
+  background: #ff69b4; /* Fun pink */
   color: white;
 }
 
@@ -578,6 +648,18 @@ nav {
 
 .details-item a:hover {
   color: #333;
+}
+
+/* Fade In Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Section Title */
@@ -602,21 +684,6 @@ nav {
   padding: 20px 0;
 }
 
-/* Vertical Line */
-.timeline::after {
-  content: '';
-  position: absolute;
-  width: 4px;
-  background: linear-gradient(to bottom, #3498db, #2ecc71, #e74c3c);
-  top: 0;
-  bottom: 0;
-  left: 0%;
-  margin-left: -2px;
-  border-radius: 2px;
-  z-index: 1;
-}
-
-/* Timeline Container */
 .timeline-container {
   padding: 5px 10px;
   position: relative;
@@ -627,69 +694,70 @@ nav {
   animation: fadeInUp 0.6s forwards;
 }
 
-/* Year on Timeline Line */
-.timeline-year {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  transform: translateX(-50%);
-  top: 15px;
-  width: 80px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: white;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 20px;
-  z-index: 2;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-  background-color: white; /* default if class not set */
-}
-
-/* Individual Education Styles */
-.bachelor-degree .timeline-year {
-  background: #3498db;
-  border: 2px solid #2980b9;
-}
-
-.twelfth-grade .timeline-year {
-  background: #2ecc71;
-  border: 2px solid #27ae60;
-}
-
-.tenth-grade .timeline-year {
-  background: #e74c3c;
-  border: 2px solid #c0392b;
-}
-
-/* Content Cards */
 .timeline-content {
-  padding: 20px;
+  position: relative;
+  padding: 20px 70px 20px 20px; /* extra right padding for year box */
   background: white;
   border-radius: 8px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
-  position: relative;
 }
 
-/* Unique Card Styles */
+/* Year inside card on right side */
+.timeline-year-inside {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 40px;
+  border-radius: 10px;
+  border: 3px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: white; /* default text color */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 3;
+  text-align: center;
+  line-height: 1.2;
+  white-space: pre-line;
+}
+
+/* Border and background color for each education type */
 .bachelor-degree .timeline-content {
   border: 3px solid #3498db;
-  border-radius:8px; /* optional: for rounded corners */
 }
 
- 
+.bachelor-degree .timeline-year-inside {
+  border-color: #3498db;
+  background-color: #3498db;
+  color: white;
+}
+
 .twelfth-grade .timeline-content {
   border: 3px solid #2ecc71;
-    border-radius:8px; /* optional: for rounded corners */
+}
+
+.twelfth-grade .timeline-year-inside {
+  border-color: #2ecc71;
+  background-color: #2ecc71;
+  color: white;
 }
 
 .tenth-grade .timeline-content {
   border: 3px solid #e74c3c;
-    border-radius:8px; /* optional: for rounded corners */
 }
 
-/* Hover Effects */
+.tenth-grade .timeline-year-inside {
+  border-color: #e74c3c;
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* Hover effects */
 .timeline-content:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
@@ -771,6 +839,8 @@ nav {
     left: 0;
   }
 }
+
+
 
 
 /* Certification Grid Layout */
@@ -866,7 +936,6 @@ nav {
   font-size: 0.95rem;
 }
 
-
 /* Skills Section */
 .skills-container {
   max-width: 1200px;
@@ -902,7 +971,7 @@ nav {
   border-radius: 1rem;
   padding: 1.5rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s ease;
+  transition: transform 0.8s ease, box-shadow 0.8s ease, background-color 0.4s ease;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -913,73 +982,217 @@ nav {
   animation: fadeInUp 0.6s ease forwards;
   border: 3px solid transparent;
   position: relative;
+  cursor: default;
 }
 
 /* Skill-specific border and icon colors */
-.skill-card[data-skill="java"] { border-color: #007396; }
-.skill-card[data-skill="java"] i { color: #007396; }
-.skill-card[data-skill="java"]:hover { background: #f0f8ff; }
-.skill-card[data-skill="java"]:hover i { color: #004f68; }
+.skill-card[data-skill="java"] {
+  border-color: #007396;
+}
+.skill-card[data-skill="java"] i {
+  color: #007396;
+}
+.skill-card[data-skill="java"]:hover {
+  background: #f0f8ff;
+}
+.skill-card[data-skill="java"]:hover i {
+  color: #004f68;
+}
 
-.skill-card[data-skill="mysql"] { border-color: #4479A1; }
-.skill-card[data-skill="mysql"] i { color: #4479A1; }
-.skill-card[data-skill="mysql"]:hover { background: #f0f8ff; }
-.skill-card[data-skill="mysql"]:hover i { color: #2b4f6e; }
+.skill-card[data-skill="mysql"] {
+  border-color: #4479A1;
+}
+.skill-card[data-skill="mysql"] i {
+  color: #4479A1;
+}
+.skill-card[data-skill="mysql"]:hover {
+  background: #f0f8ff;
+}
+.skill-card[data-skill="mysql"]:hover i {
+  color: #2b4f6e;
+}
 
-.skill-card[data-skill="html"] { border-color: #E34F26; }
-.skill-card[data-skill="html"] i { color: #E34F26; }
-.skill-card[data-skill="html"]:hover { background: #fef4f1; }
-.skill-card[data-skill="html"]:hover i { color: #9e2f13; }
+.skill-card[data-skill="html"] {
+  border-color: #E34F26;
+}
+.skill-card[data-skill="html"] i {
+  color: #E34F26;
+}
+.skill-card[data-skill="html"]:hover {
+  background: #fef4f1;
+}
+.skill-card[data-skill="html"]:hover i {
+  color: #9e2f13;
+}
 
-.skill-card[data-skill="css"] { border-color: #1572B6; }
-.skill-card[data-skill="css"] i { color: #1572B6; }
-.skill-card[data-skill="css"]:hover { background: #f1f7fe; }
-.skill-card[data-skill="css"]:hover i { color: #0a466a; }
+.skill-card[data-skill="css"] {
+  border-color: #1572B6;
+}
+.skill-card[data-skill="css"] i {
+  color: #1572B6;
+}
+.skill-card[data-skill="css"]:hover {
+  background: #f1f7fe;
+}
+.skill-card[data-skill="css"]:hover i {
+  color: #0a466a;
+}
 
-.skill-card[data-skill="javascript"] { border-color: #F7DF1E; }
-.skill-card[data-skill="javascript"] i { color: #F7DF1E; }
-.skill-card[data-skill="javascript"]:hover { background: #fffde7; }
-.skill-card[data-skill="javascript"]:hover i { color: #bfa715; }
+.skill-card[data-skill="javascript"] {
+  border-color: #F7DF1E;
+}
+.skill-card[data-skill="javascript"] i {
+  color: #F7DF1E;
+}
+.skill-card[data-skill="javascript"]:hover {
+  background: #fffde7;
+}
+.skill-card[data-skill="javascript"]:hover i {
+  color: #bfa715;
+}
 
-.skill-card[data-skill="php"] { border-color: #777BB4; }
-.skill-card[data-skill="php"] i { color: #777BB4; }
-.skill-card[data-skill="php"]:hover { background: #f3f1fc; }
-.skill-card[data-skill="php"]:hover i { color: #55588f; }
+.skill-card[data-skill="php"] {
+  border-color: #777BB4;
+}
+.skill-card[data-skill="php"] i {
+  color: #777BB4;
+}
+.skill-card[data-skill="php"]:hover {
+  background: #f3f1fc;
+}
+.skill-card[data-skill="php"]:hover i {
+  color: #55588f;
+}
 
-.skill-card[data-skill="bootstrap"] { border-color: #7952B3; }
-.skill-card[data-skill="bootstrap"] i { color: #7952B3; }
-.skill-card[data-skill="bootstrap"]:hover { background: #f6f0ff; }
-.skill-card[data-skill="bootstrap"]:hover i { color: #4e3680; }
+.skill-card[data-skill="bootstrap"] {
+  border-color: #7952B3;
+}
+.skill-card[data-skill="bootstrap"] i {
+  color: #7952B3;
+}
+.skill-card[data-skill="bootstrap"]:hover {
+  background: #f6f0ff;
+}
+.skill-card[data-skill="bootstrap"]:hover i {
+  color: #4e3680;
+}
 
-.skill-card[data-skill="react"] { border-color: #61DAFB; }
-.skill-card[data-skill="react"] i { color: #61DAFB; }
-.skill-card[data-skill="react"]:hover { background: #f0fdff; }
-.skill-card[data-skill="react"]:hover i { color: #3bb4d3; }
+.skill-card[data-skill="react"] {
+  border-color: #61DAFB;
+}
+.skill-card[data-skill="react"] i {
+  color: #61DAFB;
+}
+.skill-card[data-skill="react"]:hover {
+  background: #f0fdff;
+}
+.skill-card[data-skill="react"]:hover i {
+  color: #3bb4d3;
+}
 
-.skill-card[data-skill="nodejs"] { border-color: #339933; }
-.skill-card[data-skill="nodejs"] i { color: #339933; }
-.skill-card[data-skill="nodejs"]:hover { background: #f4fff3; }
-.skill-card[data-skill="nodejs"]:hover i { color: #1e5a1e; }
+.skill-card[data-skill="nodejs"] {
+  border-color: #339933;
+}
+.skill-card[data-skill="nodejs"] i {
+  color: #339933;
+}
+.skill-card[data-skill="nodejs"]:hover {
+  background: #f4fff3;
+}
+.skill-card[data-skill="nodejs"]:hover i {
+  color: #1e5a1e;
+}
 
-.skill-card[data-skill="kotlin"] { border-color: #7F52FF; }
-.skill-card[data-skill="kotlin"] i { color: #7F52FF; }
-.skill-card[data-skill="kotlin"]:hover { background: #f7f3fe; }
-.skill-card[data-skill="kotlin"]:hover i { color: #5539cc; }
+.skill-card[data-skill="kotlin"] {
+  border-color: #7F52FF;
+}
+.skill-card[data-skill="kotlin"] i {
+  color: #7F52FF;
+}
+.skill-card[data-skill="kotlin"]:hover {
+  background: #f7f3fe;
+}
+.skill-card[data-skill="kotlin"]:hover i {
+  color: #5539cc;
+}
 
-.skill-card[data-skill="mongodb"] { border-color: #47A248; }
-.skill-card[data-skill="mongodb"] i { color: #47A248; }
-.skill-card[data-skill="mongodb"]:hover { background: #f3fff6; }
-.skill-card[data-skill="mongodb"]:hover i { color: #2d6a31; }
+.skill-card[data-skill="mongodb"] {
+  border-color: #47A248;
+}
+.skill-card[data-skill="mongodb"] i {
+  color: #47A248;
+}
+.skill-card[data-skill="mongodb"]:hover {
+  background: #f3fff6;
+}
+.skill-card[data-skill="mongodb"]:hover i {
+  color: #2d6a31;
+}
 
-.skill-card[data-skill="google"] { border-color: #4285F4; }
-.skill-card[data-skill="google"] i { color: #4285F4; }
-.skill-card[data-skill="google"]:hover { background: #f2f8ff; }
-.skill-card[data-skill="google"]:hover i { color: #2a58a6; }
+.skill-card[data-skill="google"] {
+  border-color: #FF0000; /* Red */
+}
+.skill-card[data-skill="google"] i {
+  color: #FF0000; /* Red */
+}
+.skill-card[data-skill="google"]:hover {
+  background: #ffe6e6; /* Light red background on hover */
+}
+.skill-card[data-skill="google"]:hover i {
+  color: #b30000; /* Darker red on hover */
+}
 
-.skill-card[data-skill="microsoft"] { border-color: #0078D4; }
-.skill-card[data-skill="microsoft"] i { color: #0078D4; }
-.skill-card[data-skill="microsoft"]:hover { background: #eef6ff; }
-.skill-card[data-skill="microsoft"]:hover i { color: #004d85; }
+
+.skill-card[data-skill="microsoft"] {
+  border-color: #0078D4;
+}
+.skill-card[data-skill="microsoft"] i {
+  color: #0078D4;
+}
+.skill-card[data-skill="microsoft"]:hover {
+  background: #eef6ff;
+}
+.skill-card[data-skill="microsoft"]:hover i {
+  color: #004d85;
+}
+.skill-card[data-skill="python"] {
+  border-color: #3776AB; /* Python blue */
+}
+.skill-card[data-skill="python"] i {
+  color: #3776AB;
+}
+.skill-card[data-skill="python"]:hover {
+  background: #e6f0fb; /* Light blue background */
+}
+.skill-card[data-skill="python"]:hover i {
+  color: #1a4d73; /* Darker blue on hover */
+}
+
+.skill-card[data-skill="github"] {
+  border-color: #181717; /* GitHub black */
+}
+.skill-card[data-skill="github"] i {
+  color: #181717;
+}
+.skill-card[data-skill="github"]:hover {
+  background: #e6e6e6; /* Light gray background */
+}
+.skill-card[data-skill="github"]:hover i {
+  color: #0d0d0d; /* Darker black on hover */
+}
+
+.skill-card[data-skill="expressjs"] {
+  border-color: #000000; /* Black */
+}
+.skill-card[data-skill="expressjs"] i {
+  color: #000000;
+}
+.skill-card[data-skill="expressjs"]:hover {
+  background: #f0f0f0; /* Light gray background */
+}
+.skill-card[data-skill="expressjs"]:hover i {
+  color: #333333; /* Dark gray on hover */
+}
 
 /* Skill Card Hover Effects */
 .skill-card:hover {
@@ -990,17 +1203,23 @@ nav {
 .skill-card i {
   font-size: 3rem;
   margin-bottom: 1rem;
-  transition: color 0.4s ease, transform 0.4s ease;
+  transition: color 0.8s ease, transform 0.8s ease;
 }
 
 .skill-card p {
   font-size: 1.1rem;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: all 0.8s ease;
 }
 
 .skill-card:hover p {
   font-size: 1.2rem;
+}
+
+/* Floating Icon Animation */
+.skill-card:hover i {
+  animation: floatIcon 5s ease-in-out infinite;
+  transform: scale(1.2);
 }
 
 /* Fade In Animation */
@@ -1012,6 +1231,16 @@ nav {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Floating Icon Keyframes */
+@keyframes floatIcon {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
   }
 }
 
