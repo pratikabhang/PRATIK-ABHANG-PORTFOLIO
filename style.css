@@ -1074,7 +1074,8 @@ header.scrolled {
     opacity: 1;
     transform: translateY(0);
   }
-}.timeline {
+}
+.timeline {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
@@ -1092,8 +1093,8 @@ header.scrolled {
   margin-left: -1px;
 }
 
-/* Added circle at bottom */
-.timeline::after {
+/* Removed the bottom circle */
+/* .timeline::after {
   content: '';
   position: absolute;
   width: 20px;
@@ -1104,13 +1105,14 @@ header.scrolled {
   left: 50%;
   margin-left: -10px;
   z-index: 1;
-}
+} */
 
 .timeline-container {
   padding: 10px 40px;
   position: relative;
   background-color: inherit;
   width: 50%;
+  
   margin-bottom: 2rem;
   opacity: 0;
   animation: fadeInUp 0.6s ease forwards;
@@ -1137,7 +1139,11 @@ header.scrolled {
 .left {
   left: 0;
 }
-
+  .icon-div {
+    
+    text-align: center; /* center the icon horizontally */
+    font-size: 48px; /* increase icon size */
+  }
 .right {
   left: 50%;
 }
@@ -1152,7 +1158,7 @@ header.scrolled {
 
 .timeline-content {
   padding: 20px;
-  background-color: var(--card-bg);
+  border: 3px solid var(--border-color); 
   position: relative;
   border-radius: 1rem;
   box-shadow: var(--card-shadow);
@@ -1200,10 +1206,11 @@ header.scrolled {
     left: 31px;
   }
   
-  .timeline::after {
+  /* Removed the dot in mobile too */
+  /* .timeline::after {
     left: 31px;
     margin-left: -10px;
-  }
+  } */
   
   .timeline-container {
     width: 100%;
@@ -1226,6 +1233,7 @@ header.scrolled {
     left: 0%;
   }
 }
+
 
 /* Container for entire skills section */
 .skills-container {
@@ -2789,6 +2797,7 @@ footer {
   position: relative;
   margin-bottom: 40px;
   animation: fadeInUp 0.6s forwards;
+  
   opacity: 0;
 }
 
