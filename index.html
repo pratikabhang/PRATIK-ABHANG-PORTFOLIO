@@ -11,6 +11,8 @@
 </head>
 <body>
   <!-- Theme Toggle Button -->
+<div class="theme-controls">
+  <!-- Theme Toggle Switch -->
   <div class="theme-toggle">
     <input type="checkbox" id="theme-switch" class="theme-switch">
     <label for="theme-switch" class="theme-label">
@@ -19,6 +21,18 @@
       <span class="theme-ball"></span>
     </label>
   </div>
+
+  <!-- Color Picker Buttons -->
+  <div class="color-picker">
+    <button class="color-option" data-color="black"></button>
+    <button class="color-option" data-color="red"></button>
+    <button class="color-option" data-color="yellow"></button>
+    <button class="color-option" data-color="blue"></button>
+    <button class="color-option" data-color="green"></button>
+  </div>
+</div>
+
+
 
   <!-- Navigation -->
   <header id="header">
@@ -135,10 +149,9 @@
       </div>
     </div>
     
-    <!-- Navigation Arrow -->
-    <div class="mouse-container-right" onclick="location.href='./#about'">
-      <i class="fa-regular fa-circle-down"></i>
-    </div>
+  <div class="mouse-container-right" onclick="location.href='./#about'">
+    <i class="fa-regular fa-circle-down"></i>
+  </div>
   </section>
 
   <!-- About Section -->
@@ -160,170 +173,110 @@
       </div>
 
       <!-- Personal Details -->
-<div class="details-grid">
-  <div class="details-card">
-    <div class="details-item fa-phone-bg">
-      <a href="tel:+918766854678"><i class="fas fa-phone-alt"></i></a> 
-      +91 8766854678
-    </div>
-    <div class="details-item fa-envelope-bg">
-      <a href="mailto:work.pratikabhang@gmail.com"><i class="fas fa-envelope"></i></a> 
-      work.pratikabhang@gmail.com
-    </div>
-    <div class="details-item fa-map-marker-bg">
-      <a href="https://www.google.com/maps?q=Pune,Maharashtra" target="_blank" rel="noopener noreferrer">
-        <i class="fas fa-map-marker-alt"></i>
-      </a> 
-      Pune, Maharashtra
-    </div>
-    <div class="details-item fa-flag-bg">
-      <a href="#"><i class="fas fa-flag"></i></a> 
-      Indian
-    </div>
-    <div class="details-item fa-language-bg">
-      <a href="#"><i class="fas fa-language"></i></a> 
-      English, Marathi, Hindi
-    </div>
-  </div>
+      <div class="details-grid">
+        <div class="details-card">
+          <div class="details-item fa-phone-bg">
+            <a href="tel:+918766854678"><i class="fas fa-phone-alt"></i></a> 
+            +91 8766854678
+          </div>
+          <div class="details-item fa-envelope-bg">
+            <a href="mailto:work.pratikabhang@gmail.com"><i class="fas fa-envelope"></i></a> 
+            work.pratikabhang@gmail.com
+          </div>
+          <div class="details-item fa-map-marker-bg">
+            <a href="https://www.google.com/maps?q=Pune,Maharashtra" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-map-marker-alt"></i>
+            </a> 
+            Pune, Maharashtra
+          </div>
+          <div class="details-item fa-flag-bg">
+            <a href="#"><i class="fas fa-flag"></i></a> 
+            Indian
+          </div>
+          <div class="details-item fa-language-bg">
+            <a href="#"><i class="fas fa-language"></i></a> 
+            English, Marathi, Hindi
+          </div>
+        </div>
 
-  <div class="details-card">
-    <div class="details-item fa-cake-bg">
-      <a href="https://www.timeanddate.com/calendar/monthly.html?&month=11&day=21" target="_blank" rel="noopener noreferrer">
-        <i class="fa-solid fa-cake-candles"></i>
-      </a> 
-      21st November
-    </div>
-    <div class="details-item fa-venus-mars-bg">
-      <a href="#"><i class="fa-solid fa-venus-mars"></i></a> 
-      Male
-    </div>
-    <div class="details-item">
-      <a href="#"><i class="fas fa-calendar-days"></i></a> 
-      <span id="age"></span>
-    </div>
-    <div class="details-item">
-      <a href="#"><i class="fas fa-heart"></i></a> 
-      Single
-    </div>
-    <div class="details-item">
-      <a href="#"><i class="fa-solid fa-face-grin-hearts"></i></a> 
-      Photography, Movie, Music, Dance, Cricket
-    </div>
-  </div>
-</div>
-
+        <div class="details-card">
+          <div class="details-item fa-cake-bg">
+            <a href="https://www.timeanddate.com/calendar/monthly.html?&month=11&day=21" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-cake-candles"></i>
+            </a> 
+            21st November
+          </div>
+          <div class="details-item fa-venus-mars-bg">
+            <a href="#"><i class="fa-solid fa-venus-mars"></i></a> 
+            Male
+          </div>
+          <div class="details-item">
+            <a href="#"><i class="fas fa-calendar-days"></i></a> 
+            <span id="age"></span>
+          </div>
+          <div class="details-item">
+            <a href="#"><i class="fas fa-heart"></i></a> 
+            Single
+          </div>
+          <div class="details-item">
+            <a href="#"><i class="fa-solid fa-face-grin-hearts"></i></a> 
+            Photography, Movie, Music, Dance, Cricket
+          </div>
+        </div>
+      </div>
 
       <!-- Education Timeline -->
       <div class="section-title">
         <h3>Education</h3>
       </div>
 
-<div class="timeline">
-  <!-- Bachelor's Degree -->
-  <div class="timeline-container bachelor-degree left">
-    <div class="timeline-content">
-      <div class="timeline-year-inside"><i class="fa-solid fa-calendar-day"></i> 2025</div>
-      <div class="timeline-header">
-        <h4>Bachelor of Engineering in Computer</h4>
-      </div>
-      <div class="timeline-details">
-        <!-- Institution with graduation cap icon -->
-        <p><i class="fa-solid fa-graduation-cap"></i> STES, Sinhgad Institute of Technology and Science (SPPU)</p>
-        <!-- Location icon added -->
-        <p><i class="fa-solid fa-location-dot"></i> Pune, Maharashtra, India</p>
-        <p><i class="fa-solid fa-file-lines"></i><strong> CGPA:</strong> 8.0 / 10</p>
+      <div class="timeline">
+        <!-- Bachelor's Degree -->
+        <div class="timeline-container bachelor-degree left">
+          <div class="timeline-content">
+            <div class="timeline-year-inside"><i class="fa-solid fa-calendar-day"></i> 2025</div>
+            <div class="timeline-header">
+              <h4>Bachelor of Engineering in Computer</h4>
+            </div>
+            <div class="timeline-details">
+              <p><i class="fa-solid fa-graduation-cap"></i> STES, Sinhgad Institute of Technology and Science (SPPU)</p>
+              <p><i class="fa-solid fa-location-dot"></i> Pune, Maharashtra, India</p>
+              <p><i class="fa-solid fa-file-lines"></i><strong> CGPA:</strong> 8.0 / 10</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12th Grade -->
+        <div class="timeline-container twelfth-grade right">
+          <div class="timeline-content">
+            <div class="timeline-year-inside"><i class="fa-solid fa-calendar-day"></i> 2021</div>
+            <div class="timeline-header">
+              <h4>Higher Secondary Certificate (12th)</h4>
+            </div>
+            <div class="timeline-details">
+              <p><i class="fa-solid fa-building"></i> RSS, R.B. Narayanrao Borawake College (SPPU)</p>
+              <p><i class="fa-solid fa-location-dot"></i> Pune, Maharashtra, India</p>
+              <p><i class="fa-solid fa-file-lines"></i><strong> Percentage:</strong> 82.17 / 100</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10th Grade -->
+        <div class="timeline-container tenth-grade left">
+          <div class="timeline-content">
+            <div class="timeline-year-inside"><i class="fa-solid fa-calendar-day"></i> 2019</div>
+            <div class="timeline-header">
+              <h4>Secondary School Certificate (10th)</h4>
+            </div>
+            <div class="timeline-details">
+              <p><i class="fa-solid fa-school"></i> VMSS, De Paul English Medium High School (MSBSHSE)</p>
+              <p><i class="fa-solid fa-location-dot"></i> Pune, Maharashtra, India</p>
+              <p><i class="fa-solid fa-file-lines"></i><strong> Percentage:</strong> 72.20 / 100</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
-  <!-- 12th Grade -->
-  <div class="timeline-container twelfth-grade right">
-    <div class="timeline-content">
-      <div class="timeline-year-inside"><i class="fa-solid fa-calendar-day"></i> 2021</div>
-      <div class="timeline-header">
-        <h4>Higher Secondary Certificate (12th)</h4>
-      </div>
-      <div class="timeline-details">
-        <!-- Institution with building icon -->
-        <p><i class="fa-solid fa-building"></i> RSS, R.B. Narayanrao Borawake College (SPPU)</p>
-        <!-- Location icon added -->
-        <p><i class="fa-solid fa-location-dot"></i> Pune, Maharashtra, India</p>
-        <p><i class="fa-solid fa-file-lines"></i><strong> Percentage:</strong> 82.17 / 100</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- 10th Grade -->
-  <div class="timeline-container tenth-grade left">
-    <div class="timeline-content">
-      <div class="timeline-year-inside"><i class="fa-solid fa-calendar-day"></i> 2019</div>
-      <div class="timeline-header">
-        <h4>Secondary School Certificate (10th)</h4>
-      </div>
-      <div class="timeline-details">
-        <!-- Institution with school icon -->
-        <p><i class="fa-solid fa-school"></i> VMSS, De Paul English Medium High School (MSBSHSE)</p>
-        <!-- Location icon added -->
-        <p><i class="fa-solid fa-location-dot"></i> Pune, Maharashtra, India</p>
-        <p><i class="fa-solid fa-file-lines"></i><strong> Percentage:</strong> 72.20 / 100</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-      <!-- Certifications 
-      <div class="section-title">
-        <h3>Certifications</h3>
-      </div>
-
-      <div class="certifications-grid">
-        <div class="certification-card aws">
-          <div class="certification-header">
-            <h4>AWS Networking Basics</h4>
-          </div>
-          <div class="certification-provider">
-            <i class="fa-solid fa-book"></i> Simplilearn
-          </div>
-        </div>
-
-        <div class="certification-card software">
-          <div class="certification-header">
-            <h4>Software Conceptual Design</h4>
-          </div>
-          <div class="certification-provider">
-       <i class="fa-solid fa-book"></i> NPTEL
-          </div>
-        </div>
-
-        <div class="certification-card cyber">
-          <div class="certification-header">
-            <h4>Cybersecurity</h4>
-
-          </div>
-          <div class="certification-provider">
-                <i class="fa-solid fa-book"></i> NSDC
-          </div>
-        </div>
-
-        <div class="certification-card testing">
-          <div class="certification-header">
-            <h4>Testing Fundamentals</h4>
-          </div>
-          <div class="certification-provider">
-                 <i class="fa-solid fa-book"></i> Infosys Springboard
-          </div>
-        </div>
-
-        <div class="certification-card webdev">
-          <div class="certification-header">
-            <h4>Web Development</h4>
-          </div>
-          <div class="certification-provider">
-      <i class="fa-solid fa-book"></i> Internshala
-          </div>
-        </div>
-      </div>
-    </div>-->
 
     <!-- Navigation Arrows -->
     <div class="mouse-container-left" onclick="location.href='./#home'">
@@ -339,31 +292,30 @@
     <p class="section__text__p1">Explore My</p>
     <h1 class="title">Skills</h1>
 
-<div class="skills-container">
-  <div class="skills-category">
-    <div class="skills-grid">
-      <div class="skill-card" data-skill="java"><i class="fab fa-java"></i><p>Java</p></div>
-      <div class="skill-card" data-skill="mysql"><i class="fas fa-database"></i><p>MySQL</p></div>
-      <div class="skill-card" data-skill="html"><i class="fab fa-html5"></i><p>HTML</p></div>
-      <div class="skill-card" data-skill="css"><i class="fab fa-css3-alt"></i><p>CSS</p></div>
-      <div class="skill-card" data-skill="javascript"><i class="fab fa-js"></i><p>JavaScript</p></div>
-      <div class="skill-card" data-skill="php"><i class="fab fa-php"></i><p>PHP</p></div>
-      <div class="skill-card" data-skill="bootstrap"><i class="fab fa-bootstrap"></i><p>Bootstrap</p></div>
-      <div class="skill-card" data-skill="react"><i class="fab fa-react"></i><p>React.js</p></div>
-      <div class="skill-card" data-skill="nodejs"><i class="fa-brands fa-node"></i><p>Node.js</p></div>
-      <div class="skill-card" data-skill="mongodb"><i class="fas fa-server"></i><p>MongoDB</p></div>
-      <div class="skill-card" data-skill="expressjs"><i class="fab fa-node-js"></i><p>Express.js</p></div>
-      <div class="skill-card" data-skill="kotlin"><i class="fas fa-k"></i><p>Kotlin</p></div>
-      <div class="skill-card" data-skill="github"><i class="fab fa-github"></i><p>GitHub</p></div>
-      <div class="skill-card" data-skill="google"><i class="fab fa-google"></i><p>Google</p></div>
-      <div class="skill-card" data-skill="microsoft"><i class="fab fa-microsoft"></i><p>Microsoft</p></div>
-      <!-- New skill cards -->
-      <div class="skill-card" data-skill="communication"><i class="fas fa-comments"></i><p>Communication</p></div>
-      <div class="skill-card" data-skill="teamwork"><i class="fas fa-users"></i><p>Teamwork</p></div>
+    <div class="skills-container">
+      <div class="skills-category">
+        <div class="skills-grid">
+          <div class="skill-card" data-skill="java"><i class="fab fa-java"></i><p>Java</p></div>
+          <div class="skill-card" data-skill="mysql"><i class="fas fa-database"></i><p>MySQL</p></div>
+          <div class="skill-card" data-skill="html"><i class="fab fa-html5"></i><p>HTML</p></div>
+          <div class="skill-card" data-skill="css"><i class="fab fa-css3-alt"></i><p>CSS</p></div>
+          <div class="skill-card" data-skill="javascript"><i class="fab fa-js"></i><p>JavaScript</p></div>
+          <div class="skill-card" data-skill="php"><i class="fab fa-php"></i><p>PHP</p></div>
+          <div class="skill-card" data-skill="bootstrap"><i class="fab fa-bootstrap"></i><p>Bootstrap</p></div>
+          <div class="skill-card" data-skill="react"><i class="fab fa-react"></i><p>React.js</p></div>
+          <div class="skill-card" data-skill="nodejs"><i class="fa-brands fa-node"></i><p>Node.js</p></div>
+          <div class="skill-card" data-skill="mongodb"><i class="fas fa-server"></i><p>MongoDB</p></div>
+          <div class="skill-card" data-skill="expressjs"><i class="fab fa-node-js"></i><p>Express.js</p></div>
+          <div class="skill-card" data-skill="kotlin"><i class="fas fa-k"></i><p>Kotlin</p></div>
+          <div class="skill-card" data-skill="python"><i class="fab fa-python"></i><p>Python</p></div>
+          <div class="skill-card" data-skill="github"><i class="fab fa-github"></i><p>GitHub</p></div>
+          <div class="skill-card" data-skill="google"><i class="fab fa-google"></i><p>Google</p></div>
+          <div class="skill-card" data-skill="microsoft"><i class="fab fa-microsoft"></i><p>Microsoft</p></div>
+          <div class="skill-card" data-skill="communication"><i class="fas fa-comments"></i><p>Communication</p></div>
+          <div class="skill-card" data-skill="teamwork"><i class="fas fa-users"></i><p>Teamwork</p></div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-
 
     <!-- Navigation Arrows -->
     <div class="mouse-container-left" onclick="location.href='./#about'">
@@ -373,7 +325,6 @@
       <i class="fa-regular fa-circle-down"></i>
     </div>
   </section>
-
 
   <!-- Experience Section -->
   <section id="experience">

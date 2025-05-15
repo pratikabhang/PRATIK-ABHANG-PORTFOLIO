@@ -1,16 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Theme Toggle Functionality
   const themeSwitch = document.getElementById('theme-switch');
+  const colorOptions = document.querySelectorAll('.color-option');
   
   // Check for saved theme preference or use preferred color scheme
   const savedTheme = localStorage.getItem('theme') || 
                     (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  const savedColor = localStorage.getItem('color') || 'blue';
   
-  // Apply the saved theme
+  // Apply the saved theme and color
   if (savedTheme === 'dark') {
     document.documentElement.setAttribute('data-theme', 'dark');
     themeSwitch.checked = true;
   }
+  
+  document.documentElement.setAttribute('data-color', savedColor);
   
   // Theme switch event listener
   themeSwitch.addEventListener('change', function() {
@@ -21,6 +25,15 @@ document.addEventListener('DOMContentLoaded', function() {
       document.documentElement.setAttribute('data-theme', 'light');
       localStorage.setItem('theme', 'light');
     }
+  });
+
+  // Color picker functionality
+  colorOptions.forEach(option => {
+    option.addEventListener('click', function() {
+      const color = this.getAttribute('data-color');
+      document.documentElement.setAttribute('data-color', color);
+      localStorage.setItem('color', color);
+    });
   });
 
   // Header scroll effect
