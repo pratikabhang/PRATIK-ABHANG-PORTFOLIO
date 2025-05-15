@@ -898,8 +898,8 @@ nav {
 .skill-card {
   width: 100%;
   height: 150px;
-  background-color: white;
-  border-radius: 10px;
+  background-color: #ffffff;
+  border-radius: 1rem;
   padding: 1.5rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.4s ease;
@@ -911,31 +911,86 @@ nav {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.6s ease forwards;
+  border: 3px solid transparent;
   position: relative;
-  overflow: hidden;
 }
 
-.skill-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 10px;
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
-  pointer-events: none;
-}
+/* Skill-specific border and icon colors */
+.skill-card[data-skill="java"] { border-color: #007396; }
+.skill-card[data-skill="java"] i { color: #007396; }
+.skill-card[data-skill="java"]:hover { background: #f0f8ff; }
+.skill-card[data-skill="java"]:hover i { color: #004f68; }
 
-.skill-card:hover::before {
-  border: 2px solid #333;
+.skill-card[data-skill="mysql"] { border-color: #4479A1; }
+.skill-card[data-skill="mysql"] i { color: #4479A1; }
+.skill-card[data-skill="mysql"]:hover { background: #f0f8ff; }
+.skill-card[data-skill="mysql"]:hover i { color: #2b4f6e; }
+
+.skill-card[data-skill="html"] { border-color: #E34F26; }
+.skill-card[data-skill="html"] i { color: #E34F26; }
+.skill-card[data-skill="html"]:hover { background: #fef4f1; }
+.skill-card[data-skill="html"]:hover i { color: #9e2f13; }
+
+.skill-card[data-skill="css"] { border-color: #1572B6; }
+.skill-card[data-skill="css"] i { color: #1572B6; }
+.skill-card[data-skill="css"]:hover { background: #f1f7fe; }
+.skill-card[data-skill="css"]:hover i { color: #0a466a; }
+
+.skill-card[data-skill="javascript"] { border-color: #F7DF1E; }
+.skill-card[data-skill="javascript"] i { color: #F7DF1E; }
+.skill-card[data-skill="javascript"]:hover { background: #fffde7; }
+.skill-card[data-skill="javascript"]:hover i { color: #bfa715; }
+
+.skill-card[data-skill="php"] { border-color: #777BB4; }
+.skill-card[data-skill="php"] i { color: #777BB4; }
+.skill-card[data-skill="php"]:hover { background: #f3f1fc; }
+.skill-card[data-skill="php"]:hover i { color: #55588f; }
+
+.skill-card[data-skill="bootstrap"] { border-color: #7952B3; }
+.skill-card[data-skill="bootstrap"] i { color: #7952B3; }
+.skill-card[data-skill="bootstrap"]:hover { background: #f6f0ff; }
+.skill-card[data-skill="bootstrap"]:hover i { color: #4e3680; }
+
+.skill-card[data-skill="react"] { border-color: #61DAFB; }
+.skill-card[data-skill="react"] i { color: #61DAFB; }
+.skill-card[data-skill="react"]:hover { background: #f0fdff; }
+.skill-card[data-skill="react"]:hover i { color: #3bb4d3; }
+
+.skill-card[data-skill="nodejs"] { border-color: #339933; }
+.skill-card[data-skill="nodejs"] i { color: #339933; }
+.skill-card[data-skill="nodejs"]:hover { background: #f4fff3; }
+.skill-card[data-skill="nodejs"]:hover i { color: #1e5a1e; }
+
+.skill-card[data-skill="kotlin"] { border-color: #7F52FF; }
+.skill-card[data-skill="kotlin"] i { color: #7F52FF; }
+.skill-card[data-skill="kotlin"]:hover { background: #f7f3fe; }
+.skill-card[data-skill="kotlin"]:hover i { color: #5539cc; }
+
+.skill-card[data-skill="mongodb"] { border-color: #47A248; }
+.skill-card[data-skill="mongodb"] i { color: #47A248; }
+.skill-card[data-skill="mongodb"]:hover { background: #f3fff6; }
+.skill-card[data-skill="mongodb"]:hover i { color: #2d6a31; }
+
+.skill-card[data-skill="google"] { border-color: #4285F4; }
+.skill-card[data-skill="google"] i { color: #4285F4; }
+.skill-card[data-skill="google"]:hover { background: #f2f8ff; }
+.skill-card[data-skill="google"]:hover i { color: #2a58a6; }
+
+.skill-card[data-skill="microsoft"] { border-color: #0078D4; }
+.skill-card[data-skill="microsoft"] i { color: #0078D4; }
+.skill-card[data-skill="microsoft"]:hover { background: #eef6ff; }
+.skill-card[data-skill="microsoft"]:hover i { color: #004d85; }
+
+/* Skill Card Hover Effects */
+.skill-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .skill-card i {
   font-size: 3rem;
   margin-bottom: 1rem;
-  transition: all 0.6s ease;
+  transition: color 0.4s ease, transform 0.4s ease;
 }
 
 .skill-card p {
@@ -944,35 +999,22 @@ nav {
   transition: all 0.3s ease;
 }
 
-/* Skill Card Hover Effects */
-.skill-card:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-.skill-card:hover i {
-  animation: floatIcon 1.5s ease-in-out infinite;
-  transform: scale(1.2);
-}
-
 .skill-card:hover p {
   font-size: 1.2rem;
 }
 
-/* Skill-specific colors */
-.skill-card[data-skill="java"]:hover i { color: #007396; }
-.skill-card[data-skill="mysql"]:hover i { color: #4479A1; }
-.skill-card[data-skill="html"]:hover i { color: #E34F26; }
-.skill-card[data-skill="css"]:hover i { color: #1572B6; }
-.skill-card[data-skill="javascript"]:hover i { color: #F7DF1E; }
-.skill-card[data-skill="php"]:hover i { color: #777BB4; }
-.skill-card[data-skill="bootstrap"]:hover i { color: #7952B3; }
-.skill-card[data-skill="react"]:hover i { color: #61DAFB; }
-.skill-card[data-skill="nodejs"]:hover i { color: #339933; }
-.skill-card[data-skill="kotlin"]:hover i { color: #7F52FF; }
-.skill-card[data-skill="mongodb"]:hover i { color: #47A248; }
-.skill-card[data-skill="google"]:hover i { color: #4285F4; }
-.skill-card[data-skill="microsoft"]:hover i { color: #0078D4; }
+/* Fade In Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /* Projects Section */
 .projects-container {
