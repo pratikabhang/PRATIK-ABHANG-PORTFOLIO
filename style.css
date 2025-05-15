@@ -256,12 +256,31 @@ section {
 .titleh {
   font-size: 3.5rem;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   position: relative;
   color: var(--text-color);
   opacity: 0;
   animation: fadeIn 1s ease forwards 0.5s;
 }
+
+.titleh::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--primary-color);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.titleh:hover::after {
+  background: var(--secondary-color);
+  width: 120px;
+}
+
 
 .title {
   font-size: 3.5rem;
