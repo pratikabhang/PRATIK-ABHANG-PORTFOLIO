@@ -1029,8 +1029,7 @@ header.scrolled {
 
 .skill-card[data-skill="java"]:hover {
   /* Linear gradient from golden orange to teal */
-  background: linear-gradient(135deg, #ffb347, #008080); 
-  /* #ffb347 is a golden-orange, #008080 is teal */
+  background: #ffe5c0;
 }
 
 .skill-card[data-skill="java"]:hover i {
