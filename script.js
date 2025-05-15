@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Theme Toggle Functionality
+  // Theme and Color Picker Functionality
   const themeSwitch = document.getElementById('theme-switch');
   const colorOptions = document.querySelectorAll('.color-option');
   
-  // Check for saved theme preference or use preferred color scheme
+  // Load saved preferences or use defaults
   const savedTheme = localStorage.getItem('theme') || 
                     (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   const savedColor = localStorage.getItem('color') || 'black';
   
-  // Apply the saved theme and color
+  // Apply saved preferences
   if (savedTheme === 'dark') {
     document.documentElement.setAttribute('data-theme', 'dark');
     themeSwitch.checked = true;
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   document.documentElement.setAttribute('data-color', savedColor);
   
-  // Theme switch event listener
+  // Theme switch event
   themeSwitch.addEventListener('change', function() {
     if (this.checked) {
       document.documentElement.setAttribute('data-theme', 'dark');
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Color picker functionality
+  // Color picker events
   colorOptions.forEach(option => {
     option.addEventListener('click', function() {
       const color = this.getAttribute('data-color');
@@ -39,14 +39,10 @@ document.addEventListener('DOMContentLoaded', function() {
   // Header scroll effect
   const header = document.getElementById('header');
   window.addEventListener('scroll', function() {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
+    header.classList.toggle('scrolled', window.scrollY > 50);
   });
 
-  // Typed.js initialization for animated text
+  // Typed.js initialization
   var typed = new Typed("#typed-text", {
     strings: [
       "Computer Engineer",
@@ -67,12 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
   // Update date and time in footer
   function updateDateTime() {
     const currentDate = new Date();
-    
-    // Format date as "15 May 2023"
     const options = { day: 'numeric', month: 'long', year: 'numeric' };
     const formattedDate = currentDate.toLocaleDateString('en-GB', options);
-    
-    // Format time as "14:30:45"
     const formattedTime = currentDate.toLocaleTimeString('en-GB', {
       hour: '2-digit',
       minute: '2-digit',
@@ -84,7 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("current-time").textContent = formattedTime;
   }
 
-  // Update immediately and then every second
   updateDateTime();
   setInterval(updateDateTime, 1000);
 
@@ -128,7 +119,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Form submission handling
   const form = document.getElementById('contactForm');
-  
   if (form) {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
@@ -158,27 +148,20 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Error:', error);
       })
       .finally(() => {
-        // Remove any existing status messages
         const existingStatus = form.querySelector('.form-status');
-        if (existingStatus) {
-          existingStatus.remove();
-        }
+        if (existingStatus) existingStatus.remove();
         
-        // Add new status message
         form.appendChild(formStatus);
         
-        // Remove after 5 seconds
         setTimeout(() => {
           formStatus.style.opacity = '0';
-          setTimeout(() => {
-            formStatus.remove();
-          }, 500);
+          setTimeout(() => formStatus.remove(), 500);
         }, 5000);
       });
     });
   }
 
-  // Calculate age
+  // Calculate and display age
   function calculateAge(birthDate) {
     const today = new Date();
     let ageYears = today.getFullYear() - birthDate.getFullYear();
@@ -202,17 +185,15 @@ document.addEventListener('DOMContentLoaded', function() {
     };
   }
 
-  // Update the age on the webpage
   const birthDate = new Date('2003-11-21');
   const age = calculateAge(birthDate);
   document.getElementById('age').textContent = `${age.years} years, ${age.months} months, ${age.days} days Old`;
 
-  // Animation on scroll
+  // Animate elements on scroll
   function animateOnScroll() {
     const elements = document.querySelectorAll(
       '.about-card, .details-card, .timeline-container, ' +
-      '.certification-card, .skill-card, .project-card, ' +
-      '.experience-card'
+      '.skill-card, .project-card'
     );
     
     const windowHeight = window.innerHeight;
@@ -222,9 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const elementPosition = element.offsetTop;
       
       if (scrollPosition > elementPosition + 100 && !element.classList.contains('animate')) {
-        // Stagger animations with different delays
-        const delay = index * 0.1;
-        element.style.animationDelay = `${delay}s`;
+        element.style.animationDelay = `${index * 0.1}s`;
         element.classList.add('animate');
       }
     });
@@ -233,51 +212,21 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize elements with hidden state
   document.querySelectorAll(
     '.about-card, .details-card, .timeline-container, ' +
-    '.certification-card, .skill-card, .project-card, ' +
-    '.experience-card'
+    '.skill-card, .project-card'
   ).forEach(element => {
     element.style.opacity = '0';
     element.style.transform = 'translateY(20px)';
-    element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
   });
 
-  // Run once on load
   animateOnScroll();
-  
-  // Then run on scroll
   window.addEventListener('scroll', animateOnScroll);
 
   // Add floating animation to skills
   const skillCards = document.querySelectorAll('.skill-card');
   skillCards.forEach((card, index) => {
-    // Random delay for floating effect
     const delay = Math.random() * 2;
-    card.style.animationDelay = `${delay}s`;
-    
-    // Random floating duration for more natural effect
     const duration = 3 + Math.random() * 3;
+    card.style.animationDelay = `${delay}s`;
     card.style.animationDuration = `${duration}s`;
-  });
-
-  // Add hover effect to skill cards
-  skillCards.forEach(card => {
-    const skill = card.getAttribute('data-skill');
-    const icon = card.querySelector('i');
-    
-    card.addEventListener('mouseenter', () => {
-      // Add class based on skill for color change
-      card.classList.add(`${skill}-hover`);
-      
-      // Add pulse animation to icon
-      icon.style.animation = 'floatIcon 1.5s ease-in-out infinite';
-    });
-    
-    card.addEventListener('mouseleave', () => {
-      // Remove hover class
-      card.classList.remove(`${skill}-hover`);
-      
-      // Remove pulse animation
-      icon.style.animation = '';
-    });
   });
 });
