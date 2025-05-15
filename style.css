@@ -596,7 +596,7 @@ nav {
     #138808 66.66%,   /* Green */
     #138808 100%
   );
-  color: #000080; /* Navy blue */
+  color: #0000bb; /* Navy blue */
   border-radius: 0.5rem;
   position: relative;
   z-index: 1;
@@ -605,17 +605,21 @@ nav {
 
 
 .details-item:hover i.fa-language {
-  background: #F7DF1E; /* Language yellow */
-  color: black;
+  background: #ffe100; /* Language yellow */
+  color: rgb(70, 70, 70);
 }
 
 .details-item:hover i.fa-cake-candles {
-  background: linear-gradient(45deg, 
-    #fa9b9b,  /* Light Red */
-    #95fe95,  /* Light Green */
-    #a9a9ff   /* Light Blue */
-  );
-  color: rgb(31, 31, 31);
+background: linear-gradient(45deg, 
+  #fa9b9b 0%,     /* Light Red */
+  #e0eaa9 20%,    /* Soft Lime */
+  #95fe95 40%,    /* Light Green */
+  #9fd1e8 60%,    /* Soft Blue */
+  #a9a9ff 80%,    /* Light Blue */
+  #d5a9ff 100%    /* Light Purple */
+);
+
+  color: rgb(255, 255, 255);
   border-radius: 0.5rem;
   transition: background 0.4s ease, color 0.4s ease;
 }
@@ -681,129 +685,121 @@ nav {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 20px 15px;
 }
 
 .timeline-container {
-  padding: 5px 10px;
   position: relative;
-  width: auto;
-  box-sizing: border-box;
-  margin-bottom: 30px;
-  opacity: 0;
+  margin-bottom: 40px;
   animation: fadeInUp 0.6s forwards;
+  opacity: 0;
 }
 
 .timeline-content {
   position: relative;
-  padding: 20px 70px 20px 20px; /* extra right padding for year box */
-  background: white;
-  border-radius: 8px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px 70px 20px 20px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
 }
 
-/* Year inside card on right side */
+.timeline-content:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
 .timeline-year-inside {
   position: absolute;
   top: 50%;
   right: 15px;
   transform: translateY(-50%);
-  width: 60px;
-  height: 40px;
-  border-radius: 10px;
-  border: 3px solid;
-  display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
+  flex-direction: row;         /* Horizontal layout */
+  gap: 0.5rem;                 /* Gap between icon and year */
+  padding: 6px 10px;
+  width: auto;                 /* Auto width to fit content */
+  height: auto;
+  border-radius: 10px;
+  border: 3px solid;
+  background-color: #333;
+  color: white;
   font-size: 0.9rem;
-  color: white; /* default text color */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  z-index: 3;
   text-align: center;
-  line-height: 1.2;
-  white-space: pre-line;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 2;
+  display: inline-flex;
+
+  /* Floating animation */
+  animation: float-year 3s ease-in-out infinite;
 }
 
-/* Border and background color for each education type */
-.bachelor-degree .timeline-content {
-  border: 3px solid #3498db;
+@keyframes float-year {
+  0%, 100% {
+    transform: translateY(-50%) translateY(0);
+  }
+  50% {
+    transform: translateY(-50%) translateY(-5px);
+  }
 }
 
-.bachelor-degree .timeline-year-inside {
-  border-color: #3498db;
-  background-color: #3498db;
-  color: white;
-}
 
-.twelfth-grade .timeline-content {
-  border: 3px solid #2ecc71;
-}
-
-.twelfth-grade .timeline-year-inside {
-  border-color: #2ecc71;
-  background-color: #2ecc71;
-  color: white;
-}
-
-.tenth-grade .timeline-content {
-  border: 3px solid #e74c3c;
-}
-
-.tenth-grade .timeline-year-inside {
-  border-color: #e74c3c;
-  background-color: #e74c3c;
-  color: white;
-}
-
-/* Hover effects */
-.timeline-content:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.bachelor-degree .timeline-content:hover {
-  background: #f8fbfe;
-}
-
-.twelfth-grade .timeline-content:hover {
-  background: #f6fef8;
-}
-
-.tenth-grade .timeline-content:hover {
-  background: #fef6f6;
-}
-
-/* Header Styles */
+/* Header */
 .timeline-header h4 {
-  margin: 0 0 10px 0;
+  margin: 0 0 10px;
   color: #2c3e50;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 }
 
-/* Details Styles */
+/* Details */
 .timeline-details p {
   margin: 8px 0;
   color: #34495e;
-  font-size: 0.95rem;
+  font-size: 1rem;
   display: flex;
   align-items: center;
 }
 
 .timeline-details i {
   margin-right: 8px;
-  width: 18px;
+  width: 20px;
   text-align: center;
 }
 
-/* Position Classes */
-.left {
-  left: 0%;
+/* Type Styles */
+.bachelor-degree .timeline-content {
+  border: 3px solid #3498db;
+}
+.bachelor-degree .timeline-year-inside {
+  background-color: #3498db;
+  border-color: #3498db;
 }
 
-.right {
-  left: 0%;
+.twelfth-grade .timeline-content {
+  border: 3px solid #2ecc71;
+}
+.twelfth-grade .timeline-year-inside {
+  background-color: #2ecc71;
+  border-color: #2ecc71;
+}
+
+.tenth-grade .timeline-content {
+  border: 3px solid #e74c3c;
+}
+.tenth-grade .timeline-year-inside {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+}
+
+/* Hover background shades */
+.bachelor-degree .timeline-content:hover {
+  background-color: #f0f7fd;
+}
+.twelfth-grade .timeline-content:hover {
+  background-color: #f4fef6;
+}
+.tenth-grade .timeline-content:hover {
+  background-color: #fef4f4;
 }
 
 /* Animation */
@@ -818,25 +814,16 @@ nav {
   }
 }
 
-/* Responsive Adjustments */
+/* Responsive */
 @media screen and (max-width: 768px) {
-  .timeline::after {
-    left: 31px;
+  .timeline-content {
+    padding: 20px 60px 20px 20px;
   }
-  
-  .timeline-container {
-    width: 100%;
-    padding-left: 70px;
-    padding-right: 25px;
-  }
-  
-  .timeline-year {
-    left: 31px;
-    transform: translateX(0);
-  }
-  
-  .right {
-    left: 0;
+
+  .timeline-year-inside {
+    right: 10px;
+    font-size: 0.8rem;
+    width: 60px;
   }
 }
 
@@ -1249,7 +1236,7 @@ nav {
 .projects-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 .project-card {
@@ -1275,7 +1262,7 @@ nav {
 
 .project-image {
   flex: 1;
-  min-height: 100px;
+  min-height: 50px;
   overflow: hidden;
 }
 
@@ -1660,6 +1647,7 @@ footer {
     width: 100%;
     padding-left: 70px;
     padding-right: 25px;
+    
   }
   
   .timeline-container::before {
