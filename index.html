@@ -7,36 +7,44 @@
   <link rel="icon" href="./files/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Theme Toggle Button -->
+  <div class="theme-toggle">
+    <input type="checkbox" id="theme-switch" class="theme-switch">
+    <label for="theme-switch" class="theme-label">
+      <i class="fas fa-moon"></i>
+      <i class="fas fa-sun"></i>
+      <span class="theme-ball"></span>
+    </label>
+  </div>
+
   <!-- Navigation -->
-          <header id="header">
-            <nav id="desktop-nav">
-              <div class="logo">&lt;pratik abhang/&gt;</div>
-              <div>
-                <ul class="nav-links">
-                  <li><a href="#home"><i class="fas fa-house"></i> Home</a></li>
-                  <li><a href="#about"><i class="fa-solid fa-user-tie"></i> About</a></li>
-                  <li><a href="#skills"><i class="fa-solid fa-brain"></i> Skills</a></li>
-                  <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
-                  <li><a href="#projects"><i class="fa-solid fa-diagram-project"></i> Projects</a></li>
-                  <li><a href="#contact"><i class="fa-solid fa-id-card"></i> Contact</a></li>
-                </ul>
-              </div>
-            </nav>
-            <nav id="hamburger-nav">
-              <div class="logo">&lt;pratik/&gt;</div>
-              <div class="hamburger-menu">
-        <div class="hamburger-menu">
-          <div class="hamburger-icon" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <div class="menu-links" id="menuLinks">
-            <ul>
+  <header id="header">
+    <nav id="desktop-nav">
+      <div class="logo">&lt;pratik abhang/&gt;</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#home"><i class="fas fa-house"></i> Home</a></li>
+          <li><a href="#about"><i class="fa-solid fa-user-tie"></i> About</a></li>
+          <li><a href="#skills"><i class="fa-solid fa-brain"></i> Skills</a></li>
+          <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+          <li><a href="#projects"><i class="fa-solid fa-diagram-project"></i> Projects</a></li>
+          <li><a href="#contact"><i class="fa-solid fa-id-card"></i> Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">&lt;pratik/&gt;</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links" id="menuLinks">
+          <ul>
             <li>
               <a href="#home" onclick="toggleMenu()">
                 <span><i class="fas fa-house"></i></span>
@@ -73,18 +81,6 @@
                 <span>Contact</span>
               </a>
             </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="menu-links" id="menuLinks">
-          <ul>
-          <li><a href="#home" onclick="toggleMenu()">Home</a></li>
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -119,7 +115,7 @@
       <!-- Introduction Text -->
       <div class="section__text">
         <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Pratik Abhang</h1>
+        <h1 class="titleh">Pratik Abhang</h1>
         <p class="section__text__p2"><span id="typed-text"></span></p>
         
         <!-- Buttons -->
@@ -163,61 +159,59 @@
         </div>
       </div>
 
-<!-- Personal Details -->
-<div class="details-grid">
-  <div class="details-card">
-    <div class="details-item fa-phone-bg">
-      <i class="fas fa-phone-alt"></i> 
-      <a href="tel:+918766854678">+91 8766854678</a>
-    </div>
-    <div class="details-item fa-envelope-bg">
-      <i class="fas fa-envelope"></i> 
-      <a href="mailto:work.pratikabhang@gmail.com">work.pratikabhang@gmail.com</a>
-    </div>
-    <div class="details-item fa-map-marker-bg">
-      <i class="fas fa-map-marker-alt"></i> 
-      <a href="https://www.google.com/maps?q=Pune,Maharashtra" target="_blank" rel="noopener noreferrer">Pune, Maharashtra</a>
-    </div>
-<div class="details-item fa-flag-bg">
-  <i class="fas fa-flag"></i> 
-  Indian
-</div>
+      <!-- Personal Details -->
+      <div class="details-grid">
+        <div class="details-card">
+          <div class="details-item fa-phone-bg">
+            <i class="fas fa-phone-alt"></i> 
+            <a href="tel:+918766854678">+91 8766854678</a>
+          </div>
+          <div class="details-item fa-envelope-bg">
+            <i class="fas fa-envelope"></i> 
+            <a href="mailto:work.pratikabhang@gmail.com">work.pratikabhang@gmail.com</a>
+          </div>
+          <div class="details-item fa-map-marker-bg">
+            <i class="fas fa-map-marker-alt"></i> 
+            <a href="https://www.google.com/maps?q=Pune,Maharashtra" target="_blank" rel="noopener noreferrer">Pune, Maharashtra</a>
+          </div>
+          <div class="details-item fa-flag-bg">
+            <i class="fas fa-flag"></i> 
+            Indian
+          </div>
+          <div class="details-item fa-language-bg">
+            <i class="fas fa-language"></i> 
+            English, Marathi, Hindi
+          </div>
+        </div>
 
-    <div class="details-item fa-language-bg">
-      <i class="fas fa-language"></i> 
-      English, Marathi, Hindi
-    </div>
-  </div>
+        <div class="details-card">
+          <div class="details-item fa-cake-bg">
+            <i class="fa-solid fa-cake-candles"></i> 
+            <a href="https://www.timeanddate.com/calendar/monthly.html?&month=11&day=21" target="_blank" rel="noopener noreferrer">21st November</a>
+          </div>
+          <div class="details-item fa-venus-mars-bg">
+            <i class="fa-solid fa-venus-mars"></i> 
+            Male
+          </div>
+          <div class="details-item">
+            <i class="fas fa-calendar-days"></i> 
+            <span id="age"></span>
+          </div>
+          <div class="details-item">
+            <i class="fas fa-heart"></i> 
+            Single
+          </div>
+          <div class="details-item">
+            <i class="fa-solid fa-face-grin-hearts"></i>
+            Photography, Movie, Music, Dance, Cricket
+          </div>
+        </div>
+      </div>
 
-  <div class="details-card">
-    <div class="details-item fa-cake-bg">
-      <i class="fa-solid fa-cake-candles"></i> 
-      <a href="https://www.timeanddate.com/calendar/monthly.html?&month=11&day=21" target="_blank" rel="noopener noreferrer">21st November</a>
-    </div>
-    <div class="details-item fa-venus-mars-bg">
-      <i class="fa-solid fa-venus-mars"></i> 
-      Male
-    </div>
-    <div class="details-item">
-      <i class="fas fa-calendar-days"></i> 
-      <span id="age"></span>
-    </div>
-    <div class="details-item">
-      <i class="fas fa-heart"></i> 
-      Single
-    </div>
-    <div class="details-item">
-      <i class="fa-solid fa-face-grin-hearts"></i>
-      Photography, Movie, Music, Dance, Cricket
-    </div>
-  </div>
-</div>
-
-
-<!-- Education Timeline -->
-<div class="section-title">
-  <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-</div>
+      <!-- Education Timeline -->
+      <div class="section-title">
+        <h3>Education</h3>
+      </div>
 
 <div class="timeline">
   <!-- Bachelor's Degree -->
@@ -228,8 +222,11 @@
         <h4>Bachelor of Engineering in Computer</h4>
       </div>
       <div class="timeline-details">
+        <!-- Institution with graduation cap icon -->
         <p><i class="fa-solid fa-graduation-cap"></i> STES, Sinhgad Institute of Technology and Science (SPPU)</p>
-        <p><strong>CGPA:</strong> 8.0 / 10</p>
+        <!-- Location icon added -->
+        <p><i class="fa-solid fa-location-dot"></i> Pune, Maharashtra, India</p>
+        <p><i class="fa-solid fa-file-lines"></i><strong> CGPA:</strong> 8.0 / 10</p>
       </div>
     </div>
   </div>
@@ -242,8 +239,11 @@
         <h4>Higher Secondary Certificate (12th)</h4>
       </div>
       <div class="timeline-details">
+        <!-- Institution with building icon -->
         <p><i class="fa-solid fa-building"></i> RSS, R.B. Narayanrao Borawake College (SPPU)</p>
-        <p><strong>Percentage:</strong> 82.17 / 100</p>
+        <!-- Location icon added -->
+        <p><i class="fa-solid fa-location-dot"></i> Pune, Maharashtra, India</p>
+        <p><i class="fa-solid fa-file-lines"></i><strong> Percentage:</strong> 82.17 / 100</p>
       </div>
     </div>
   </div>
@@ -256,80 +256,69 @@
         <h4>Secondary School Certificate (10th)</h4>
       </div>
       <div class="timeline-details">
+        <!-- Institution with school icon -->
         <p><i class="fa-solid fa-school"></i> VMSS, De Paul English Medium High School (MSBSHSE)</p>
-        <p><strong>Percentage:</strong> 72.20 / 100</p>
+        <!-- Location icon added -->
+        <p><i class="fa-solid fa-location-dot"></i> Pune, Maharashtra, India</p>
+        <p><i class="fa-solid fa-file-lines"></i><strong> Percentage:</strong> 72.20 / 100</p>
       </div>
     </div>
   </div>
 </div>
 
-
-      <!-- Certifications -->
-<div class="section-title">
-  <h3><i class="fas fa-certificate"></i> Certifications</h3>
-</div>
-
-<div class="certifications-grid">
-  <div class="certification-card aws">
-    <div class="certification-header">
-      <h4>AWS Networking Basics</h4>
-      <div class="certification-meta">
-        <span class="certification-date"><i class="fa-solid fa-calendar-day"></i> OCT 2024</span>
+      <!-- Certifications 
+      <div class="section-title">
+        <h3>Certifications</h3>
       </div>
-    </div>
-    <div class="certification-provider">
-      <i class="fa-solid fa-chalkboard-user"></i> Simplilearn
-    </div>
-  </div>
 
-  <div class="certification-card software">
-    <div class="certification-header">
-      <h4>Software Conceptual Design</h4>
-      <div class="certification-meta">
-        <span class="certification-date"><i class="fa-solid fa-calendar-day"></i> SEP 2024</span>
-      </div>
-    </div>
-    <div class="certification-provider">
-      <i class="fa-solid fa-chalkboard-user"></i> NPTEL
-    </div>
-  </div>
+      <div class="certifications-grid">
+        <div class="certification-card aws">
+          <div class="certification-header">
+            <h4>AWS Networking Basics</h4>
+          </div>
+          <div class="certification-provider">
+            <i class="fa-solid fa-book"></i> Simplilearn
+          </div>
+        </div>
 
-  <div class="certification-card cyber">
-    <div class="certification-header">
-      <h4>Cybersecurity</h4>
-      <div class="certification-meta">
-        <span class="certification-date"><i class="fa-solid fa-calendar-day"></i> AUG 2024</span>
-      </div>
-    </div>
-    <div class="certification-provider">
-      <i class="fa-solid fa-chalkboard-user"></i> NSDC
-    </div>
-  </div>
+        <div class="certification-card software">
+          <div class="certification-header">
+            <h4>Software Conceptual Design</h4>
+          </div>
+          <div class="certification-provider">
+       <i class="fa-solid fa-book"></i> NPTEL
+          </div>
+        </div>
 
-  <div class="certification-card testing">
-    <div class="certification-header">
-      <h4>Testing Fundamentals</h4>
-      <div class="certification-meta">
-        <span class="certification-date"><i class="fa-solid fa-calendar-day"></i> AUG 2024</span>
-      </div>
-    </div>
-    <div class="certification-provider">
-      <i class="fa-solid fa-chalkboard-user"></i> Infosys Springboard
-    </div>
-  </div>
+        <div class="certification-card cyber">
+          <div class="certification-header">
+            <h4>Cybersecurity</h4>
 
-  <div class="certification-card webdev">
-    <div class="certification-header">
-      <h4>Web Development</h4>
-      <div class="certification-meta">
-        <span class="certification-date"><i class="fa-solid fa-calendar-day"></i> AUG 2023</span>
+          </div>
+          <div class="certification-provider">
+                <i class="fa-solid fa-book"></i> NSDC
+          </div>
+        </div>
+
+        <div class="certification-card testing">
+          <div class="certification-header">
+            <h4>Testing Fundamentals</h4>
+          </div>
+          <div class="certification-provider">
+                 <i class="fa-solid fa-book"></i> Infosys Springboard
+          </div>
+        </div>
+
+        <div class="certification-card webdev">
+          <div class="certification-header">
+            <h4>Web Development</h4>
+          </div>
+          <div class="certification-provider">
+      <i class="fa-solid fa-book"></i> Internshala
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="certification-provider">
-      <i class="fa-solid fa-chalkboard-user"></i> Internshala
-    </div>
-  </div>
-</div>
+    </div>-->
 
     <!-- Navigation Arrows -->
     <div class="mouse-container-left" onclick="location.href='./#home'">
@@ -339,36 +328,37 @@
       <i class="fa-regular fa-circle-down"></i>
     </div>
   </section>
-<!-- Skills Section -->
-<section id="skills">
-  <p class="section__text__p1">Explore My</p>
-  <h1 class="title">Skills</h1>
 
-  <div class="skills-container">
-    <div class="skills-category">
-      <h3><i class="fas fa-code"></i> Technical</h3>
-      <div class="skills-grid">
-        <div class="skill-card" data-skill="java"><i class="fab fa-java"></i><p>Java</p></div>
-        <div class="skill-card" data-skill="mysql"><i class="fas fa-database"></i><p>MySQL</p></div>
-        <div class="skill-card" data-skill="html"><i class="fab fa-html5"></i><p>HTML</p></div>
-        <div class="skill-card" data-skill="css"><i class="fab fa-css3-alt"></i><p>CSS</p></div>
-        <div class="skill-card" data-skill="javascript"><i class="fab fa-js"></i><p>JavaScript</p></div>
-        <div class="skill-card" data-skill="php"><i class="fab fa-php"></i><p>PHP</p></div>
-        <div class="skill-card" data-skill="bootstrap"><i class="fab fa-bootstrap"></i><p>Bootstrap</p></div>
-        <div class="skill-card" data-skill="react"><i class="fab fa-react"></i><p>React.js</p></div>
-        <div class="skill-card" data-skill="nodejs"><i class="fa-brands fa-node"></i><p>Node.js</p></div>
-                <div class="skill-card" data-skill="mongodb"><i class="fas fa-server"></i><p>MongoDB</p></div>
-                 <div class="skill-card" data-skill="expressjs"><i class="fab fa-node-js"></i><p>Express.js</p></div>
-        <div class="skill-card" data-skill="kotlin"><i class="fas fa-k"></i><p>Kotlin</p></div>
-        <div class="skill-card" data-skill="python"><i class="fab fa-python"></i><p>Python</p></div>
-        <div class="skill-card" data-skill="github"><i class="fab fa-github"></i><p>GitHub</p></div>
-        <div class="skill-card" data-skill="google"><i class="fab fa-google"></i><p>Google</p></div>
-        <div class="skill-card" data-skill="microsoft"><i class="fab fa-microsoft"></i><p>Microsoft</p></div>
+  <!-- Skills Section -->
+  <section id="skills">
+    <p class="section__text__p1">Explore My</p>
+    <h1 class="title">Skills</h1>
 
-      </div>
+<div class="skills-container">
+  <div class="skills-category">
+    <div class="skills-grid">
+      <div class="skill-card" data-skill="java"><i class="fab fa-java"></i><p>Java</p></div>
+      <div class="skill-card" data-skill="mysql"><i class="fas fa-database"></i><p>MySQL</p></div>
+      <div class="skill-card" data-skill="html"><i class="fab fa-html5"></i><p>HTML</p></div>
+      <div class="skill-card" data-skill="css"><i class="fab fa-css3-alt"></i><p>CSS</p></div>
+      <div class="skill-card" data-skill="javascript"><i class="fab fa-js"></i><p>JavaScript</p></div>
+      <div class="skill-card" data-skill="php"><i class="fab fa-php"></i><p>PHP</p></div>
+      <div class="skill-card" data-skill="bootstrap"><i class="fab fa-bootstrap"></i><p>Bootstrap</p></div>
+      <div class="skill-card" data-skill="react"><i class="fab fa-react"></i><p>React.js</p></div>
+      <div class="skill-card" data-skill="nodejs"><i class="fa-brands fa-node"></i><p>Node.js</p></div>
+      <div class="skill-card" data-skill="mongodb"><i class="fas fa-server"></i><p>MongoDB</p></div>
+      <div class="skill-card" data-skill="expressjs"><i class="fab fa-node-js"></i><p>Express.js</p></div>
+      <div class="skill-card" data-skill="kotlin"><i class="fas fa-k"></i><p>Kotlin</p></div>
+      <div class="skill-card" data-skill="python"><i class="fab fa-python"></i><p>Python</p></div>
+      <div class="skill-card" data-skill="github"><i class="fab fa-github"></i><p>GitHub</p></div>
+      <div class="skill-card" data-skill="google"><i class="fab fa-google"></i><p>Google</p></div>
+      <div class="skill-card" data-skill="microsoft"><i class="fab fa-microsoft"></i><p>Microsoft</p></div>
+      <!-- New skill cards -->
+      <div class="skill-card" data-skill="communication"><i class="fas fa-comments"></i><p>Communication</p></div>
+      <div class="skill-card" data-skill="teamwork"><i class="fas fa-users"></i><p>Teamwork</p></div>
     </div>
   </div>
-</section>
+</div>
 
 
     <!-- Navigation Arrows -->
@@ -379,6 +369,7 @@
       <i class="fa-regular fa-circle-down"></i>
     </div>
   </section>
+
 
   <!-- Experience Section -->
   <section id="experience">

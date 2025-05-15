@@ -1,4 +1,28 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Theme Toggle Functionality
+  const themeSwitch = document.getElementById('theme-switch');
+  
+  // Check for saved theme preference or use preferred color scheme
+  const savedTheme = localStorage.getItem('theme') || 
+                    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  
+  // Apply the saved theme
+  if (savedTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    themeSwitch.checked = true;
+  }
+  
+  // Theme switch event listener
+  themeSwitch.addEventListener('change', function() {
+    if (this.checked) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.setItem('theme', 'light');
+    }
+  });
+
   // Header scroll effect
   const header = document.getElementById('header');
   window.addEventListener('scroll', function() {
@@ -109,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(response => {
         if (response.ok) {
           formStatus.textContent = 'Message sent successfully!';
-          formStatus.style.color = 'green';
+          formStatus.style.color = 'var(--secondary-color)';
           form.reset();
         } else {
           throw new Error('Network response was not ok');
@@ -117,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .catch(error => {
         formStatus.textContent = 'Oops! There was a problem sending your message.';
-        formStatus.style.color = 'red';
+        formStatus.style.color = 'var(--accent-color)';
         console.error('Error:', error);
       })
       .finally(() => {
