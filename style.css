@@ -393,6 +393,7 @@ section {
   height: 80px;
 }
 
+
 /* Hide default checkbox */
 .theme-switch {
   opacity: 0;
@@ -482,6 +483,8 @@ section {
   transform: translateY(36px) scale(0.9);
 }
 
+
+
 /* ========== COLOR PICKER ========== */
 .color-picker {
   position: fixed;
@@ -504,7 +507,7 @@ section {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 2px solid var(--card-bg);
+  border: 2px solid #ffffff; /* white border */
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -552,6 +555,7 @@ header {
   transition: all 0.3s ease;
   background-color: var(--nav-bg);
   padding: 0.5rem;
+    /*position: fixed;*/
 }
 
 header.scrolled {
@@ -2134,4 +2138,60 @@ footer {
     flex-direction: column;
     gap: 1rem;
   }
+}
+
+
+
+
+
+
+
+
+
+/* Container fixed top-left with spacing */
+.auto-scroll-container {
+  position: fixed;
+  top: 465px;    /* Adjust distance from top */
+  left: 63px;   /* Adjust distance from left */
+  z-index: 9999; /* Always on top */
+  background: transparent; /* No background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Button styling */
+#autoScrollBtn {
+  background: transparent; /* Transparent background */
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  /* Color is inherited or set by JS using data-color */
+  color: inherit;
+  font-size: 2.6rem;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover color change only when NOT active */
+#autoScrollBtn:not(.active):hover {
+  color: var(--secondary-color) /* Red color on hover */
+}
+
+/* Bounce animation keyframes */
+@keyframes upDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Active state: apply bounce animation only, no color override */
+#autoScrollBtn.active {
+  animation: upDown 1.2s ease-in-out infinite;
+}
+
+/* Ensure the icon inherits the button color */
+#autoScrollBtn i {
+  color: inherit;
 }

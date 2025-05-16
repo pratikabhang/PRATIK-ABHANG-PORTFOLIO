@@ -20,6 +20,19 @@
         <span class="theme-ball"></span>
       </label>
     </div>
+    <!-- Auto Scroll Button -->
+<!-- Auto-scroll button container -->
+<div class="auto-scroll-container">
+  <!-- 
+    Button with mouse icon.
+    Set your preferred color via data-color attribute if needed.
+  -->
+  <button id="autoScrollBtn" aria-label="Toggle Auto Scroll" data-color="#1a73e8">
+    <i class="fa-solid fa-computer-mouse"></i>
+  </button>
+</div>
+
+
     <div class="color-picker">
       <button class="color-option" data-color="black"></button>
       <button class="color-option" data-color="red"></button>
@@ -475,5 +488,62 @@
 
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="script.js"></script>
+
+
+
+
+
+
+
+
+  
+<script>
+const scrollBtn = document.getElementById('autoScrollBtn');
+let autoScroll = false;
+let scrollDirection = 'down';
+
+scrollBtn.addEventListener('click', () => {
+  autoScroll = !autoScroll;
+  scrollBtn.classList.toggle('active', autoScroll);
+
+  if (autoScroll) {
+    autoScrollFunction();
+  }
+});
+
+function autoScrollFunction() {
+  if (!autoScroll) return;
+
+  const scrollStep = 6;  // faster scroll
+  const delay = 12;       // smoother speed
+  const scrollMax = document.body.scrollHeight - window.innerHeight;
+
+  const scroll = () => {
+    if (!autoScroll) return;
+
+    const currentScroll = window.scrollY;
+
+    if (scrollDirection === 'down') {
+      if (currentScroll + scrollStep < scrollMax) {
+        window.scrollBy(0, scrollStep);
+      } else {
+        scrollDirection = 'up';
+      }
+    } else {
+      if (currentScroll - scrollStep > 0) {
+        window.scrollBy(0, -scrollStep);
+      } else {
+        scrollDirection = 'down';
+      }
+    }
+
+    setTimeout(scroll, delay);
+  };
+
+  scroll();
+}
+</script>
+
+
 </body>
 </html>
