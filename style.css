@@ -892,7 +892,7 @@ header.scrolled {
   text-align: justify;
 }
 
-/* Details Grid */
+/* === DETAILS SECTION GRID === */
 .details-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -900,9 +900,10 @@ header.scrolled {
   margin-bottom: 3rem;
 }
 
+/* === DETAILS CARD STYLE === */
 .details-card {
   background: var(--card-bg);
-  border: 3px solid var(--border-color);
+  border: 3px solid var(--border-color); /* Consistent border for light/dark */
   border-radius: 1rem;
   padding: 1.5rem;
   box-shadow: var(--card-shadow);
@@ -911,11 +912,13 @@ header.scrolled {
   animation: fadeInUp 0.6s ease forwards;
 }
 
+/* Hover effect on card */
 .details-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* === INDIVIDUAL ITEM === */
 .details-item {
   display: flex;
   align-items: center;
@@ -924,6 +927,7 @@ header.scrolled {
   color: var(--text-color);
 }
 
+/* === ICON STYLE === */
 .details-item i {
   font-size: 1.4rem;
   width: 40px;
@@ -934,20 +938,17 @@ header.scrolled {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  color: var(--icon-color);
 }
 
-/* Default hover for icons */
+/* === DEFAULT HOVER STYLE === */
 .details-item:hover i {
   background: #333;
   color: white;
 }
 
-/* Override icon hover colors for specific icons */
-.details-item:hover i.fa-phone-alt {
-  background: #000000;
-  color: white;
-}
-
+/* === ICON OVERRIDES === */
+.details-item:hover i.fa-phone-alt,
 .details-item:hover i.fa-envelope {
   background: #000000;
   color: white;
@@ -1038,6 +1039,7 @@ header.scrolled {
   color: white;
 }
 
+/* === LINK STYLES === */
 .details-item a {
   color: #555;
   transition: color 0.3s ease;
@@ -1046,6 +1048,7 @@ header.scrolled {
 .details-item a:hover {
   color: #333;
 }
+
 
 /* Timeline Styles */
 .timeline {
