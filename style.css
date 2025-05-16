@@ -2288,7 +2288,7 @@ footer {
   }
 }
 
-/* ---------- Force Landscape Mode on Portrait Orientation (Mobile) ---------- */
+/* ---------- Force Landscape Mode on Portrait Orientation (Mobile) ---------- 
 @media screen and (orientation: portrait) {
   body::before {
     content: "Please rotate your device to landscape mode.";
@@ -2303,5 +2303,5 @@ footer {
     font-size: 1.5rem;
     text-align: center;
     padding: 1rem;
-  }
-}
+  }*/
+}*/

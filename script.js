@@ -327,20 +327,12 @@ document.addEventListener('DOMContentLoaded', function() {
     scroll();
   }
 
-// Detect mobile devices
-  const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-  // Only run if not done before
+  // Ensure code runs only once using localStorage (works across refresh)
   const hasOpened = localStorage.getItem('hasOpened');
   const hasSpoken = localStorage.getItem('hasSpoken');
 
   window.onload = function () {
-    // 1. Suggest Landscape mode for mobile
-    if (isMobile && screen.orientation && screen.orientation.type.includes("portrait")) {
-      alert("For best experience, please rotate your device to landscape mode.");
-    }
-
-    // 2. Open in desktop-like window once (where supported)
+    // Open only once
     if (!hasOpened) {
       const currentURL = window.location.href;
       const width = 1920;
@@ -348,21 +340,18 @@ document.addEventListener('DOMContentLoaded', function() {
       const left = (screen.width - width) / 2;
       const top = (screen.height - height) / 2;
 
-      // Try to open new desktop-size window
-      try {
-        const win = window.open(
-          currentURL,
-          '_blank',
-          `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`
-        );
-        if (win) localStorage.setItem('hasOpened', 'true'); // only set if it opens
-      } catch (e) {
-        console.warn("Popup blocked or unsupported.");
-      }
+      // Open same page in new window with desktop resolution
+      window.open(
+        currentURL,
+        '_blank',
+        `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`
+      );
+
+      localStorage.setItem('hasOpened', 'true');
     }
 
-    // 3. Speak message only once
-    if (!hasSpoken && 'speechSynthesis' in window) {
+    // Speak welcome message after 5 seconds
+    if (!hasSpoken) {
       setTimeout(() => {
         const message = new SpeechSynthesisUtterance(
           "Hi, I’m Pratik Abhang, a computer engineer. Welcome to my portfolio, where technology transforms ideas into reality."
@@ -370,9 +359,16 @@ document.addEventListener('DOMContentLoaded', function() {
         message.lang = 'en-US';
         message.rate = 1;
         message.pitch = 1;
-        speechSynthesis.speak(message);
-        localStorage.setItem('hasSpoken', 'true');
+
+        // Check if speech is supported
+        if ('speechSynthesis' in window) {
+          speechSynthesis.speak(message);
+          localStorage.setItem('hasSpoken', 'true');
+        } else {
+          console.warn("Speech synthesis not supported in this browser.");
+        }
       }, 5000);
     }
   };
+
 });
