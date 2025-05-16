@@ -1759,7 +1759,7 @@ header.scrolled {
   width: 50px;
   height: 50px;
   background: var(--hover-color);
-  border-radius: 50%;
+  border-radius: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
