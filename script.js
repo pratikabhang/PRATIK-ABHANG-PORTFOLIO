@@ -280,4 +280,50 @@ document.addEventListener('DOMContentLoaded', function() {
       icon.style.animation = '';
     });
   });
+
+  // Auto-scroll functionality
+  const scrollBtn = document.getElementById('autoScrollBtn');
+  let autoScroll = false;
+  let scrollDirection = 'down';
+
+  scrollBtn.addEventListener('click', () => {
+    autoScroll = !autoScroll;
+    scrollBtn.classList.toggle('active', autoScroll);
+
+    if (autoScroll) {
+      autoScrollFunction();
+    }
+  });
+
+  function autoScrollFunction() {
+    if (!autoScroll) return;
+
+    const scrollStep = 6;  // faster scroll
+    const delay = 12;       // smoother speed
+    const scrollMax = document.body.scrollHeight - window.innerHeight;
+
+    const scroll = () => {
+      if (!autoScroll) return;
+
+      const currentScroll = window.scrollY;
+
+      if (scrollDirection === 'down') {
+        if (currentScroll + scrollStep < scrollMax) {
+          window.scrollBy(0, scrollStep);
+        } else {
+          scrollDirection = 'up';
+        }
+      } else {
+        if (currentScroll - scrollStep > 0) {
+          window.scrollBy(0, -scrollStep);
+        } else {
+          scrollDirection = 'down';
+        }
+      }
+
+      setTimeout(scroll, delay);
+    };
+
+    scroll();
+  }
 });

@@ -8,9 +8,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-
-
-
 </head>
 <body>
   <!-- Theme Controls -->
@@ -24,18 +21,11 @@
       </label>
     </div>
     <!-- Auto Scroll Button -->
-<!-- Auto-scroll button container -->
-<div class="auto-scroll-container">
-  <!-- 
-    Button with mouse icon.
-    Set your preferred color via data-color attribute if needed.
-  -->
-  <button id="autoScrollBtn" aria-label="Toggle Auto Scroll" data-color="#1a73e8">
-    <i class="fa-solid fa-computer-mouse"></i>
-  </button>
-</div>
-
-
+    <div class="auto-scroll-container">
+      <button id="autoScrollBtn" aria-label="Toggle Auto Scroll" data-color="#1a73e8">
+        <i class="fa-solid fa-computer-mouse"></i>
+      </button>
+    </div>
     <div class="color-picker">
       <button class="color-option" data-color="black"></button>
       <button class="color-option" data-color="red"></button>
@@ -49,17 +39,17 @@
   <header id="header">
     <nav id="desktop-nav">
       <div class="logo">&lt;pratik abhang/&gt;</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#home"><i class="fas fa-house"></i> Home</a></li>
-          <li><a href="#about"><i class="fa-solid fa-user-tie"></i> About</a></li>
-          <li><a href="#skills"><i class="fa-solid fa-brain"></i> Skills</a></li>
-          <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
-          <li><a href="#projects"><i class="fa-solid fa-diagram-project"></i> Projects</a></li>
-          <li><a href="#contact"><i class="fa-solid fa-id-card"></i> Contact</a></li>
-        </ul>
-      </div>
+      <ul class="nav-links">
+        <li><a href="#home"><i class="fas fa-house"></i> Home</a></li>
+        <li><a href="#about"><i class="fas fa-user-tie"></i> About</a></li>
+        <li><a href="#skills"><i class="fas fa-brain"></i> Skills</a></li>
+        <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+        <li><a href="#projects"><i class="fas fa-code"></i> Projects</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
     </nav>
+
+    <!-- Hamburger Navigation -->
     <nav id="hamburger-nav">
       <div class="logo">&lt;pratik/&gt;</div>
       <div class="hamburger-menu">
@@ -109,9 +99,6 @@
       </div>
     </div>
     
-    <div class="mouse-container-right" onclick="location.href='./#about'">
-      <i class="fa-regular fa-circle-down"></i>
-    </div>
   </section>
 
   <!-- About Section -->
@@ -130,100 +117,90 @@
           </p>
         </div>
       </div>
-<div class="details-grid">
-  <div class="details-card">
-    <div class="details-item">
-      <a href="tel:+918766854678"><i class="fas fa-phone-alt"></i></a> +91 8766854678
-    </div>
-    <div class="details-item">
-      <a href="mailto:work.pratikabhang@gmail.com"><i class="fas fa-envelope"></i></a> work.pratikabhang@gmail.com
-    </div>
-    <div class="details-item">
-      <a href="https://www.google.com/maps?q=Pune,Maharashtra" target="_blank"><i class="fas fa-map-marker-alt"></i></a> Pune, Maharashtra
-    </div>
-    <div class="details-item">
-      <a href="#"><i class="fas fa-flag"></i></a> Indian
-    </div>
-    <div class="details-item">
-      <a href="#"><i class="fas fa-language"></i></a> English, Marathi, Hindi
-    </div>
-  </div>
+      <div class="details-grid">
+        <div class="details-card">
+          <div class="details-item">
+            <a href="tel:+918766854678"><i class="fas fa-phone-alt"></i></a> +91 8766854678
+          </div>
+          <div class="details-item">
+            <a href="mailto:work.pratikabhang@gmail.com"><i class="fas fa-envelope"></i></a> work.pratikabhang@gmail.com
+          </div>
+          <div class="details-item">
+            <a href="https://www.google.com/maps?q=Pune,Maharashtra" target="_blank"><i class="fas fa-map-marker-alt"></i></a> Pune, Maharashtra
+          </div>
+          <div class="details-item">
+            <a href="#"><i class="fas fa-flag"></i></a> Indian
+          </div>
+          <div class="details-item">
+            <a href="#"><i class="fas fa-language"></i></a> English, Marathi, Hindi
+          </div>
+        </div>
 
-  <div class="details-card">
-    <div class="details-item">
-      <a href="https://www.timeanddate.com/calendar/monthly.html?&month=11&day=21" target="_blank"><i class="fa-solid fa-cake-candles"></i></a> 21st November
-    </div>
-    <div class="details-item">
-      <a href="#"><i class="fa-solid fa-venus-mars"></i></a> Male
-    </div>
-    <div class="details-item">
-      <a href="#"><i class="fas fa-calendar-days"></i></a> <span id="age"></span>
-    </div>
-    <div class="details-item">
-      <a href="#"><i class="fas fa-heart"></i></a> Single
-    </div>
-    <div class="details-item">
-      <a href="#"><i class="fa-solid fa-face-grin-hearts"></i></a> Photography, Movie, Music, Dance, Cricket
-    </div>
-  </div>
-</div>
-
+        <div class="details-card">
+          <div class="details-item">
+            <a href="https://www.timeanddate.com/calendar/monthly.html?&month=11&day=21" target="_blank"><i class="fa-solid fa-cake-candles"></i></a> 21st November
+          </div>
+          <div class="details-item">
+            <a href="#"><i class="fa-solid fa-venus-mars"></i></a> Male
+          </div>
+          <div class="details-item">
+            <a href="#"><i class="fas fa-calendar-days"></i></a> <span id="age"></span>
+          </div>
+          <div class="details-item">
+            <a href="#"><i class="fas fa-heart"></i></a> Single
+          </div>
+          <div class="details-item">
+            <a href="#"><i class="fa-solid fa-face-grin-hearts"></i></a> Photography, Movie, Music, Dance, Cricket
+          </div>
+        </div>
+      </div>
 
       <!-- Education Section -->
       <div class="section-title">
         <h3><i class="fas fa-graduation-cap"></i> Education</h3>
       </div>
-   <div class="timeline">
+      <div class="timeline">
+        <div class="timeline-container left top" data-year="2025">
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h4>Bachelor of Engineering in Computer</h4>
+            </div>
+            <div class="timeline-details">
+              <p><i class="fa-solid fa-graduation-cap"></i> STES, Sinhgad Institute of Technology and Science</p>
+              <p><i class="fa-solid fa-file-lines"></i><strong> CGPA:</strong> 8.0 / 10 <i class="fa-solid fa-book"></i>SPPU</p>
+            </div>
+          </div>
+          <div class="location-arrow top"><i class="fa-solid fa-location-dot"></i> Pune, Maharashtra, India</div>
+        </div>
 
-  <div class="timeline-container left top" data-year="2025">
-    <div class="timeline-content">
-      <div class="timeline-header">
-        <h4>Bachelor of Engineering in Computer</h4>
-      </div>
-      <div class="timeline-details">
-        <p><i class="fa-solid fa-graduation-cap"></i> STES, Sinhgad Institute of Technology and Science</p>
-        <p><i class="fa-solid fa-file-lines"></i><strong> CGPA:</strong> 8.0 / 10 <i class="fa-solid fa-book"></i>SPPU</p>
+        <div class="timeline-container right middle" data-year="2021">
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h4>Higher Secondary Certificate (12th)</h4>
+            </div>
+            <div class="timeline-details">
+              <p><i class="fa-solid fa-building"></i> RSS, R.B. Narayanrao Borawake College</p>
+              <p><i class="fa-solid fa-file-lines"></i><strong> Percentage:</strong> 82.17 / 100 <i class="fa-solid fa-book"></i>MSBSHSE</p>
+            </div>
+          </div>
+          <div class="location-arrow middle"><i class="fa-solid fa-location-dot"></i> Shrirampur, Maharashtra, India</div>
+        </div>
+
+        <div class="timeline-container left bottom" data-year="2019">
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h4>Secondary School Certificate (10th)</h4>
+            </div>
+            <div class="timeline-details">
+              <p><i class="fa-solid fa-school"></i> VMSS, De Paul English Medium High School</p>
+              <p><i class="fa-solid fa-file-lines"></i><strong> Percentage:</strong> 72.20 / 100 <i class="fa-solid fa-book"></i>MSBSHSE</p>
+            </div>
+          </div>
+          <div class="location-arrow bottom"><i class="fa-solid fa-location-dot"></i> Shrirampur, Maharashtra, India</div>
+        </div>
       </div>
     </div>
-    <div class="location-arrow top"><i class="fa-solid fa-location-dot"></i> Pune, Maharashtra, India</div>
-  </div>
 
-  <div class="timeline-container right middle" data-year="2021">
-    <div class="timeline-content">
-      <div class="timeline-header">
-        <h4>Higher Secondary Certificate (12th)</h4>
-      </div>
-      <div class="timeline-details">
-        <p><i class="fa-solid fa-building"></i> RSS, R.B. Narayanrao Borawake College</p>
-        <p><i class="fa-solid fa-file-lines"></i><strong> Percentage:</strong> 82.17 / 100 <i class="fa-solid fa-book"></i>MSBSHSE</p>
-      </div>
-    </div>
-    <div class="location-arrow middle"><i class="fa-solid fa-location-dot"></i> Shrirampur, Maharashtra, India</div>
-  </div>
-
-  <div class="timeline-container left bottom" data-year="2019">
-    <div class="timeline-content">
-      <div class="timeline-header">
-        <h4>Secondary School Certificate (10th)</h4>
-      </div>
-      <div class="timeline-details">
-        <p><i class="fa-solid fa-school"></i> VMSS, De Paul English Medium High School</p>
-        <p><i class="fa-solid fa-file-lines"></i><strong> Percentage:</strong> 72.20 / 100 <i class="fa-solid fa-book"></i>MSBSHSE</p>
-      </div>
-    </div>
-    <div class="location-arrow bottom"><i class="fa-solid fa-location-dot"></i> Shrirampur, Maharashtra, India</div>
-  </div>
-
-</div>
-
-
-
-    <div class="mouse-container-left" onclick="location.href='./#home'">
-      <i class="fa-regular fa-circle-up"></i>
-    </div>
-    <div class="mouse-container-right" onclick="location.href='./#skills'">
-      <i class="fa-regular fa-circle-down"></i>
-    </div>
   </section>
 
   <!-- Skills Section -->
@@ -254,160 +231,140 @@
       </div>
     </div>
 
-    <div class="mouse-container-left" onclick="location.href='./#about'">
-      <i class="fa-regular fa-circle-up"></i>
-    </div>
-    <div class="mouse-container-right" onclick="location.href='./#experience'">
-      <i class="fa-regular fa-circle-down"></i>
-    </div>
   </section>
 
-<!-- Experience Section -->
-<section id="experience">
-  <p class="section__text__p1">Browse My</p>
-  <h1 class="title">Experience</h1>
-    
-<div class="experience-container">
-  <div class="section-title">
-    <h3><i class="fas fa-briefcase"></i> Internships</h3>
-  </div>
-  
-  <div class="itimeline">
-    <div class="itimeline-container">
-      <div class="itimeline-content">
-        <div class="itimeline-year-inside">Oct 2024 - Nov 2024</div>
-        <div class="itimeline-header">
-          <h4 class="role">Software Developer Intern</h4>
+  <!-- Experience Section -->
+  <section id="experience">
+    <p class="section__text__p1">Browse My</p>
+    <h1 class="title">Experience</h1>
+      
+    <div class="experience-container">
+      <div class="section-title">
+        <h3><i class="fas fa-briefcase"></i> Internships</h3>
+      </div>
+      
+      <div class="itimeline">
+        <div class="itimeline-container">
+          <div class="itimeline-content">
+            <div class="itimeline-year-inside">Oct 2024 - Nov 2024</div>
+            <div class="itimeline-header">
+              <h4 class="role">Software Developer Intern</h4>
+            </div>
+            <div class="itimeline-details">
+              <p class="company"><i class="fas fa-building"></i> Cognifyz Technologies</p>
+              <p class="location"><i class="fa-solid fa-location-dot"></i> Virtual</p>
+              <ul class="experience-list">
+                <li><i class="fa-regular fa-circle-dot"></i> Gained knowledge of the Software Development Life Cycle (SDLC) and its types</li>
+                <li><i class="fa-regular fa-circle-dot"></i> Enhanced project management skills by effectively managing tasks and meeting deadlines</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="itimeline-details">
-          <p class="company"><i class="fas fa-building"></i> Cognifyz Technologies</p>
-          <p class="location"><i class="fa-solid fa-location-dot"></i> Virtual</p>
-          <ul class="experience-list">
-            <li><i class="fa-regular fa-circle-dot"></i> Gained knowledge of the Software Development Life Cycle (SDLC) and its types</li>
-            <li><i class="fa-regular fa-circle-dot"></i> Enhanced project management skills by effectively managing tasks and meeting deadlines</li>
-          </ul>
+
+        <div class="itimeline-container">
+          <div class="itimeline-content">
+            <div class="itimeline-year-inside">Dec 2023 - Jan 2024</div>
+            <div class="itimeline-header">
+              <h4 class="role">Web Developer Intern</h4>
+            </div>
+            <div class="itimeline-details">
+              <p class="company"><i class="fas fa-building"></i> Elite Softwares</p>
+              <p class="location"><i class="fa-solid fa-location-dot"></i> Virtual</p>
+              <ul class="experience-list">
+                <li><i class="fa-regular fa-circle-dot"></i> Learned website hosting and understood various domain types and their uses</li>
+                <li><i class="fa-regular fa-circle-dot"></i> Applied technologies such as HTML, CSS, JavaScript, MySQL, and PHP to create dynamic websites</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="itimeline-container">
-      <div class="itimeline-content">
-        <div class="itimeline-year-inside">Dec 2023 - Jan 2024</div>
-        <div class="itimeline-header">
-          <h4 class="role">Web Developer Intern</h4>
-        </div>
-        <div class="itimeline-details">
-          <p class="company"><i class="fas fa-building"></i> Elite Softwares</p>
-          <p class="location"><i class="fa-solid fa-location-dot"></i> Virtual</p>
-          <ul class="experience-list">
-            <li><i class="fa-regular fa-circle-dot"></i> Learned website hosting and understood various domain types and their uses</li>
-            <li><i class="fa-regular fa-circle-dot"></i> Applied technologies such as HTML, CSS, JavaScript, MySQL, and PHP to create dynamic websites</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-  <div class="mouse-container-left" onclick="location.href='./#skills'">
-    <i class="fa-regular fa-circle-up"></i>
-  </div>
-  <div class="mouse-container-right" onclick="location.href='./#projects'">
-    <i class="fa-regular fa-circle-down"></i>
-  </div>
-</section>
-
+  </section>
 
   <!-- Projects Section -->
   <section id="projects">
     <p class="section__text__p1">My Recent</p>
     <h1 class="title">Projects</h1>
     
-<div class="projects-container">
-  <div class="project-card">
-    <div class="project-image">
-      <img src="./files/project1.jpg" alt="E-Commerce Platform" />
-    </div>
-    <div class="project-details">
-      <h3>E-Commerce Platform</h3>
-      <p class="project-tech">React | Node.js | MongoDB | Stripe API</p>
-      <p class="project-desc">
-        Full-featured e-commerce platform with user authentication, product catalog, 
-        shopping cart, and payment processing. Implemented responsive design and
-        secure payment gateway integration.
-      </p>
-      <div class="project-links">
-        <a href="https://github.com/pratikabhang/ecommerce-platform" target="_blank"><i class="fab fa-github"></i> Code</a>
-        <a href="https://ecommerce-demo.pratikabhang.com" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+    <div class="projects-container">
+      <div class="project-card">
+        <div class="project-image">
+          <img src="./files/project1.jpg" alt="E-Commerce Platform" />
+        </div>
+        <div class="project-details">
+          <h3>E-Commerce Platform</h3>
+          <p class="project-tech">React | Node.js | MongoDB | Stripe API</p>
+          <p class="project-desc">
+            Full-featured e-commerce platform with user authentication, product catalog, 
+            shopping cart, and payment processing. Implemented responsive design and
+            secure payment gateway integration.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/pratikabhang/ecommerce-platform" target="_blank"><i class="fab fa-github"></i> Code</a>
+            <a href="https://ecommerce-demo.pratikabhang.com" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="./files/project1.jpg" alt="Task Management App" />
+        </div>
+        <div class="project-details">
+          <h3>Task Management App</h3>
+          <p class="project-tech">React | Firebase | Material UI</p>
+          <p class="project-desc">
+            Real-time task management application with drag-and-drop functionality,
+            team collaboration features, and deadline tracking. Uses Firebase for
+            authentication and real-time database.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/pratikabhang/task-manager" target="_blank"><i class="fab fa-github"></i> Code</a>
+            <a href="https://taskmanager.pratikabhang.com" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="./files/project1.jpg" alt="Weather Dashboard" />
+        </div>
+        <div class="project-details">
+          <h3>Weather Dashboard</h3>
+          <p class="project-tech">JavaScript | OpenWeather API | Chart.js</p>
+          <p class="project-desc">
+            Interactive weather dashboard that displays current conditions and
+            5-day forecast for any location. Features include temperature unit
+            conversion and historical weather data visualization.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/pratikabhang/weather-dashboard" target="_blank"><i class="fab fa-github"></i> Code</a>
+            <a href="https://weather.pratikabhang.com" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="./files/project1.jpg" alt="Recipe Finder App" />
+        </div>
+        <div class="project-details">
+          <h3>Recipe Finder App</h3>
+          <p class="project-tech">React | Edamam API | Tailwind CSS</p>
+          <p class="project-desc">
+            Recipe discovery application with search by ingredients, dietary filters,
+            and nutritional information. Features saved favorites and meal planning
+            with a clean, intuitive interface.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/pratikabhang/recipe-finder" target="_blank"><i class="fab fa-github"></i> Code</a>
+            <a href="https://recipes.pratikabhang.com" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="project-card">
-    <div class="project-image">
-      <img src="./files/project1.jpg" alt="Task Management App" />
-    </div>
-    <div class="project-details">
-      <h3>Task Management App</h3>
-      <p class="project-tech">React | Firebase | Material UI</p>
-      <p class="project-desc">
-        Real-time task management application with drag-and-drop functionality,
-        team collaboration features, and deadline tracking. Uses Firebase for
-        authentication and real-time database.
-      </p>
-      <div class="project-links">
-        <a href="https://github.com/pratikabhang/task-manager" target="_blank"><i class="fab fa-github"></i> Code</a>
-        <a href="https://taskmanager.pratikabhang.com" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="project-card">
-    <div class="project-image">
-      <img src="./files/project1.jpg" alt="Weather Dashboard" />
-    </div>
-    <div class="project-details">
-      <h3>Weather Dashboard</h3>
-      <p class="project-tech">JavaScript | OpenWeather API | Chart.js</p>
-      <p class="project-desc">
-        Interactive weather dashboard that displays current conditions and
-        5-day forecast for any location. Features include temperature unit
-        conversion and historical weather data visualization.
-      </p>
-      <div class="project-links">
-        <a href="https://github.com/pratikabhang/weather-dashboard" target="_blank"><i class="fab fa-github"></i> Code</a>
-        <a href="https://weather.pratikabhang.com" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="project-card">
-    <div class="project-image">
-      <img src="./files/project1.jpg" alt="Recipe Finder App" />
-    </div>
-    <div class="project-details">
-      <h3>Recipe Finder App</h3>
-      <p class="project-tech">React | Edamam API | Tailwind CSS</p>
-      <p class="project-desc">
-        Recipe discovery application with search by ingredients, dietary filters,
-        and nutritional information. Features saved favorites and meal planning
-        with a clean, intuitive interface.
-      </p>
-      <div class="project-links">
-        <a href="https://github.com/pratikabhang/recipe-finder" target="_blank"><i class="fab fa-github"></i> Code</a>
-        <a href="https://recipes.pratikabhang.com" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-    <div class="mouse-container-left" onclick="location.href='./#experience'">
-      <i class="fa-regular fa-circle-up"></i>
-    </div>
-    <div class="mouse-container-right" onclick="location.href='./#contact'">
-      <i class="fa-regular fa-circle-down"></i>
-    </div>
   </section>
 
   <!-- Contact Section -->
@@ -470,9 +427,6 @@
       </form>
     </div>
 
-    <div class="mouse-container-left" onclick="location.href='./#'">
-      <i class="fa-regular fa-circle-up"></i>
-    </div>
   </section>
 
   <!-- Footer -->
@@ -494,62 +448,5 @@
 
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="script.js"></script>
-
-
-
-
-
-
-
-
-  
-<script>
-const scrollBtn = document.getElementById('autoScrollBtn');
-let autoScroll = false;
-let scrollDirection = 'down';
-
-scrollBtn.addEventListener('click', () => {
-  autoScroll = !autoScroll;
-  scrollBtn.classList.toggle('active', autoScroll);
-
-  if (autoScroll) {
-    autoScrollFunction();
-  }
-});
-
-function autoScrollFunction() {
-  if (!autoScroll) return;
-
-  const scrollStep = 6;  // faster scroll
-  const delay = 12;       // smoother speed
-  const scrollMax = document.body.scrollHeight - window.innerHeight;
-
-  const scroll = () => {
-    if (!autoScroll) return;
-
-    const currentScroll = window.scrollY;
-
-    if (scrollDirection === 'down') {
-      if (currentScroll + scrollStep < scrollMax) {
-        window.scrollBy(0, scrollStep);
-      } else {
-        scrollDirection = 'up';
-      }
-    } else {
-      if (currentScroll - scrollStep > 0) {
-        window.scrollBy(0, -scrollStep);
-      } else {
-        scrollDirection = 'down';
-      }
-    }
-
-    setTimeout(scroll, delay);
-  };
-
-  scroll();
-}
-</script>
-
-
 </body>
 </html>
