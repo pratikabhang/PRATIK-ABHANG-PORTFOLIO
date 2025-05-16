@@ -2190,7 +2190,7 @@ footer {
 /* RESPONSIVE DESIGN - MEDIA QUERIES */
 
 /* For screens up to 1400px */
-@media screen and (max-width: 4000px) {
+@media screen and (max-width: 1400px) {
   #home {
     height: 83vh;
     margin-bottom: 6rem;
@@ -2207,7 +2207,7 @@ footer {
 }
 
 /* For screens up to 1200px */
-@media screen and (max-width: 2000px) {
+@media screen and (max-width: 1200px) {
   #desktop-nav {
     display: none;
   }
@@ -2257,7 +2257,7 @@ footer {
 }
 
 /* For screens up to 800px */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 800px) {
   /* Adjust project card layout */
   .project-card {
     flex-direction: column;
@@ -2280,7 +2280,7 @@ footer {
 }
 
 /* For screens up to 600px (mobile devices) */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 600px) {
   #contact,
   footer {
     height: 40vh;
@@ -2370,7 +2370,7 @@ footer {
 }
 
 /* For very small screens up to 400px */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 400px) {
   .section__pic-container {
     width: 200px;
     height: 200px;
@@ -2395,7 +2395,7 @@ footer {
 }
 
 
-@media screen and (orientation: lanscape) {
+@media screen and (orientation: portrait) {
   body::before {
     content: "Please rotate your device to landscape mode.";
     position: fixed;
