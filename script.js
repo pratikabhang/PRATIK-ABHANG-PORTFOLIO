@@ -326,4 +326,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
     scroll();
   }
+  let hasOpened = false;
+
+function openResponsiveDesktopViewOnce() {
+  if (hasOpened) return;  // Exit if already opened
+
+  const url = "https://pratiksunilabhang.netlify.app/";
+  const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    window.open(url, '_blank');
+  } else {
+    const width = 1920;
+    const height = 1080;
+    const left = (screen.width - width) / 2;
+    const top = (screen.height - height) / 2;
+
+    window.open(
+      url,
+      '_blank',
+      `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`
+    );
+  }
+
+  hasOpened = true;  // Mark as opened
+}
+
+openResponsiveDesktopViewOnce();
+
 });
