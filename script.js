@@ -327,76 +327,78 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Function to open the page in a desktop-sized window once, using localStorage to remember
-  function openInDesktopOnce() {
-    if (localStorage.getItem('desktopOpened') === 'true') {
-      return; // Already opened once, skip opening again
-    }
-
-    const currentURL = window.location.href;
-    const width = 1920;
-    const height = 1080;
-    const left = (screen.width - width) / 2;
-    const top = (screen.height - height) / 2;
-
-    window.open(
-      currentURL,
-      '_blank',
-      `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`
-    );
-
-    localStorage.setItem('desktopOpened', 'true'); // Mark as opened once
+function openInDesktopOnce() {
+  if (localStorage.getItem('desktopOpened') === 'true') {
+    return; // Already opened once, skip opening again
   }
 
-  // Function to speak welcome message using Web Speech API
-  function speakWelcomeMessage() {
-    const message = new SpeechSynthesisUtterance(
-      "Hi, I’m Pratik Abhang, a computer engineer. Welcome to my portfolio, where technology transforms ideas into reality."
-    );
+  const currentURL = window.location.href;
+  const width = 1920;
+  const height = 1080;
+  const left = (screen.width - width) / 2;
+  const top = (screen.height - height) / 2;
 
-    message.lang = 'en-US';
-    message.rate = 1;
-    message.pitch = 1;
+  window.open(
+    currentURL,
+    '_blank',
+    `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`
+  );
 
-    // Get available voices and filter for English voices
-    const voices = speechSynthesis.getVoices();
-    const englishVoices = voices.filter(voice => voice.lang.toLowerCase().startsWith('en'));
+  localStorage.setItem('desktopOpened', 'true'); // Mark as opened once
+}
 
-    // Try to select a preferred male voice, fallback to first English or first voice
-    const maleVoiceNameHints = ['google us english'];
-    let maleVoice = englishVoices.find(voice =>
-      maleVoiceNameHints.some(hint => voice.name.toLowerCase().includes(hint))
-    ) || englishVoices[0] || voices[0];
-
-    message.voice = maleVoice;
-    speechSynthesis.speak(message);
+// Function to speak welcome message using Web Speech API only once
+function speakWelcomeMessageOnce() {
+  if (localStorage.getItem('voicePlayed') === 'true') {
+    return; // Already spoken once, skip
   }
 
-  // Initialize speech after 5 seconds delay, ensuring voices are loaded
-  function initSpeechAfterDelay() {
-    setTimeout(() => {
-      // Check if voices are loaded; if not, wait for onvoiceschanged event
-      if (speechSynthesis.getVoices().length === 0 && speechSynthesis.onvoiceschanged !== undefined) {
-        speechSynthesis.onvoiceschanged = () => {
-          speakWelcomeMessage();
-          speechSynthesis.onvoiceschanged = null; // Remove event listener after first call
-        };
-      } else {
-        speakWelcomeMessage();
-      }
-    }, 5000); // Delay of 5 seconds
-  }
+  const message = new SpeechSynthesisUtterance(
+    "Hi, I’m Pratik Abhang, a computer engineer. Welcome to my portfolio, where technology transforms ideas into reality."
+  );
 
-  // On window load, open desktop window once and speak welcome message
-  window.addEventListener('load', initSpeechAfterDelay);
+  message.lang = 'en-US';
+  message.rate = 1;
+  message.pitch = 1;
 
-  window.onload = function () {
-    openInDesktopOnce();
+  // Get available voices and filter for English voices
+  const voices = speechSynthesis.getVoices();
+  const englishVoices = voices.filter(voice => voice.lang.toLowerCase().startsWith('en'));
 
-    // Speak welcome message after 5 seconds on every page load
-    setTimeout(() => {
-      // On mobile, speech might require user interaction; check speaking state
-      if (speechSynthesis.speaking || speechSynthesis.pending) return;
-      speakWelcomeMessage();
-    }, 5000);
+  // Try to select a preferred male voice, fallback to first English or first voice
+  const maleVoiceNameHints = ['daniel'];
+  let maleVoice = englishVoices.find(voice =>
+    maleVoiceNameHints.some(hint => voice.name.toLowerCase().includes(hint))
+  ) || englishVoices[0] || voices[0];
+
+  message.voice = maleVoice;
+
+  // After speech ends, mark voice as played once
+  message.onend = () => {
+    localStorage.setItem('voicePlayed', 'true');
   };
+
+  speechSynthesis.speak(message);
+}
+
+// Initialize speech after 3 seconds delay, ensuring voices are loaded
+function initSpeechAfterDelay() {
+  setTimeout(() => {
+    if (speechSynthesis.getVoices().length === 0 && speechSynthesis.onvoiceschanged !== undefined) {
+      speechSynthesis.onvoiceschanged = () => {
+        speakWelcomeMessageOnce();
+        speechSynthesis.onvoiceschanged = null; // Remove event listener after first call
+      };
+    } else {
+      speakWelcomeMessageOnce();
+    }
+  }, 3000); // Delay 3 seconds as requested
+}
+
+// On window load, open desktop window once and speak welcome message once only
+window.addEventListener('load', () => {
+  openInDesktopOnce();
+  initSpeechAfterDelay();
+});
+
 });
