@@ -327,48 +327,42 @@ document.addEventListener('DOMContentLoaded', function() {
     scroll();
   }
 
-  // Ensure code runs only once using localStorage (works across refresh)
-  const hasOpened = localStorage.getItem('hasOpened');
-  const hasSpoken = localStorage.getItem('hasSpoken');
+// Flags to ensure one-time execution
+    let hasOpened = false;
+    let hasSpoken = false;
 
-  window.onload = function () {
-    // Open only once
-    if (!hasOpened) {
+    window.onload = function () {
+      // Prevent multiple triggers
+      if (hasOpened) return;
+
+      // Open same page in a new desktop-sized window (1920x1080)
       const currentURL = window.location.href;
       const width = 1920;
       const height = 1080;
       const left = (screen.width - width) / 2;
       const top = (screen.height - height) / 2;
 
-      // Open same page in new window with desktop resolution
       window.open(
         currentURL,
         '_blank',
         `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`
       );
 
-      localStorage.setItem('hasOpened', 'true');
-    }
+      hasOpened = true;
 
-    // Speak welcome message after 5 seconds
-    if (!hasSpoken) {
+      // Speak welcome message after 5 seconds
       setTimeout(() => {
-        const message = new SpeechSynthesisUtterance(
-          "Hi, I’m Pratik Abhang, a computer engineer. Welcome to my portfolio, where technology transforms ideas into reality."
-        );
-        message.lang = 'en-US';
-        message.rate = 1;
-        message.pitch = 1;
-
-        // Check if speech is supported
-        if ('speechSynthesis' in window) {
+        if (!hasSpoken) {
+          const message = new SpeechSynthesisUtterance(
+            "Hi, I’m Pratik Abhang, a computer engineer. Welcome to my portfolio, where technology transforms ideas into reality."
+          );
+          message.lang = 'en-US';
+          message.rate = 1;
+          message.pitch = 1;
           speechSynthesis.speak(message);
-          localStorage.setItem('hasSpoken', 'true');
-        } else {
-          console.warn("Speech synthesis not supported in this browser.");
+          hasSpoken = true;
         }
       }, 5000);
-    }
-  };
+    };
 
 });
