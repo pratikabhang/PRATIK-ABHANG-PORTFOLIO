@@ -1619,10 +1619,10 @@ header.scrolled {
   color: #003366;
 }
 
-
 /* Projects Section */
 .projects-container {
   max-width: 1200px;
+  min-height: 50px;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -1638,6 +1638,8 @@ header.scrolled {
   opacity: 0;
   transform: translateY(20px);
   border: 3px solid var(--border-color);
+
+  max-height: 300px; /* limit max height to reduce card height */
 }
 
 .project-card.animate {
@@ -1651,7 +1653,7 @@ header.scrolled {
 
 .project-image {
   flex: 1;
-  min-height: 50px;
+  min-height: 150px; /* reduced min-height */
   overflow: hidden;
 }
 
@@ -1668,29 +1670,29 @@ header.scrolled {
 
 .project-details {
   flex: 1;
-  padding: 2rem;
+  padding: 1rem 1.5rem; /* reduced padding */
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .project-details h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+  font-size: 1.5rem; /* smaller title font */
+  margin-bottom: 0.5rem;
   color: var(--text-color);
 }
 
 .project-tech {
   color: var(--icon-color);
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
   font-style: italic;
 }
 
 .project-desc {
   color: var(--text-color);
-  margin-bottom: 2rem;
-  line-height: 1.8;
+  margin-bottom: 1rem;
+  line-height: 1.5;
 }
 
 .project-links {
@@ -1718,6 +1720,7 @@ header.scrolled {
 .project-links a i {
   font-size: 1rem;
 }
+
 
 /* Contact Section */
 .contact-container {
