@@ -177,6 +177,66 @@
   --hover-color: rgba(255, 235, 59, 0.08); /* Yellow-tinted hover */
 }
 
+
+
+/* === Default Hover Effect (Uses Variable) === */
+.details-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow);
+}
+
+/* === Light Theme Shadows by Color === */
+[data-color="blue"] {
+  --hover-shadow: 0 10px 25px rgba(26, 115, 232, 0.25);
+}
+[data-color="green"] {
+  --hover-shadow: 0 10px 25px rgba(11, 128, 67, 0.25);
+}
+[data-color="red"] {
+  --hover-shadow: 0 10px 25px rgba(211, 47, 47, 0.25);
+}
+[data-color="yellow"] {
+  --hover-shadow: 0 10px 25px rgba(251, 192, 45, 0.25);
+}
+[data-color="black"] {
+  --hover-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* === Dark Theme Shadows by Color === */
+[data-theme="dark"][data-color="blue"] {
+  --hover-shadow: 0 10px 25px rgba(138, 180, 248, 0.25);
+}
+[data-theme="dark"][data-color="green"] {
+  --hover-shadow: 0 10px 25px rgba(129, 201, 149, 0.25);
+}
+[data-theme="dark"][data-color="red"] {
+  --hover-shadow: 0 10px 25px rgba(242, 139, 130, 0.25);
+}
+[data-theme="dark"][data-color="yellow"] {
+  --hover-shadow: 0 10px 25px rgba(255, 235, 59, 0.25);
+}
+[data-theme="dark"][data-color="black"] {
+  --hover-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Base HTML and Body styles */
 html {
   scroll-behavior: smooth;
@@ -1049,23 +1109,185 @@ header.scrolled {
   color: #333;
 }
 
-
-/* Timeline Styles */
+/* Timeline Section */
 .timeline {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 15px 15px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color: var(--primary-color);
+  top: 105px;
+  bottom: 145px;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.timeline-container {
+  position: relative;
+  padding: 15px -15px 15px 15px;
+  background-color: inherit;
+  width: 50%;
+  margin-bottom: 40px;
+  animation: fadeInUp 0.6s forwards;
+  opacity: 0;
+}
+
+.timeline-container::after {
+  content: attr(data-year);
+  position: absolute;
+  min-width: 60px;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 4px;
+  top: 80px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  z-index: 1;
+  box-shadow: 0 0 0 4px var(--card-bg);
+  /* This stays static — not floating */
+}
+
+/* Circle at the bottom of timeline line */
+.timeline::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  margin-left: -12px; /* center circle */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+/* Left side */
+.left {
+  left: calc(0% - 40px); /* Added gap: push left containers 30px left */
+}
+
+.left::after {
+  right: -70px;
+}
+
+/* Right side */
+.right {
+  left: calc(50% + 40px); /* Added gap: push right containers 30px right */
+}
+
+.right::after {
+  left: -70px;
+}
+
+.timeline-content {
+  position: relative;
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+  border: 3px solid var(--border-color);
+  animation: floatContainer 3s ease-in-out infinite; /* 🔸 Added float only here */
+}
+
+.timeline-content:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-header h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.timeline-details p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.timeline-details i {
+  width: 20px;
+  text-align: center;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🔸 Floating effect only for content */
+@keyframes floatContainer {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Responsive adjustments for timeline */
+@media screen and (max-width: 768px) {
+  .timeline::before {
+    left: 31px;
+  }
+
+  .timeline-container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  .timeline-container::after {
+    left: 15px;
+    right: auto;
+  }
+
+  /* Both left and right timeline badges positioned on left on small screens */
+  .left::after, 
+  .right::after {
+    left: 15px;
+    right: auto;
+  }
+
+  .right {
+    left: 0%;
+  }
+}
+
+
+/* Experience Timeline (itimeline) */
+.itimeline {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
   padding: 15px 15px;
 }
 
-.timeline-container {
+.itimeline-container {
   position: relative;
   margin-bottom: 40px;
   animation: fadeInUp 0.6s forwards;
   opacity: 0;
 }
 
-.timeline-content {
+.itimeline-content {
   position: relative;
   background: var(--card-bg);
   border-radius: 10px;
@@ -1075,12 +1297,12 @@ header.scrolled {
   border: 3px solid var(--border-color);
 }
 
-.timeline-content:hover {
+.itimeline-content:hover {
   transform: translateY(-6px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.timeline-year-inside {
+.itimeline-year-inside {
   position: absolute;
   top: 50%;
   right: 15px;
@@ -1103,6 +1325,8 @@ header.scrolled {
   z-index: 2;
   animation: float-year 3s ease-in-out infinite;
 }
+
+
 
 /* Skills Section */
 .skills-container {
