@@ -296,7 +296,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (localStorage.getItem('welcomeVoicePlayed')) return;
     
     const message = new SpeechSynthesisUtterance(
-      "Hi, I'm Pratik Abhang, a computer engineer. Welcome to my portfolio, where technology transforms ideas into reality."
+      "Hi, Welcome to Pratik Abhang portfolio, where technology transforms ideas into reality."
     );
     
     message.lang = 'en-US';

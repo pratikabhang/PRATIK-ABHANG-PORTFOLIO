@@ -335,7 +335,7 @@ section {
 .theme-label {
   position: relative;
   display: block;
-  top: 350px;
+  top: 290px;
   width: 44px;
   left: 45px;
   height: 80px;
@@ -1617,8 +1617,8 @@ footer {
 
 .auto-scroll-container {
   position: fixed;
-  top: 465px;
-  left: 63px;
+  top: 410px;
+  left: 62px;
   z-index: 9999;
   background: transparent;
   display: flex;
