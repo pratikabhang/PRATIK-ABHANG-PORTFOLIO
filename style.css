@@ -2190,7 +2190,7 @@ footer {
 /* RESPONSIVE DESIGN - MEDIA QUERIES */
 
 /* For screens up to 1400px */
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 4000px) {
   #home {
     height: 83vh;
     margin-bottom: 6rem;
@@ -2207,7 +2207,7 @@ footer {
 }
 
 /* For screens up to 1200px */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 2000px) {
   #desktop-nav {
     display: none;
   }
@@ -2257,7 +2257,7 @@ footer {
 }
 
 /* For screens up to 800px */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
   /* Adjust project card layout */
   .project-card {
     flex-direction: column;
@@ -2280,7 +2280,7 @@ footer {
 }
 
 /* For screens up to 600px (mobile devices) */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
   #contact,
   footer {
     height: 40vh;
@@ -2370,7 +2370,7 @@ footer {
 }
 
 /* For very small screens up to 400px */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 1000px) {
   .section__pic-container {
     width: 200px;
     height: 200px;
@@ -2391,5 +2391,23 @@ footer {
   /* Single column layout for smallest screens */
   .skills-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+
+@media screen and (orientation: lanscape) {
+  body::before {
+    content: "Please rotate your device to landscape mode.";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 1rem;
   }
 }

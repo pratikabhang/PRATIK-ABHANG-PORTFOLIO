@@ -326,42 +326,53 @@ document.addEventListener('DOMContentLoaded', function() {
 
     scroll();
   }
-// Flags to make sure it runs only once
-let hasOpened = false;
-let hasSpoken = false;
 
-window.onload = function () {
-  if (hasOpened) return; // Prevent multiple openings
+// Detect mobile devices
+  const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-  const currentURL = window.location.href; // Get current page URL
-  const width = 1920;
-  const height = 1080;
-  const left = (screen.width - width) / 2;
-  const top = (screen.height - height) / 2;
+  // Only run if not done before
+  const hasOpened = localStorage.getItem('hasOpened');
+  const hasSpoken = localStorage.getItem('hasSpoken');
 
-  // Open this same page in a desktop-like window on all devices
-  window.open(
-    currentURL,
-    '_blank',
-    `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`
-  );
-
-  hasOpened = true;
-
-  // Speak welcome message after 5 seconds
-  setTimeout(() => {
-    if (!hasSpoken) {
-      const message = new SpeechSynthesisUtterance(
-        "Hi, I’m Pratik Abhang, a computer engineer. Welcome to my portfolio, where technology transforms ideas into reality."
-      );
-      message.lang = 'en-US';
-      message.rate = 1;
-      message.pitch = 1;
-      speechSynthesis.speak(message);
-      hasSpoken = true;
+  window.onload = function () {
+    // 1. Suggest Landscape mode for mobile
+    if (isMobile && screen.orientation && screen.orientation.type.includes("portrait")) {
+      alert("For best experience, please rotate your device to landscape mode.");
     }
-  }, 5000);
-};
 
+    // 2. Open in desktop-like window once (where supported)
+    if (!hasOpened) {
+      const currentURL = window.location.href;
+      const width = 1920;
+      const height = 1080;
+      const left = (screen.width - width) / 2;
+      const top = (screen.height - height) / 2;
 
+      // Try to open new desktop-size window
+      try {
+        const win = window.open(
+          currentURL,
+          '_blank',
+          `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`
+        );
+        if (win) localStorage.setItem('hasOpened', 'true'); // only set if it opens
+      } catch (e) {
+        console.warn("Popup blocked or unsupported.");
+      }
+    }
+
+    // 3. Speak message only once
+    if (!hasSpoken && 'speechSynthesis' in window) {
+      setTimeout(() => {
+        const message = new SpeechSynthesisUtterance(
+          "Hi, I’m Pratik Abhang, a computer engineer. Welcome to my portfolio, where technology transforms ideas into reality."
+        );
+        message.lang = 'en-US';
+        message.rate = 1;
+        message.pitch = 1;
+        speechSynthesis.speak(message);
+        localStorage.setItem('hasSpoken', 'true');
+      }, 5000);
+    }
+  };
 });
