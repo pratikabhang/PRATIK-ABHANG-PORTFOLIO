@@ -1222,7 +1222,7 @@ header.scrolled {
 /* Location arrow box - reversed placement */
 .location-arrow {
   position: absolute;
-  top: 42%;
+  top: 47%;
   transform: translateY(-50%);
   background-color: var(--primary-color);
   color: white;
