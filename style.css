@@ -1109,7 +1109,6 @@ header.scrolled {
   color: #333;
 }
 
-/* Timeline Section */
 .timeline {
   position: relative;
   max-width: 1400px;
@@ -1130,7 +1129,7 @@ header.scrolled {
 
 .timeline-container {
   position: relative;
-  padding: 15px -15px 15px 15px;
+  padding: 15px 15px 15px 15px;
   background-color: inherit;
   width: 50%;
   margin-bottom: 40px;
@@ -1153,7 +1152,6 @@ header.scrolled {
   font-weight: bold;
   z-index: 1;
   box-shadow: 0 0 0 4px var(--card-bg);
-  /* This stays static — not floating */
 }
 
 /* Circle at the bottom of timeline line */
@@ -1162,23 +1160,23 @@ header.scrolled {
   position: absolute;
   left: 50%;
   bottom: 0;
-  margin-left: -12px; /* center circle */
+  margin-left: -12px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
   z-index: 1;
 }
 
-/* Left side */
+/* Left side timeline container */
 .left {
-  left: calc(0% - 40px); /* Added gap: push left containers 30px left */
+  left: calc(0% - 40px);
 }
 
 .left::after {
   right: -70px;
 }
 
-/* Right side */
+/* Right side timeline container */
 .right {
-  left: calc(50% + 40px); /* Added gap: push right containers 30px right */
+  left: calc(50% + 40px);
 }
 
 .right::after {
@@ -1193,7 +1191,8 @@ header.scrolled {
   box-shadow: var(--card-shadow);
   transition: all 0.3s ease;
   border: 3px solid var(--border-color);
-  animation: floatContainer 3s ease-in-out infinite; /* 🔸 Added float only here */
+  animation: floatContainer 3s ease-in-out infinite;
+  z-index: 2;
 }
 
 .timeline-content:hover {
@@ -1220,6 +1219,53 @@ header.scrolled {
   text-align: center;
 }
 
+/* Location arrow box - reversed placement */
+.location-arrow {
+  position: absolute;
+  top: 42%;
+  transform: translateY(-50%);
+  background-color: var(--primary-color);
+  color: white;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  white-space: nowrap;
+  z-index: 3;
+  cursor: default;
+  user-select: none;
+}
+
+/* Arrow shape */
+.location-arrow::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 8px solid transparent;
+}
+
+/* If timeline container is on the left, show location arrow on LEFT side */
+.left .location-arrow {
+  left: 650px; /* Adjust spacing */
+}
+
+.left .location-arrow::after {
+  right: 100%; /* Arrow on right edge of the box */
+  border-right-color: var(--primary-color);
+}
+
+/* If timeline container is on the right, show location arrow on RIGHT side */
+.right .location-arrow {
+  right: 650px; /* Adjust spacing */
+}
+
+.right .location-arrow::after {
+  left: 100%; /* Arrow on left edge of the box */
+  border-left-color: var(--primary-color);
+}
+
 /* Animations */
 @keyframes fadeInUp {
   from {
@@ -1232,7 +1278,6 @@ header.scrolled {
   }
 }
 
-/* 🔸 Floating effect only for content */
 @keyframes floatContainer {
   0%, 100% {
     transform: translateY(0);
@@ -1242,7 +1287,7 @@ header.scrolled {
   }
 }
 
-/* Responsive adjustments for timeline */
+/* Responsive adjustments */
 @media screen and (max-width: 768px) {
   .timeline::before {
     left: 31px;
@@ -1259,7 +1304,7 @@ header.scrolled {
     right: auto;
   }
 
-  /* Both left and right timeline badges positioned on left on small screens */
+  /* Position all years on left on small screens */
   .left::after, 
   .right::after {
     left: 15px;
@@ -1268,6 +1313,21 @@ header.scrolled {
 
   .right {
     left: 0%;
+  }
+
+  /* Location arrow becomes block below content on small screens */
+  .location-arrow {
+    position: relative !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin-top: 10px;
+    transform: none !important;
+    border-radius: 4px;
+    box-shadow: var(--card-shadow);
+  }
+
+  .location-arrow::after {
+    display: none;
   }
 }
 
