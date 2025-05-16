@@ -1335,13 +1335,12 @@ header.scrolled {
   }
 }
 
-
 /* Experience Timeline (itimeline) */
 .itimeline {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 15px 15px;
+  padding: 15px;
 }
 
 .itimeline-container {
@@ -1355,10 +1354,12 @@ header.scrolled {
   position: relative;
   background: var(--card-bg);
   border-radius: 10px;
-  padding: 20px 70px 20px 20px;
+  padding: 24px 70px 24px 24px;
   box-shadow: var(--card-shadow);
   transition: all 0.3s ease;
   border: 3px solid var(--border-color);
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
 
 .itimeline-content:hover {
@@ -1374,20 +1375,45 @@ header.scrolled {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
-  gap: 0.5rem;
   padding: 6px 10px;
-  width: auto;
-  height: auto;
   border-radius: 10px;
   border: 3px solid;
   background-color: var(--primary-color);
   color: white;
   font-size: 0.9rem;
-  text-align: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   z-index: 2;
   animation: float-year 3s ease-in-out infinite;
+}
+
+/* Added spacing and emphasis */
+.itimeline-header .role {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-heading, #222);
+}
+
+.itimeline-details .company,
+.itimeline-details .location {
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  color: #444;
+}
+
+.itimeline-details .location {
+  font-style: italic;
+}
+
+.experience-list {
+  margin-top: 0.6rem;
+  padding-left: 1.2rem;
+  color: #333;
+}
+
+.experience-list li {
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
 }
 
 
