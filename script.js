@@ -326,47 +326,42 @@ document.addEventListener('DOMContentLoaded', function() {
 
     scroll();
   }
-
-  let hasOpened = false;
-
-  function openResponsiveDesktopViewOnce() {
-    if (hasOpened) return;  // Exit if already opened
-
-    const url = "https://pratiksunilabhang.netlify.app/";
-    const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-    if (isMobile) {
-      window.open(url, '_blank');
-    } else {
-      const width = 1920;
-      const height = 1080;
-      const left = (screen.width - width) / 2;
-      const top = (screen.height - height) / 2;
-
-      window.open(
-        url,
-        '_blank',
-        `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`
-      );
-    }
-
-    hasOpened = true;  // Mark as opened
-  }
-
+// Flags to make sure it runs only once
+let hasOpened = false;
 let hasSpoken = false;
 
-window.onload = function() {
-  if (!hasSpoken) {
-    setTimeout(() => {
-      const message = new SpeechSynthesisUtterance("Hi, I’m Pratik Abhang, a computer engineer, welcome to my portfolio where technology transforms ideas into reality.");
-      message.lang = 'en-US';   // language and accent
-      message.rate = 1;         // speed of speech (0.1 to 10)
-      message.pitch = 1;        // voice pitch (0 to 2)
+window.onload = function () {
+  if (hasOpened) return; // Prevent multiple openings
 
+  const currentURL = window.location.href; // Get current page URL
+  const width = 1920;
+  const height = 1080;
+  const left = (screen.width - width) / 2;
+  const top = (screen.height - height) / 2;
+
+  // Open this same page in a desktop-like window on all devices
+  window.open(
+    currentURL,
+    '_blank',
+    `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`
+  );
+
+  hasOpened = true;
+
+  // Speak welcome message after 5 seconds
+  setTimeout(() => {
+    if (!hasSpoken) {
+      const message = new SpeechSynthesisUtterance(
+        "Hi, I’m Pratik Abhang, a computer engineer. Welcome to my portfolio, where technology transforms ideas into reality."
+      );
+      message.lang = 'en-US';
+      message.rate = 1;
+      message.pitch = 1;
       speechSynthesis.speak(message);
       hasSpoken = true;
-    }, 5000); // 5 seconds delay
-  }
+    }
+  }, 5000);
 };
+
 
 });
