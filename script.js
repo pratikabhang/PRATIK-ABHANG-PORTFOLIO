@@ -327,15 +327,12 @@ document.addEventListener('DOMContentLoaded', function() {
     scroll();
   }
 
-// Flags to ensure one-time execution
-    let hasOpened = false;
-    let hasSpoken = false;
+ // Function to open the page in desktop mode once, using localStorage to remember
+    function openInDesktopOnce() {
+      if (localStorage.getItem('desktopOpened') === 'true') {
+        return; // Already opened once, don't open again
+      }
 
-    window.onload = function () {
-      // Prevent multiple triggers
-      if (hasOpened) return;
-
-      // Open same page in a new desktop-sized window (1920x1080)
       const currentURL = window.location.href;
       const width = 1920;
       const height = 1080;
@@ -348,21 +345,28 @@ document.addEventListener('DOMContentLoaded', function() {
         `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`
       );
 
-      hasOpened = true;
+      localStorage.setItem('desktopOpened', 'true'); // Mark as opened once
+    }
 
-      // Speak welcome message after 5 seconds
+    // Speak welcome message after 5 seconds (runs every page load)
+    function speakWelcomeMessage() {
+      const message = new SpeechSynthesisUtterance(
+        "Hi, I’m Pratik Abhang, a computer engineer. Welcome to my portfolio, where technology transforms ideas into reality."
+      );
+      message.lang = 'en-US';
+      message.rate = 1;
+      message.pitch = 1;
+      speechSynthesis.speak(message);
+    }
+
+    window.onload = function () {
+      openInDesktopOnce();
+
+      // Speak after 5 seconds every page load
       setTimeout(() => {
-        if (!hasSpoken) {
-          const message = new SpeechSynthesisUtterance(
-            "Hi, I’m Pratik Abhang, a computer engineer. Welcome to my portfolio, where technology transforms ideas into reality."
-          );
-          message.lang = 'en-US';
-          message.rate = 1;
-          message.pitch = 1;
-          speechSynthesis.speak(message);
-          hasSpoken = true;
-        }
+        // On mobile, user interaction might be needed
+        if (speechSynthesis.speaking || speechSynthesis.pending) return;
+        speakWelcomeMessage();
       }, 5000);
     };
-
 });
