@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+  
       // Set viewport to desktop size
       const viewportMeta = document.querySelector('meta[name="viewport"]');
       viewportMeta.content = "width=980, initial-scale=1.0, maximum-scale=1.0, user-scalable=no";
@@ -9,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Get saved theme preference or use system preference
       const savedTheme = localStorage.getItem('theme') || 
-                        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                        (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
       const savedColor = localStorage.getItem('color') || 'black';
       
       // Apply saved theme
