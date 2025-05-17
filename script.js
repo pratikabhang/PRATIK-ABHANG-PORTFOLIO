@@ -305,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const message = new SpeechSynthesisUtterance(
-      "Welcome! to Pratik Abhang’s Portfolio!"
+      "Welcome to Pratik Abhang’s Portfolio!"
     );
 
     message.lang = 'en-US';
