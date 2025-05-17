@@ -335,4 +335,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 3000);
   });
 
+  // Disable Ctrl + '+' or Ctrl + '-' keys for zoom on desktop
+window.addEventListener('keydown', function(e) {
+  if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '=')) {
+    e.preventDefault();
+  }
+});
+
+// Disable zoom via mouse wheel + Ctrl on desktop
+window.addEventListener('wheel', function(e) {
+  if (e.ctrlKey) {
+    e.preventDefault();
+  }
+}, { passive: false });
+
+
 });
