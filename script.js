@@ -295,17 +295,21 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
 function speakWelcomeMessage() {
+  if (speechSynthesis.speaking) {
+    // Already speaking, do not start another speech
+    return;
+  }
+
   const message = new SpeechSynthesisUtterance(
     "Welcome to Pratik Abhang’s Portfolio!"
   );
 
   message.lang = 'en-US';
   message.rate = 1;  // Normal speed
-  message.pitch = 2; // Normal pitch
+  message.pitch = 2; // Higher pitch
 
   function setVoiceAndSpeak() {
     const voices = speechSynthesis.getVoices();
-    // Use the first available voice, any gender or type
     message.voice = voices[0] || null;
     speechSynthesis.speak(message);
   }
@@ -320,12 +324,13 @@ function speakWelcomeMessage() {
   }
 }
 
-// Run 3 seconds after page load, every time page refreshes
+// Run 3 seconds after page load, only once
 window.addEventListener('load', () => {
   setTimeout(() => {
     speakWelcomeMessage();
   }, 3000);
 });
+
 
 
     });
