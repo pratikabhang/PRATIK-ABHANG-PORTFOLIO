@@ -306,7 +306,7 @@ function speakWelcomeMessage() {
 
   message.lang = 'en-US';
   message.rate = 1;  // Normal speed
-  message.pitch = 2; // Higher pitch
+  message.pitch = 3; // Higher pitch
 
   function setVoiceAndSpeak() {
     const voices = speechSynthesis.getVoices();
