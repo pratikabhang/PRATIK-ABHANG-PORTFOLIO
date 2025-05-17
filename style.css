@@ -486,7 +486,7 @@
 
     .nav-links {
       display: flex;
-      gap: 0.5rem;
+      gap: 0.1rem;
     }
 
     .nav-links li {
@@ -573,7 +573,7 @@
     }
 
     .logo {
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: bold;
       cursor: pointer;
       display: inline-block;
