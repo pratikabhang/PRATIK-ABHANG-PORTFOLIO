@@ -294,46 +294,38 @@ document.addEventListener('DOMContentLoaded', function() {
         scroll();
       }
 
-      // Voice greeting functionality (plays once after 3 seconds)
-      function speakWelcomeMessage() {
-        // Check if already spoken
-        if (localStorage.getItem('welcomeVoicePlayed')) return;
-        
-        const message = new SpeechSynthesisUtterance(
-          "Hi, Welcome to Pratik Abhang portfolio, where technology transforms ideas into reality."
-        );
-        
-        message.lang = 'en-US';
-        message.rate = 1;
-        message.pitch = 1;
-        
-        // Get voices and try to find a suitable one
-        const voices = speechSynthesis.getVoices();
-        const preferredVoices = voices.filter(v => v.lang.includes('en'));
-        if (preferredVoices.length > 0) {
-          message.voice = preferredVoices[0];
-        }
-        
-        // Mark as played
-        message.onend = () => {
-          localStorage.setItem('welcomeVoicePlayed', 'true');
-        };
-        
-        speechSynthesis.speak(message);
-      }
+function speakWelcomeMessage() {
+  const message = new SpeechSynthesisUtterance(
+    "Welcome to Pratik Abhang’s Portfolio!"
+  );
 
-      // Initialize voice greeting after 3 seconds
-      setTimeout(() => {
-        // If voices are already loaded
-        if (speechSynthesis.getVoices().length > 0) {
-          speakWelcomeMessage();
-        } 
-        // If voices need to be loaded
-        else {
-          speechSynthesis.onvoiceschanged = () => {
-            speakWelcomeMessage();
-            speechSynthesis.onvoiceschanged = null;
-          };
-        }
-      }, 3000);
+  message.lang = 'en-US';
+  message.rate = 1;  // Normal speed
+  message.pitch = 2; // Normal pitch
+
+  function setVoiceAndSpeak() {
+    const voices = speechSynthesis.getVoices();
+    // Use the first available voice, any gender or type
+    message.voice = voices[0] || null;
+    speechSynthesis.speak(message);
+  }
+
+  if (speechSynthesis.getVoices().length > 0) {
+    setVoiceAndSpeak();
+  } else {
+    speechSynthesis.onvoiceschanged = () => {
+      setVoiceAndSpeak();
+      speechSynthesis.onvoiceschanged = null;
+    };
+  }
+}
+
+// Run 3 seconds after page load, every time page refreshes
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    speakWelcomeMessage();
+  }, 3000);
+});
+
+
     });
