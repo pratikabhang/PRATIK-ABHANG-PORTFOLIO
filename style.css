@@ -500,7 +500,7 @@
     .nav-links a {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.3rem;
       font-size: 1.2rem;
       font-weight: 500;
       color: var(--text-color);
@@ -573,7 +573,7 @@
     }
 
     .logo {
-      font-size: 2.2rem;
+      font-size: 2.3rem;
       font-weight: bold;
       cursor: pointer;
       display: inline-block;
