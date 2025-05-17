@@ -113,54 +113,61 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Contact form handling
-  const form = document.getElementById('contactForm');
-  
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const formData = new FormData(form);
-      const formStatus = document.createElement('p');
-      formStatus.className = 'form-status';
-      
-      fetch(form.action, {
+const form = document.getElementById('contactForm');
+const sendBtn = document.getElementById('sendBtn');
+
+if (form && sendBtn) {
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const oldStatus = form.querySelector('.form-status');
+    if (oldStatus) oldStatus.remove();
+
+    // Start loading
+    sendBtn.classList.add('sending');
+    const btnIcon = sendBtn.querySelector('i');
+    const btnText = sendBtn.querySelector('span');
+    btnIcon.className = 'fa-solid fa-spinner fa-spin';
+    btnText.textContent = 'Sending...';
+
+    const formData = new FormData(form);
+    const formStatus = document.createElement('p');
+    formStatus.className = 'form-status';
+
+    try {
+      const response = await fetch(form.action, {
         method: 'POST',
         body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      })
-      .then(response => {
-        if (response.ok) {
-          formStatus.textContent = 'Message sent successfully!';
-          formStatus.style.color = 'var(--secondary-color)';
-          form.reset();
-        } else {
-          throw new Error('Network response was not ok');
-        }
-      })
-      .catch(error => {
-        formStatus.textContent = 'Oops! There was a problem sending your message.';
-        formStatus.style.color = 'var(--accent-color)';
-        console.error('Error:', error);
-      })
-      .finally(() => {
-        const existingStatus = form.querySelector('.form-status');
-        if (existingStatus) {
-          existingStatus.remove();
-        }
-        
-        form.appendChild(formStatus);
-        
-        setTimeout(() => {
-          formStatus.style.opacity = '0';
-          setTimeout(() => {
-            formStatus.remove();
-          }, 500);
-        }, 5000);
+        headers: { 'Accept': 'application/json' }
       });
-    });
-  }
+
+      if (response.ok) {
+        formStatus.textContent = 'Message sent successfully!';
+        formStatus.classList.add('success');
+        form.reset();
+      } else {
+        throw new Error('Failed to send');
+      }
+    } catch (error) {
+      formStatus.textContent = 'Oops! There was a problem sending your message.';
+      formStatus.classList.add('error');
+      console.error(error);
+    } finally {
+      sendBtn.classList.remove('sending');
+      btnIcon.className = 'fas fa-paper-plane';
+      btnText.textContent = 'Send Message';
+
+      form.appendChild(formStatus);
+      setTimeout(() => formStatus.classList.add('show'), 100);
+
+      setTimeout(() => {
+        formStatus.classList.remove('show');
+        setTimeout(() => formStatus.remove(), 500);
+      }, 5000);
+    }
+  });
+}
+
 
   // Age calculation
   function calculateAge(birthDate) {

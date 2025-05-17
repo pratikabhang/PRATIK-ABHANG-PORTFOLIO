@@ -69,10 +69,14 @@
         <p class="section__text__p1">Hello, I'm</p>
         <h1 class="titleh">Pratik Abhang</h1>
         <p class="section__text__p2"><span id="typed-text"></span></p>
-        <div class="btn-container">
-          <button class="btn btn-color-2" onclick="window.open('./files/pratikabhang.pdf')"><i class="fa-solid fa-download"></i> My Resume</button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'"><i class="fa-solid fa-briefcase"></i> Hire Me</button>
-        </div>
+<div class="btn-container">
+  <button class="btn btn-color-2" onclick="window.open('./files/pratikabhang.pdf', '_blank')">
+    <i class="fa-solid fa-download"></i> My Resume
+  </button>
+  <button class="btn btn-color-1" onclick="location.href='./#contact'">
+    <i class="fa-solid fa-briefcase"></i> Hire Me
+  </button>
+</div>
       </div>
 
       <div class="section__pic-container">
@@ -385,20 +389,28 @@
         </div>
       </div>
 
-      <form class="contact-form" id="contactForm" action="https://formspree.io/f/xwpowbev" method="POST">
-        <div class="form-group">
-          <input type="text" name="name" placeholder="Your Name" required />
-        </div>
-        <div class="form-group">
-          <input type="email" name="email" placeholder="Your Email" required />
-        </div>
-        <div class="form-group">
-          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-        </div>
-        <div class="form-submit">
-          <button type="submit" class="btn btn-color-1"><i class="fas fa-paper-plane"></i> Send Message to Pratik</button>
-        </div>
-      </form>
+<form class="contact-form" id="contactForm" action="https://formspree.io/f/xwpowbev" method="POST">
+  <div class="form-group">
+    <input type="text" name="name" placeholder="Your Name" required />
+  </div>
+
+  <div class="form-group">
+    <input type="email" name="email" placeholder="Your Email" required />
+  </div>
+
+  <div class="form-group">
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+  </div>
+
+  <div class="form-submit">
+    <button type="submit" class="btn btn-color-1" id="sendBtn">
+      <i class="fas fa-paper-plane"></i>
+      <span>Send Message</span>
+    </button>
+  </div>
+</form>
+
+
     </div>
   </section>
 

@@ -90,10 +90,10 @@
 
 /* Dark mode black scheme */
 [data-theme="dark"][data-color="black"] {
-  --primary-color: #7d7d7d;
+  --primary-color: #898888;
   --secondary-color: #e0e0e0;
   --accent-color: #b3b3b3;
-  --text-color: #ffffff;
+  --text-color: #dddddd;
   --secondary-bg: #121212;
   --border-color: #333333;
   --icon-color: #f5f5f5;
@@ -790,13 +790,16 @@
     .section__pic-container:hover .profile-img {
       transform: scale(0.95);
     }
-.btn-container {
+
+    .btn-container {
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
+/* Base button styles */
 .btn {
   font-weight: 600;
   transition: all 300ms ease;
@@ -815,15 +818,14 @@
   user-select: none;
 }
 
-/* FadeIn animation */
+/* Fade-in animation for button appearance */
 @keyframes fadeIn {
   to {
     opacity: 1;
   }
 }
 
-/* Button variants with border and background */
-
+/* Shared button variant styling */
 .btn-color-1,
 .btn-color-2 {
   border: 0.1rem solid var(--primary-color);
@@ -841,7 +843,7 @@
   color: var(--btn-text-color);
 }
 
-/* Hover effect for variant 1 using new variables */
+/* Hover for filled button */
 .btn-color-1:hover {
   background-color: var(--btn-hover-bg-color);
   color: var(--btn-hover-color);
@@ -856,7 +858,7 @@
   color: var(--text-color);
 }
 
-/* Hover effect for variant 2 */
+/* Hover for outline button */
 .btn-color-2:hover {
   background-color: var(--btn-hover-bg-color);
   color: var(--btn-hover-color);
@@ -864,6 +866,7 @@
   transform: translateY(-5px) scale(1.05);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
+
 
     .socials__vertical {
       display: flex;
@@ -1823,33 +1826,101 @@
       min-height: 150px;
       resize: vertical;
     }
+    /* Submit button styling */
+.form-submit {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
 
-    .form-submit {
-      display: flex;
-      justify-content: center;
-    }
+.form-submit button {
+  width: 100%;
+  padding: 1rem;
+  border: 0.15rem solid var(--primary-color);
+  border-radius: 0.5rem;
+  background-color: var(--primary-color);
+  color: var(--white, #fff);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
 
-    .form-submit button {
-      width: 100%;
-      padding: 1rem;
-      border: none;
-      border-radius: 0.5rem;
-      background: var(--primary-color);
-      color: white;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
+.form-submit button:hover {
+  background-color: var(--secondary-color, #2ecc71);
+  transform: translateY(-3px);
+}
 
-    .form-submit button:hover {
-      background: var(--secondary-color);
-      transform: translateY(-3px);
-    }
+/* Loading border animation */
+.form-submit button.sending {
+  pointer-events: none;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.form-submit button.sending::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 0.5rem;
+  animation: spin-border 1s linear infinite;
+}
+
+@keyframes spin-border {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Status message */
+.form-status {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  margin-inline: auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form-status.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-status.success {
+  background-color: var(--secondary-color, #2ecc71);
+  color: white;
+}
+
+.form-status.error {
+  background-color: var(--accent-color, #e74c3c);
+  color: white;
+}
+
+.form-status.success::before {
+  content: '✅ ';
+}
+
+.form-status.error::before {
+  content: '❌ ';
+}
 
     footer {
       padding: 3rem 2rem;
