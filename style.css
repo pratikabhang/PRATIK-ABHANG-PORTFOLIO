@@ -1837,7 +1837,7 @@
     .theme-nav-container {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       padding: 0.5rem;
       border-radius: 8px;
       background: var(--hover-color);
@@ -1875,7 +1875,7 @@
       width: 18px;
       height: 18px;
       left: 3px;
-      top: 3px;
+      top: 2px;
       background-color: var(--primary-color);
       border-radius: 50%;
       transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -1892,13 +1892,13 @@
 
     .theme-label-nav .fa-moon {
       left: 6px;
-      top: 6px;
+      top: 5px;
       color: #f1c40f;
     }
 
     .theme-label-nav .fa-sun {
       right: 6px;
-      top: 6px;
+      top: 5px;
       color: #f39c12;
     }
 
