@@ -777,10 +777,6 @@
       color: #0077b5;
     }
 
-    .social-icon.github:hover i {
-      color: #333;
-    }
-
     .social-icon.instagram:hover i {
       background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
       -webkit-background-clip: text;
@@ -789,14 +785,6 @@
 
     .social-icon.hackerrank:hover i {
       color: #2ec866;
-    }
-
-    .social-icon.portfolio:hover i {
-      color: #ad00b0;
-    }
-
-    .social-icon.x:hover i {
-      color: #000;
     }
 
     .about-container {
