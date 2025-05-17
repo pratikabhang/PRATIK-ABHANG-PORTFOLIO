@@ -459,6 +459,7 @@ section {
   box-shadow: var(--hover-shadow);
 }
 
+
 header {
   top: 0;
   left: 0;
@@ -529,6 +530,46 @@ header.scrolled {
 
 .nav-links a i {
   font-size: 1rem;
+}
+
+/* === Added styles for theme toggle button === */
+
+#theme-toggle {
+  all: unset; /* reset default button styles */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-color);
+  padding: 0.4rem 0.8rem;
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: color 0.3s ease, border 0.3s ease;
+}
+
+#theme-toggle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  border: 1.2px dashed transparent;
+  transition: border-color 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+#theme-toggle:hover {
+  color: var(--primary-color);
+}
+
+#theme-toggle:hover::before {
+  border-color: var(--primary-color);
+}
+
+#theme-toggle i {
+  font-size: 1.4rem;
 }
 
 .logo {
