@@ -8,10 +8,12 @@ document.addEventListener('DOMContentLoaded', function() {
       const themeSwitch = document.getElementById('theme-switch-nav');
       const colorOptions = document.querySelectorAll('.color-option-nav');
       
-      // Get saved theme preference or use system preference
-      const savedTheme = localStorage.getItem('theme') || 
-                        (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-      const savedColor = localStorage.getItem('color') || 'black';
+// Get saved theme preference or use system preference (favoring light mode)
+const savedTheme = localStorage.getItem('theme') || 
+                   (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+
+const savedColor = localStorage.getItem('color') || 'black';
+
       
       // Apply saved theme
       if (savedTheme === 'dark') {
