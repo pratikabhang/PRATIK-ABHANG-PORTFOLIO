@@ -989,12 +989,27 @@ header.scrolled {
 
 .timeline-container {
   position: relative;
-  padding: 15px 15px 15px 15px;
+  padding: 15px;
   background-color: inherit;
   width: 50%;
   margin-bottom: 40px;
   animation: fadeInUp 0.6s forwards;
   opacity: 0;
+  animation-fill-mode: forwards;
+  box-sizing: border-box;
+}
+
+
+/* If you want to make sure timeline containers are visible after animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .timeline-container::after {
@@ -1030,6 +1045,7 @@ header.scrolled {
   left: -70px;
 }
 
+/* Content box styling */
 .timeline-content {
   position: relative;
   background: var(--card-bg);
@@ -1040,6 +1056,20 @@ header.scrolled {
   border: 3px solid var(--border-color);
   animation: floatContainer 3s ease-in-out infinite;
   z-index: 2;
+ width: 100%;       /* Make content fill the container */
+  box-sizing: border-box;
+  word-wrap: break-word; /* Prevent overflow of long words */
+}
+
+
+
+@keyframes floatContainer {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 .timeline-content:hover {
@@ -1087,19 +1117,34 @@ header.scrolled {
   left: 650px;
 }
 
-.left .location-arrow::after {
-  right: 100%;
-  border-right-color: var(--primary-color);
-}
-
 .right .location-arrow {
   right: 650px;
 }
 
-.right .location-arrow::after {
-  left: 100%;
-  border-left-color: var(--primary-color);
+.left .location-arrow::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  transform: translateY(-50%);
+  border-width: 8px 8px 8px 0;
+  border-style: solid;
+  border-color: transparent var(--primary-color) transparent transparent;
 }
+
+.right .location-arrow::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -8px;
+  transform: translateY(-50%);
+  border-width: 8px 0 8px 8px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--primary-color);
+}
+
+
+
 
 .itimeline {
   position: relative;
@@ -1133,6 +1178,7 @@ header.scrolled {
   box-shadow: var(--hover-shadow);
 }
 
+/* Fixed year position - no float, no animation */
 .itimeline-year-inside {
   position: absolute;
   top: 50%;
@@ -1149,7 +1195,8 @@ header.scrolled {
   font-size: 0.9rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   z-index: 2;
-  animation: float-year 3s ease-in-out infinite;
+  /* Removed float and animation */
+  animation: none !important;
 }
 
 .itimeline-header .role {
@@ -1180,6 +1227,7 @@ header.scrolled {
   margin-bottom: 0.4rem;
   line-height: 1.5;
 }
+
 
 .skills-container {
   max-width: 1200px;
