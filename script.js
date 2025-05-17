@@ -1,36 +1,38 @@
 document.addEventListener('DOMContentLoaded', function() {
       // Set viewport to desktop size
-      const viewportMeta = document.querySelector('meta[name="viewport"]');
-      viewportMeta.content = "width=980, initial-scale=1.0, maximum-scale=1.0, user-scalable=no";
-      
-      // Theme switching functionality
-      const themeSwitch = document.getElementById('theme-switch-nav');
-      const colorOptions = document.querySelectorAll('.color-option-nav');
-      
-      // Get saved theme preference or use system preference
-      const savedTheme = localStorage.getItem('theme') || 
-                        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      const savedColor = localStorage.getItem('color') || 'black';
-      
-      // Apply saved theme
-      if (savedTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        themeSwitch.checked = true;
-      }
-      
-      // Apply saved color
-      document.documentElement.setAttribute('data-color', savedColor);
-      
-      // Theme switch event listener
-      themeSwitch.addEventListener('change', function() {
-        if (this.checked) {
-          document.documentElement.setAttribute('data-theme', 'dark');
-          localStorage.setItem('theme', 'dark');
-        } else {
-          document.documentElement.setAttribute('data-theme', 'light');
-          localStorage.setItem('theme', 'light');
-        }
-      });
+const viewportMeta = document.querySelector('meta[name="viewport"]');
+viewportMeta.content = "width=980, initial-scale=1.0, maximum-scale=1.0, user-scalable=no";
+
+// Theme switching functionality
+const themeSwitch = document.getElementById('theme-switch-nav');
+const colorOptions = document.querySelectorAll('.color-option-nav');
+
+// Get saved theme preference or default to light
+const savedTheme = localStorage.getItem('theme') || 'light';
+const savedColor = localStorage.getItem('color') || 'black';
+
+// Apply saved theme
+if (savedTheme === 'dark') {
+  document.documentElement.setAttribute('data-theme', 'dark');
+  themeSwitch.checked = true;
+} else {
+  document.documentElement.setAttribute('data-theme', 'light');
+  themeSwitch.checked = false;  // ensure switch is off for light
+}
+
+// Apply saved color
+document.documentElement.setAttribute('data-color', savedColor);
+
+// Theme switch event listener
+themeSwitch.addEventListener('change', function() {
+  if (this.checked) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
+  }
+});
 
       // Color options event listeners
       colorOptions.forEach(option => {
