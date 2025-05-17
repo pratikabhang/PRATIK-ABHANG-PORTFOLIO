@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=980, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>PRATIK ABHANG</title>
   <link rel="icon" href="./files/titleprofile.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -9,29 +10,16 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Theme Controls -->
   <div class="theme-controls">
-    <div class="theme-toggle">
-      <input type="checkbox" id="theme-switch" class="theme-switch">
-      <label for="theme-switch" class="theme-label">
-        <i class="fas fa-moon"></i>
-        <i class="fas fa-sun"></i>
-        <span class="theme-ball"></span>
-      </label>
-    </div>
     <div class="auto-scroll-container">
       <button id="autoScrollBtn" aria-label="Toggle Auto Scroll" data-color="#1a73e8">
         <i class="fa-solid fa-computer-mouse"></i>
       </button>
     </div>
-    <div class="color-picker">
-      <button class="color-option" data-color="black"></button>
-      <button class="color-option" data-color="red"></button>
-      <button class="color-option" data-color="yellow"></button>
-      <button class="color-option" data-color="blue"></button>
-      <button class="color-option" data-color="green"></button>
-    </div>
   </div>
 
+  <!-- Header Navigation -->
   <header id="header">
     <nav id="desktop-nav">
       <div class="logo">&lt;pratik abhang/&gt;</div>
@@ -42,13 +30,30 @@
         <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
         <li><a href="#projects"><i class="fas fa-code"></i> Projects</a></li>
         <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-        <li>
-  <button id="theme-toggle"><i class="fa-solid fa-paintbrush"></i></i></button>
-</li>
+        <li class="theme-nav-item">
+          <div class="theme-nav-container">
+            <div class="theme-toggle-nav">
+              <input type="checkbox" id="theme-switch-nav" class="theme-switch-nav">
+              <label for="theme-switch-nav" class="theme-label-nav">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <span class="theme-ball-nav"></span>
+              </label>
+            </div>
+            <div class="color-picker-nav">
+              <button class="color-option-nav" data-color="black"></button>
+              <button class="color-option-nav" data-color="red"></button>
+              <button class="color-option-nav" data-color="yellow"></button>
+              <button class="color-option-nav" data-color="blue"></button>
+              <button class="color-option-nav" data-color="green"></button>
+            </div>
+          </div>
+        </li>
       </ul>
     </nav>
   </header>
 
+  <!-- Home Section -->
   <section id="home">
     <div class="profile__container">
       <div class="socials__vertical">
@@ -76,6 +81,7 @@
     </div>
   </section>
 
+  <!-- About Section -->
   <section id="about">
     <p class="section__text__p1">Get To Know More</p>
     <h1 class="title">About Me</h1>
@@ -175,6 +181,7 @@
     </div>
   </section>
 
+  <!-- Skills Section -->
   <section id="skills">
     <p class="section__text__p1">Explore My</p>
     <h1 class="title">Skills</h1>
@@ -203,6 +210,7 @@
     </div>
   </section>
 
+  <!-- Experience Section -->
   <section id="experience">
     <p class="section__text__p1">Browse My</p>
     <h1 class="title">Experience</h1>
@@ -250,89 +258,90 @@
     </div>
   </section>
 
+  <!-- Projects Section -->
   <section id="projects">
     <p class="section__text__p1">My Recent</p>
     <h1 class="title">Projects</h1>
     <div class="projects-container">
-  <div class="project-card">
-    <div class="project-image">
-      <img src="./files/project1.jpg" alt="E-Commerce Platform" />
-    </div>
-    <div class="project-details">
-      <h3>E-Commerce Platform</h3>
-      <p class="project-tech">React | Node.js | MongoDB | Stripe API</p>
-      <p class="project-desc">
-        Full-featured e-commerce platform with user authentication, product catalog, 
-        shopping cart, and payment processing. Implemented responsive design and
-        secure payment gateway integration.
-      </p>
-      <div class="project-links">
-        <a href="https://github.com/pratikabhang/ecommerce-platform" target="_blank"><i class="fab fa-github"></i> Code</a>
-        <a href="https://ecommerce-demo.pratikabhang.com" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+      <div class="project-card">
+        <div class="project-image">
+          <img src="./files/project1.jpg" alt="E-Commerce Platform" />
+        </div>
+        <div class="project-details">
+          <h3>E-Commerce Platform</h3>
+          <p class="project-tech">React | Node.js | MongoDB | Stripe API</p>
+          <p class="project-desc">
+            Full-featured e-commerce platform with user authentication, product catalog, 
+            shopping cart, and payment processing. Implemented responsive design and
+            secure payment gateway integration.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/pratikabhang/ecommerce-platform" target="_blank"><i class="fab fa-github"></i> Code</a>
+            <a href="https://ecommerce-demo.pratikabhang.com" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="./files/project1.jpg" alt="Task Management App" />
+        </div>
+        <div class="project-details">
+          <h3>Task Management App</h3>
+          <p class="project-tech">React | Firebase | Material UI</p>
+          <p class="project-desc">
+            Real-time task management application with drag-and-drop functionality,
+            team collaboration features, and deadline tracking. Uses Firebase for
+            authentication and real-time database.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/pratikabhang/task-manager" target="_blank"><i class="fab fa-github"></i> Code</a>
+            <a href="https://taskmanager.pratikabhang.com" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="./files/project1.jpg" alt="Weather Dashboard" />
+        </div>
+        <div class="project-details">
+          <h3>Weather Dashboard</h3>
+          <p class="project-tech">JavaScript | OpenWeather API | Chart.js</p>
+          <p class="project-desc">
+            Interactive weather dashboard that displays current conditions and
+            5-day forecast for any location. Features include temperature unit
+            conversion and historical weather data visualization.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/pratikabhang/weather-dashboard" target="_blank"><i class="fab fa-github"></i> Code</a>
+            <a href="https://weather.pratikabhang.com" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="./files/project1.jpg" alt="Recipe Finder App" />
+        </div>
+        <div class="project-details">
+          <h3>Recipe Finder App</h3>
+          <p class="project-tech">React | Edamam API | Tailwind CSS</p>
+          <p class="project-desc">
+            Recipe discovery application with search by ingredients, dietary filters,
+            and nutritional information. Features saved favorites and meal planning
+            with a clean, intuitive interface.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/pratikabhang/recipe-finder" target="_blank"><i class="fab fa-github"></i> Code</a>
+            <a href="https://recipes.pratikabhang.com" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="project-card">
-    <div class="project-image">
-      <img src="./files/project1.jpg" alt="Task Management App" />
-    </div>
-    <div class="project-details">
-      <h3>Task Management App</h3>
-      <p class="project-tech">React | Firebase | Material UI</p>
-      <p class="project-desc">
-        Real-time task management application with drag-and-drop functionality,
-        team collaboration features, and deadline tracking. Uses Firebase for
-        authentication and real-time database.
-      </p>
-      <div class="project-links">
-        <a href="https://github.com/pratikabhang/task-manager" target="_blank"><i class="fab fa-github"></i> Code</a>
-        <a href="https://taskmanager.pratikabhang.com" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="project-card">
-    <div class="project-image">
-      <img src="./files/project1.jpg" alt="Weather Dashboard" />
-    </div>
-    <div class="project-details">
-      <h3>Weather Dashboard</h3>
-      <p class="project-tech">JavaScript | OpenWeather API | Chart.js</p>
-      <p class="project-desc">
-        Interactive weather dashboard that displays current conditions and
-        5-day forecast for any location. Features include temperature unit
-        conversion and historical weather data visualization.
-      </p>
-      <div class="project-links">
-        <a href="https://github.com/pratikabhang/weather-dashboard" target="_blank"><i class="fab fa-github"></i> Code</a>
-        <a href="https://weather.pratikabhang.com" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="project-card">
-    <div class="project-image">
-      <img src="./files/project1.jpg" alt="Recipe Finder App" />
-    </div>
-    <div class="project-details">
-      <h3>Recipe Finder App</h3>
-      <p class="project-tech">React | Edamam API | Tailwind CSS</p>
-      <p class="project-desc">
-        Recipe discovery application with search by ingredients, dietary filters,
-        and nutritional information. Features saved favorites and meal planning
-        with a clean, intuitive interface.
-      </p>
-      <div class="project-links">
-        <a href="https://github.com/pratikabhang/recipe-finder" target="_blank"><i class="fab fa-github"></i> Code</a>
-        <a href="https://recipes.pratikabhang.com" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-      </div>
-    </div>
-  </div>
-</div>
-
   </section>
 
+  <!-- Contact Section -->
   <section id="contact">
     <p class="section__text__p1">Get in Touch</p>
     <h1 class="title">Contact Me</h1>
@@ -393,6 +402,7 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <div class="footer-navigation">
       <ul class="footer-links">
@@ -409,6 +419,7 @@
     </p>
   </footer>
 
+  <!-- JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="script.js"></script>
 </body>

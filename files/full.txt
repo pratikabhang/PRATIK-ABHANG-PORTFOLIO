@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=980, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>PRATIK ABHANG</title>
+  <link rel="icon" href="./files/titleprofile.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* CSS Styles */
     * {
       margin: 0;
       padding: 0;
@@ -1965,3 +1976,763 @@
     .color-option-nav[data-color="blue"] {
       background: #3498db;
     }
+
+    /* Rest of your existing CSS remains the same */
+  </style>
+</head>
+<body>
+  <!-- Theme Controls -->
+  <div class="theme-controls">
+    <div class="auto-scroll-container">
+      <button id="autoScrollBtn" aria-label="Toggle Auto Scroll" data-color="#1a73e8">
+        <i class="fa-solid fa-computer-mouse"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header id="header">
+    <nav id="desktop-nav">
+      <div class="logo">&lt;pratik abhang/&gt;</div>
+      <ul class="nav-links">
+        <li><a href="#home"><i class="fas fa-house"></i> Home</a></li>
+        <li><a href="#about"><i class="fas fa-user-tie"></i> About</a></li>
+        <li><a href="#skills"><i class="fas fa-brain"></i> Skills</a></li>
+        <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+        <li><a href="#projects"><i class="fas fa-code"></i> Projects</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li class="theme-nav-item">
+          <div class="theme-nav-container">
+            <div class="theme-toggle-nav">
+              <input type="checkbox" id="theme-switch-nav" class="theme-switch-nav">
+              <label for="theme-switch-nav" class="theme-label-nav">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <span class="theme-ball-nav"></span>
+              </label>
+            </div>
+            <div class="color-picker-nav">
+              <button class="color-option-nav" data-color="black"></button>
+              <button class="color-option-nav" data-color="red"></button>
+              <button class="color-option-nav" data-color="yellow"></button>
+              <button class="color-option-nav" data-color="blue"></button>
+              <button class="color-option-nav" data-color="green"></button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home">
+    <div class="profile__container">
+      <div class="socials__vertical">
+        <div class="social-icon portfolio" onclick="window.open('https://pratikabhang.netlify.app/')"><i class="fas fa-globe"></i></div>
+        <div class="social-icon linkedin" onclick="window.open('https://linkedin.com/in/pratikabhang/')"><i class="fab fa-linkedin-in"></i></div>
+        <div class="social-icon github" onclick="window.open('https://github.com/pratikabhang/')"><i class="fab fa-github"></i></div>
+        <div class="social-icon instagram" onclick="window.open('https://www.instagram.com/pratikabhang1/')"><i class="fab fa-instagram"></i></div>
+        <div class="social-icon x" onclick="window.open('https://twitter.com/pratikabhang11')"><i class="fa-brands fa-square-x-twitter"></i></div>
+        <div class="social-icon hackerrank" onclick="window.open('https://www.hackerrank.com/profile/pratikabhang/')"><i class="fab fa-hackerrank"></i></div>
+      </div>
+
+      <div class="section__text">
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1 class="titleh">Pratik Abhang</h1>
+        <p class="section__text__p2"><span id="typed-text"></span></p>
+        <div class="btn-container">
+          <button class="btn btn-color-2" onclick="window.open('./files/pratikabhang.pdf')"><i class="fa-solid fa-download"></i> My Resume</button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'"><i class="fa-solid fa-briefcase"></i> Hire Me</button>
+        </div>
+      </div>
+
+      <div class="section__pic-container">
+        <img src="./files/profile.jpg" alt="Pratik Abhang Profile" class="profile-img" />
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <p class="section__text__p1">Get To Know More</p>
+    <h1 class="title">About Me</h1>
+
+    <div class="about-container">
+      <div class="about-card">
+        <div class="about-content">
+          <p>
+            Passionate Computer Engineer with expertise in Full Stack Development and Data Science. 
+            I specialize in building responsive, user-friendly web applications using modern technologies.
+            With a strong foundation in computer science principles and hands-on experience in various
+            programming languages and frameworks, I create efficient and scalable solutions.
+          </p>
+        </div>
+      </div>
+      <div class="details-grid">
+        <div class="details-card">
+          <div class="details-item">
+            <a href="tel:+918766854678"><i class="fas fa-phone-alt"></i></a> +91 8766854678
+          </div>
+          <div class="details-item">
+            <a href="mailto:work.pratikabhang@gmail.com"><i class="fas fa-envelope"></i></a> work.pratikabhang@gmail.com
+          </div>
+          <div class="details-item">
+            <a href="https://www.google.com/maps?q=Pune,Maharashtra" target="_blank"><i class="fas fa-map-marker-alt"></i></a> Pune, Maharashtra
+          </div>
+          <div class="details-item">
+            <a href="#"><i class="fas fa-flag"></i></a> Indian
+          </div>
+          <div class="details-item">
+            <a href="#"><i class="fas fa-language"></i></a> English, Marathi, Hindi
+          </div>
+        </div>
+
+        <div class="details-card">
+          <div class="details-item">
+            <a href="https://www.timeanddate.com/calendar/monthly.html?&month=11&day=21" target="_blank"><i class="fa-solid fa-cake-candles"></i></a> 21st November
+          </div>
+          <div class="details-item">
+            <a href="#"><i class="fa-solid fa-venus-mars"></i></a> Male
+          </div>
+          <div class="details-item">
+            <a href="#"><i class="fas fa-calendar-days"></i></a> <span id="age"></span>
+          </div>
+          <div class="details-item">
+            <a href="#"><i class="fas fa-heart"></i></a> Single
+          </div>
+          <div class="details-item">
+            <a href="#"><i class="fa-solid fa-face-grin-hearts"></i></a> Photography, Movie, Music, Dance, Cricket
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title">
+        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+      </div>
+      <div class="timeline">
+        <div class="timeline-container left top" data-year="2025">
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h4>Bachelor of Engineering in Computer</h4>
+            </div>
+            <div class="timeline-details">
+              <p><i class="fa-solid fa-graduation-cap"></i> STES, Sinhgad Institute of Technology and Science</p>
+              <p><i class="fa-solid fa-file-lines"></i><strong> CGPA:</strong> 8.0 / 10 <i class="fa-solid fa-book"></i>SPPU</p>
+            </div>
+          </div>
+          <div class="location-arrow top"><i class="fa-solid fa-location-dot"></i> Pune, Maharashtra, India</div>
+        </div>
+
+        <div class="timeline-container right middle" data-year="2021">
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h4>Higher Secondary Certificate (12th)</h4>
+            </div>
+            <div class="timeline-details">
+              <p><i class="fa-solid fa-building"></i> RSS, R.B. Narayanrao Borawake College</p>
+              <p><i class="fa-solid fa-file-lines"></i><strong> Percentage:</strong> 82.17 / 100 <i class="fa-solid fa-book"></i>MSBSHSE</p>
+            </div>
+          </div>
+          <div class="location-arrow middle"><i class="fa-solid fa-location-dot"></i> Shrirampur, Maharashtra, India</div>
+        </div>
+
+        <div class="timeline-container left bottom" data-year="2019">
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h4>Secondary School Certificate (10th)</h4>
+            </div>
+            <div class="timeline-details">
+              <p><i class="fa-solid fa-school"></i> VMSS, De Paul English Medium High School</p>
+              <p><i class="fa-solid fa-file-lines"></i><strong> Percentage:</strong> 72.20 / 100 <i class="fa-solid fa-book"></i>MSBSHSE</p>
+            </div>
+          </div>
+          <div class="location-arrow bottom"><i class="fa-solid fa-location-dot"></i> Shrirampur, Maharashtra, India</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <p class="section__text__p1">Explore My</p>
+    <h1 class="title">Skills</h1>
+
+    <div class="skills-container">
+      <div class="skills-grid">
+        <div class="skill-card" data-skill="java"><i class="fab fa-java"></i><p>Java</p></div>
+        <div class="skill-card" data-skill="mysql"><i class="fas fa-database"></i><p>MySQL</p></div>
+        <div class="skill-card" data-skill="html"><i class="fab fa-html5"></i><p>HTML</p></div>
+        <div class="skill-card" data-skill="css"><i class="fab fa-css3-alt"></i><p>CSS</p></div>
+        <div class="skill-card" data-skill="javascript"><i class="fab fa-js"></i><p>JavaScript</p></div>
+        <div class="skill-card" data-skill="php"><i class="fab fa-php"></i><p>PHP</p></div>
+        <div class="skill-card" data-skill="bootstrap"><i class="fab fa-bootstrap"></i><p>Bootstrap</p></div>
+        <div class="skill-card" data-skill="react"><i class="fab fa-react"></i><p>React.js</p></div>
+        <div class="skill-card" data-skill="nodejs"><i class="fa-brands fa-node"></i><p>Node.js</p></div>
+        <div class="skill-card" data-skill="mongodb"><i class="fas fa-server"></i><p>MongoDB</p></div>
+        <div class="skill-card" data-skill="expressjs"><i class="fab fa-node-js"></i><p>Express.js</p></div>
+        <div class="skill-card" data-skill="kotlin"><i class="fas fa-k"></i><p>Kotlin</p></div>
+        <div class="skill-card" data-skill="python"><i class="fab fa-python"></i><p>Python</p></div>
+        <div class="skill-card" data-skill="github"><i class="fab fa-github"></i><p>GitHub</p></div>
+        <div class="skill-card" data-skill="google"><i class="fab fa-google"></i><p>Google</p></div>
+        <div class="skill-card" data-skill="microsoft"><i class="fab fa-microsoft"></i><p>Microsoft</p></div>
+        <div class="skill-card" data-skill="communication"><i class="fas fa-comments"></i><p>Communication</p></div>
+        <div class="skill-card" data-skill="teamwork"><i class="fas fa-users"></i><p>Teamwork</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience">
+    <p class="section__text__p1">Browse My</p>
+    <h1 class="title">Experience</h1>
+      
+    <div class="experience-container">
+      <div class="section-title">
+        <h3><i class="fas fa-briefcase"></i> Internships</h3>
+      </div>
+      
+      <div class="itimeline">
+        <div class="itimeline-container">
+          <div class="itimeline-content">
+            <div class="itimeline-year-inside">Oct 2024 - Nov 2024</div>
+            <div class="itimeline-header">
+              <h4 class="role">Software Developer Intern</h4>
+            </div>
+            <div class="itimeline-details">
+              <p class="company"><i class="fas fa-building"></i> Cognifyz Technologies</p>
+              <p class="location"><i class="fa-solid fa-location-dot"></i> Virtual</p>
+              <ul class="experience-list">
+                <li><i class="fa-regular fa-circle-dot"></i> Gained knowledge of the Software Development Life Cycle (SDLC) and its types</li>
+                <li><i class="fa-regular fa-circle-dot"></i> Enhanced project management skills by effectively managing tasks and meeting deadlines</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="itimeline-container">
+          <div class="itimeline-content">
+            <div class="itimeline-year-inside">Dec 2023 - Jan 2024</div>
+            <div class="itimeline-header">
+              <h4 class="role">Web Developer Intern</h4>
+            </div>
+            <div class="itimeline-details">
+              <p class="company"><i class="fas fa-building"></i> Elite Softwares</p>
+              <p class="location"><i class="fa-solid fa-location-dot"></i> Virtual</p>
+              <ul class="experience-list">
+                <li><i class="fa-regular fa-circle-dot"></i> Learned website hosting and understood various domain types and their uses</li>
+                <li><i class="fa-regular fa-circle-dot"></i> Applied technologies such as HTML, CSS, JavaScript, MySQL, and PHP to create dynamic websites</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <p class="section__text__p1">My Recent</p>
+    <h1 class="title">Projects</h1>
+    <div class="projects-container">
+      <div class="project-card">
+        <div class="project-image">
+          <img src="./files/project1.jpg" alt="E-Commerce Platform" />
+        </div>
+        <div class="project-details">
+          <h3>E-Commerce Platform</h3>
+          <p class="project-tech">React | Node.js | MongoDB | Stripe API</p>
+          <p class="project-desc">
+            Full-featured e-commerce platform with user authentication, product catalog, 
+            shopping cart, and payment processing. Implemented responsive design and
+            secure payment gateway integration.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/pratikabhang/ecommerce-platform" target="_blank"><i class="fab fa-github"></i> Code</a>
+            <a href="https://ecommerce-demo.pratikabhang.com" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="./files/project1.jpg" alt="Task Management App" />
+        </div>
+        <div class="project-details">
+          <h3>Task Management App</h3>
+          <p class="project-tech">React | Firebase | Material UI</p>
+          <p class="project-desc">
+            Real-time task management application with drag-and-drop functionality,
+            team collaboration features, and deadline tracking. Uses Firebase for
+            authentication and real-time database.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/pratikabhang/task-manager" target="_blank"><i class="fab fa-github"></i> Code</a>
+            <a href="https://taskmanager.pratikabhang.com" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="./files/project1.jpg" alt="Weather Dashboard" />
+        </div>
+        <div class="project-details">
+          <h3>Weather Dashboard</h3>
+          <p class="project-tech">JavaScript | OpenWeather API | Chart.js</p>
+          <p class="project-desc">
+            Interactive weather dashboard that displays current conditions and
+            5-day forecast for any location. Features include temperature unit
+            conversion and historical weather data visualization.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/pratikabhang/weather-dashboard" target="_blank"><i class="fab fa-github"></i> Code</a>
+            <a href="https://weather.pratikabhang.com" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="./files/project1.jpg" alt="Recipe Finder App" />
+        </div>
+        <div class="project-details">
+          <h3>Recipe Finder App</h3>
+          <p class="project-tech">React | Edamam API | Tailwind CSS</p>
+          <p class="project-desc">
+            Recipe discovery application with search by ingredients, dietary filters,
+            and nutritional information. Features saved favorites and meal planning
+            with a clean, intuitive interface.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/pratikabhang/recipe-finder" target="_blank"><i class="fab fa-github"></i> Code</a>
+            <a href="https://recipes.pratikabhang.com" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <p class="section__text__p1">Get in Touch</p>
+    <h1 class="title">Contact Me</h1>
+
+    <div class="contact-container">
+      <div class="contact-info">
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fas fa-phone"></i></div>
+          <div class="contact-text">
+            <h4>Phone</h4>
+            <p><a href="tel:+918766854678">+91 8766854678</a></p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-text">
+            <h4>Email</h4>
+            <p><a href="mailto:work.pratikabhang@gmail.com">work.pratikabhang@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+          <div class="contact-text">
+            <h4>LinkedIn</h4>
+            <p><a href="https://linkedin.com/in/pratikabhang" target="_blank">in/pratikabhang</a></p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fab fa-instagram"></i></div>
+          <div class="contact-text">
+            <h4>Instagram</h4>
+            <p><a href="https://www.instagram.com/pratikabhang1" target="_blank">@pratikabhang1</a></p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="contact-text">
+            <h4>Location</h4>
+            <p><a href="https://www.google.com/maps/place/Pune,+Maharashtra" target="_blank">Pune, Maharashtra</a></p>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/xwpowbev" method="POST">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Your Email" required />
+        </div>
+        <div class="form-group">
+          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-color-1"><i class="fas fa-paper-plane"></i> Send Message to Pratik</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-navigation">
+      <ul class="footer-links">
+        <li><a href="#home"><i class="fas fa-house"></i> Home</a></li>
+        <li><a href="#about"><i class="fa-solid fa-user-tie"></i> About</a></li>
+        <li><a href="#skills"><i class="fa-solid fa-brain"></i> Skills</a></li>
+        <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+        <li><a href="#projects"><i class="fa-solid fa-diagram-project"></i> Projects</a></li>
+        <li><a href="#contact"><i class="fa-solid fa-id-card"></i> Contact</a></li>
+      </ul>
+    </div>
+    <p class="footer-copy">
+      <span id="current-time"></span> | All Rights Reserved &copy; PRATIK ABHANG | <span id="current-date"></span>
+    </p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    // JavaScript Code
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set viewport to desktop size
+      const viewportMeta = document.querySelector('meta[name="viewport"]');
+      viewportMeta.content = "width=980, initial-scale=1.0, maximum-scale=1.0, user-scalable=no";
+      
+      // Theme switching functionality
+      const themeSwitch = document.getElementById('theme-switch-nav');
+      const colorOptions = document.querySelectorAll('.color-option-nav');
+      
+      // Get saved theme preference or use system preference
+      const savedTheme = localStorage.getItem('theme') || 
+                        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      const savedColor = localStorage.getItem('color') || 'black';
+      
+      // Apply saved theme
+      if (savedTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeSwitch.checked = true;
+      }
+      
+      // Apply saved color
+      document.documentElement.setAttribute('data-color', savedColor);
+      
+      // Theme switch event listener
+      themeSwitch.addEventListener('change', function() {
+        if (this.checked) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+          localStorage.setItem('theme', 'light');
+        }
+      });
+
+      // Color options event listeners
+      colorOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          const color = this.getAttribute('data-color');
+          document.documentElement.setAttribute('data-color', color);
+          localStorage.setItem('color', color);
+        });
+      });
+
+      // Header scroll effect
+      const header = document.getElementById('header');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+
+      // Typed.js animation for profession titles
+      var typed = new Typed("#typed-text", {
+        strings: [
+          "Computer Engineer",
+          "Full Stack Developer",
+          "Web Developer",
+          "Software Developer",
+          "Data Analyst"
+        ],
+        typeSpeed: 80,
+        backSpeed: 40,
+        backDelay: 800,
+        startDelay: 400,
+        loop: true,
+        showCursor: true,
+        cursorChar: "|",
+      });
+
+      // Date and time display
+      function updateDateTime() {
+        const currentDate = new Date();
+        const options = { day: 'numeric', month: 'long', year: 'numeric' };
+        const formattedDate = currentDate.toLocaleDateString('en-GB', options);
+        const formattedTime = currentDate.toLocaleTimeString('en-GB', {
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false
+        });
+        
+        document.getElementById("current-date").textContent = formattedDate;
+        document.getElementById("current-time").textContent = formattedTime;
+      }
+
+      updateDateTime();
+      setInterval(updateDateTime, 1000);
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          
+          if (targetId !== '#') {
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              const headerHeight = document.getElementById('header').offsetHeight;
+              const targetPosition = targetElement.offsetTop - headerHeight;
+              
+              window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+              });
+            }
+          }
+        });
+      });
+
+      // Contact form handling
+      const form = document.getElementById('contactForm');
+      
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const formData = new FormData(form);
+          const formStatus = document.createElement('p');
+          formStatus.className = 'form-status';
+          
+          fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          })
+          .then(response => {
+            if (response.ok) {
+              formStatus.textContent = 'Message sent successfully!';
+              formStatus.style.color = 'var(--secondary-color)';
+              form.reset();
+            } else {
+              throw new Error('Network response was not ok');
+            }
+          })
+          .catch(error => {
+            formStatus.textContent = 'Oops! There was a problem sending your message.';
+            formStatus.style.color = 'var(--accent-color)';
+            console.error('Error:', error);
+          })
+          .finally(() => {
+            const existingStatus = form.querySelector('.form-status');
+            if (existingStatus) {
+              existingStatus.remove();
+            }
+            
+            form.appendChild(formStatus);
+            
+            setTimeout(() => {
+              formStatus.style.opacity = '0';
+              setTimeout(() => {
+                formStatus.remove();
+              }, 500);
+            }, 5000);
+          });
+        });
+      }
+
+      // Age calculation
+      function calculateAge(birthDate) {
+        const today = new Date();
+        let ageYears = today.getFullYear() - birthDate.getFullYear();
+        let ageMonths = today.getMonth() - birthDate.getMonth();
+        let ageDays = today.getDate() - birthDate.getDate();
+
+        if (ageDays < 0) {
+          ageMonths--;
+          ageDays += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+        }
+
+        if (ageMonths < 0) {
+          ageYears--;
+          ageMonths += 12;
+        }
+
+        return {
+          years: ageYears,
+          months: ageMonths,
+          days: ageDays
+        };
+      }
+
+      const birthDate = new Date('2003-11-21');
+      const age = calculateAge(birthDate);
+      document.getElementById('age').textContent = `${age.years} years, ${age.months} months, ${age.days} days Old`;
+
+      // Scroll animation for elements
+      function animateOnScroll() {
+        const elements = document.querySelectorAll(
+          '.about-card, .details-card, .timeline-container, ' +
+          '.certification-card, .skill-card, .project-card, ' +
+          '.experience-card'
+        );
+        
+        const windowHeight = window.innerHeight;
+        const scrollPosition = window.scrollY + windowHeight;
+        
+        elements.forEach((element, index) => {
+          const elementPosition = element.offsetTop;
+          
+          if (scrollPosition > elementPosition + 100 && !element.classList.contains('animate')) {
+            const delay = index * 0.1;
+            element.style.animationDelay = `${delay}s`;
+            element.classList.add('animate');
+          }
+        });
+      }
+
+      // Initialize elements for animation
+      document.querySelectorAll(
+        '.about-card, .details-card, .timeline-container, ' +
+        '.certification-card, .skill-card, .project-card, ' +
+        '.experience-card'
+      ).forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      });
+
+      animateOnScroll();
+      window.addEventListener('scroll', animateOnScroll);
+
+      // Skill cards animation
+      const skillCards = document.querySelectorAll('.skill-card');
+      skillCards.forEach((card, index) => {
+        const delay = Math.random() * 2;
+        card.style.animationDelay = `${delay}s`;
+        
+        const duration = 3 + Math.random() * 3;
+        card.style.animationDuration = `${duration}s`;
+      });
+
+      // Skill cards hover effects
+      skillCards.forEach(card => {
+        const skill = card.getAttribute('data-skill');
+        const icon = card.querySelector('i');
+        
+        card.addEventListener('mouseenter', () => {
+          card.classList.add(`${skill}-hover`);
+          icon.style.animation = 'floatIcon 1.5s ease-in-out infinite';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          card.classList.remove(`${skill}-hover`);
+          icon.style.animation = '';
+        });
+      });
+
+      // Auto-scroll button functionality
+      const scrollBtn = document.getElementById('autoScrollBtn');
+      let autoScroll = false;
+      let scrollDirection = 'down';
+
+      scrollBtn.addEventListener('click', () => {
+        autoScroll = !autoScroll;
+        scrollBtn.classList.toggle('active', autoScroll);
+
+        if (autoScroll) {
+          autoScrollFunction();
+        }
+      });
+
+      function autoScrollFunction() {
+        if (!autoScroll) return;
+
+        const scrollStep = 6;
+        const delay = 12;
+        const scrollMax = document.body.scrollHeight - window.innerHeight;
+
+        const scroll = () => {
+          if (!autoScroll) return;
+
+          const currentScroll = window.scrollY;
+
+          if (scrollDirection === 'down') {
+            if (currentScroll + scrollStep < scrollMax) {
+              window.scrollBy(0, scrollStep);
+            } else {
+              scrollDirection = 'up';
+            }
+          } else {
+            if (currentScroll - scrollStep > 0) {
+              window.scrollBy(0, -scrollStep);
+            } else {
+              scrollDirection = 'down';
+            }
+          }
+
+          setTimeout(scroll, delay);
+        };
+
+        scroll();
+      }
+
+      // Voice greeting functionality (plays once after 3 seconds)
+      function speakWelcomeMessage() {
+        // Check if already spoken
+        if (localStorage.getItem('welcomeVoicePlayed')) return;
+        
+        const message = new SpeechSynthesisUtterance(
+          "Hi, Welcome to Pratik Abhang portfolio, where technology transforms ideas into reality."
+        );
+        
+        message.lang = 'en-US';
+        message.rate = 1;
+        message.pitch = 1;
+        
+        // Get voices and try to find a suitable one
+        const voices = speechSynthesis.getVoices();
+        const preferredVoices = voices.filter(v => v.lang.includes('en'));
+        if (preferredVoices.length > 0) {
+          message.voice = preferredVoices[0];
+        }
+        
+        // Mark as played
+        message.onend = () => {
+          localStorage.setItem('welcomeVoicePlayed', 'true');
+        };
+        
+        speechSynthesis.speak(message);
+      }
+
+      // Initialize voice greeting after 3 seconds
+      setTimeout(() => {
+        // If voices are already loaded
+        if (speechSynthesis.getVoices().length > 0) {
+          speakWelcomeMessage();
+        } 
+        // If voices need to be loaded
+        else {
+          speechSynthesis.onvoiceschanged = () => {
+            speakWelcomeMessage();
+            speechSynthesis.onvoiceschanged = null;
+          };
+        }
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
