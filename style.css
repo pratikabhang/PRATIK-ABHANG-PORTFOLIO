@@ -1272,138 +1272,199 @@
       font-size: 1.2rem;
     }
 
-    .skill-card[data-skill="java"] {
-      border: 3px solid var(--border-color);
-    }
-    .skill-card[data-skill="java"] i {
-      color: #FF8C00;
-    }
+.skill-card[data-skill="java"] {
+  border: 3px solid var(--border-color);
+}
+.skill-card[data-skill="java"] i {
+  color: #FF8C00;
+}
+[data-theme="dark"] .skill-card[data-skill="java"] i {
+  color: #FFA74D;
+}
 
-    .skill-card[data-skill="mysql"] {
-      border: 3px solid var(--border-color);
-    }
-    .skill-card[data-skill="mysql"] i {
-      color: #4479A1;
-    }
+.skill-card[data-skill="mysql"] {
+  border: 3px solid var(--border-color);
+}
+.skill-card[data-skill="mysql"] i {
+  color: #4479A1;
+}
+[data-theme="dark"] .skill-card[data-skill="mysql"] i {
+  color: #6FA8D6;
+}
 
-    .skill-card[data-skill="html"] {
-      border: 3px solid var(--border-color);
-    }
-    .skill-card[data-skill="html"] i {
-      color: #E34F26;
-    }
+.skill-card[data-skill="html"] {
+  border: 3px solid var(--border-color);
+}
+.skill-card[data-skill="html"] i {
+  color: #E34F26;
+}
+[data-theme="dark"] .skill-card[data-skill="html"] i {
+  color: #FF7043;
+}
 
-    .skill-card[data-skill="css"] {
-      border: 3px solid var(--border-color);
-    }
-    .skill-card[data-skill="css"] i {
-      color: #1572B6;
-    }
+.skill-card[data-skill="css"] {
+  border: 3px solid var(--border-color);
+}
+.skill-card[data-skill="css"] i {
+  color: #1572B6;
+}
+[data-theme="dark"] .skill-card[data-skill="css"] i {
+  color: #40A9FF;
+}
 
-    .skill-card[data-skill="javascript"] {
-      border: 3px solid var(--border-color);
-    }
-    .skill-card[data-skill="javascript"] i {
-      color: #F7DF1E;
-    }
+.skill-card[data-skill="javascript"] {
+  border: 3px solid var(--border-color);
+}
+.skill-card[data-skill="javascript"] i {
+  color: #F7DF1E;
+}
+[data-theme="dark"] .skill-card[data-skill="javascript"] i {
+  color: #FFF176;
+}
 
-    .skill-card[data-skill="php"] {
-      border: 3px solid var(--border-color);
-    }
-    .skill-card[data-skill="php"] i {
-      color: #777BB4;
-    }
+.skill-card[data-skill="php"] {
+  border: 3px solid var(--border-color);
+}
+.skill-card[data-skill="php"] i {
+  color: #777BB4;
+}
+[data-theme="dark"] .skill-card[data-skill="php"] i {
+  color: #A6A9DC;
+}
 
-    .skill-card[data-skill="bootstrap"] {
-      border: 3px solid var(--border-color);
-    }
-    .skill-card[data-skill="bootstrap"] i {
-      color: #7952B3;
-    }
+.skill-card[data-skill="bootstrap"] {
+  border: 3px solid var(--border-color);
+}
+.skill-card[data-skill="bootstrap"] i {
+  color: #7952B3;
+}
+[data-theme="dark"] .skill-card[data-skill="bootstrap"] i {
+  color: #A279E4;
+}
 
-    .skill-card[data-skill="react"] {
-      border: 3px solid var(--border-color);
-    }
-    .skill-card[data-skill="react"] i {
-      color: #61DAFB;
-    }
+.skill-card[data-skill="react"] {
+  border: 3px solid var(--border-color);
+}
+.skill-card[data-skill="react"] i {
+  color: #61DAFB;
+}
+[data-theme="dark"] .skill-card[data-skill="react"] i {
+  color: #8EEBFF;
+}
 
-    .skill-card[data-skill="nodejs"] {
-      border: 3px solid var(--border-color);
-    }
-    .skill-card[data-skill="nodejs"] i {
-      color: #339933;
-    }
+.skill-card[data-skill="nodejs"] {
+  border: 3px solid var(--border-color);
+}
+.skill-card[data-skill="nodejs"] i {
+  color: #339933;
+}
+[data-theme="dark"] .skill-card[data-skill="nodejs"] i {
+  color: #5AC95A;
+}
 
-    .skill-card[data-skill="mongodb"] {
-      border: 3px solid var(--border-color);
-    }
-    .skill-card[data-skill="mongodb"] i {
-      color: #47A248;
-    }
+.skill-card[data-skill="mongodb"] {
+  border: 3px solid var(--border-color);
+}
+.skill-card[data-skill="mongodb"] i {
+  color: #47A248;
+}
+[data-theme="dark"] .skill-card[data-skill="mongodb"] i {
+  color: #6FCF70;
+}
 
-    .skill-card[data-skill="expressjs"] {
-      border: 3px solid var(--border-color);
-    }
-    .skill-card[data-skill="expressjs"] i {
-      color: #000000;
-    }
+.skill-card[data-skill="expressjs"] {
+  border: 3px solid var(--border-color);
+}
+.skill-card[data-skill="expressjs"] i {
+  color: #000000; /* default for light theme */
+}
+[data-theme="dark"] .skill-card[data-skill="expressjs"] i {
+  color: #ffffff;
+}
 
-    .skill-card[data-skill="kotlin"] {
-      border: 3px solid var(--border-color);
-    }
-    .skill-card[data-skill="kotlin"] i {
-      color: #7F52FF;
-    }
+.skill-card[data-skill="kotlin"] {
+  border: 3px solid var(--border-color);
+}
+.skill-card[data-skill="kotlin"] i {
+  color: #7F52FF;
+}
+[data-theme="dark"] .skill-card[data-skill="kotlin"] i {
+  color: #A88CFF;
+}
 
-    .skill-card[data-skill="google"] {
-      border: 3px solid var(--border-color);
-    }
-    .skill-card[data-skill="google"] i {
-      color: #FF0000;
-    }
+.skill-card[data-skill="google"] {
+  border: 3px solid var(--border-color);
+}
+.skill-card[data-skill="google"] i {
+  color: #FF0000;
+}
+[data-theme="dark"] .skill-card[data-skill="google"] i {
+  color: #FF5C5C;
+}
 
-    .skill-card[data-skill="microsoft"] {
-      border: 3px solid var(--border-color);
-    }
-    .skill-card[data-skill="microsoft"] i {
-      color: #0078D4;
-    }
+.skill-card[data-skill="microsoft"] {
+  border: 3px solid var(--border-color);
+}
+.skill-card[data-skill="microsoft"] i {
+  color: #0078D4;
+}
+[data-theme="dark"] .skill-card[data-skill="microsoft"] i {
+  color: #4DA8FF;
+}
 
-    .skill-card[data-skill="github"] {
-      border: 3px solid var(--border-color);
-    }
-    .skill-card[data-skill="github"] i {
-      color: #181717;
-    }
+.skill-card[data-skill="github"] {
+  border: 3px solid var(--border-color);
+}
+.skill-card[data-skill="github"] i {
+  color: #181717; /* default color for light theme */
+}
+[data-theme="dark"] .skill-card[data-skill="github"] i {
+  color: #ffffff;
+}
 
-    .skill-card[data-skill="vscode"] {
-      border: 3px solid var(--border-color);
-    }
-    .skill-card[data-skill="vscode"] i {
-      color: #007ACC;
-    }
+.skill-card[data-skill="vscode"] {
+  border: 3px solid var(--border-color);
+}
+.skill-card[data-skill="vscode"] i {
+  color: #007ACC;
+}
+[data-theme="dark"] .skill-card[data-skill="vscode"] i {
+  color: #4DA8FF;
+}
 
-    .skill-card[data-skill="python"] {
-      border: 3px solid var(--border-color);
-    }
-    .skill-card[data-skill="python"] i {
-      color: #3776AB;
-    }
+.skill-card[data-skill="python"] {
+  border: 3px solid var(--border-color);
+}
+.skill-card[data-skill="python"] i {
+  color: #3776AB;
+}
+[data-theme="dark"] .skill-card[data-skill="python"] i {
+  color: #5FA2D6;
+}
 
-    .skill-card[data-skill="communication"] {
-      border: 3px solid var(--border-color);
-    }
-    .skill-card[data-skill="communication"] i {
-      color: #8B4513;
-    }
+.skill-card[data-skill="communication"] {
+  border: 3px solid var(--border-color);
+}
+.skill-card[data-skill="communication"] i {
+  color: #8B4513;
+}
+[data-theme="dark"] .skill-card[data-skill="communication"] i {
+  color: #C96F33;
+}
 
-    .skill-card[data-skill="teamwork"] {
-      border: 3px solid var(--border-color);
-    }
-    .skill-card[data-skill="teamwork"] i {
-      color: #003366;
-    }
+.skill-card[data-skill="teamwork"] {
+  border: 3px solid var(--border-color);
+}
+.skill-card[data-skill="teamwork"] i {
+  color: #09a58b;
+}
+[data-theme="dark"] .skill-card[data-skill="teamwork"] i {
+  color: #5CD9C2;
+}
+
+
+
+
     .projects-container {
       max-width: 1200px;
       margin: 0 auto;
