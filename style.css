@@ -1334,16 +1334,15 @@ header.scrolled {
 .skill-card[data-skill="teamwork"] i {
   color: #003366;
 }
-
 .projects-container {
   max-width: 1200px;
-  min-height: 50px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
 .project-card {
   display: flex;
+  flex-direction: row;
   background: var(--card-bg);
   border-radius: 1rem;
   overflow: hidden;
@@ -1354,6 +1353,11 @@ header.scrolled {
   transform: translateY(20px);
   border: 3px solid var(--border-color);
   max-height: 300px;
+}
+
+/* Alternate layout for even cards */
+.project-card:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
 .project-card.animate {
@@ -1433,6 +1437,24 @@ header.scrolled {
 
 .project-links a i {
   font-size: 1rem;
+}
+
+/* Optional: Make it responsive on mobile */
+@media (max-width: 768px) {
+  .project-card,
+  .project-card:nth-child(even) {
+    flex-direction: column;
+    max-height: none;
+  }
+
+  .project-image,
+  .project-details {
+    width: 100%;
+  }
+
+  .project-image img {
+    height: auto;
+  }
 }
 
 .contact-container {
