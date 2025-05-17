@@ -50,7 +50,7 @@
     }
 
     [data-theme="dark"][data-color="black"] {
-      --primary-color: #5e5e5e;
+      --primary-color: #7d7d7d;
       --secondary-color: #e0e0e0;
       --accent-color: #b3b3b3;
       --text-color: #ffffff;
@@ -720,12 +720,12 @@
 
     .btn-color-1 {
       background: var(--primary-color);
-      color: white;
+      color: var(--secondary-color);
     }
 
     .btn-color-1:hover {
       background: var(--secondary-color);
-      color: white;
+      color:var(--primary-color);
       border: none;
     }
 
@@ -736,7 +736,7 @@
 
     .btn-color-2:hover {
       background: var(--secondary-color);
-      color: rgb(255, 255, 255);
+      color: var(--primary-color);
       border: var(--secondary-color) 0.1rem solid;
     }
 
