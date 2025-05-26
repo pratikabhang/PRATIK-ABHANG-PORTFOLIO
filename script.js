@@ -92,60 +92,60 @@ document.addEventListener('DOMContentLoaded', function () {
   updateDateTime();
   setInterval(updateDateTime, 1000);
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
 
-    const targetId = this.getAttribute('href');
-    if (targetId !== '#' && targetId.length > 1) {
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        const header = document.getElementById('header');
-        const headerHeight = header ? header.offsetHeight : 0;
-        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight;
+      const targetId = this.getAttribute('href');
+      if (targetId !== '#' && targetId.length > 1) {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          const header = document.getElementById('header');
+          const headerHeight = header ? header.offsetHeight : 0;
+          const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight;
 
-        // Smooth scroll with a custom duration
-        smoothScrollTo(targetPosition, 800); // 800ms duration
+          // Smooth scroll with a custom duration
+          smoothScrollTo(targetPosition, 800); // 800ms duration
+        }
+      }
+    });
+  });
+
+  /**
+   * Smooth scroll to a target position
+   * @param {number} targetPosition - The vertical position to scroll to
+   * @param {number} duration - Duration in milliseconds
+   */
+  function smoothScrollTo(targetPosition, duration) {
+    const start = window.scrollY;
+    const distance = targetPosition - start;
+    let startTime = null;
+
+    function animation(currentTime) {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+
+      // Ease-in-out function
+      const ease = easeInOutCubic(timeElapsed, start, distance, duration);
+
+      window.scrollTo(0, ease);
+
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      } else {
+        window.scrollTo(0, targetPosition); // Ensure final position
       }
     }
-  });
-});
 
-/**
- * Smooth scroll to a target position
- * @param {number} targetPosition - The vertical position to scroll to
- * @param {number} duration - Duration in milliseconds
- */
-function smoothScrollTo(targetPosition, duration) {
-  const start = window.scrollY;
-  const distance = targetPosition - start;
-  let startTime = null;
-
-  function animation(currentTime) {
-    if (startTime === null) startTime = currentTime;
-    const timeElapsed = currentTime - startTime;
-
-    // Ease-in-out function
-    const ease = easeInOutCubic(timeElapsed, start, distance, duration);
-
-    window.scrollTo(0, ease);
-
-    if (timeElapsed < duration) {
-      requestAnimationFrame(animation);
-    } else {
-      window.scrollTo(0, targetPosition); // Ensure final position
+    function easeInOutCubic(t, b, c, d) {
+      t /= d / 2;
+      if (t < 1) return c / 2 * t * t * t + b;
+      t -= 2;
+      return c / 2 * (t * t * t + 2) + b;
     }
-  }
 
-  function easeInOutCubic(t, b, c, d) {
-    t /= d / 2;
-    if (t < 1) return c / 2 * t * t * t + b;
-    t -= 2;
-    return c / 2 * (t * t * t + 2) + b;
+    requestAnimationFrame(animation);
   }
-
-  requestAnimationFrame(animation);
-}
 
 
   const form = document.getElementById('contactForm');
