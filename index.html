@@ -3,11 +3,16 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <title>PRATIK ABHANG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRATIK ABHANG - Portfolio</title>
   <link rel="icon" href="./files/titleprofile.png" type="image/x-icon">
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Google Fonts - Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Typed.js for typing animation -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -52,6 +57,44 @@
           </div>
         </li>
       </ul>
+    </nav>
+    <!-- Mobile Navigation -->
+    <nav id="hamburger-nav">
+      <div class="logo">&lt;pratik abhang/&gt;</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#home" onclick="toggleMenu()"><i class="fas fa-house"></i> Home</a></li>
+          <li><a href="#about" onclick="toggleMenu()"><i class="fas fa-user-tie"></i> About</a></li>
+          <li><a href="#skills" onclick="toggleMenu()"><i class="fas fa-brain"></i> Skills</a></li>
+          <li><a href="#experience" onclick="toggleMenu()"><i class="fas fa-briefcase"></i> Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()"><i class="fas fa-code"></i> Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()"><i class="fas fa-envelope"></i> Contact</a></li>
+          <li class="theme-nav-item">
+            <div class="theme-nav-container">
+              <div class="theme-toggle-nav">
+                <input type="checkbox" id="theme-switch-nav-mobile" class="theme-switch-nav">
+                <label for="theme-switch-nav-mobile" class="theme-label-nav">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+                  <span class="theme-ball-nav"></span>
+                </label>
+              </div>
+              <div class="color-picker-nav">
+                <button class="color-option-nav" data-color="black"></button>
+                <button class="color-option-nav" data-color="red"></button>
+                <button class="color-option-nav" data-color="yellow"></button>
+                <button class="color-option-nav" data-color="blue"></button>
+                <button class="color-option-nav" data-color="green"></button>
+              </div>
+            </div>
+          </li>
+        </div>
+      </div>
     </nav>
   </header>
 
@@ -384,8 +427,6 @@
           </div>
         </div>
       </div>
-
-
     </div>
   </section>
 
@@ -453,8 +494,6 @@
           </button>
         </div>
       </form>
-
-
     </div>
   </section>
 
@@ -476,7 +515,6 @@
   </footer>
 
   <!-- JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="script.js"></script>
 </body>
 
