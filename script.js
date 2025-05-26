@@ -92,26 +92,24 @@ document.addEventListener('DOMContentLoaded', function () {
   updateDateTime();
   setInterval(updateDateTime, 1000);
 
-  // Smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
 
-      if (targetId !== '#') {
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          const headerHeight = document.getElementById('header').offsetHeight;
-          const targetPosition = targetElement.offsetTop - headerHeight;
+    const targetId = this.getAttribute('href');
+    if (targetId !== '#' && targetId.length > 1) {
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        const header = document.getElementById('header');
+        const headerHeight = header ? header.offsetHeight : 0;
+        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight;
 
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-        }
+        // Smooth scroll with a custom duration
+        smoothScrollTo(targetPosition, 800); // 800ms duration
       }
-    });
+    }
   });
+});
 
   const form = document.getElementById('contactForm');
   const sendBtn = document.getElementById('sendBtn');
