@@ -1,13 +1,13 @@
-document.addEventListener('DOMContentLoaded', function() {
-  
+document.addEventListener('DOMContentLoaded', function () {
+
   // Set viewport to desktop size
   const viewportMeta = document.querySelector('meta[name="viewport"]');
   viewportMeta.content = "width=980, initial-scale=1.0, maximum-scale=1.0, user-scalable=no";
-  
+
   // Theme switching functionality
   const themeSwitch = document.getElementById('theme-switch-nav');
   const colorOptions = document.querySelectorAll('.color-option-nav');
-  
+
   // Get saved theme preference or default to light theme (ignores system preference)
   const savedTheme = localStorage.getItem('theme') || 'light';
 
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.documentElement.setAttribute('data-color', savedColor);
 
   // Theme switch event listener
-  themeSwitch.addEventListener('change', function() {
+  themeSwitch.addEventListener('change', function () {
     if (this.checked) {
       document.documentElement.setAttribute('data-theme', 'dark');
       localStorage.setItem('theme', 'dark');
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Color options event listeners
   colorOptions.forEach(option => {
-    option.addEventListener('click', function() {
+    option.addEventListener('click', function () {
       const color = this.getAttribute('data-color');
       document.documentElement.setAttribute('data-color', color);
       localStorage.setItem('color', color);
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Header scroll effect
   const header = document.getElementById('header');
-  window.addEventListener('scroll', function() {
+  window.addEventListener('scroll', function () {
     if (window.scrollY > 50) {
       header.classList.add('scrolled');
     } else {
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
       second: '2-digit',
       hour12: false
     });
-    
+
     document.getElementById("current-date").textContent = formattedDate;
     document.getElementById("current-time").textContent = formattedTime;
   }
@@ -94,16 +94,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
       e.preventDefault();
       const targetId = this.getAttribute('href');
-      
+
       if (targetId !== '#') {
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
           const headerHeight = document.getElementById('header').offsetHeight;
           const targetPosition = targetElement.offsetTop - headerHeight;
-          
+
           window.scrollTo({
             top: targetPosition,
             behavior: 'smooth'
@@ -113,60 +113,60 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-const form = document.getElementById('contactForm');
-const sendBtn = document.getElementById('sendBtn');
+  const form = document.getElementById('contactForm');
+  const sendBtn = document.getElementById('sendBtn');
 
-if (form && sendBtn) {
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
+  if (form && sendBtn) {
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
 
-    const oldStatus = form.querySelector('.form-status');
-    if (oldStatus) oldStatus.remove();
+      const oldStatus = form.querySelector('.form-status');
+      if (oldStatus) oldStatus.remove();
 
-    // Start loading
-    sendBtn.classList.add('sending');
-    const btnIcon = sendBtn.querySelector('i');
-    const btnText = sendBtn.querySelector('span');
-    btnIcon.className = 'fa-solid fa-spinner fa-spin';
-    btnText.textContent = 'Sending...';
+      // Start loading
+      sendBtn.classList.add('sending');
+      const btnIcon = sendBtn.querySelector('i');
+      const btnText = sendBtn.querySelector('span');
+      btnIcon.className = 'fa-solid fa-spinner fa-spin';
+      btnText.textContent = 'Sending...';
 
-    const formData = new FormData(form);
-    const formStatus = document.createElement('p');
-    formStatus.className = 'form-status';
+      const formData = new FormData(form);
+      const formStatus = document.createElement('p');
+      formStatus.className = 'form-status';
 
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      });
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
 
-      if (response.ok) {
-        formStatus.textContent = 'Message sent successfully!';
-        formStatus.classList.add('success');
-        form.reset();
-      } else {
-        throw new Error('Failed to send');
+        if (response.ok) {
+          formStatus.textContent = 'Message sent successfully!';
+          formStatus.classList.add('success');
+          form.reset();
+        } else {
+          throw new Error('Failed to send');
+        }
+      } catch (error) {
+        formStatus.textContent = 'Oops! There was a problem sending your message.';
+        formStatus.classList.add('error');
+        console.error(error);
+      } finally {
+        sendBtn.classList.remove('sending');
+        btnIcon.className = 'fas fa-paper-plane';
+        btnText.textContent = 'Send Message';
+
+        form.appendChild(formStatus);
+        setTimeout(() => formStatus.classList.add('show'), 100);
+
+        setTimeout(() => {
+          formStatus.classList.remove('show');
+          setTimeout(() => formStatus.remove(), 500);
+        }, 5000);
       }
-    } catch (error) {
-      formStatus.textContent = 'Oops! There was a problem sending your message.';
-      formStatus.classList.add('error');
-      console.error(error);
-    } finally {
-      sendBtn.classList.remove('sending');
-      btnIcon.className = 'fas fa-paper-plane';
-      btnText.textContent = 'Send Message';
-
-      form.appendChild(formStatus);
-      setTimeout(() => formStatus.classList.add('show'), 100);
-
-      setTimeout(() => {
-        formStatus.classList.remove('show');
-        setTimeout(() => formStatus.remove(), 500);
-      }, 5000);
-    }
-  });
-}
+    });
+  }
 
 
   // Age calculation
@@ -204,13 +204,13 @@ if (form && sendBtn) {
       '.certification-card, .skill-card, .project-card, ' +
       '.experience-card'
     );
-    
+
     const windowHeight = window.innerHeight;
     const scrollPosition = window.scrollY + windowHeight;
-    
+
     elements.forEach((element, index) => {
       const elementPosition = element.offsetTop;
-      
+
       if (scrollPosition > elementPosition + 100 && !element.classList.contains('animate')) {
         const delay = index * 0.1;
         element.style.animationDelay = `${delay}s`;
@@ -238,7 +238,7 @@ if (form && sendBtn) {
   skillCards.forEach((card, index) => {
     const delay = Math.random() * 2;
     card.style.animationDelay = `${delay}s`;
-    
+
     const duration = 3 + Math.random() * 3;
     card.style.animationDuration = `${duration}s`;
   });
@@ -247,12 +247,12 @@ if (form && sendBtn) {
   skillCards.forEach(card => {
     const skill = card.getAttribute('data-skill');
     const icon = card.querySelector('i');
-    
+
     card.addEventListener('mouseenter', () => {
       card.classList.add(`${skill}-hover`);
       icon.style.animation = 'floatIcon 1.5s ease-in-out infinite';
     });
-    
+
     card.addEventListener('mouseleave', () => {
       card.classList.remove(`${skill}-hover`);
       icon.style.animation = '';
@@ -343,18 +343,18 @@ if (form && sendBtn) {
   });
 
   // Disable Ctrl + '+' or Ctrl + '-' keys for zoom on desktop
-window.addEventListener('keydown', function(e) {
-  if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '=')) {
-    e.preventDefault();
-  }
-});
+  window.addEventListener('keydown', function (e) {
+    if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '=')) {
+      e.preventDefault();
+    }
+  });
 
-// Disable zoom via mouse wheel + Ctrl on desktop
-window.addEventListener('wheel', function(e) {
-  if (e.ctrlKey) {
-    e.preventDefault();
-  }
-}, { passive: false });
+  // Disable zoom via mouse wheel + Ctrl on desktop
+  window.addEventListener('wheel', function (e) {
+    if (e.ctrlKey) {
+      e.preventDefault();
+    }
+  }, { passive: false });
 
 
 });
