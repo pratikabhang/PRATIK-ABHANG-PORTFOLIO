@@ -111,6 +111,43 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+/**
+ * Smooth scroll to a target position
+ * @param {number} targetPosition - The vertical position to scroll to
+ * @param {number} duration - Duration in milliseconds
+ */
+function smoothScrollTo(targetPosition, duration) {
+  const start = window.scrollY;
+  const distance = targetPosition - start;
+  let startTime = null;
+
+  function animation(currentTime) {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+
+    // Ease-in-out function
+    const ease = easeInOutCubic(timeElapsed, start, distance, duration);
+
+    window.scrollTo(0, ease);
+
+    if (timeElapsed < duration) {
+      requestAnimationFrame(animation);
+    } else {
+      window.scrollTo(0, targetPosition); // Ensure final position
+    }
+  }
+
+  function easeInOutCubic(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return c / 2 * t * t * t + b;
+    t -= 2;
+    return c / 2 * (t * t * t + 2) + b;
+  }
+
+  requestAnimationFrame(animation);
+}
+
+
   const form = document.getElementById('contactForm');
   const sendBtn = document.getElementById('sendBtn');
 
