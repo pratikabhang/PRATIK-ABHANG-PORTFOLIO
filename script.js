@@ -1,40 +1,59 @@
 document.addEventListener('DOMContentLoaded', function () {
-
-  // Set viewport to desktop size
-  const viewportMeta = document.querySelector('meta[name="viewport"]');
-  viewportMeta.content = "width=980, initial-scale=1.0, maximum-scale=1.0, user-scalable=no";
+  // Mobile menu toggle functionality
+  function toggleMenu() {
+    const menuLinks = document.querySelector('.menu-links');
+    const hamburgerIcon = document.querySelector('.hamburger-icon');
+    menuLinks.classList.toggle('open');
+    hamburgerIcon.classList.toggle('open');
+  }
 
   // Theme switching functionality
   const themeSwitch = document.getElementById('theme-switch-nav');
+  const themeSwitchMobile = document.getElementById('theme-switch-nav-mobile');
   const colorOptions = document.querySelectorAll('.color-option-nav');
 
-  // Get saved theme preference or default to light theme (ignores system preference)
+  // Get saved theme preference or default to light theme
   const savedTheme = localStorage.getItem('theme') || 'light';
-
   const savedColor = localStorage.getItem('color') || 'black';
 
   // Apply saved theme
   if (savedTheme === 'dark') {
     document.documentElement.setAttribute('data-theme', 'dark');
-    themeSwitch.checked = true;
+    if (themeSwitch) themeSwitch.checked = true;
+    if (themeSwitchMobile) themeSwitchMobile.checked = true;
   } else {
     document.documentElement.setAttribute('data-theme', 'light');
-    themeSwitch.checked = false;
+    if (themeSwitch) themeSwitch.checked = false;
+    if (themeSwitchMobile) themeSwitchMobile.checked = false;
   }
 
   // Apply saved color
   document.documentElement.setAttribute('data-color', savedColor);
 
-  // Theme switch event listener
-  themeSwitch.addEventListener('change', function () {
-    if (this.checked) {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.setAttribute('data-theme', 'light');
-      localStorage.setItem('theme', 'light');
-    }
-  });
+  // Theme switch event listeners
+  if (themeSwitch) {
+    themeSwitch.addEventListener('change', function () {
+      if (this.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  }
+
+  if (themeSwitchMobile) {
+    themeSwitchMobile.addEventListener('change', function () {
+      if (this.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  }
 
   // Color options event listeners
   colorOptions.forEach(option => {
@@ -92,6 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
   updateDateTime();
   setInterval(updateDateTime, 1000);
 
+  // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
@@ -147,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
     requestAnimationFrame(animation);
   }
 
-
+  // Contact form submission
   const form = document.getElementById('contactForm');
   const sendBtn = document.getElementById('sendBtn');
 
@@ -203,7 +223,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-
   // Age calculation
   function calculateAge(birthDate) {
     const today = new Date();
@@ -236,8 +255,8 @@ document.addEventListener('DOMContentLoaded', function () {
   function animateOnScroll() {
     const elements = document.querySelectorAll(
       '.about-card, .details-card, .timeline-container, ' +
-      '.certification-card, .skill-card, .project-card, ' +
-      '.experience-card'
+      '.skill-card, .project-card, ' +
+      '.itimeline-container'
     );
 
     const windowHeight = window.innerHeight;
@@ -257,8 +276,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // Initialize elements for animation
   document.querySelectorAll(
     '.about-card, .details-card, .timeline-container, ' +
-    '.certification-card, .skill-card, .project-card, ' +
-    '.experience-card'
+    '.skill-card, .project-card, ' +
+    '.itimeline-container'
   ).forEach(element => {
     element.style.opacity = '0';
     element.style.transform = 'translateY(20px)';
@@ -347,7 +366,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     const message = new SpeechSynthesisUtterance(
-      "Welcome to Pratik Abhang’s Portfolio!"
+      "Welcome to Pratik Abhang's Portfolio!"
     );
 
     message.lang = 'en-US';
@@ -390,6 +409,4 @@ document.addEventListener('DOMContentLoaded', function () {
       e.preventDefault();
     }
   }, { passive: false });
-
-
 });
