@@ -1376,12 +1376,6 @@ main {
   opacity: 1;
 }
 
-.skill-card:hover i {
-  animation: floatIconSlow 6s ease-in-out infinite;
-  transform: scale(1.2);
-  opacity: 1;
-}
-
 .skill-card p {
   font-size: 1.1rem;
   font-weight: 500;
@@ -1389,227 +1383,67 @@ main {
   color: var(--text-color, #333);
 }
 
+.skill-card:hover i {
+  /* animation: floatIconSlow 6s ease-in-out infinite; */
+  /* transform: scale(1.2); */
+  /* opacity: 1; */
+}
+
 .skill-card:hover p {
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
 }
 
-.skill-card[data-skill="java"] {
-  border: 3px solid var(--border-color);
+
+.skill-card[data-skill="java"] i { color: #FF8C00; }
+.skill-card[data-skill="python"] i { color: #3776AB; }
+.skill-card[data-skill="sql"] i { color: #e38c00; }
+.skill-card[data-skill="kotlin"] i { color: #7F52FF; }
+.skill-card[data-skill="javascript"] i { color: #F7DF1E; }
+.skill-card[data-skill="typescript"] i { color: #3178c6; }
+.skill-card[data-skill="html"] i { color: #E34F26; }
+.skill-card[data-skill="css"] i { color: #1572B6; }
+.skill-card[data-skill="react"] i { color: #61DAFB; }
+.skill-card[data-skill="nextjs"] i { color: #000; }
+.skill-card[data-skill="tailwind"] i { color: #38BDF8; }
+.skill-card[data-skill="nodejs"] i { color: #339933; }
+.skill-card[data-skill="express"] i { color: #000; }
+.skill-card[data-skill="springboot"] i { color: #6DB33F; }
+.skill-card[data-skill="django"] i { color: #092E20; }
+.skill-card[data-skill="graphql"] i { color: #E10098; }
+.skill-card[data-skill="mysql"] i { color: #4479A1; }
+.skill-card[data-skill="postgresql"] i { color: #336791; }
+.skill-card[data-skill="mongodb"] i { color: #47A248; }
+.skill-card[data-skill="firebase"] i { color: #FFCA28; }
+.skill-card[data-skill="redis"] i { color: #DC382D; }
+.skill-card[data-skill="aws"] i { color: #FF9900; }
+.skill-card[data-skill="docker"] i { color: #2496ED; }
+.skill-card[data-skill="kubernetes"] i { color: #326CE5; }
+.skill-card[data-skill="terraform"] i { color: #623CE4; }
+.skill-card[data-skill="github"] i { color: #181717; }
+.skill-card[data-skill="vscode"] i { color: #007ACC; }
+.skill-card[data-skill="postman"] i { color: #FF6C37; }
+.skill-card[data-skill="slack"] i { color: #4A154B; }
+.skill-card[data-skill="figma"] i { color: #F24E1E; }
+.skill-card[data-skill="oop"] i { color: #9C27B0; }
+.skill-card[data-skill="dsa"] i { color: #00ACC1; }
+.skill-card[data-skill="sdlc"] i { color: #3F51B5; }
+.skill-card[data-skill="restapi"] i { color: #607D8B; }
+.skill-card[data-skill="cloud"] i { color: #00C853; }
+.skill-card[data-skill="systemdesign"] i { color: #FF5722; }
+.skill-card[data-skill="cybersecurity"] i { color: #607D8B; }
+.skill-card[data-skill="ai"] i { color: #00BFA5; }
+.skill-card[data-skill="anaconda"] i { color: #44A833; }
+
+/* Border highlight */
+.skill-card[data-skill] {
+  border: 3px solid var(--border-color, #ddd);
 }
 
-.skill-card[data-skill="java"] i {
-  color: #FF8C00;
+/* Dark mode adjustments */
+[data-theme="dark"] .skill-card i {
+  filter: brightness(1.2);
 }
 
-[data-theme="dark"] .skill-card[data-skill="java"] i {
-  color: #FFA74D;
-}
-
-.skill-card[data-skill="mysql"] {
-  border: 3px solid var(--border-color);
-}
-
-.skill-card[data-skill="mysql"] i {
-  color: #4479A1;
-}
-
-[data-theme="dark"] .skill-card[data-skill="mysql"] i {
-  color: #6FA8D6;
-}
-
-.skill-card[data-skill="html"] {
-  border: 3px solid var(--border-color);
-}
-
-.skill-card[data-skill="html"] i {
-  color: #E34F26;
-}
-
-[data-theme="dark"] .skill-card[data-skill="html"] i {
-  color: #FF7043;
-}
-
-.skill-card[data-skill="css"] {
-  border: 3px solid var(--border-color);
-}
-
-.skill-card[data-skill="css"] i {
-  color: #1572B6;
-}
-
-[data-theme="dark"] .skill-card[data-skill="css"] i {
-  color: #40A9FF;
-}
-
-.skill-card[data-skill="javascript"] {
-  border: 3px solid var(--border-color);
-}
-
-.skill-card[data-skill="javascript"] i {
-  color: #F7DF1E;
-}
-
-[data-theme="dark"] .skill-card[data-skill="javascript"] i {
-  color: #FFF176;
-}
-
-.skill-card[data-skill="php"] {
-  border: 3px solid var(--border-color);
-}
-
-.skill-card[data-skill="php"] i {
-  color: #777BB4;
-}
-
-[data-theme="dark"] .skill-card[data-skill="php"] i {
-  color: #A6A9DC;
-}
-
-.skill-card[data-skill="bootstrap"] {
-  border: 3px solid var(--border-color);
-}
-
-.skill-card[data-skill="bootstrap"] i {
-  color: #7952B3;
-}
-
-[data-theme="dark"] .skill-card[data-skill="bootstrap"] i {
-  color: #A279E4;
-}
-
-.skill-card[data-skill="react"] {
-  border: 3px solid var(--border-color);
-}
-
-.skill-card[data-skill="react"] i {
-  color: #61DAFB;
-}
-
-[data-theme="dark"] .skill-card[data-skill="react"] i {
-  color: #8EEBFF;
-}
-
-.skill-card[data-skill="nodejs"] {
-  border: 3px solid var(--border-color);
-}
-
-.skill-card[data-skill="nodejs"] i {
-  color: #339933;
-}
-
-[data-theme="dark"] .skill-card[data-skill="nodejs"] i {
-  color: #5AC95A;
-}
-
-.skill-card[data-skill="mongodb"] {
-  border: 3px solid var(--border-color);
-}
-
-.skill-card[data-skill="mongodb"] i {
-  color: #47A248;
-}
-
-[data-theme="dark"] .skill-card[data-skill="mongodb"] i {
-  color: #6FCF70;
-}
-
-.skill-card[data-skill="expressjs"] {
-  border: 3px solid var(--border-color);
-}
-
-.skill-card[data-skill="expressjs"] i {
-  color: #000000;
-  /* default for light theme */
-}
-
-[data-theme="dark"] .skill-card[data-skill="expressjs"] i {
-  color: #ffffff;
-}
-
-.skill-card[data-skill="kotlin"] {
-  border: 3px solid var(--border-color);
-}
-
-.skill-card[data-skill="kotlin"] i {
-  color: #7F52FF;
-}
-
-[data-theme="dark"] .skill-card[data-skill="kotlin"] i {
-  color: #A88CFF;
-}
-
-.skill-card[data-skill="google"] {
-  border: 3px solid var(--border-color);
-}
-
-.skill-card[data-skill="google"] i {
-  color: #FF0000;
-}
-
-[data-theme="dark"] .skill-card[data-skill="google"] i {
-  color: #FF5C5C;
-}
-
-.skill-card[data-skill="microsoft"] {
-  border: 3px solid var(--border-color);
-}
-
-.skill-card[data-skill="microsoft"] i {
-  color: #0078D4;
-}
-
-[data-theme="dark"] .skill-card[data-skill="microsoft"] i {
-  color: #4DA8FF;
-}
-
-.skill-card[data-skill="github"] {
-  border: 3px solid var(--border-color);
-}
-
-.skill-card[data-skill="github"] i {
-  color: #181717;
-  /* default color for light theme */
-}
-
-[data-theme="dark"] .skill-card[data-skill="github"] i {
-  color: #ffffff;
-}
-
-.skill-card[data-skill="python"] {
-  border: 3px solid var(--border-color);
-}
-
-.skill-card[data-skill="python"] i {
-  color: #3776AB;
-}
-
-[data-theme="dark"] .skill-card[data-skill="python"] i {
-  color: #5FA2D6;
-}
-
-.skill-card[data-skill="communication"] {
-  border: 3px solid var(--border-color);
-}
-
-.skill-card[data-skill="communication"] i {
-  color: #8B4513;
-}
-
-[data-theme="dark"] .skill-card[data-skill="communication"] i {
-  color: #C96F33;
-}
-
-.skill-card[data-skill="teamwork"] {
-  border: 3px solid var(--border-color);
-}
-
-.skill-card[data-skill="teamwork"] i {
-  color: #09a58b;
-}
-
-[data-theme="dark"] .skill-card[data-skill="teamwork"] i {
-  color: #5CD9C2;
-}
 
 /* ========================================
    EXPERIENCE SECTION
