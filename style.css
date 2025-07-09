@@ -517,21 +517,23 @@ header {
 
 header.scrolled {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-  height: 110px; /* height when scrolled */
+  height: 100px; /* height when scrolled */
 }
 
 #desktop-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 3rem;
+  padding: 1rem 3rem;
   max-width: 1400px;
   margin: 0 auto;
+  margin-top: -8px;
 }
 
 .nav-links {
   display: flex;
   gap: 0.1rem;
+  
 }
 
 .nav-links li {
@@ -587,6 +589,7 @@ header.scrolled {
   padding: 0.5rem 1rem;
   border-radius: 12px;
   transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    margin-left: -80px;
 }
 
 .logo::before {
@@ -701,7 +704,7 @@ main {
 #home {
   justify-content: center;
   align-items: center;
-  padding: 10rem 2rem;
+  padding: 8rem 2rem;
 }
 
 .profile__container {
@@ -2051,6 +2054,8 @@ footer {
   border-radius: 8px;
   background: var(--hover-color);
   transition: all 0.3s ease;
+  margin-right: -70px;
+    margin-left: 130px;
 }
 
 .theme-toggle-nav {
