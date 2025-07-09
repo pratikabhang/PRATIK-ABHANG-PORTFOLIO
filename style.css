@@ -501,12 +501,11 @@ section {
 
 #autoScrollBtn i {
   color: inherit;
-}
-
-/* ========================================
+}/* ========================================
    HEADER & NAVIGATION
    ======================================== */
 header {
+  position: fixed; /* keeps header fixed at top */
   top: 0;
   left: 0;
   width: 100%;
@@ -518,7 +517,7 @@ header {
 
 header.scrolled {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-  height: 70px;
+  height: 120px; /* height when scrolled */
 }
 
 #desktop-nav {
@@ -579,7 +578,7 @@ header.scrolled {
 }
 
 .logo {
-  font-size: 2.3rem;
+  font-size: 2rem;
   font-weight: bold;
   cursor: pointer;
   display: inline-block;
@@ -607,6 +606,13 @@ header.scrolled {
 
 .logo:hover::before {
   border: 2.2px dashed var(--primary-color);
+}
+
+/* ========================================
+   MAIN CONTENT SPACING
+   ======================================== */
+main {
+  padding-top: 100px; /* pushes content below header */
 }
 
 /* ========================================
@@ -688,13 +694,14 @@ header.scrolled {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
+
 /* ========================================
    HOME SECTION
    ======================================== */
 #home {
   justify-content: center;
   align-items: center;
-  padding: 2rem 2rem;
+  padding: 10rem 2rem;
 }
 
 .profile__container {
