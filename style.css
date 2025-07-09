@@ -1947,15 +1947,6 @@ main {
   animation: spin-border 1s linear infinite;
 }
 
-@keyframes spin-border {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 /* Status message */
 .form-status {
