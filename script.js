@@ -166,62 +166,67 @@ document.addEventListener('DOMContentLoaded', function () {
 
     requestAnimationFrame(animation);
   }
+const form = document.getElementById('contactForm');
+const sendBtn = document.getElementById('sendBtn');
 
-  // Contact form submission
-  const form = document.getElementById('contactForm');
-  const sendBtn = document.getElementById('sendBtn');
+if (form && sendBtn) {
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
 
-  if (form && sendBtn) {
-    form.addEventListener('submit', async function (e) {
-      e.preventDefault();
+    // Remove any existing status messages
+    const oldStatus = form.querySelector('.form-status');
+    if (oldStatus) oldStatus.remove();
 
-      const oldStatus = form.querySelector('.form-status');
-      if (oldStatus) oldStatus.remove();
+    // Button elements
+    const btnIcon = sendBtn.querySelector('.btn-icon i');
+    const btnText = sendBtn.querySelector('.btn-text');
 
-      // Start loading
-      sendBtn.classList.add('sending');
-      const btnIcon = sendBtn.querySelector('i');
-      const btnText = sendBtn.querySelector('span');
-      btnIcon.className = 'fa-solid fa-spinner fa-spin';
-      btnText.textContent = 'Sending...';
+    // Start loading animation
+    sendBtn.classList.add('sending');
+    btnIcon.className = 'fas fa-spinner fa-spin';
+    btnText.textContent = 'Sending...';
 
-      const formData = new FormData(form);
-      const formStatus = document.createElement('p');
-      formStatus.className = 'form-status';
+    const formData = new FormData(form);
+    const formStatus = document.createElement('p');
+    formStatus.className = 'form-status';
 
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
 
-        if (response.ok) {
-          formStatus.textContent = 'Message sent successfully!';
-          formStatus.classList.add('success');
-          form.reset();
-        } else {
-          throw new Error('Failed to send');
-        }
-      } catch (error) {
-        formStatus.textContent = 'Oops! There was a problem sending your message.';
-        formStatus.classList.add('error');
-        console.error(error);
-      } finally {
-        sendBtn.classList.remove('sending');
-        btnIcon.className = 'fas fa-paper-plane';
-        btnText.textContent = 'Send Message';
-
-        form.appendChild(formStatus);
-        setTimeout(() => formStatus.classList.add('show'), 100);
-
-        setTimeout(() => {
-          formStatus.classList.remove('show');
-          setTimeout(() => formStatus.remove(), 500);
-        }, 5000);
+      if (response.ok) {
+        formStatus.textContent = 'Message sent successfully!';
+        formStatus.classList.add('success');
+        form.reset();
+      } else {
+        throw new Error('Failed to send');
       }
-    });
-  }
+    } catch (error) {
+      formStatus.textContent = 'Oops! There was a problem sending your message.';
+      formStatus.classList.add('error');
+      console.error(error);
+    } finally {
+      // Reset button
+      sendBtn.classList.remove('sending');
+      btnIcon.className = 'fas fa-paper-plane';
+      btnText.textContent = 'Send Message';
+
+      // Append & show status message
+      form.appendChild(formStatus);
+      setTimeout(() => formStatus.classList.add('show'), 100);
+
+      // Auto-remove status after 5s
+      setTimeout(() => {
+        formStatus.classList.remove('show');
+        setTimeout(() => formStatus.remove(), 500);
+      }, 5000);
+    }
+  });
+}
+
 
   // Age calculation
   function calculateAge(birthDate) {

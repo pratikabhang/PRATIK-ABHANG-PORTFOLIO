@@ -704,7 +704,7 @@ main {
 #home {
   justify-content: center;
   align-items: center;
-  padding: 8rem 2rem;
+  padding: 10rem 2rem;
 }
 
 .profile__container {
@@ -765,6 +765,7 @@ main {
   transform: scale(0.95);
 }
 
+/* Container for buttons */
 .btn-container {
   display: flex;
   gap: 1rem;
@@ -772,64 +773,69 @@ main {
   justify-content: center;
   flex-wrap: wrap;
 }
-/* Base button styles */
+
+/* Base button styling */
 .btn {
-  font-weight: 600;
-  transition: all 300ms ease;
-  padding: 1rem;
   width: 10rem;
-  border-radius: 2rem; /* Default: rounded pill shape */
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   font-size: 1rem;
-  opacity: 0;
-  animation: fadeIn 1s ease forwards 0.9s;
+  font-weight: 600;
   border: none;
+  border-radius: 2rem; /* pill shape */
   cursor: pointer;
   user-select: none;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards 0.9s;
+  transition:
+    border-radius 300ms ease,
+    transform 300ms ease,
+    background-color 300ms ease,
+    color 300ms ease;
 }
 
-/* Fade-in animation for button appearance */
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+/* Text and icon animation */
+.btn-text,
+.btn-icon {
+  display: inline-block;
+  transition: transform 300ms ease;
 }
 
-/* Shared button variant styling */
+/* Hover zoom-in effect */
+.btn:hover .btn-text,
+.btn:hover .btn-icon {
+  transform: scale(1.05);
+}
+
+
+/* Common styles */
 .btn-color-1,
 .btn-color-2 {
   border: 0.1rem solid var(--primary-color);
-  transition:
-    border-radius 300ms ease,
-    transform 300ms ease;
 }
 
-/* Variant 1: Filled button */
+/* Filled button */
 .btn-color-1 {
   background-color: var(--btn-color);
   color: var(--btn-text-color);
 }
 
-/* Hover for filled button (only shape change) */
-.btn-color-1:hover {
-  border-radius: 0; /* Only shape changes */
-  transform: translateY(-5px) scale(1.05); /* Optional: small lift */
-}
-
-/* Variant 2: Outline button */
+/* Outline button */
 .btn-color-2 {
   background-color: transparent;
   color: var(--text-color);
 }
 
-/* Hover for outline button (only shape change) */
+/* Hover: shape + lift */
+.btn-color-1:hover,
 .btn-color-2:hover {
-  border-radius: 0; /* Only shape changes */
-  transform: translateY(-5px) scale(1.05); /* Optional: small lift */
+  border-radius: 0.75rem;
+  transform: translateY(-5px) scale(1.05);
 }
+
 
 
 .socials__vertical {
@@ -1713,25 +1719,27 @@ main {
   min-height: 150px;
   resize: vertical;
 }
-
-/* Submit button styling */
+/* Form submit container */
 .form-submit {
   display: flex;
   justify-content: center;
   margin-top: 1.5rem;
 }
 
+/* Submit button styling */
 .form-submit button {
   width: 100%;
   padding: 1rem;
   border: 0.15rem solid var(--primary-color);
-  border-radius: 0.5rem;
+  border-radius: 2rem; /* pill by default */
   background-color: var(--primary-color);
-  color: var(--white, #fff);
+  color: var(--btn-text-color, #fff);
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition:
+    border-radius 0.3s ease,
+    transform 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1740,12 +1748,14 @@ main {
   overflow: hidden;
 }
 
+/* Hover effect: change shape only */
 .form-submit button:hover {
-  background-color: var(--secondary-color, #2ecc71);
+  border-radius: 0.75rem; /* change to soft rectangle */
   transform: translateY(-3px);
+  /* No color change */
 }
 
-/* Loading border animation */
+/* Spinner loading state */
 .form-submit button.sending {
   pointer-events: none;
   background-color: var(--primary-color);
@@ -1760,9 +1770,40 @@ main {
   right: -2px;
   bottom: -2px;
   border: 2px solid transparent;
-  border-top: 2px solid white;
+  border-top: 2px solid #fff;
   border-radius: 0.5rem;
   animation: spin-border 1s linear infinite;
+}
+
+/* Icon zoom on hover */
+.form-submit button .btn-icon {
+  transition: transform 0.3s ease;
+}
+
+.form-submit button:hover .btn-icon {
+  transform: scale(1.1);
+}
+
+/* Form status messages */
+.form-status {
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.form-status.success {
+  color: #2ecc71;
+}
+
+.form-status.error {
+  color: #e74c3c;
+}
+
+.form-status.show {
+  opacity: 1;
 }
 
 

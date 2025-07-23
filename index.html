@@ -106,14 +106,17 @@
 <div class="btn-container">
   <!-- Resume Button -->
   <button class="btn btn-color-2" onclick="window.open('https://flowcv.com/resume/9ivpkstiaeqd', '_blank')">
-    <i class="fa-solid fa-eye"></i> Resume
+    <span class="btn-icon"><i class="fa-solid fa-eye"></i></span>
+    <span class="btn-text">Resume</span>
   </button>
 
   <!-- Hire Me Button -->
   <button class="btn btn-color-1" onclick="location.href='./#contact'">
-    <i class="fa-solid fa-briefcase"></i> Hire Me
+    <span class="btn-icon"><i class="fa-solid fa-briefcase"></i></span>
+    <span class="btn-text">Hire Me</span>
   </button>
 </div>
+
 
     </div>
     <div class="section__pic-container">
@@ -395,67 +398,84 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <p class="section__text__p1">Get in Touch</p>
-    <h1 class="title">Contact Me</h1>
-    <div class="contact-container">
-      <div class="contact-info">
-        <div class="contact-info-item">
-          <div class="contact-icon"><i class="fas fa-phone"></i></div>
-          <div class="contact-text">
-            <h4>Phone</h4>
-            <p><a href="tel:+918766854678">+91 8766854678</a></p>
-          </div>
-        </div>
-        <div class="contact-info-item">
-          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-          <div class="contact-text">
-            <h4>Email</h4>
-            <p><a href="mailto:work.pratikabhang@gmail.com">work.pratikabhang@gmail.com</a></p>
-          </div>
-        </div>
-        <div class="contact-info-item">
-          <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
-          <div class="contact-text">
-            <h4>LinkedIn</h4>
-            <p><a href="https://linkedin.com/in/pratikabhang" target="_blank">in/pratikabhang</a></p>
-          </div>
-        </div>
-        <div class="contact-info-item">
-          <div class="contact-icon"><i class="fab fa-instagram"></i></div>
-          <div class="contact-text">
-            <h4>Instagram</h4>
-            <p><a href="https://www.instagram.com/pratikabhang1" target="_blank">@pratikabhang1</a></p>
-          </div>
-        </div>
-        <div class="contact-info-item">
-          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-          <div class="contact-text">
-            <h4>Location</h4>
-            <p><a href="https://www.google.com/maps/place/Pune,+Maharashtra" target="_blank">Pune, Maharashtra, India</a></p>
-          </div>
+<!-- Contact Section -->
+<section id="contact">
+  <p class="section__text__p1">Get in Touch</p>
+  <h1 class="title">Contact Me</h1>
+
+  <div class="contact-container">
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <div class="contact-info-item">
+        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+        <div class="contact-text">
+          <h4>Phone</h4>
+          <p><a href="tel:+918766854678">+91 8766854678</a></p>
         </div>
       </div>
-      <form class="contact-form" id="contactForm" action="https://formspree.io/f/xwpowbev" method="POST">
-        <div class="form-group">
-          <input type="text" name="name" placeholder="Your Name" required />
+
+      <div class="contact-info-item">
+        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+        <div class="contact-text">
+          <h4>Email</h4>
+          <p><a href="mailto:work.pratikabhang@gmail.com">work.pratikabhang@gmail.com</a></p>
         </div>
-        <div class="form-group">
-          <input type="email" name="email" placeholder="Your Email" required />
+      </div>
+
+      <div class="contact-info-item">
+        <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+        <div class="contact-text">
+          <h4>LinkedIn</h4>
+          <p><a href="https://linkedin.com/in/pratikabhang" target="_blank">in/pratikabhang</a></p>
         </div>
-        <div class="form-group">
-          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      </div>
+
+      <div class="contact-info-item">
+        <div class="contact-icon"><i class="fab fa-instagram"></i></div>
+        <div class="contact-text">
+          <h4>Instagram</h4>
+          <p><a href="https://www.instagram.com/pratikabhang1" target="_blank">@pratikabhang1</a></p>
         </div>
-        <div class="form-submit">
-          <button type="submit" class="btn btn-color-1" id="sendBtn">
-            <i class="fas fa-paper-plane"></i>
-            <span>Send Message</span>
-          </button>
+      </div>
+
+      <div class="contact-info-item">
+        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div class="contact-text">
+          <h4>Location</h4>
+          <p><a href="https://www.google.com/maps/place/Pune,+Maharashtra" target="_blank">Pune, Maharashtra, India</a></p>
         </div>
-      </form>
+      </div>
     </div>
-  </section>
+
+    <!-- Contact Form -->
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xwpowbev" method="POST">
+      <!-- Name -->
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Your Name" required />
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Your Email" required />
+      </div>
+
+      <!-- Message -->
+      <div class="form-group">
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      </div>
+
+      <!-- Submit Button -->
+<div class="form-submit">
+  <button type="submit" class="btn btn-color-1" id="sendBtn">
+    <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+    <span class="btn-text">Send Message</span>
+  </button>
+</div>
+
+    </form>
+  </div>
+</section>
+
 
   <!-- Footer -->
   <footer>
