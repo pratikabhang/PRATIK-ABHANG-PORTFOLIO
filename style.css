@@ -772,14 +772,13 @@ main {
   justify-content: center;
   flex-wrap: wrap;
 }
-
 /* Base button styles */
 .btn {
   font-weight: 600;
   transition: all 300ms ease;
   padding: 1rem;
   width: 10rem;
-  border-radius: 2rem;
+  border-radius: 2rem; /* Default: rounded pill shape */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -804,11 +803,8 @@ main {
 .btn-color-2 {
   border: 0.1rem solid var(--primary-color);
   transition:
-    background-color 300ms ease,
-    color 300ms ease,
-    transform 300ms ease,
-    box-shadow 300ms ease,
-    border-color 300ms ease;
+    border-radius 300ms ease,
+    transform 300ms ease;
 }
 
 /* Variant 1: Filled button */
@@ -817,13 +813,10 @@ main {
   color: var(--btn-text-color);
 }
 
-/* Hover for filled button */
+/* Hover for filled button (only shape change) */
 .btn-color-1:hover {
-  background-color: var(--btn-hover-bg-color);
-  color: var(--btn-hover-color);
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-  border-color: var(--btn-hover-bg-color);
+  border-radius: 0; /* Only shape changes */
+  transform: translateY(-5px) scale(1.05); /* Optional: small lift */
 }
 
 /* Variant 2: Outline button */
@@ -832,14 +825,12 @@ main {
   color: var(--text-color);
 }
 
-/* Hover for outline button */
+/* Hover for outline button (only shape change) */
 .btn-color-2:hover {
-  background-color: var(--btn-hover-bg-color);
-  color: var(--btn-hover-color);
-  border-color: var(--btn-hover-bg-color);
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 0; /* Only shape changes */
+  transform: translateY(-5px) scale(1.05); /* Optional: small lift */
 }
+
 
 .socials__vertical {
   display: flex;
@@ -874,19 +865,6 @@ main {
   transform: scale(1.2);
 }
 
-.social-icon.linkedin:hover i {
-  color: #0077b5;
-}
-
-.social-icon.instagram:hover i {
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.social-icon.hackerrank:hover i {
-  color: #2ec866;
-}
 
 /* ========================================
    ABOUT SECTION
