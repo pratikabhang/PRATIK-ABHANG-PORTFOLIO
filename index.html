@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <!-- Header Navigation -->
+  <!-- Header Navigation Section -->
   <header id="header" role="banner">
     <div class="logo" aria-label="Pratik Abhang Portfolio">&lt;pratik abhang/&gt;</div>
 
@@ -107,8 +107,8 @@
 
       <!-- Section Navigation Buttons -->
       <div class="section-nav-container">
-        <button class="section-nav-btn up-btn" aria-label="Go to Previous Section"><i class="fas fa-arrow-up"></i></button>
-        <button class="section-nav-btn down-btn" aria-label="Go to Next Section"><i class="fas fa-arrow-down"></i></button>
+        <button class="section-nav-btn up-btn" aria-label="Go to Previous Section"><i class="fa-solid fa-arrow-up"></i></button>
+        <button class="section-nav-btn down-btn" aria-label="Go to Next Section"><i class="fa-solid fa-arrow-down"></i></button>
       </div>
     </section>
 
@@ -337,49 +337,18 @@
       <p class="section__text__p1">Get in Touch</p>
       <h1 class="title" id="contact-title">Contact Me</h1>
       <div class="contact-container">
-        <div class="contact-info">
-          <div class="contact-info-item">
-            <div class="contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
-            <div class="contact-text">
-              <h4>Email</h4>
-              <p><a href="mailto:work.pratikabhang@gmail.com">work.pratikabhang@gmail.com</a></p>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-icon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></div>
-            <div class="contact-text">
-              <h4>LinkedIn</h4>
-              <p><a href="https://linkedin.com/in/pratikabhang" target="_blank">in/pratikabhang</a></p>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-icon"><i class="fab fa-github" aria-hidden="true"></i></div>
-            <div class="contact-text">
-              <h4>GitHub</h4>
-              <p><a href="https://github.com/pratikabhang" target="_blank">github.com/pratikabhang</a></p>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-icon"><i class="fab fa-instagram" aria-hidden="true"></i></div>
-            <div class="contact-text">
-              <h4>Instagram</h4>
-              <p><a href="https://www.instagram.com/pratikabhang1" target="_blank">@pratikabhang1</a></p>
-            </div>
-          </div>
-        </div>
-
         <!-- Contact Form -->
         <form class="contact-form" id="contactForm" action="https://formspree.io/f/xwpowbev" method="POST">
           <div class="form-group">
-            <label for="name" class="visually-hidden">Your Name</label>
+            <label for="name" class="visually-hidden"><i class="fa-solid fa-user"></i> Your Name</label>
             <input type="text" id="name" name="name" placeholder="Your Name" required />
           </div>
           <div class="form-group">
-            <label for="email" class="visually-hidden">Your Email</label>
+            <label for="email" class="visually-hidden"><i class="fa-solid fa-envelope"></i> Your Email</label>
             <input type="email" id="email" name="email" placeholder="Your Email" required />
           </div>
           <div class="form-group">
-            <label for="message" class="visually-hidden">Your Message</label>
+            <label for="message" class="visually-hidden"><i class="fa-solid fa-comment-dots"></i> Your Message</label>
             <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
           </div>
           <div class="form-submit">
@@ -388,20 +357,30 @@
               <span class="btn-text">Send Message</span>
             </button>
           </div>
-
-          <!-- Social Media Icons -->
-          <div class="social-icons">
-            <a href="https://linkedin.com/in/pratikabhang" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-            <a href="https://github.com/pratikabhang" target="_blank" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-            <a href="https://www.instagram.com/pratikabhang1" target="_blank" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-            <a href="mailto:work.pratikabhang@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
-          </div>
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+          <a href="https://pratikabhang.netlify.app/" target="_blank" aria-label="Website">
+            <i class="fas fa-globe"></i>
+          </a>
+          <a href="https://linkedin.com/in/pratikabhang" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/pratikabhang" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.instagram.com/pratikabhang1" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/@pratikabhang" target="_blank" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
         </form>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- Footer Section -->
   <footer role="contentinfo">
     <div class="footer-navigation">
       <ul class="footer-links">
