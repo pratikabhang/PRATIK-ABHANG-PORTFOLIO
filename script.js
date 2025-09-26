@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
           const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight;
 
           // Smooth scroll with a custom duration
-          smoothScrollTo(targetPosition, 800); // 800ms duration
+          smoothScrollTo(targetPosition, 800);
         }
       }
     });
@@ -166,67 +166,68 @@ document.addEventListener('DOMContentLoaded', function () {
 
     requestAnimationFrame(animation);
   }
-const form = document.getElementById('contactForm');
-const sendBtn = document.getElementById('sendBtn');
 
-if (form && sendBtn) {
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
+  // Contact form submission
+  const form = document.getElementById('contactForm');
+  const sendBtn = document.getElementById('sendBtn');
 
-    // Remove any existing status messages
-    const oldStatus = form.querySelector('.form-status');
-    if (oldStatus) oldStatus.remove();
+  if (form && sendBtn) {
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
 
-    // Button elements
-    const btnIcon = sendBtn.querySelector('.btn-icon i');
-    const btnText = sendBtn.querySelector('.btn-text');
+      // Remove any existing status messages
+      const oldStatus = form.querySelector('.form-status');
+      if (oldStatus) oldStatus.remove();
 
-    // Start loading animation
-    sendBtn.classList.add('sending');
-    btnIcon.className = 'fas fa-spinner fa-spin';
-    btnText.textContent = 'Sending...';
+      // Button elements
+      const btnIcon = sendBtn.querySelector('.btn-icon i');
+      const btnText = sendBtn.querySelector('.btn-text');
 
-    const formData = new FormData(form);
-    const formStatus = document.createElement('p');
-    formStatus.className = 'form-status';
+      // Start loading animation
+      sendBtn.classList.add('sending');
+      btnIcon.className = 'fas fa-spinner fa-spin';
+      btnText.textContent = 'Sending...';
 
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      });
+      const formData = new FormData(form);
+      const formStatus = document.createElement('p');
+      formStatus.className = 'form-status';
 
-      if (response.ok) {
-        formStatus.textContent = 'Message sent successfully!';
-        formStatus.classList.add('success');
-        form.reset();
-      } else {
-        throw new Error('Failed to send');
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          formStatus.textContent = 'Message sent successfully!';
+          formStatus.classList.add('success');
+          form.reset();
+        } else {
+          throw new Error('Failed to send');
+        }
+      } catch (error) {
+        formStatus.textContent = 'Oops! There was a problem sending your message.';
+        formStatus.classList.add('error');
+        console.error(error);
+      } finally {
+        // Reset button
+        sendBtn.classList.remove('sending');
+        btnIcon.className = 'fas fa-paper-plane';
+        btnText.textContent = 'Send Message';
+
+        // Append & show status message
+        form.appendChild(formStatus);
+        setTimeout(() => formStatus.classList.add('show'), 100);
+
+        // Auto-remove status after 5s
+        setTimeout(() => {
+          formStatus.classList.remove('show');
+          setTimeout(() => formStatus.remove(), 500);
+        }, 5000);
       }
-    } catch (error) {
-      formStatus.textContent = 'Oops! There was a problem sending your message.';
-      formStatus.classList.add('error');
-      console.error(error);
-    } finally {
-      // Reset button
-      sendBtn.classList.remove('sending');
-      btnIcon.className = 'fas fa-paper-plane';
-      btnText.textContent = 'Send Message';
-
-      // Append & show status message
-      form.appendChild(formStatus);
-      setTimeout(() => formStatus.classList.add('show'), 100);
-
-      // Auto-remove status after 5s
-      setTimeout(() => {
-        formStatus.classList.remove('show');
-        setTimeout(() => formStatus.remove(), 500);
-      }, 5000);
-    }
-  });
-}
-
+    });
+  }
 
   // Age calculation
   function calculateAge(birthDate) {
@@ -259,9 +260,8 @@ if (form && sendBtn) {
   // Scroll animation for elements
   function animateOnScroll() {
     const elements = document.querySelectorAll(
-      '.about-card, .details-card, .timeline-container, ' +
-      '.skill-card, .project-card, ' +
-      '.itimeline-container'
+      '.about-card, .details-card, .education-card, ' +
+      '.skill-card, .project-card, .experience-card'
     );
 
     const windowHeight = window.innerHeight;
@@ -280,9 +280,8 @@ if (form && sendBtn) {
 
   // Initialize elements for animation
   document.querySelectorAll(
-    '.about-card, .details-card, .timeline-container, ' +
-    '.skill-card, .project-card, ' +
-    '.itimeline-container'
+    '.about-card, .details-card, .education-card, ' +
+    '.skill-card, .project-card, .experience-card'
   ).forEach(element => {
     element.style.opacity = '0';
     element.style.transform = 'translateY(20px)';
@@ -318,122 +317,6 @@ if (form && sendBtn) {
     });
   });
 
-  // Auto-scroll button functionality
-  const scrollBtn = document.getElementById('autoScrollBtn');
-  let autoScroll = false;
-  let scrollDirection = 'down';
-
-  scrollBtn.addEventListener('click', () => {
-    autoScroll = !autoScroll;
-    scrollBtn.classList.toggle('active', autoScroll);
-
-    if (autoScroll) {
-      autoScrollFunction();
-    }
-  });
-
-  function autoScrollFunction() {
-    if (!autoScroll) return;
-
-    const scrollStep = 6;
-    const delay = 12;
-    const scrollMax = document.body.scrollHeight - window.innerHeight;
-
-    const scroll = () => {
-      if (!autoScroll) return;
-
-      const currentScroll = window.scrollY;
-
-      if (scrollDirection === 'down') {
-        if (currentScroll + scrollStep < scrollMax) {
-          window.scrollBy(0, scrollStep);
-        } else {
-          scrollDirection = 'up';
-        }
-      } else {
-        if (currentScroll - scrollStep > 0) {
-          window.scrollBy(0, -scrollStep);
-        } else {
-          scrollDirection = 'down';
-        }
-      }
-
-      setTimeout(scroll, delay);
-    };
-
-    scroll();
-  }
-
-  function speakWelcomeMessage() {
-    if (speechSynthesis.speaking) {
-      // Already speaking, do not start another speech
-      return;
-    }
-
-    const message = new SpeechSynthesisUtterance(
-      "Welcome to Pratik Abhang's Portfolio!"
-    );
-
-    message.lang = 'en-US';
-    message.rate = 1;  // Normal speed
-    message.pitch = 3; // Higher pitch
-
-    function setVoiceAndSpeak() {
-      const voices = speechSynthesis.getVoices();
-      message.voice = voices[0] || null;
-      speechSynthesis.speak(message);
-    }
-
-    if (speechSynthesis.getVoices().length > 0) {
-      setVoiceAndSpeak();
-    } else {
-      speechSynthesis.onvoiceschanged = () => {
-        setVoiceAndSpeak();
-        speechSynthesis.onvoiceschanged = null;
-      };
-    }
-  }
-
-  // Run 3 seconds after page load, only once
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      speakWelcomeMessage();
-    }, 3000);
-  });
-
-  // Disable Ctrl + '+' or Ctrl + '-' keys for zoom on desktop
-  window.addEventListener('keydown', function (e) {
-    if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '=')) {
-      e.preventDefault();
-    }
-  });
-
-  // Disable zoom via mouse wheel + Ctrl on desktop
-  window.addEventListener('wheel', function (e) {
-    if (e.ctrlKey) {
-      e.preventDefault();
-    }
-  }, { passive: false });
-
-    document.querySelectorAll('.dropdown-btn .btn').forEach(button => {
-    button.addEventListener('click', function (e) {
-      e.stopPropagation();
-      let parent = this.closest('.dropdown-btn');
-      parent.classList.toggle('active');
-
-      // Close other dropdowns if needed
-      document.querySelectorAll('.dropdown-btn').forEach(other => {
-        if (other !== parent) {
-          other.classList.remove('active');
-        }
-      });
-    });
-  });
-
-  // Close dropdown if clicked outside
-  document.addEventListener('click', function () {
-    document.querySelectorAll('.dropdown-btn').forEach(drop => {
-      drop.classList.remove('active');
-    });
-  });
+  // Make toggleMenu function globally available
+  window.toggleMenu = toggleMenu;
 });
