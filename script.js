@@ -1,65 +1,37 @@
 // script.js
-/**
- * PRATIK ABHANG PORTFOLIO WEBSITE
- * Main JavaScript functionality for interactive features
- */
-
-// Document ready event listener
 document.addEventListener('DOMContentLoaded', function () {
-  
-  // ===========================================
-  // MOBILE MENU TOGGLE FUNCTIONALITY
-  // ===========================================
-  
-  /**
-   * Toggle mobile menu open/close state
-   */
+  // Mobile menu toggle functionality
   function toggleMenu() {
     const menuLinks = document.querySelector('.menu-links');
     const hamburgerIcon = document.querySelector('.hamburger-icon');
     menuLinks.classList.toggle('open');
     hamburgerIcon.classList.toggle('open');
-    
-    // Update aria-expanded attribute for accessibility
-    const isExpanded = hamburgerIcon.getAttribute('aria-expanded') === 'true';
-    hamburgerIcon.setAttribute('aria-expanded', !isExpanded);
   }
 
-  // ===========================================
-  // THEME SWITCHING FUNCTIONALITY
-  // ===========================================
-  
+  // Theme switching functionality
   const themeSwitch = document.getElementById('theme-switch-nav');
+  const themeSwitchMobile = document.getElementById('theme-switch-nav-mobile');
   const colorOptions = document.querySelectorAll('.color-option-nav');
 
   // Get saved theme preference or default to light theme
   const savedTheme = localStorage.getItem('theme') || 'light';
   const savedColor = localStorage.getItem('color') || 'black';
 
-  /**
-   * Apply saved theme and color preferences
-   */
-  function applySavedPreferences() {
-    // Apply saved theme
-    if (savedTheme === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      if (themeSwitch) themeSwitch.checked = true;
-    } else {
-      document.documentElement.setAttribute('data-theme', 'light');
-      if (themeSwitch) themeSwitch.checked = false;
-    }
-
-    // Apply saved color
-    document.documentElement.setAttribute('data-color', savedColor);
-    
-    // Sync arrow colors with theme
-    syncArrowColor();
+  // Apply saved theme
+  if (savedTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    if (themeSwitch) themeSwitch.checked = true;
+    if (themeSwitchMobile) themeSwitchMobile.checked = true;
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+    if (themeSwitch) themeSwitch.checked = false;
+    if (themeSwitchMobile) themeSwitchMobile.checked = false;
   }
 
-  // Apply preferences on page load
-  applySavedPreferences();
+  // Apply saved color
+  document.documentElement.setAttribute('data-color', savedColor);
 
-  // Theme switch event listener
+  // Theme switch event listeners
   if (themeSwitch) {
     themeSwitch.addEventListener('change', function () {
       if (this.checked) {
@@ -69,7 +41,18 @@ document.addEventListener('DOMContentLoaded', function () {
         document.documentElement.setAttribute('data-theme', 'light');
         localStorage.setItem('theme', 'light');
       }
-      syncArrowColor();
+    });
+  }
+
+  if (themeSwitchMobile) {
+    themeSwitchMobile.addEventListener('change', function () {
+      if (this.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      }
     });
   }
 
@@ -79,14 +62,10 @@ document.addEventListener('DOMContentLoaded', function () {
       const color = this.getAttribute('data-color');
       document.documentElement.setAttribute('data-color', color);
       localStorage.setItem('color', color);
-      syncArrowColor();
     });
   });
 
-  // ===========================================
-  // HEADER SCROLL EFFECT
-  // ===========================================
-  
+  // Header scroll effect
   const header = document.getElementById('header');
   window.addEventListener('scroll', function () {
     if (window.scrollY > 50) {
@@ -96,10 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // ===========================================
-  // TYPED.JS ANIMATION FOR PROFESSION TITLES
-  // ===========================================
-  
+  // Typed.js animation for profession titles
   var typed = new Typed("#typed-text", {
     strings: [
       "Computer Engineer",
@@ -117,13 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
     cursorChar: "|",
   });
 
-  // ===========================================
-  // DATE AND TIME DISPLAY
-  // ===========================================
-  
-  /**
-   * Update date and time display in footer
-   */
+  // Date and time display
   function updateDateTime() {
     const currentDate = new Date();
     const options = { day: 'numeric', month: 'long', year: 'numeric' };
@@ -139,14 +109,10 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById("current-time").textContent = formattedTime;
   }
 
-  // Initialize and update date/time every second
   updateDateTime();
   setInterval(updateDateTime, 1000);
 
-  // ===========================================
-  // SMOOTH SCROLLING FOR ANCHOR LINKS
-  // ===========================================
-  
+  // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
@@ -202,10 +168,7 @@ document.addEventListener('DOMContentLoaded', function () {
     requestAnimationFrame(animation);
   }
 
-  // ===========================================
-  // CONTACT FORM SUBMISSION
-  // ===========================================
-  
+  // Contact form submission
   const form = document.getElementById('contactForm');
   const sendBtn = document.getElementById('sendBtn');
 
@@ -267,15 +230,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // ===========================================
-  // AGE CALCULATION
-  // ===========================================
-  
-  /**
-   * Calculate age from birth date
-   * @param {Date} birthDate - Birth date
-   * @returns {Object} Age in years, months, and days
-   */
+  // Age calculation
   function calculateAge(birthDate) {
     const today = new Date();
     let ageYears = today.getFullYear() - birthDate.getFullYear();
@@ -299,18 +254,11 @@ document.addEventListener('DOMContentLoaded', function () {
     };
   }
 
-  // Calculate and display age
   const birthDate = new Date('2003-11-21');
   const age = calculateAge(birthDate);
   document.getElementById('age').textContent = `${age.years} years, ${age.months} months, ${age.days} days Old`;
 
-  // ===========================================
-  // SCROLL ANIMATION FOR ELEMENTS
-  // ===========================================
-  
-  /**
-   * Animate elements when they come into view
-   */
+  // Scroll animation for elements
   function animateOnScroll() {
     const elements = document.querySelectorAll(
       '.about-card, .details-card, .education-card, ' +
@@ -341,14 +289,10 @@ document.addEventListener('DOMContentLoaded', function () {
     element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
   });
 
-  // Initialize and add scroll event listener
   animateOnScroll();
   window.addEventListener('scroll', animateOnScroll);
 
-  // ===========================================
-  // SKILL CARDS ANIMATION
-  // ===========================================
-  
+  // Skill cards animation
   const skillCards = document.querySelectorAll('.skill-card');
   skillCards.forEach((card, index) => {
     const delay = Math.random() * 2;
@@ -358,64 +302,53 @@ document.addEventListener('DOMContentLoaded', function () {
     card.style.animationDuration = `${duration}s`;
   });
 
-  // ===========================================
-  // SECTION NAVIGATION BUTTONS
-  // ===========================================
-  
-  const sections = ['home','about','skills','experience','projects','contact'];
-  const upBtn = document.querySelector('.up-btn');
-  const downBtn = document.querySelector('.down-btn');
-
-  /**
-   * Get current section index based on scroll position
-   * @returns {number} Index of current section
-   */
-  function getCurrentSectionIndex() {
-    const scrollPos = window.scrollY + window.innerHeight / 2;
-    for (let i = 0; i < sections.length; i++) {
-      const sec = document.getElementById(sections[i]);
-      if (sec.offsetTop <= scrollPos && sec.offsetTop + sec.offsetHeight > scrollPos) return i;
-    }
-    return 0;
-  }
-
-  // Up button click event
-  upBtn.addEventListener('click', () => { 
-    const idx = getCurrentSectionIndex(); 
-    if (idx > 0) {
-      document.getElementById(sections[idx-1]).scrollIntoView({behavior:'smooth'});
-    }
-  });
-
-  // Down button click event
-  downBtn.addEventListener('click', () => {
-    const idx = getCurrentSectionIndex(); 
-    if (idx < sections.length-1) {
-      document.getElementById(sections[idx+1]).scrollIntoView({behavior:'smooth'});
-    }
-  });
-
-  /**
-   * Sync arrow colors with current theme
-   */
-  function syncArrowColor() {
-    const color = getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim();
-    const bg = document.documentElement.getAttribute('data-theme') === 'dark' ? '#111' : '#fff';
-    
-    [upBtn, downBtn].forEach(btn => {
-      btn.style.backgroundColor = color;
-      btn.style.border = `2px solid ${color}`;
-      btn.style.color = bg;
-      btn.style.boxShadow = `0 4px 10px ${document.documentElement.getAttribute('data-theme') === 'dark' ? 'rgba(0,0,0,0.7)' : 'rgba(0,0,0,0.25)'}`;
-    });
-  }
-
-  // Initialize arrow colors
-  syncArrowColor();
-
-  // ===========================================
-  // MAKE TOGGLEMENU FUNCTION GLOBALLY AVAILABLE
-  // ===========================================
-  
+  // Make toggleMenu function globally available
   window.toggleMenu = toggleMenu;
 });
+
+// Sections scroll buttons
+const sections = ['home','about','skills','experience','projects','contact'];
+const upBtn = document.querySelector('.up-btn');
+const downBtn = document.querySelector('.down-btn');
+
+// Scroll functionality
+function getCurrentSectionIndex() {
+  const scrollPos = window.scrollY + window.innerHeight / 2;
+  for (let i=0;i<sections.length;i++) {
+    const sec = document.getElementById(sections[i]);
+    if(sec.offsetTop <= scrollPos && sec.offsetTop + sec.offsetHeight > scrollPos) return i;
+  }
+  return 0;
+}
+
+upBtn.addEventListener('click', ()=>{ 
+  const idx = getCurrentSectionIndex(); 
+  if(idx>0) document.getElementById(sections[idx-1]).scrollIntoView({behavior:'smooth'});
+});
+
+downBtn.addEventListener('click', ()=>{
+  const idx = getCurrentSectionIndex(); 
+  if(idx<sections.length-1) document.getElementById(sections[idx+1]).scrollIntoView({behavior:'smooth'});
+});
+
+// Sync arrow colors with theme
+let themeIsDark = false;
+const themeSwitch = document.getElementById('theme-switch-nav');
+
+themeSwitch.addEventListener('change', e => {
+  themeIsDark = e.target.checked;
+  syncArrowColor();
+});
+
+function syncArrowColor() {
+  const color = getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim();
+  const bg = themeIsDark ? '#111' : '#fff';
+  [upBtn, downBtn].forEach(btn=>{
+    btn.style.backgroundColor = color;
+    btn.style.border = `1px solid ${color}`;
+    btn.style.color = bg;
+    btn.style.boxShadow = `0 4px 10px ${themeIsDark?'rgba(0,0,0,0.7)':'rgba(0,0,0,0.25)'}`;
+  });
+}
+
+syncArrowColor();
