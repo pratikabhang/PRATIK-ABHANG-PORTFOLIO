@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>PRATIK ABHANG - Portfolio</title>
   <link rel="icon" href="./files/titleprofile.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -15,9 +15,7 @@
   <!-- Header Navigation -->
   <header id="header">
     <nav id="desktop-nav">
-      <!--<div class="logo">&lt;pratik abhang/&gt;</div>-->
       <ul class="nav-links">
-        <li><a href="#home"><i class="fas fa-house"></i> pratik abhang</a></li>
         <li><a href="#home"><i class="fas fa-house"></i> Home</a></li>
         <li><a href="#about"><i class="fas fa-user-tie"></i> About</a></li>
         <li><a href="#skills"><i class="fas fa-brain"></i> Skills</a></li>
@@ -45,6 +43,7 @@
         </li>
       </ul>
     </nav>
+    
     <!-- Mobile Navigation -->
     <nav id="hamburger-nav">
       <div class="logo">&lt;pratik abhang/&gt;</div>
@@ -323,70 +322,71 @@
       </div>
     </div>
   </section>
-<!-- Contact Section -->
-<section id="contact">
-  <p class="section__text__p1">Get in Touch</p>
-  <h1 class="title">Contact Me</h1>
-  <div class="contact-container">
-    <div class="contact-info">
-      <div class="contact-info-item">
-        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-        <div class="contact-text">
-          <h4>Email</h4>
-          <p><a href="mailto:work.pratikabhang@gmail.com">work.pratikabhang@gmail.com</a></p>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <p class="section__text__p1">Get in Touch</p>
+    <h1 class="title">Contact Me</h1>
+    <div class="contact-container">
+      <div class="contact-info">
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-text">
+            <h4>Email</h4>
+            <p><a href="mailto:work.pratikabhang@gmail.com">work.pratikabhang@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+          <div class="contact-text">
+            <h4>LinkedIn</h4>
+            <p><a href="https://linkedin.com/in/pratikabhang" target="_blank">in/pratikabhang</a></p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fab fa-github"></i></div>
+          <div class="contact-text">
+            <h4>GitHub</h4>
+            <p><a href="https://github.com/pratikabhang" target="_blank">github.com/pratikabhang</a></p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fab fa-instagram"></i></div>
+          <div class="contact-text">
+            <h4>Instagram</h4>
+            <p><a href="https://www.instagram.com/pratikabhang1" target="_blank">@pratikabhang1</a></p>
+          </div>
         </div>
       </div>
-      <div class="contact-info-item">
-        <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
-        <div class="contact-text">
-          <h4>LinkedIn</h4>
-          <p><a href="https://linkedin.com/in/pratikabhang" target="_blank">in/pratikabhang</a></p>
+
+      <!-- Contact Form -->
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/xwpowbev" method="POST">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your Name" required />
         </div>
-      </div>
-      <div class="contact-info-item">
-        <div class="contact-icon"><i class="fab fa-github"></i></div>
-        <div class="contact-text">
-          <h4>GitHub</h4>
-          <p><a href="https://github.com/pratikabhang" target="_blank">github.com/pratikabhang</a></p>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Your Email" required />
         </div>
-      </div>
-      <div class="contact-info-item">
-        <div class="contact-icon"><i class="fab fa-instagram"></i></div>
-        <div class="contact-text">
-          <h4>Instagram</h4>
-          <p><a href="https://www.instagram.com/pratikabhang1" target="_blank">@pratikabhang1</a></p>
+        <div class="form-group">
+          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
         </div>
-      </div>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-color-1" id="sendBtn">
+            <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+            <span class="btn-text">Send Message</span>
+          </button>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+          <a href="https://linkedin.com/in/pratikabhang" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/pratikabhang" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.instagram.com/pratikabhang1" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:work.pratikabhang@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+      </form>
     </div>
-
-    <!-- Contact Form -->
-    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xwpowbev" method="POST">
-      <div class="form-group">
-        <input type="text" name="name" placeholder="Your Name" required />
-      </div>
-      <div class="form-group">
-        <input type="email" name="email" placeholder="Your Email" required />
-      </div>
-      <div class="form-group">
-        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-      </div>
-      <div class="form-submit">
-        <button type="submit" class="btn btn-color-1" id="sendBtn">
-          <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
-          <span class="btn-text">Send Message</span>
-        </button>
-      </div>
-
-      <!-- Social Media Icons -->
-      <div class="social-icons">
-        <a href="https://linkedin.com/in/pratikabhang" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/pratikabhang" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.instagram.com/pratikabhang1" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="mailto:work.pratikabhang@gmail.com"><i class="fas fa-envelope"></i></a>
-      </div>
-    </form>
-  </div>
-</section>
+  </section>
 
   <!-- Footer -->
   <footer>

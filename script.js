@@ -1,3 +1,4 @@
+// script.js
 document.addEventListener('DOMContentLoaded', function () {
   // Mobile menu toggle functionality
   function toggleMenu() {
@@ -299,22 +300,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const duration = 3 + Math.random() * 3;
     card.style.animationDuration = `${duration}s`;
-  });
-
-  // Skill cards hover effects
-  skillCards.forEach(card => {
-    const skill = card.getAttribute('data-skill');
-    const icon = card.querySelector('i');
-
-    card.addEventListener('mouseenter', () => {
-      card.classList.add(`${skill}-hover`);
-      icon.style.animation = 'floatIcon 1.5s ease-in-out infinite';
-    });
-
-    card.addEventListener('mouseleave', () => {
-      card.classList.remove(`${skill}-hover`);
-      icon.style.animation = '';
-    });
   });
 
   // Make toggleMenu function globally available
