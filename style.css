@@ -1,10 +1,12 @@
 /* style.css */
+/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* CSS Variables for theming */
 :root {
   --bg-color: #ffffff;
   --secondary-bg: #f5f5f5;
@@ -26,6 +28,7 @@
   --btn-hover-color: #ffffff;
 }
 
+/* Dark theme variables */
 [data-theme="dark"] {
   --bg-color: #0d0d0d;
   --secondary-bg: #1a1a1a;
@@ -47,6 +50,7 @@
   --btn-hover-color: #ffffff;
 }
 
+/* Color theme variations */
 [data-color="black"]:not([data-theme="dark"]) {
   --primary-color: #1a1a1a;
   --secondary-color: #333333;
@@ -197,6 +201,7 @@
   --btn-hover-color: #332900;
 }
 
+/* Hover shadow variations based on color theme */
 [data-color="blue"] { --hover-shadow: 0 10px 25px rgba(26, 115, 232, 0.25); }
 [data-color="green"] { --hover-shadow: 0 10px 25px rgba(11, 128, 67, 0.25); }
 [data-color="red"] { --hover-shadow: 0 10px 25px rgba(211, 47, 47, 0.25); }
@@ -209,6 +214,7 @@
 [data-theme="dark"][data-color="yellow"] { --hover-shadow: 0 10px 25px rgba(255, 235, 59, 0.25); }
 [data-theme="dark"][data-color="black"] { --hover-shadow: 0 10px 25px rgba(255, 255, 255, 0.1); }
 
+/* Base HTML and body styles */
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -226,6 +232,7 @@ body {
   touch-action: manipulation;
 }
 
+/* Typography and element styles */
 a {
   color: inherit;
   text-decoration: none;
@@ -262,6 +269,7 @@ p {
   line-height: 1.6;
 }
 
+/* Section styling */
 section {
   padding: 100px 0;
   min-height: 15vh;
@@ -341,6 +349,7 @@ section {
   width: 120px;
 }
 
+/* Header and navigation styles */
 header {
   position: fixed;
   top: 0;
@@ -461,6 +470,7 @@ main {
   padding-top: 100px;
 }
 
+/* Mobile navigation styles */
 #hamburger-nav {
   display: none;
   justify-content: space-between;
@@ -537,6 +547,7 @@ main {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
+/* Home section styles */
 #home {
   justify-content: center;
   align-items: center;
@@ -688,6 +699,7 @@ main {
   transform: scale(1.2);
 }
 
+/* About section styles */
 #about {
   justify-content: center;
   align-items: center;
@@ -822,6 +834,7 @@ main {
   color: white;
 }
 
+/* Education section styles */
 #education {
   display: flex;
   flex-direction: column;
@@ -913,17 +926,7 @@ main {
   color: var(--secondary-color);
 }
 
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* Skills section styles */
 #skills {
   justify-content: center;
   align-items: center;
@@ -982,6 +985,7 @@ main {
   color: var(--text-color, #333);
 }
 
+/* Skill-specific icon colors */
 .skill-card[data-skill="java"] i { color: #FF8C00; }
 .skill-card[data-skill="python"] i { color: #3776AB; }
 .skill-card[data-skill="sql"] i { color: #e38c00; }
@@ -1019,6 +1023,7 @@ main {
   filter: brightness(1.2);
 }
 
+/* Experience section styles */
 #experience {
   display: flex;
   flex-direction: column;
@@ -1119,6 +1124,7 @@ main {
   line-height: 1.5;
 }
 
+/* Projects section styles */
 #projects {
   justify-content: center;
   align-items: center;
@@ -1213,6 +1219,7 @@ main {
   font-size: 1rem;
 }
 
+/* Contact section styles */
 #contact {
   justify-content: center;
   align-items: center;
@@ -1406,6 +1413,7 @@ main {
   opacity: 1;
 }
 
+/* Footer styles */
 footer {
   padding: 3rem 2rem;
   text-align: center;
@@ -1448,6 +1456,7 @@ footer {
   color: var(--text-color);
 }
 
+/* Theme toggle styles */
 .theme-nav-item {
   position: relative;
 }
@@ -1577,6 +1586,7 @@ footer {
 .color-option-nav[data-color="green"] { background: #2ecc71; }
 .color-option-nav[data-color="blue"] { background: #3498db; }
 
+/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -1607,6 +1617,17 @@ footer {
 @keyframes spin-border {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive Design */
