@@ -305,3 +305,50 @@ document.addEventListener('DOMContentLoaded', function () {
   // Make toggleMenu function globally available
   window.toggleMenu = toggleMenu;
 });
+
+// Sections scroll buttons
+const sections = ['home','about','skills','experience','projects','contact'];
+const upBtn = document.querySelector('.up-btn');
+const downBtn = document.querySelector('.down-btn');
+
+// Scroll functionality
+function getCurrentSectionIndex() {
+  const scrollPos = window.scrollY + window.innerHeight / 2;
+  for (let i=0;i<sections.length;i++) {
+    const sec = document.getElementById(sections[i]);
+    if(sec.offsetTop <= scrollPos && sec.offsetTop + sec.offsetHeight > scrollPos) return i;
+  }
+  return 0;
+}
+
+upBtn.addEventListener('click', ()=>{ 
+  const idx = getCurrentSectionIndex(); 
+  if(idx>0) document.getElementById(sections[idx-1]).scrollIntoView({behavior:'smooth'});
+});
+
+downBtn.addEventListener('click', ()=>{
+  const idx = getCurrentSectionIndex(); 
+  if(idx<sections.length-1) document.getElementById(sections[idx+1]).scrollIntoView({behavior:'smooth'});
+});
+
+// Sync arrow colors with theme
+let themeIsDark = false;
+const themeSwitch = document.getElementById('theme-switch-nav');
+
+themeSwitch.addEventListener('change', e => {
+  themeIsDark = e.target.checked;
+  syncArrowColor();
+});
+
+function syncArrowColor() {
+  const color = getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim();
+  const bg = themeIsDark ? '#111' : '#fff';
+  [upBtn, downBtn].forEach(btn=>{
+    btn.style.backgroundColor = color;
+    btn.style.border = `1px solid ${color}`;
+    btn.style.color = bg;
+    btn.style.boxShadow = `0 4px 10px ${themeIsDark?'rgba(0,0,0,0.7)':'rgba(0,0,0,0.25)'}`;
+  });
+}
+
+syncArrowColor();

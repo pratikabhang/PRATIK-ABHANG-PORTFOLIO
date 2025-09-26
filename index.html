@@ -14,11 +14,11 @@
 </head>
 
 <body>
-  <!-- Skip to main content for accessibility -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  
   <!-- Header Navigation -->
   <header id="header" role="banner">
+    <div class="logo" aria-label="Pratik Abhang Portfolio">&lt;pratik abhang/&gt;</div>
+
+    <!-- Desktop Navigation -->
     <nav id="desktop-nav" aria-label="Main Navigation">
       <ul class="nav-links">
         <li><a href="#home" aria-label="Home"><i class="fas fa-house" aria-hidden="true"></i> Home</a></li>
@@ -26,32 +26,12 @@
         <li><a href="#skills" aria-label="Skills"><i class="fas fa-brain" aria-hidden="true"></i> Skills</a></li>
         <li><a href="#experience" aria-label="Experience"><i class="fas fa-briefcase" aria-hidden="true"></i> Experience</a></li>
         <li><a href="#projects" aria-label="Projects"><i class="fas fa-code" aria-hidden="true"></i> Projects</a></li>
-        <li><a href="#contact" aria-label="Contact"><i class="fa-solid fa-id-card" aria-hidden="true"></i> Contact</a></li>
-        <li class="theme-nav-item">
-          <div class="theme-nav-container">
-            <div class="theme-toggle-nav">
-              <input type="checkbox" id="theme-switch-nav" class="theme-switch-nav" aria-label="Toggle dark mode">
-              <label for="theme-switch-nav" class="theme-label-nav">
-                <i class="fas fa-moon" aria-hidden="true"></i>
-                <i class="fas fa-sun" aria-hidden="true"></i>
-                <span class="theme-ball-nav"></span>
-              </label>
-            </div>
-            <div class="color-picker-nav" aria-label="Color theme picker">
-              <button class="color-option-nav" data-color="black" aria-label="Black theme"></button>
-              <button class="color-option-nav" data-color="red" aria-label="Red theme"></button>
-              <button class="color-option-nav" data-color="yellow" aria-label="Yellow theme"></button>
-              <button class="color-option-nav" data-color="blue" aria-label="Blue theme"></button>
-              <button class="color-option-nav" data-color="green" aria-label="Green theme"></button>
-            </div>
-          </div>
-        </li>
+        <li><a href="#contact" aria-label="Contact"><i class="fas fa-id-card" aria-hidden="true"></i> Contact</a></li>
       </ul>
     </nav>
-    
+
     <!-- Mobile Navigation -->
     <nav id="hamburger-nav" aria-label="Mobile Navigation">
-      <div class="logo" aria-label="Pratik Abhang Portfolio">&lt;pratik abhang/&gt;</div>
       <div class="hamburger-menu">
         <button class="hamburger-icon" onclick="toggleMenu()" aria-expanded="false" aria-controls="menu-links" aria-label="Toggle menu">
           <span></span>
@@ -64,36 +44,17 @@
           <li role="none"><a href="#skills" onclick="toggleMenu()" role="menuitem"><i class="fas fa-brain" aria-hidden="true"></i> Skills</a></li>
           <li role="none"><a href="#experience" onclick="toggleMenu()" role="menuitem"><i class="fas fa-briefcase" aria-hidden="true"></i> Experience</a></li>
           <li role="none"><a href="#projects" onclick="toggleMenu()" role="menuitem"><i class="fas fa-code" aria-hidden="true"></i> Projects</a></li>
-          <li role="none"><a href="#contact" onclick="toggleMenu()" role="menuitem"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a></li>
-          <li class="theme-nav-item" role="none">
-            <div class="theme-nav-container">
-              <div class="theme-toggle-nav">
-                <input type="checkbox" id="theme-switch-nav-mobile" class="theme-switch-nav" aria-label="Toggle dark mode">
-                <label for="theme-switch-nav-mobile" class="theme-label-nav">
-                  <i class="fas fa-moon" aria-hidden="true"></i>
-                  <i class="fas fa-sun" aria-hidden="true"></i>
-                  <span class="theme-ball-nav"></span>
-                </label>
-              </div>
-              <div class="color-picker-nav" aria-label="Color theme picker">
-                <button class="color-option-nav" data-color="black" aria-label="Black theme"></button>
-                <button class="color-option-nav" data-color="red" aria-label="Red theme"></button>
-                <button class="color-option-nav" data-color="yellow" aria-label="Yellow theme"></button>
-                <button class="color-option-nav" data-color="blue" aria-label="Blue theme"></button>
-                <button class="color-option-nav" data-color="green" aria-label="Green theme"></button>
-              </div>
-            </div>
-          </li>
+          <li role="none"><a href="#contact" onclick="toggleMenu()" role="menuitem"><i class="fas fa-id-card" aria-hidden="true"></i> Contact</a></li>
         </div>
       </div>
     </nav>
   </header>
 
-  <!-- Main Content -->
-  <main id="main-content">
-    <!-- Home Section -->
+  <main>
+    <!-- Home/Hero Section -->
     <section id="home" aria-labelledby="home-title">
       <div class="profile__container">
+        <!-- Social Media Links -->
         <div class="socials__vertical" aria-label="Social Media Links">
           <a href="https://pratikabhang.netlify.app/" class="social-icon portfolio" aria-label="Portfolio Website"><i class="fas fa-globe" aria-hidden="true"></i></a>
           <a href="https://linkedin.com/in/pratikabhang/" class="social-icon linkedin" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
@@ -101,6 +62,27 @@
           <a href="https://www.instagram.com/pratikabhang1/" class="social-icon instagram" aria-label="Instagram Profile"><i class="fab fa-instagram" aria-hidden="true"></i></a>
           <a href="https://www.youtube.com/@pratikabhang" class="social-icon youtube" aria-label="YouTube Channel"><i class="fab fa-youtube" aria-hidden="true"></i></a>
         </div>
+
+        <!-- Theme Toggle & Color Picker -->
+        <div class="theme-nav-container">
+          <div class="theme-toggle-nav">
+            <input type="checkbox" id="theme-switch-nav" class="theme-switch-nav" aria-label="Toggle dark mode">
+            <label for="theme-switch-nav" class="theme-label-nav">
+              <i class="fas fa-moon" aria-hidden="true"></i>
+              <i class="fas fa-sun" aria-hidden="true"></i>
+              <span class="theme-ball-nav"></span>
+            </label>
+          </div>
+          <div class="color-picker-nav" aria-label="Color theme picker">
+            <button class="color-option-nav" data-color="black" aria-label="Black theme"></button>
+            <button class="color-option-nav" data-color="red" aria-label="Red theme"></button>
+            <button class="color-option-nav" data-color="yellow" aria-label="Yellow theme"></button>
+            <button class="color-option-nav" data-color="blue" aria-label="Blue theme"></button>
+            <button class="color-option-nav" data-color="green" aria-label="Green theme"></button>
+          </div>
+        </div>
+
+        <!-- Hero Text Content -->
         <div class="section__text">
           <p class="section__text__p1">Hello, I'm</p>
           <h1 class="titleh" id="home-title">Pratik Abhang</h1>
@@ -116,9 +98,17 @@
             </button>
           </div>
         </div>
+
+        <!-- Profile Image -->
         <div class="section__pic-container">
           <img src="./files/profile.jpg" alt="Pratik Abhang Profile Picture" class="profile-img" />
         </div>
+      </div>
+
+      <!-- Section Navigation Buttons -->
+      <div class="section-nav-container">
+        <button class="section-nav-btn up-btn" aria-label="Go to Previous Section"><i class="fas fa-arrow-up"></i></button>
+        <button class="section-nav-btn down-btn" aria-label="Go to Next Section"><i class="fas fa-arrow-down"></i></button>
       </div>
     </section>
 
@@ -126,7 +116,9 @@
     <section id="about" aria-labelledby="about-title">
       <p class="section__text__p1">Get To Know More</p>
       <h1 class="title" id="about-title">About Me</h1>
+
       <div class="about-container">
+        <!-- About Card -->
         <div class="about-card">
           <div class="about-content">
             <p>
@@ -134,6 +126,8 @@
             </p>
           </div>
         </div>
+
+        <!-- Personal Details -->
         <div class="details-grid">
           <div class="details-card">
             <div class="details-item">
@@ -153,13 +147,15 @@
             </div>
           </div>
         </div>
-        
+
         <!-- Education Section -->
         <div id="education" aria-labelledby="education-title">
           <div class="section-title">
             <h3 id="education-title"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Education</h3>
           </div>
+
           <div class="education-container">
+            <!-- Education Card 1 -->
             <div class="education-card animate">
               <h4>Bachelor of Engineering in Computer</h4>
               <div class="education-details">
@@ -168,6 +164,8 @@
               </div>
               <div class="education-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Pune, Maharashtra, India</div>
             </div>
+
+            <!-- Education Card 2 -->
             <div class="education-card animate">
               <h4>Higher Secondary Certificate (12th)</h4>
               <div class="education-details">
@@ -176,6 +174,8 @@
               </div>
               <div class="education-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Shrirampur, Maharashtra, India</div>
             </div>
+
+            <!-- Education Card 3 -->
             <div class="education-card animate">
               <h4>Secondary School Certificate (10th)</h4>
               <div class="education-details">
