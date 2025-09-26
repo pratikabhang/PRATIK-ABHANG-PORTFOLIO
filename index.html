@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Pratik Abhang - Computer Engineer and Full Stack Developer Portfolio">
+  <meta name="keywords" content="Pratik Abhang, Computer Engineer, Full Stack Developer, Web Developer, Portfolio">
   <title>PRATIK ABHANG - Portfolio</title>
   <link rel="icon" href="./files/titleprofile.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -12,32 +14,35 @@
 </head>
 
 <body>
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
   <!-- Header Navigation -->
-  <header id="header">
-    <nav id="desktop-nav">
+  <header id="header" role="banner">
+    <nav id="desktop-nav" aria-label="Main Navigation">
       <ul class="nav-links">
-        <li><a href="#home"><i class="fas fa-house"></i> Home</a></li>
-        <li><a href="#about"><i class="fas fa-user-tie"></i> About</a></li>
-        <li><a href="#skills"><i class="fas fa-brain"></i> Skills</a></li>
-        <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
-        <li><a href="#projects"><i class="fas fa-code"></i> Projects</a></li>
-        <li><a href="#contact"><i class="fa-solid fa-id-card"></i> Contact</a></li>
+        <li><a href="#home" aria-label="Home"><i class="fas fa-house" aria-hidden="true"></i> Home</a></li>
+        <li><a href="#about" aria-label="About"><i class="fas fa-user-tie" aria-hidden="true"></i> About</a></li>
+        <li><a href="#skills" aria-label="Skills"><i class="fas fa-brain" aria-hidden="true"></i> Skills</a></li>
+        <li><a href="#experience" aria-label="Experience"><i class="fas fa-briefcase" aria-hidden="true"></i> Experience</a></li>
+        <li><a href="#projects" aria-label="Projects"><i class="fas fa-code" aria-hidden="true"></i> Projects</a></li>
+        <li><a href="#contact" aria-label="Contact"><i class="fa-solid fa-id-card" aria-hidden="true"></i> Contact</a></li>
         <li class="theme-nav-item">
           <div class="theme-nav-container">
             <div class="theme-toggle-nav">
-              <input type="checkbox" id="theme-switch-nav" class="theme-switch-nav">
+              <input type="checkbox" id="theme-switch-nav" class="theme-switch-nav" aria-label="Toggle dark mode">
               <label for="theme-switch-nav" class="theme-label-nav">
-                <i class="fas fa-moon"></i>
-                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon" aria-hidden="true"></i>
+                <i class="fas fa-sun" aria-hidden="true"></i>
                 <span class="theme-ball-nav"></span>
               </label>
             </div>
-            <div class="color-picker-nav">
-              <button class="color-option-nav" data-color="black"></button>
-              <button class="color-option-nav" data-color="red"></button>
-              <button class="color-option-nav" data-color="yellow"></button>
-              <button class="color-option-nav" data-color="blue"></button>
-              <button class="color-option-nav" data-color="green"></button>
+            <div class="color-picker-nav" aria-label="Color theme picker">
+              <button class="color-option-nav" data-color="black" aria-label="Black theme"></button>
+              <button class="color-option-nav" data-color="red" aria-label="Red theme"></button>
+              <button class="color-option-nav" data-color="yellow" aria-label="Yellow theme"></button>
+              <button class="color-option-nav" data-color="blue" aria-label="Blue theme"></button>
+              <button class="color-option-nav" data-color="green" aria-label="Green theme"></button>
             </div>
           </div>
         </li>
@@ -45,37 +50,37 @@
     </nav>
     
     <!-- Mobile Navigation -->
-    <nav id="hamburger-nav">
-      <div class="logo">&lt;pratik abhang/&gt;</div>
+    <nav id="hamburger-nav" aria-label="Mobile Navigation">
+      <div class="logo" aria-label="Pratik Abhang Portfolio">&lt;pratik abhang/&gt;</div>
       <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
+        <button class="hamburger-icon" onclick="toggleMenu()" aria-expanded="false" aria-controls="menu-links" aria-label="Toggle menu">
           <span></span>
           <span></span>
           <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#home" onclick="toggleMenu()"><i class="fas fa-house"></i> Home</a></li>
-          <li><a href="#about" onclick="toggleMenu()"><i class="fas fa-user-tie"></i> About</a></li>
-          <li><a href="#skills" onclick="toggleMenu()"><i class="fas fa-brain"></i> Skills</a></li>
-          <li><a href="#experience" onclick="toggleMenu()"><i class="fas fa-briefcase"></i> Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()"><i class="fas fa-code"></i> Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()"><i class="fas fa-envelope"></i> Contact</a></li>
-          <li class="theme-nav-item">
+        </button>
+        <div class="menu-links" id="menu-links" role="menu">
+          <li role="none"><a href="#home" onclick="toggleMenu()" role="menuitem"><i class="fas fa-house" aria-hidden="true"></i> Home</a></li>
+          <li role="none"><a href="#about" onclick="toggleMenu()" role="menuitem"><i class="fas fa-user-tie" aria-hidden="true"></i> About</a></li>
+          <li role="none"><a href="#skills" onclick="toggleMenu()" role="menuitem"><i class="fas fa-brain" aria-hidden="true"></i> Skills</a></li>
+          <li role="none"><a href="#experience" onclick="toggleMenu()" role="menuitem"><i class="fas fa-briefcase" aria-hidden="true"></i> Experience</a></li>
+          <li role="none"><a href="#projects" onclick="toggleMenu()" role="menuitem"><i class="fas fa-code" aria-hidden="true"></i> Projects</a></li>
+          <li role="none"><a href="#contact" onclick="toggleMenu()" role="menuitem"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a></li>
+          <li class="theme-nav-item" role="none">
             <div class="theme-nav-container">
               <div class="theme-toggle-nav">
-                <input type="checkbox" id="theme-switch-nav-mobile" class="theme-switch-nav">
+                <input type="checkbox" id="theme-switch-nav-mobile" class="theme-switch-nav" aria-label="Toggle dark mode">
                 <label for="theme-switch-nav-mobile" class="theme-label-nav">
-                  <i class="fas fa-moon"></i>
-                  <i class="fas fa-sun"></i>
+                  <i class="fas fa-moon" aria-hidden="true"></i>
+                  <i class="fas fa-sun" aria-hidden="true"></i>
                   <span class="theme-ball-nav"></span>
                 </label>
               </div>
-              <div class="color-picker-nav">
-                <button class="color-option-nav" data-color="black"></button>
-                <button class="color-option-nav" data-color="red"></button>
-                <button class="color-option-nav" data-color="yellow"></button>
-                <button class="color-option-nav" data-color="blue"></button>
-                <button class="color-option-nav" data-color="green"></button>
+              <div class="color-picker-nav" aria-label="Color theme picker">
+                <button class="color-option-nav" data-color="black" aria-label="Black theme"></button>
+                <button class="color-option-nav" data-color="red" aria-label="Red theme"></button>
+                <button class="color-option-nav" data-color="yellow" aria-label="Yellow theme"></button>
+                <button class="color-option-nav" data-color="blue" aria-label="Blue theme"></button>
+                <button class="color-option-nav" data-color="green" aria-label="Green theme"></button>
               </div>
             </div>
           </li>
@@ -84,320 +89,328 @@
     </nav>
   </header>
 
-  <!-- Home Section -->
-  <section id="home">
-    <div class="profile__container">
-      <div class="socials__vertical">
-        <div class="social-icon portfolio" onclick="window.open('https://pratikabhang.netlify.app/')"><i class="fas fa-globe"></i></div>
-        <div class="social-icon linkedin" onclick="window.open('https://linkedin.com/in/pratikabhang/')"><i class="fab fa-linkedin-in"></i></div>
-        <div class="social-icon github" onclick="window.open('https://github.com/pratikabhang/')"><i class="fab fa-github"></i></div>
-        <div class="social-icon instagram" onclick="window.open('https://www.instagram.com/pratikabhang1/')"><i class="fab fa-instagram"></i></div>
-        <div class="social-icon youtube" onclick="window.open('https://www.youtube.com/@pratikabhang', '_blank')"><i class="fab fa-youtube"></i></div>
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="titleh">Pratik Abhang</h1>
-        <p class="section__text__p2"><span id="typed-text"></span></p>
-        <div class="btn-container">
-          <button class="btn btn-color-2" onclick="window.open('https://flowcv.com/resume/9ivpkstiaeqd', '_blank')">
-            <span class="btn-icon"><i class="fa-solid fa-eye"></i></span>
-            <span class="btn-text">Resume</span>
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            <span class="btn-icon"><i class="fa-solid fa-briefcase"></i></span>
-            <span class="btn-text">Hire Me</span>
-          </button>
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Home Section -->
+    <section id="home" aria-labelledby="home-title">
+      <div class="profile__container">
+        <div class="socials__vertical" aria-label="Social Media Links">
+          <a href="https://pratikabhang.netlify.app/" class="social-icon portfolio" aria-label="Portfolio Website"><i class="fas fa-globe" aria-hidden="true"></i></a>
+          <a href="https://linkedin.com/in/pratikabhang/" class="social-icon linkedin" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="https://github.com/pratikabhang/" class="social-icon github" aria-label="GitHub Profile"><i class="fab fa-github" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/pratikabhang1/" class="social-icon instagram" aria-label="Instagram Profile"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/@pratikabhang" class="social-icon youtube" aria-label="YouTube Channel"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+        </div>
+        <div class="section__text">
+          <p class="section__text__p1">Hello, I'm</p>
+          <h1 class="titleh" id="home-title">Pratik Abhang</h1>
+          <p class="section__text__p2"><span id="typed-text" aria-live="polite"></span></p>
+          <div class="btn-container">
+            <button class="btn btn-color-2" onclick="window.open('https://flowcv.com/resume/9ivpkstiaeqd', '_blank')" aria-label="View Resume">
+              <span class="btn-icon"><i class="fa-solid fa-eye" aria-hidden="true"></i></span>
+              <span class="btn-text">Resume</span>
+            </button>
+            <button class="btn btn-color-1" onclick="location.href='./#contact'" aria-label="Hire Me">
+              <span class="btn-icon"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></span>
+              <span class="btn-text">Hire Me</span>
+            </button>
+          </div>
+        </div>
+        <div class="section__pic-container">
+          <img src="./files/profile.jpg" alt="Pratik Abhang Profile Picture" class="profile-img" />
         </div>
       </div>
-      <div class="section__pic-container">
-        <img src="./files/profile.jpg" alt="Pratik Abhang Profile" class="profile-img" />
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- About Section -->
-  <section id="about">
-    <p class="section__text__p1">Get To Know More</p>
-    <h1 class="title">About Me</h1>
-    <div class="about-container">
-      <div class="about-card">
-        <div class="about-content">
-          <p>
-            I am a Computer Engineer with strong technical skills and solid fundamentals, experienced in Cloud Computing, Artificial Intelligence, Cybersecurity, and Data Protection. I continuously learn and stay updated on emerging technology trends to enhance productivity and deepen my technical expertise.
-          </p>
-        </div>
-      </div>
-      <div class="details-grid">
-        <div class="details-card">
-          <div class="details-item">
-            <a href="#"><i class="fas fa-flag"></i></a> Indian
-          </div>
-          <div class="details-item">
-            <a href="#"><i class="fas fa-language"></i></a> English, Marathi, Hindi
+    <!-- About Section -->
+    <section id="about" aria-labelledby="about-title">
+      <p class="section__text__p1">Get To Know More</p>
+      <h1 class="title" id="about-title">About Me</h1>
+      <div class="about-container">
+        <div class="about-card">
+          <div class="about-content">
+            <p>
+              I am a Computer Engineer with strong technical skills and solid fundamentals, experienced in Cloud Computing, Artificial Intelligence, Cybersecurity, and Data Protection. I continuously learn and stay updated on emerging technology trends to enhance productivity and deepen my technical expertise.
+            </p>
           </div>
         </div>
-        <div class="details-card">
-          <div class="details-item">
-            <a href="#"><i class="fas fa-calendar-days"></i></a> <span id="age"></span>
-          </div>
-          <div class="details-item">
-            <a href="#"><i class="fa-solid fa-face-grin-hearts"></i></a>
-            <span>Photography, Music, Movie, Puzzle, Cricket</span>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Education Section -->
-      <div id="education">
-        <div class="section-title">
-          <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-        </div>
-        <div class="education-container">
-          <div class="education-card animate">
-            <h4>Bachelor of Engineering in Computer</h4>
-            <div class="education-details">
-              <p><i class="fa-solid fa-graduation-cap"></i> STES, Sinhgad Institute of Technology and Science</p>
-              <p><i class="fa-solid fa-file-lines"></i> CGPA: 8.21 / 10 | SPPU</p>
+        <div class="details-grid">
+          <div class="details-card">
+            <div class="details-item">
+              <span class="details-icon"><i class="fas fa-flag" aria-hidden="true"></i></span> Indian
             </div>
-            <div class="education-location"><i class="fa-solid fa-location-dot"></i> Pune, Maharashtra, India</div>
-          </div>
-          <div class="education-card animate">
-            <h4>Higher Secondary Certificate (12th)</h4>
-            <div class="education-details">
-              <p><i class="fa-solid fa-building"></i> RSS, R.B. Narayanrao Borawake College</p>
-              <p><i class="fa-solid fa-file-lines"></i> Percentage: 82.17 / 100 | MSBSHSE</p>
+            <div class="details-item">
+              <span class="details-icon"><i class="fas fa-language" aria-hidden="true"></i></span> English, Marathi, Hindi
             </div>
-            <div class="education-location"><i class="fa-solid fa-location-dot"></i> Shrirampur, Maharashtra, India</div>
           </div>
-          <div class="education-card animate">
-            <h4>Secondary School Certificate (10th)</h4>
-            <div class="education-details">
-              <p><i class="fa-solid fa-school"></i> VMSS, De Paul English Medium High School</p>
-              <p><i class="fa-solid fa-file-lines"></i> Percentage: 72.20 / 100 | MSBSHSE</p>
+          <div class="details-card">
+            <div class="details-item">
+              <span class="details-icon"><i class="fas fa-calendar-days" aria-hidden="true"></i></span> <span id="age"></span>
             </div>
-            <div class="education-location"><i class="fa-solid fa-location-dot"></i> Shrirampur, Maharashtra, India</div>
+            <div class="details-item">
+              <span class="details-icon"><i class="fa-solid fa-face-grin-hearts" aria-hidden="true"></i></span>
+              <span>Photography, Music, Movie, Puzzle, Cricket</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Education Section -->
+        <div id="education" aria-labelledby="education-title">
+          <div class="section-title">
+            <h3 id="education-title"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Education</h3>
+          </div>
+          <div class="education-container">
+            <div class="education-card animate">
+              <h4>Bachelor of Engineering in Computer</h4>
+              <div class="education-details">
+                <p><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> STES, Sinhgad Institute of Technology and Science</p>
+                <p><i class="fa-solid fa-file-lines" aria-hidden="true"></i> CGPA: 8.21 / 10 | SPPU</p>
+              </div>
+              <div class="education-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Pune, Maharashtra, India</div>
+            </div>
+            <div class="education-card animate">
+              <h4>Higher Secondary Certificate (12th)</h4>
+              <div class="education-details">
+                <p><i class="fa-solid fa-building" aria-hidden="true"></i> RSS, R.B. Narayanrao Borawake College</p>
+                <p><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Percentage: 82.17 / 100 | MSBSHSE</p>
+              </div>
+              <div class="education-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Shrirampur, Maharashtra, India</div>
+            </div>
+            <div class="education-card animate">
+              <h4>Secondary School Certificate (10th)</h4>
+              <div class="education-details">
+                <p><i class="fa-solid fa-school" aria-hidden="true"></i> VMSS, De Paul English Medium High School</p>
+                <p><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Percentage: 72.20 / 100 | MSBSHSE</p>
+              </div>
+              <div class="education-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Shrirampur, Maharashtra, India</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Skills Section -->
-  <section id="skills">
-    <p class="section__text__p1">Explore My</p>
-    <h1 class="title">Skills</h1>
-    <div class="skills-container">
-      <div class="skills-grid">
-        <div class="skill-card" data-skill="java"><i class="fab fa-java"></i><p>Java</p></div>
-        <div class="skill-card" data-skill="python"><i class="fab fa-python"></i><p>Python</p></div>
-        <div class="skill-card" data-skill="sql"><i class="fas fa-database"></i><p>SQL</p></div>
-        <div class="skill-card" data-skill="mysql"><i class="fas fa-database"></i><p>MySQL</p></div>
-        <div class="skill-card" data-skill="html"><i class="fab fa-html5"></i><p>HTML</p></div>
-        <div class="skill-card" data-skill="css"><i class="fab fa-css3-alt"></i><p>CSS</p></div>
-        <div class="skill-card" data-skill="javascript"><i class="fab fa-js"></i><p>JavaScript</p></div>
-        <div class="skill-card" data-skill="mongodb"><i class="fas fa-server"></i><p>MongoDB</p></div>
-        <div class="skill-card" data-skill="react"><i class="fab fa-react"></i><p>React.js</p></div>
-        <div class="skill-card" data-skill="express"><i class="fas fa-server"></i><p>Express.js</p></div>
-        <div class="skill-card" data-skill="nodejs"><i class="fab fa-node-js"></i><p>Node.js</p></div>
-        <div class="skill-card" data-skill="springboot"><i class="fas fa-leaf"></i><p>Spring Boot</p></div>
-        <div class="skill-card" data-skill="django"><i class="fab fa-python"></i><p>Django</p></div>
-        <div class="skill-card" data-skill="firebase"><i class="fas fa-fire"></i><p>Firebase</p></div>
-        <div class="skill-card" data-skill="redis"><i class="fas fa-database"></i><p>Redis</p></div>
-        <div class="skill-card" data-skill="github"><i class="fab fa-github"></i><p>GitHub</p></div>
-        <div class="skill-card" data-skill="vscode"><i class="fas fa-code"></i><p>VS Code</p></div>
-        <div class="skill-card" data-skill="postman"><i class="fas fa-envelope-open-text"></i><p>Postman</p></div>
-        <div class="skill-card" data-skill="docker"><i class="fab fa-docker"></i><p>Docker</p></div>
-        <div class="skill-card" data-skill="google"><i class="fab fa-google"></i><p>Google</p></div>
-        <div class="skill-card" data-skill="microsoft"><i class="fab fa-microsoft"></i><p>Microsoft</p></div>
-        <div class="skill-card" data-skill="oop"><i class="fas fa-cubes"></i><p>OOP</p></div>
-        <div class="skill-card" data-skill="dsa"><i class="fas fa-sitemap"></i><p>DSA</p></div>
-        <div class="skill-card" data-skill="dbms"><i class="fas fa-database"></i><p>DBMS</p></div>
-        <div class="skill-card" data-skill="sdlc"><i class="fas fa-project-diagram"></i><p>SDLC</p></div>
-        <div class="skill-card" data-skill="restapi"><i class="fas fa-cloud"></i><p>REST APIs</p></div>
-        <div class="skill-card" data-skill="cloud"><i class="fas fa-cloud-upload-alt"></i><p>Cloud Computing</p></div>
-        <div class="skill-card" data-skill="systemdesign"><i class="fas fa-network-wired"></i><p>System Design</p></div>
-        <div class="skill-card" data-skill="cybersecurity"><i class="fas fa-shield-alt"></i><p>Cybersecurity</p></div>
-        <div class="skill-card" data-skill="ai"><i class="fas fa-robot"></i><p>AI</p></div>
-        <div class="skill-card" data-skill="communication"><i class="fas fa-comments"></i><p>Communication</p></div>
-        <div class="skill-card" data-skill="teamwork"><i class="fas fa-users"></i><p>Teamwork</p></div>
-        <div class="skill-card" data-skill="critical-thinking"><i class="fas fa-brain"></i><p>Critical Thinking</p></div>
-        <div class="skill-card" data-skill="adaptability"><i class="fas fa-sync-alt"></i><p>Adaptability</p></div>
-        <div class="skill-card" data-skill="organizational"><i class="fas fa-tasks"></i><p>Organizational</p></div>
-        <div class="skill-card" data-skill="creativity"><i class="fas fa-lightbulb"></i><p>Creativity</p></div>
+    <!-- Skills Section -->
+    <section id="skills" aria-labelledby="skills-title">
+      <p class="section__text__p1">Explore My</p>
+      <h1 class="title" id="skills-title">Skills</h1>
+      <div class="skills-container">
+        <div class="skills-grid">
+          <!-- Technical Skills -->
+          <div class="skill-card" data-skill="java" tabindex="0"><i class="fab fa-java" aria-hidden="true"></i><p>Java</p></div>
+          <div class="skill-card" data-skill="python" tabindex="0"><i class="fab fa-python" aria-hidden="true"></i><p>Python</p></div>
+          <div class="skill-card" data-skill="sql" tabindex="0"><i class="fas fa-database" aria-hidden="true"></i><p>SQL</p></div>
+          <div class="skill-card" data-skill="mysql" tabindex="0"><i class="fas fa-database" aria-hidden="true"></i><p>MySQL</p></div>
+          <div class="skill-card" data-skill="html" tabindex="0"><i class="fab fa-html5" aria-hidden="true"></i><p>HTML</p></div>
+          <div class="skill-card" data-skill="css" tabindex="0"><i class="fab fa-css3-alt" aria-hidden="true"></i><p>CSS</p></div>
+          <div class="skill-card" data-skill="javascript" tabindex="0"><i class="fab fa-js" aria-hidden="true"></i><p>JavaScript</p></div>
+          <div class="skill-card" data-skill="mongodb" tabindex="0"><i class="fas fa-server" aria-hidden="true"></i><p>MongoDB</p></div>
+          <div class="skill-card" data-skill="react" tabindex="0"><i class="fab fa-react" aria-hidden="true"></i><p>React.js</p></div>
+          <div class="skill-card" data-skill="express" tabindex="0"><i class="fas fa-server" aria-hidden="true"></i><p>Express.js</p></div>
+          <div class="skill-card" data-skill="nodejs" tabindex="0"><i class="fab fa-node-js" aria-hidden="true"></i><p>Node.js</p></div>
+          <div class="skill-card" data-skill="springboot" tabindex="0"><i class="fas fa-leaf" aria-hidden="true"></i><p>Spring Boot</p></div>
+          <div class="skill-card" data-skill="django" tabindex="0"><i class="fab fa-python" aria-hidden="true"></i><p>Django</p></div>
+          <div class="skill-card" data-skill="firebase" tabindex="0"><i class="fas fa-fire" aria-hidden="true"></i><p>Firebase</p></div>
+          <div class="skill-card" data-skill="redis" tabindex="0"><i class="fas fa-database" aria-hidden="true"></i><p>Redis</p></div>
+          <div class="skill-card" data-skill="github" tabindex="0"><i class="fab fa-github" aria-hidden="true"></i><p>GitHub</p></div>
+          <div class="skill-card" data-skill="vscode" tabindex="0"><i class="fas fa-code" aria-hidden="true"></i><p>VS Code</p></div>
+          <div class="skill-card" data-skill="postman" tabindex="0"><i class="fas fa-envelope-open-text" aria-hidden="true"></i><p>Postman</p></div>
+          <div class="skill-card" data-skill="docker" tabindex="0"><i class="fab fa-docker" aria-hidden="true"></i><p>Docker</p></div>
+          <div class="skill-card" data-skill="google" tabindex="0"><i class="fab fa-google" aria-hidden="true"></i><p>Google</p></div>
+          <div class="skill-card" data-skill="microsoft" tabindex="0"><i class="fab fa-microsoft" aria-hidden="true"></i><p>Microsoft</p></div>
+          <div class="skill-card" data-skill="oop" tabindex="0"><i class="fas fa-cubes" aria-hidden="true"></i><p>OOP</p></div>
+          <div class="skill-card" data-skill="dsa" tabindex="0"><i class="fas fa-sitemap" aria-hidden="true"></i><p>DSA</p></div>
+          <div class="skill-card" data-skill="dbms" tabindex="0"><i class="fas fa-database" aria-hidden="true"></i><p>DBMS</p></div>
+          <div class="skill-card" data-skill="sdlc" tabindex="0"><i class="fas fa-project-diagram" aria-hidden="true"></i><p>SDLC</p></div>
+          <div class="skill-card" data-skill="restapi" tabindex="0"><i class="fas fa-cloud" aria-hidden="true"></i><p>REST APIs</p></div>
+          <div class="skill-card" data-skill="cloud" tabindex="0"><i class="fas fa-cloud-upload-alt" aria-hidden="true"></i><p>Cloud Computing</p></div>
+          <div class="skill-card" data-skill="systemdesign" tabindex="0"><i class="fas fa-network-wired" aria-hidden="true"></i><p>System Design</p></div>
+          <div class="skill-card" data-skill="cybersecurity" tabindex="0"><i class="fas fa-shield-alt" aria-hidden="true"></i><p>Cybersecurity</p></div>
+          <div class="skill-card" data-skill="ai" tabindex="0"><i class="fas fa-robot" aria-hidden="true"></i><p>AI</p></div>
+          <!-- Soft Skills -->
+          <div class="skill-card" data-skill="communication" tabindex="0"><i class="fas fa-comments" aria-hidden="true"></i><p>Communication</p></div>
+          <div class="skill-card" data-skill="teamwork" tabindex="0"><i class="fas fa-users" aria-hidden="true"></i><p>Teamwork</p></div>
+          <div class="skill-card" data-skill="critical-thinking" tabindex="0"><i class="fas fa-brain" aria-hidden="true"></i><p>Critical Thinking</p></div>
+          <div class="skill-card" data-skill="adaptability" tabindex="0"><i class="fas fa-sync-alt" aria-hidden="true"></i><p>Adaptability</p></div>
+          <div class="skill-card" data-skill="organizational" tabindex="0"><i class="fas fa-tasks" aria-hidden="true"></i><p>Organizational</p></div>
+          <div class="skill-card" data-skill="creativity" tabindex="0"><i class="fas fa-lightbulb" aria-hidden="true"></i><p>Creativity</p></div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Experience Section -->
-  <section id="experience">
-    <p class="section__text__p1">Browse My</p>
-    <h1 class="title">Professional Experience</h1>
-    <div class="experience-container">
-      <div class="experience-card animate">
-        <div class="experience-details">
-          <h3>Cybersecurity Analyst</h3>
-          <p class="experience-company">Forage (TCS) | Jul 2025 - Sep 2025</p>
-          <p class="experience-desc">
-            Completed a cybersecurity simulation focusing on IAM fundamentals, assessment, and platform integration. Acquired expertise in IAM principles, cybersecurity best practices, and strategic alignment with business objectives.
-          </p>
+    <!-- Experience Section -->
+    <section id="experience" aria-labelledby="experience-title">
+      <p class="section__text__p1">Browse My</p>
+      <h1 class="title" id="experience-title">Professional Experience</h1>
+      <div class="experience-container">
+        <div class="experience-card animate">
+          <div class="experience-details">
+            <h3>Cybersecurity Analyst</h3>
+            <p class="experience-company">Forage (TCS) | Jul 2025 - Sep 2025</p>
+            <p class="experience-desc">
+              Completed a cybersecurity simulation focusing on IAM fundamentals, assessment, and platform integration. Acquired expertise in IAM principles, cybersecurity best practices, and strategic alignment with business objectives.
+            </p>
+          </div>
+        </div>
+        <div class="experience-card animate">
+          <div class="experience-details">
+            <h3>Software Developer Intern</h3>
+            <p class="experience-company">Cognifyz Technologies | Oct 2024 - Nov 2024</p>
+            <p class="experience-desc">
+              Designed and deployed full-stack MERN applications, improving performance, scalability, and system reliability. Enhanced software quality through rigorous testing, reducing defects and accelerating delivery cycles.
+            </p>
+          </div>
+        </div>
+        <div class="experience-card animate">
+          <div class="experience-details">
+            <h3>Web Developer Intern</h3>
+            <p class="experience-company">Elite Softwares | Dec 2023 - Jan 2024</p>
+            <p class="experience-desc">
+              Developed responsive web applications using modern frameworks, ensuring accessibility across multiple platforms. Boosted user engagement by lowering bounce rates and enhancing cross-device compatibility and performance.
+            </p>
+          </div>
         </div>
       </div>
-      <div class="experience-card animate">
-        <div class="experience-details">
-          <h3>Software Developer Intern</h3>
-          <p class="experience-company">Cognifyz Technologies | Oct 2024 - Nov 2024</p>
-          <p class="experience-desc">
-            Designed and deployed full-stack MERN applications, improving performance, scalability, and system reliability. Enhanced software quality through rigorous testing, reducing defects and accelerating delivery cycles.
-          </p>
-        </div>
-      </div>
-      <div class="experience-card animate">
-        <div class="experience-details">
-          <h3>Web Developer Intern</h3>
-          <p class="experience-company">Elite Softwares | Dec 2023 - Jan 2024</p>
-          <p class="experience-desc">
-            Developed responsive web applications using modern frameworks, ensuring accessibility across multiple platforms. Boosted user engagement by lowering bounce rates and enhancing cross-device compatibility and performance.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <p class="section__text__p1">My Recent</p>
-    <h1 class="title">Projects</h1>
-    <div class="projects-container">
-      <div class="project-card">
-        <div class="project-details">
-          <h3>CREDBUD: The Student Platform</h3>
-          <p class="project-tech">React | Node.js | Express | MongoDB | JWT</p>
-          <p class="project-desc">
-            A complete student management platform with smart attendance tracking, role-based dashboards for teachers and students, performance analytics, and communication tools — making academic management seamless.
-          </p>
-          <div class="project-links">
-            <a href="https://github.com/pratikabhang/CREDBUD--The-Student-Platform" target="_blank"><i class="fab fa-github"></i> Code</a>
-            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+    <!-- Projects Section -->
+    <section id="projects" aria-labelledby="projects-title">
+      <p class="section__text__p1">My Recent</p>
+      <h1 class="title" id="projects-title">Projects</h1>
+      <div class="projects-container">
+        <div class="project-card">
+          <div class="project-details">
+            <h3>CREDBUD: The Student Platform</h3>
+            <p class="project-tech">React | Node.js | Express | MongoDB | JWT</p>
+            <p class="project-desc">
+              A complete student management platform with smart attendance tracking, role-based dashboards for teachers and students, performance analytics, and communication tools — making academic management seamless.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/pratikabhang/CREDBUD--The-Student-Platform" target="_blank" aria-label="View CREDBUD project on GitHub"><i class="fab fa-github" aria-hidden="true"></i> Code</a>
+              <a href="#" target="_blank" aria-label="View CREDBUD live demo"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-details">
+            <h3>PAYCIRCLE: Group Expense Record</h3>
+            <p class="project-tech">Node.js | Express | MongoDB | Bootstrap | REST API</p>
+            <p class="project-desc">
+              A modern web app to simplify tracking and managing group expenses. Features include bill splitting, shared expense history, summaries, and notifications for friends or group members.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/pratikabhang/PAYCIRCLE--Group-Expense-Record" target="_blank" aria-label="View PAYCIRCLE project on GitHub"><i class="fab fa-github" aria-hidden="true"></i> Code</a>
+              <a href="#" target="_blank" aria-label="View PAYCIRCLE live demo"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-details">
+            <h3>DOCVIEW: AI Document Analyzer</h3>
+            <p class="project-tech">Python | AI/ML | TensorFlow | OpenCV | Docker</p>
+            <p class="project-desc">
+              An AI-powered document analyzer that extracts, classifies, and summarizes content from various document formats. Useful for automating data extraction and improving document workflows.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/pratikabhang/DOCVIEW--AI-Document-Analyzer" target="_blank" aria-label="View DOCVIEW project on GitHub"><i class="fab fa-github" aria-hidden="true"></i> Code</a>
+              <a href="#" target="_blank" aria-label="View DOCVIEW demo"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Demo / Docs</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-details">
+            <h3>CLASSWORK</h3>
+            <p class="project-tech">HTML | CSS | JavaScript | Bootstrap | jQuery</p>
+            <p class="project-desc">
+              An educational toolkit for students featuring tools like marks-to-percentage converter, QR code generator, to-do tasks, age calculator, and more — designed for practical classroom and learning use.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/pratikabhang/CLASSWORK" target="_blank" aria-label="View CLASSWORK project on GitHub"><i class="fab fa-github" aria-hidden="true"></i> Code</a>
+              <a href="#" target="_blank" aria-label="View CLASSWORK live demo"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Live Demo</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="project-card">
-        <div class="project-details">
-          <h3>PAYCIRCLE: Group Expense Record</h3>
-          <p class="project-tech">Node.js | Express | MongoDB | Bootstrap | REST API</p>
-          <p class="project-desc">
-            A modern web app to simplify tracking and managing group expenses. Features include bill splitting, shared expense history, summaries, and notifications for friends or group members.
-          </p>
-          <div class="project-links">
-            <a href="https://github.com/pratikabhang/PAYCIRCLE--Group-Expense-Record" target="_blank"><i class="fab fa-github"></i> Code</a>
-            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-          </div>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-details">
-          <h3>DOCVIEW: AI Document Analyzer</h3>
-          <p class="project-tech">Python | AI/ML | TensorFlow | OpenCV | Docker</p>
-          <p class="project-desc">
-            An AI-powered document analyzer that extracts, classifies, and summarizes content from various document formats. Useful for automating data extraction and improving document workflows.
-          </p>
-          <div class="project-links">
-            <a href="https://github.com/pratikabhang/DOCVIEW--AI-Document-Analyzer" target="_blank"><i class="fab fa-github"></i> Code</a>
-            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Demo / Docs</a>
-          </div>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-details">
-          <h3>CLASSWORK</h3>
-          <p class="project-tech">HTML | CSS | JavaScript | Bootstrap | jQuery</p>
-          <p class="project-desc">
-            An educational toolkit for students featuring tools like marks-to-percentage converter, QR code generator, to-do tasks, age calculator, and more — designed for practical classroom and learning use.
-          </p>
-          <div class="project-links">
-            <a href="https://github.com/pratikabhang/CLASSWORK" target="_blank"><i class="fab fa-github"></i> Code</a>
-            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <p class="section__text__p1">Get in Touch</p>
-    <h1 class="title">Contact Me</h1>
-    <div class="contact-container">
-      <div class="contact-info">
-        <div class="contact-info-item">
-          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-          <div class="contact-text">
-            <h4>Email</h4>
-            <p><a href="mailto:work.pratikabhang@gmail.com">work.pratikabhang@gmail.com</a></p>
+    <!-- Contact Section -->
+    <section id="contact" aria-labelledby="contact-title">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title" id="contact-title">Contact Me</h1>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <div class="contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+            <div class="contact-text">
+              <h4>Email</h4>
+              <p><a href="mailto:work.pratikabhang@gmail.com">work.pratikabhang@gmail.com</a></p>
+            </div>
           </div>
-        </div>
-        <div class="contact-info-item">
-          <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
-          <div class="contact-text">
-            <h4>LinkedIn</h4>
-            <p><a href="https://linkedin.com/in/pratikabhang" target="_blank">in/pratikabhang</a></p>
+          <div class="contact-info-item">
+            <div class="contact-icon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></div>
+            <div class="contact-text">
+              <h4>LinkedIn</h4>
+              <p><a href="https://linkedin.com/in/pratikabhang" target="_blank">in/pratikabhang</a></p>
+            </div>
           </div>
-        </div>
-        <div class="contact-info-item">
-          <div class="contact-icon"><i class="fab fa-github"></i></div>
-          <div class="contact-text">
-            <h4>GitHub</h4>
-            <p><a href="https://github.com/pratikabhang" target="_blank">github.com/pratikabhang</a></p>
+          <div class="contact-info-item">
+            <div class="contact-icon"><i class="fab fa-github" aria-hidden="true"></i></div>
+            <div class="contact-text">
+              <h4>GitHub</h4>
+              <p><a href="https://github.com/pratikabhang" target="_blank">github.com/pratikabhang</a></p>
+            </div>
           </div>
-        </div>
-        <div class="contact-info-item">
-          <div class="contact-icon"><i class="fab fa-instagram"></i></div>
-          <div class="contact-text">
-            <h4>Instagram</h4>
-            <p><a href="https://www.instagram.com/pratikabhang1" target="_blank">@pratikabhang1</a></p>
+          <div class="contact-info-item">
+            <div class="contact-icon"><i class="fab fa-instagram" aria-hidden="true"></i></div>
+            <div class="contact-text">
+              <h4>Instagram</h4>
+              <p><a href="https://www.instagram.com/pratikabhang1" target="_blank">@pratikabhang1</a></p>
+            </div>
           </div>
-        </div>
-      </div>
-
-      <!-- Contact Form -->
-      <form class="contact-form" id="contactForm" action="https://formspree.io/f/xwpowbev" method="POST">
-        <div class="form-group">
-          <input type="text" name="name" placeholder="Your Name" required />
-        </div>
-        <div class="form-group">
-          <input type="email" name="email" placeholder="Your Email" required />
-        </div>
-        <div class="form-group">
-          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-        </div>
-        <div class="form-submit">
-          <button type="submit" class="btn btn-color-1" id="sendBtn">
-            <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
-            <span class="btn-text">Send Message</span>
-          </button>
         </div>
 
-        <!-- Social Media Icons -->
-        <div class="social-icons">
-          <a href="https://linkedin.com/in/pratikabhang" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/pratikabhang" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://www.instagram.com/pratikabhang1" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="mailto:work.pratikabhang@gmail.com"><i class="fas fa-envelope"></i></a>
-        </div>
-      </form>
-    </div>
-  </section>
+        <!-- Contact Form -->
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xwpowbev" method="POST">
+          <div class="form-group">
+            <label for="name" class="visually-hidden">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <label for="email" class="visually-hidden">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required />
+          </div>
+          <div class="form-group">
+            <label for="message" class="visually-hidden">Your Message</label>
+            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn btn-color-1" id="sendBtn">
+              <span class="btn-icon"><i class="fas fa-paper-plane" aria-hidden="true"></i></span>
+              <span class="btn-text">Send Message</span>
+            </button>
+          </div>
+
+          <!-- Social Media Icons -->
+          <div class="social-icons">
+            <a href="https://linkedin.com/in/pratikabhang" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="https://github.com/pratikabhang" target="_blank" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/pratikabhang1" target="_blank" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="mailto:work.pratikabhang@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer>
+  <footer role="contentinfo">
     <div class="footer-navigation">
       <ul class="footer-links">
-        <li><a href="#home"><i class="fas fa-house"></i> Home</a></li>
-        <li><a href="#about"><i class="fa-solid fa-user-tie"></i> About</a></li>
-        <li><a href="#skills"><i class="fa-solid fa-brain"></i> Skills</a></li>
-        <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
-        <li><a href="#projects"><i class="fas fa-code"></i>Projects</a></li>
-        <li><a href="#contact"><i class="fa-solid fa-id-card"></i> Contact</a></li>
+        <li><a href="#home" aria-label="Home"><i class="fas fa-house" aria-hidden="true"></i> Home</a></li>
+        <li><a href="#about" aria-label="About"><i class="fa-solid fa-user-tie" aria-hidden="true"></i> About</a></li>
+        <li><a href="#skills" aria-label="Skills"><i class="fa-solid fa-brain" aria-hidden="true"></i> Skills</a></li>
+        <li><a href="#experience" aria-label="Experience"><i class="fas fa-briefcase" aria-hidden="true"></i> Experience</a></li>
+        <li><a href="#projects" aria-label="Projects"><i class="fas fa-code" aria-hidden="true"></i>Projects</a></li>
+        <li><a href="#contact" aria-label="Contact"><i class="fa-solid fa-id-card" aria-hidden="true"></i> Contact</a></li>
       </ul>
     </div>
     <p class="footer-copy">
