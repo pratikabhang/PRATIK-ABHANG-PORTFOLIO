@@ -545,8 +545,8 @@ header {
 #home {
   justify-content: center;
   align-items: center;
-  padding: 2rem 10rem;
-  margin-bottom: 3rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
 }
 
 .profile__container {
@@ -700,12 +700,12 @@ header {
 #about {
   justify-content: center;
   align-items: center;
+  margin-bottom: -5rem;
 }
 
 .about-container {
   max-width: 1200px;
   margin: 0 auto;
-  gap: 2rem;
 }
 
 .about-card {
@@ -836,12 +836,12 @@ header {
 #education {
   justify-content: center;
   align-items: center;
+  
 }
 
 .education-container {
   max-width: 1200px;
   margin: 0 auto;
-  gap: 2rem;
 }
 
 #education .section-title {
@@ -886,6 +886,7 @@ header {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.6s ease forwards;
+  margin-bottom: 2rem;
 }
 
 .education-card:hover {
@@ -921,6 +922,7 @@ header {
 #skills {
   justify-content: center;
   align-items: center;
+  margin-bottom: -5rem;
 }
 
 .skills-container {
@@ -1020,12 +1022,12 @@ header {
 #experience {
   justify-content: center;
   align-items: center;
+    margin-bottom: -5rem;
 }
 
 .experience-container {
   max-width: 1200px;
   margin: 0 auto;
-  gap: 2rem;
 }
 
 .section-title {
@@ -1065,7 +1067,7 @@ header {
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: var(--card-shadow);
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   opacity: 0;
   transform: translateY(20px);
@@ -1119,12 +1121,12 @@ header {
 #projects {
   justify-content: center;
   align-items: center;
+    margin-bottom: -5rem;
 }
 
 .projects-container {
   max-width: 1200px;
   margin: 0 auto;
-  gap: 2rem;
 }
 
 .project-card {
@@ -1134,7 +1136,7 @@ header {
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: var(--card-shadow);
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   transition: transform 0.3s ease;
   opacity: 0;
   transform: translateY(20px);
@@ -1215,12 +1217,12 @@ header {
 #contact {
   justify-content: center;
   align-items: center;
+  margin-bottom: -rem;
 }
 
 .contact-container {
   max-width: 1200px;
   margin: 0 auto;
-  gap: 2rem;
 }
 
 .contact-form {
