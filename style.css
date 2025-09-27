@@ -1121,7 +1121,7 @@ header {
 #projects {
   justify-content: center;
   align-items: center;
-    margin-bottom: -5rem;
+    margin-bottom: -3rem;
 }
 
 .projects-container {
@@ -1217,7 +1217,7 @@ header {
 #contact {
   justify-content: center;
   align-items: center;
-  margin-bottom: -rem;
+  margin-bottom: -3rem;
 }
 
 .contact-container {
