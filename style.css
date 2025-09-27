@@ -1,13 +1,24 @@
-/* style.css */
-/* Reset and base styles */
+/* ===========================================
+   PORTFOLIO WEBSITE STYLESHEET
+   Author: Pratik Abhang
+   Version: 1.0
+   Description: Modern, responsive portfolio with theme switching
+   =========================================== */
+
+/* ===========================================
+   CSS RESET AND BASE STYLES
+   =========================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* CSS Variables for theming */
+/* ===========================================
+   CSS VARIABLES FOR THEMING SYSTEM
+   =========================================== */
 :root {
+  /* Default Light Theme Variables */
   --bg-color: #ffffff;
   --secondary-bg: #f5f5f5;
   --card-bg: #ffffff;
@@ -28,7 +39,7 @@
   --btn-hover-color: #ffffff;
 }
 
-/* Dark theme variables */
+/* Dark Theme Variables */
 [data-theme="dark"] {
   --bg-color: #0d0d0d;
   --secondary-bg: #1a1a1a;
@@ -50,7 +61,7 @@
   --btn-hover-color: #ffffff;
 }
 
-/* Color theme variations */
+/* Color Theme Variations - Black */
 [data-color="black"]:not([data-theme="dark"]) {
   --primary-color: #1a1a1a;
   --secondary-color: #333333;
@@ -81,6 +92,7 @@
   --btn-hover-color: #ffffff;
 }
 
+/* Color Theme Variations - Blue */
 [data-color="blue"]:not([data-theme="dark"]) {
   --primary-color: #1a73e8;
   --secondary-color: #4285f4;
@@ -111,6 +123,7 @@
   --btn-hover-color: #0d2b50;
 }
 
+/* Color Theme Variations - Green */
 [data-color="green"]:not([data-theme="dark"]) {
   --primary-color: #0b8043;
   --secondary-color: #34a853;
@@ -141,6 +154,7 @@
   --btn-hover-color: #1b3e24;
 }
 
+/* Color Theme Variations - Red */
 [data-color="red"]:not([data-theme="dark"]) {
   --primary-color: #d32f2f;
   --secondary-color: #f44336;
@@ -171,6 +185,7 @@
   --btn-hover-color: #3c0a0a;
 }
 
+/* Color Theme Variations - Yellow */
 [data-color="yellow"]:not([data-theme="dark"]) {
   --primary-color: #fbc02d;
   --secondary-color: #f7e540;
@@ -201,7 +216,7 @@
   --btn-hover-color: #332900;
 }
 
-/* Hover shadow variations based on color theme */
+/* Hover Shadow Variations Based on Color Theme */
 [data-color="blue"] { --hover-shadow: 0 10px 25px rgba(26, 115, 232, 0.25); }
 [data-color="green"] { --hover-shadow: 0 10px 25px rgba(11, 128, 67, 0.25); }
 [data-color="red"] { --hover-shadow: 0 10px 25px rgba(211, 47, 47, 0.25); }
@@ -214,7 +229,9 @@
 [data-theme="dark"][data-color="yellow"] { --hover-shadow: 0 10px 25px rgba(255, 235, 59, 0.25); }
 [data-theme="dark"][data-color="black"] { --hover-shadow: 0 10px 25px rgba(255, 255, 255, 0.1); }
 
-/* Base HTML and body styles */
+/* ===========================================
+   BASE HTML AND BODY STYLES
+   =========================================== */
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -232,7 +249,9 @@ body {
   touch-action: manipulation;
 }
 
-/* Typography and element styles */
+/* ===========================================
+   TYPOGRAPHY AND ELEMENT STYLES
+   =========================================== */
 a {
   color: inherit;
   text-decoration: none;
@@ -269,7 +288,9 @@ p {
   line-height: 1.6;
 }
 
-/* Section styling */
+/* ===========================================
+   SECTION STYLING
+   =========================================== */
 section {
   padding: 100px 0;
   min-height: 15vh;
@@ -349,39 +370,43 @@ section {
   width: 120px;
 }
 
-/* Header and navigation styles */
+/* ===========================================
+   HEADER AND NAVIGATION STYLES
+   =========================================== */
 header {
-  position: relative; /* Normal scrolling header */
+  position: relative;
   width: 100%;
   z-index: 1000;
   transition: all 0.3s ease;
   background-color: var(--nav-bg);
-  padding: 0; /* removes extra gap */
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: var(--nav-shadow);
 }
 
-/* Logo styling */
+/* Logo Styling */
 .logo {
-  font-size: 2rem;                     
-  font-weight: bold;                    
-  cursor: pointer;                      
-  display: block;                       
-  position: relative;                   
-  color: var(--text-color);             
-  padding: 0.5rem 1rem;                 
-  margin: 0.2rem 0 0.3rem 0;           
-  border-radius: 10px;                  
-  text-align: center;                   
-  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Only color and transform transition */
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  margin: 0.2rem 0 0.3rem 0;
+  border-radius: 10px;
+  text-align: center;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-/* Hover effect - only color change */
 .logo:hover {
   color: var(--primary-color);
 }
 
-
-
-/* Desktop nav styling */
+/* Desktop Navigation Styling */
 #desktop-nav {
   display: flex;
   justify-content: center;
@@ -438,7 +463,7 @@ header {
   border-color: var(--primary-color);
 }
 
-/* Mobile nav styling */
+/* Mobile Navigation Styling */
 #hamburger-nav {
   display: none;
 }
@@ -514,23 +539,14 @@ header {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Responsive */
-@media screen and (max-width: 768px) {
-  #desktop-nav {
-    display: none;
-  }
-  #hamburger-nav {
-    display: block;
-  }
-}
-
-
-/* Home section styles */
+/* ===========================================
+   HOME/HERO SECTION STYLES
+   =========================================== */
 #home {
   justify-content: center;
   align-items: center;
   padding: 2rem 10rem;
-  margin-bottom: 3rem; 
+  margin-bottom: 3rem;
 }
 
 .profile__container {
@@ -678,7 +694,9 @@ header {
   transform: scale(1.2);
 }
 
-/* About section styles */
+/* ===========================================
+   ABOUT SECTION STYLES
+   =========================================== */
 #about {
   justify-content: center;
   align-items: center;
@@ -811,7 +829,10 @@ header {
   background: #ff69b4;
   color: white;
 }
-/* Education section styles */
+
+/* ===========================================
+   EDUCATION SECTION STYLES
+   =========================================== */
 #education {
   justify-content: center;
   align-items: center;
@@ -822,7 +843,6 @@ header {
   margin: 0 auto;
   gap: 2rem;
 }
-
 
 #education .section-title {
   text-align: center;
@@ -895,19 +915,9 @@ header {
   color: var(--secondary-color);
 }
 
-/* Animation Keyframes */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Skills section styles */
+/* ===========================================
+   SKILLS SECTION STYLES
+   =========================================== */
 #skills {
   justify-content: center;
   align-items: center;
@@ -918,7 +928,6 @@ header {
   margin: 0 auto;
   gap: 2rem;
 }
-
 
 .skills-grid {
   display: grid;
@@ -942,7 +951,7 @@ header {
   text-align: center;
   opacity: 0;
   animation: fadeInUp 1.2s ease forwards, floatCard 6s ease-in-out infinite;
-  border: 3px solid var(--primary-color); /* added border */
+  border: 3px solid var(--border-color);
   position: relative;
   cursor: default;
 }
@@ -950,7 +959,7 @@ header {
 .skill-card:hover {
   transform: translateY(-8px) scale(1.05);
   box-shadow: var(--hover-shadow);
-  border-color: var(--primary-color); /* keep border consistent on hover */
+  border-color: var(--primary-color);
 }
 
 .skill-card i {
@@ -967,7 +976,7 @@ header {
   color: var(--text-color, #333);
 }
 
-/* Skill-specific icon colors */
+/* Skill-specific Icon Colors */
 .skill-card[data-skill="java"] i { color: #FF8C00; }
 .skill-card[data-skill="python"] i { color: #3776AB; }
 .skill-card[data-skill="sql"] i { color: #e38c00; }
@@ -1005,12 +1014,12 @@ header {
   filter: brightness(1.2);
 }
 
-
-/* Experience section styles */
+/* ===========================================
+   EXPERIENCE SECTION STYLES
+   =========================================== */
 #experience {
   justify-content: center;
   align-items: center;
-
 }
 
 .experience-container {
@@ -1018,7 +1027,6 @@ header {
   margin: 0 auto;
   gap: 2rem;
 }
-
 
 .section-title {
   text-align: center;
@@ -1105,18 +1113,18 @@ header {
   line-height: 1.5;
 }
 
-/* Projects section styles */
+/* ===========================================
+   PROJECTS SECTION STYLES
+   =========================================== */
 #projects {
   justify-content: center;
   align-items: center;
-
 }
 
 .projects-container {
   max-width: 1200px;
   margin: 0 auto;
   gap: 2rem;
-
 }
 
 .project-card {
@@ -1199,7 +1207,11 @@ header {
 
 .project-links a i {
   font-size: 1rem;
-}/* ================= Contact Section ================= */
+}
+
+/* ===========================================
+   CONTACT SECTION STYLES
+   =========================================== */
 #contact {
   justify-content: center;
   align-items: center;
@@ -1211,71 +1223,12 @@ header {
   gap: 2rem;
 }
 
-/* Contact Info Boxes */
-.contact-info {
-  flex: 1;
-  min-width: 260px; /* Slightly smaller */
-  background: var(--card-bg);
-  border-radius: 1rem;
-  padding: 1.8rem; /* Slightly reduced padding */
-  box-shadow: var(--card-shadow);
-  border: 2px solid var(--border-color); /* Slightly thinner border */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-info:hover {
-  transform: translateY(-4px); /* Slightly less lift */
-  box-shadow: var(--hover-shadow);
-}
-
-.contact-info-item {
-  display: flex;
-  align-items: center;
-  gap: 1.3rem; /* Slightly smaller gap */
-  margin-bottom: 1.8rem;
-}
-
-.contact-icon {
-  width: 45px;  /* smaller size */
-  height: 45px;
-  background: var(--hover-color);
-  border-radius: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.6rem;
-  transition: all 0.3s ease;
-}
-
-.contact-info-item:hover .contact-icon {
-  background: var(--primary-color);
-  color: white;
-  transform: scale(1.1);
-}
-
-.contact-text h4 {
-  font-size: 1.15rem;
-  color: var(--text-color);
-  margin-bottom: 0.3rem;
-}
-
-.contact-text p,
-.contact-text a {
-  color: var(--text-color);
-  font-size: 0.95rem;
-}
-
-.contact-text a:hover {
-  color: var(--primary-color);
-}
-
-/* Contact Form */
 .contact-form {
   flex: 1;
   min-width: 260px;
   background: var(--card-bg);
   border-radius: 1rem;
-  padding: 2.5rem; /* Slightly reduced padding */
+  padding: 2.5rem;
   box-shadow: var(--card-shadow);
   border: 2px solid var(--border-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1286,7 +1239,6 @@ header {
   box-shadow: var(--hover-shadow);
 }
 
-/* Form Inputs */
 .form-group {
   margin-bottom: 1.3rem;
 }
@@ -1312,11 +1264,10 @@ header {
 }
 
 .form-group textarea {
-  min-height: 130px; /* slightly smaller height */
+  min-height: 130px;
   resize: vertical;
 }
 
-/* Send Button */
 .form-submit {
   display: flex;
   justify-content: center;
@@ -1374,7 +1325,6 @@ header {
   transform: scale(1.1);
 }
 
-/* Form Status */
 .form-status {
   text-align: center;
   opacity: 0;
@@ -1396,7 +1346,6 @@ header {
   opacity: 1;
 }
 
-/* Social Media Icons */
 .contact-form .social-icons {
   margin-top: 1.5rem;
   display: flex;
@@ -1423,7 +1372,9 @@ header {
   transform: scale(1.1);
 }
 
-/* Footer styles */
+/* ===========================================
+   FOOTER STYLES
+   =========================================== */
 footer {
   padding: 3rem 2rem;
   text-align: center;
@@ -1465,16 +1416,15 @@ footer {
   font-size: 1rem;
   color: var(--text-color);
 }
-.theme-nav-item {
-  position: relative;
-}
 
-/* Position the theme container on the right */
+/* ===========================================
+   THEME TOGGLE AND COLOR PICKER STYLES
+   =========================================== */
 .theme-nav-container {
-  position: fixed;       /* fixed so it stays while scrolling */
-  top: 50%;              /* center vertically */
-  left: 2.5rem;           /* distance from the right edge */
-  transform: translateY(-50%); /* truly center vertically */
+  position: fixed;
+  top: 50%;
+  left: 2.5rem;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1483,10 +1433,9 @@ footer {
   margin-top: 15px;
   border-radius: 8px;
   background: var(--hover-color);
-  z-index: 1000;         /* above other content */
+  z-index: 1000;
   transition: all 0.3s ease;
 }
-
 
 .theme-toggle-nav {
   position: relative;
@@ -1565,7 +1514,6 @@ footer {
 .color-option-nav[data-color="blue"] { background-color: #3498db; }
 .color-option-nav[data-color="green"] { background-color: #2ecc71; }
 
-
 .color-picker-nav {
   display: flex;
   gap: 6px;
@@ -1601,7 +1549,50 @@ footer {
 .color-option-nav[data-color="green"] { background: #2ecc71; }
 .color-option-nav[data-color="blue"] { background: #3498db; }
 
-/* Animations */
+/* ===========================================
+   SECTION NAVIGATION BUTTONS STYLES
+   =========================================== */
+.section-nav-container {
+  position: fixed;
+  top: 50%;
+  right: 2.5rem;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background: var(--hover-color);
+  padding: 0.6rem;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  z-index: 1000;
+  margin-top: 15px;
+}
+
+.section-nav-btn {
+  width: 25px;
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.section-nav-btn:hover {
+  transform: scale(1.1);
+  box-shadow: var(--hover-shadow);
+}
+
+/* ===========================================
+   ANIMATION KEYFRAMES
+   =========================================== */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -1645,7 +1636,11 @@ footer {
   }
 }
 
-/* Responsive Design */
+/* ===========================================
+   RESPONSIVE DESIGN - MEDIA QUERIES
+   =========================================== */
+
+/* Large Screens (1200px and below) */
 @media (max-width: 1200px) {
   .profile__container {
     gap: 3rem;
@@ -1657,6 +1652,7 @@ footer {
   }
 }
 
+/* Tablets (992px and below) */
 @media (max-width: 992px) {
   .profile__container {
     flex-direction: column;
@@ -1685,6 +1681,7 @@ footer {
   }
 }
 
+/* Small Tablets (768px and below) */
 @media (max-width: 768px) {
   #desktop-nav {
     display: none;
@@ -1750,8 +1747,19 @@ footer {
     font-size: 1rem;
     padding: 0.5rem 1rem;
   }
+  
+  /* Hide section navigation buttons on mobile */
+  .section-nav-container {
+    display: none;
+  }
+  
+  /* Hide theme toggle on mobile */
+  .theme-nav-container {
+    display: none;
+  }
 }
 
+/* Mobile Phones (576px and below) */
 @media (max-width: 576px) {
   section {
     padding: 60px 0;
@@ -1821,54 +1829,15 @@ footer {
   }
 }
 
-
-/* ================================
-   Section Navigation Container
-   ================================ */
-.section-nav-container {
-  position: fixed;
-  top: 50%; 
-  right: 2.5rem; 
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column; 
-  gap: 0.6rem; 
-  background: var(--hover-color); 
-  padding: 0.6rem; 
-  border-radius: 12px; 
-  box-shadow: var(--card-shadow);
-  z-index: 1000; 
-  margin-top: 15px;
+/* Accessibility - Screen Reader Only */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
-
-/* ================================
-   Section Navigation Buttons (Theme-Aware)
-   ================================ */
-.section-nav-btn {
-  width: 25px;  
-  height: 40px;
-  border-radius: 5px; 
-  border: 2px solid var(--primary-color); /* fallback */
-  background-color: var(--primary-color); /* fallback */
-  color: var(--theme-bg-color); 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px; 
-  font-weight: bold; 
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* default shadow */
-  transition: all 0.3s ease; 
-}
-
-/* Theme-aware background, border, and shadow */
-.section-nav-btn[data-color] {
-  background-color: var(--btn-bg, var(--primary-color));
-  border-color: var(--btn-border, var(--primary-color));
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-/* Apply data-color dynamically using inline style for better browser support */
-
-
-
