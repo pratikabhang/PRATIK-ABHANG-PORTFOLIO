@@ -1883,7 +1883,7 @@ footer {
 /* Mobile devices (max-width: 768px) */
 @media (max-width: 768px) {
   .logo {
-    font-size: 2rem; /* Smaller font size for mobile */
+    font-size: 1rem; /* Smaller font size for mobile */
     padding: 0.3rem 0.6rem; /* Optional: adjust padding */
   }
 }
