@@ -378,7 +378,7 @@ header {
   z-index: 1000;
   transition: all 0.3s ease;
   background-color: var(--nav-bg);
-  padding: 1rem 2rem;
+  padding: 0.5rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -387,7 +387,7 @@ header {
 
 /* Logo Styling */
 .logo {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bold;
   cursor: pointer;
   display: block;
@@ -730,8 +730,8 @@ header {
 #about {
   justify-content: center;
   align-items: center;
-  padding: 2rem;
-  margin-bottom: -2rem;
+  padding: auto;
+  margin-bottom: -3rem;
 }
 
 .about-container {
@@ -954,8 +954,8 @@ header {
 #skills {
   justify-content: center;
   align-items: center;
-  padding: 2rem;
-  margin-bottom: -2rem;
+  padding: auto;
+  margin-bottom: -3rem;
 }
 
 .skills-container {
@@ -1055,8 +1055,8 @@ header {
 #experience {
   justify-content: center;
   align-items: center;
-  padding: 2rem;
-  margin-bottom: -2rem;
+  padding: auto;
+  margin-bottom: -3rem;
 }
 
 .experience-container {
@@ -1155,8 +1155,8 @@ header {
 #projects {
   justify-content: center;
   align-items: center;
-  padding: 2rem;
-  margin-bottom: -2rem;
+  padding: auto;
+  margin-bottom: -3rem;
 }
 
 .projects-container {
@@ -1252,8 +1252,8 @@ header {
 #contact {
   justify-content: center;
   align-items: center;
-  padding: 2rem;
-  margin-bottom: -2rem;
+  padding: auto;
+  margin-bottom: -3rem;
 }
 
 .contact-container {
