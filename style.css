@@ -572,7 +572,7 @@ header {
 #home {
   justify-content: center;
   align-items: center;
-  padding: 2.2rem;
+  padding: 3rem;
   margin-bottom: 2rem;
   padding-top: 140px; /* Account for fixed header */
 }
