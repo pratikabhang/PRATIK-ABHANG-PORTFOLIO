@@ -741,7 +741,7 @@ header {
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  margin-bottom: -2rem;
+  margin-bottom: -3rem;
 }
 
 .about-container {
@@ -761,12 +761,10 @@ header {
   animation: fadeInUp 0.6s ease forwards;
 }
 
-.about-card:hover,
-.details-card:hover {
-  transform: translateY(-5px) scale(1.05); /* Zoom in slightly */
+.about-card:hover {
+  transform: translateY(-5px);
   box-shadow: var(--hover-shadow);
 }
-
 
 .about-content p {
   font-size: 1.1rem;
@@ -894,8 +892,8 @@ header {
 #skills {
   justify-content: center;
   align-items: center;
-  padding: 2rem;
-  margin-bottom: -2rem;
+  padding: auto;
+  margin-bottom: -3rem;
 }
 
 .skills-container {
@@ -994,8 +992,8 @@ header {
 #experience {
   justify-content: center;
   align-items: center;
-  padding: 2rem;
-  margin-bottom: -2rem;
+  padding: auto;
+  margin-bottom: -3rem;
 }
 
 .experience-container {
@@ -1094,8 +1092,8 @@ header {
 #projects {
   justify-content: center;
   align-items: center;
-  padding: 2rem;
-  margin-bottom: -2rem;
+  padding: auto;
+  margin-bottom: -3rem;
 }
 
 .projects-container {
@@ -1192,8 +1190,8 @@ header {
 #contact {
   justify-content: center;
   align-items: center;
-  padding: 2rem;
-  margin-bottom: -2rem;
+  padding: auto;
+  margin-bottom: -3rem;
 }
 
 .contact-container {
