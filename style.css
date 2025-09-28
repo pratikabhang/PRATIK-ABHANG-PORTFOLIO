@@ -382,7 +382,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: var(--nav-shadow);
 }
 
 /* Logo Styling */
@@ -1883,7 +1882,10 @@ footer {
 /* Mobile devices (max-width: 768px) */
 @media (max-width: 768px) {
   .logo {
-    font-size: 1rem; /* Smaller font size for mobile */
-    padding: 0.3rem 0.6rem; /* Optional: adjust padding */
+    font-size: 1.5rem;          /* Smaller font size for mobile */
+    padding: 0.3rem 0.6rem;   /* Adjust padding */
+    margin: 0.5rem auto;      /* Center the logo horizontally */
+    text-align: center;       /* Ensure text is centered */
+    display: block;           /* Make sure it's block for centering */
   }
 }
