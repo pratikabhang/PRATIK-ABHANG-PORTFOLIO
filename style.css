@@ -633,13 +633,15 @@ header {
   transition: border-radius 300ms ease, transform 300ms ease, background-color 300ms ease, color 300ms ease;
 }
 
+/* ✅ Removed text zoom effect on hover */
 .btn-text, .btn-icon {
   display: inline-block;
   transition: transform 300ms ease;
 }
 
-.btn:hover .btn-text, .btn:hover .btn-icon {
-  transform: scale(1.05);
+.btn:hover .btn-text,
+.btn:hover .btn-icon {
+  transform: none; /* No zoom on hover */
 }
 
 .btn-color-1, .btn-color-2 {
@@ -656,10 +658,12 @@ header {
   color: var(--text-color);
 }
 
+/* ✅ Button hover lift stays intact */
 .btn-color-1:hover, .btn-color-2:hover {
   border-radius: 0.75rem;
   transform: translateY(-5px) scale(1.05);
 }
+
 
 .socials__vertical {
   display: flex;
@@ -700,7 +704,8 @@ header {
 #about {
   justify-content: center;
   align-items: center;
-  margin-bottom: -5rem;
+  padding: 2rem;
+  margin-bottom: -2rem;
 }
 
 .about-container {
@@ -836,7 +841,8 @@ header {
 #education {
   justify-content: center;
   align-items: center;
-  
+  padding: 2rem;
+  margin-bottom: -2rem;
 }
 
 .education-container {
@@ -922,7 +928,8 @@ header {
 #skills {
   justify-content: center;
   align-items: center;
-  margin-bottom: -5rem;
+  padding: 2rem;
+  margin-bottom: -2rem;
 }
 
 .skills-container {
@@ -1022,7 +1029,8 @@ header {
 #experience {
   justify-content: center;
   align-items: center;
-    margin-bottom: -5rem;
+  padding: 2rem;
+  margin-bottom: -2rem;
 }
 
 .experience-container {
@@ -1121,7 +1129,8 @@ header {
 #projects {
   justify-content: center;
   align-items: center;
-    margin-bottom: -3rem;
+  padding: 2rem;
+  margin-bottom: -2rem;
 }
 
 .projects-container {
@@ -1217,7 +1226,8 @@ header {
 #contact {
   justify-content: center;
   align-items: center;
-  margin-bottom: -3rem;
+  padding: 2rem;
+  margin-bottom: -2rem;
 }
 
 .contact-container {
@@ -1564,16 +1574,16 @@ footer {
   gap: 0.6rem;
   background: var(--hover-color);
   padding: 0.6rem;
-  border-radius: 12px;
+  border-radius: 15px;
   box-shadow: var(--card-shadow);
   z-index: 1000;
   margin-top: 15px;
 }
 
 .section-nav-btn {
-  width: 25px;
+  width: 20px;
   height: 40px;
-  border-radius: 5px;
+  border-radius: 40px;
   border: 2px solid var(--primary-color);
   background-color: var(--primary-color);
   color: var(--bg-color);
