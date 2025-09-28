@@ -411,3 +411,29 @@ document.addEventListener('DOMContentLoaded', function () {
   
   window.toggleMenu = toggleMenu;
 });
+
+// Prevent zooming with keyboard shortcuts (Ctrl + / Ctrl -) and mouse wheel
+window.addEventListener('wheel', function(e) {
+  if (e.ctrlKey) {
+    e.preventDefault();
+  }
+}, { passive: false });
+
+window.addEventListener('keydown', function(e) {
+  if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '=')) {
+    e.preventDefault();
+  }
+});
+
+// Prevent pinch zoom on touch devices
+window.addEventListener('touchmove', function(e) {
+  if (e.scale !== undefined && e.scale !== 1) {
+    e.preventDefault();
+  }
+}, { passive: false });
+
+// Optional: set viewport to prevent scaling
+const meta = document.createElement('meta');
+meta.name = "viewport";
+meta.content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no";
+document.head.appendChild(meta);

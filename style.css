@@ -739,6 +739,7 @@ header {
   margin: 0 auto;
 }
 
+
 .about-card {
   background: var(--card-bg);
   border: 3px solid var(--border-color);
@@ -867,8 +868,7 @@ header {
 #education {
   justify-content: center;
   align-items: center;
-  padding: 2rem;
-  margin-bottom: -2rem;
+  padding: auto;
 }
 
 .education-container {
@@ -1891,3 +1891,4 @@ footer {
     display: block;           /* Make sure it's block for centering */
   }
 }
+
