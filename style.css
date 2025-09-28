@@ -369,7 +369,6 @@ section {
   background: var(--secondary-color);
   width: 120px;
 }
-
 /* ===========================================
    HEADER AND NAVIGATION STYLES
    =========================================== */
@@ -379,22 +378,21 @@ header {
   z-index: 1000;
   transition: all 0.3s ease;
   background-color: var(--nav-bg);
-  padding: 0;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
   box-shadow: var(--nav-shadow);
 }
 
 /* Logo Styling */
 .logo {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   cursor: pointer;
   display: block;
   position: relative;
-  color: var(--text-color);
+  color: var(--text-color); /* Default color */
   padding: 0.5rem 1rem;
   margin: 0.2rem 0 0.3rem 0;
   border-radius: 10px;
@@ -402,9 +400,24 @@ header {
   transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.logo:hover {
-  color: var(--primary-color);
+.logo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  border: 2px dashed transparent;
+  transition: border-color 0.3s ease-in-out;
+  pointer-events: none;
 }
+
+.logo:hover {
+  color: var(--primary-color); /* Color changes on hover */
+}
+
+.logo:hover::before {
+  border-color: var(--primary-color); /* Dashed border appears on hover */
+}
+
 
 /* Desktop Navigation Styling */
 #desktop-nav {
@@ -450,7 +463,7 @@ header {
   position: absolute;
   inset: 0;
   border-radius: 6px;
-  border: 1.2px dashed transparent;
+  border: 2px dashed transparent;
   transition: border-color 0.3s ease-in-out;
   pointer-events: none;
 }
@@ -462,6 +475,7 @@ header {
 .nav-links a:hover::before {
   border-color: var(--primary-color);
 }
+
 /* Mobile Navigation Styling */
 #hamburger-nav {
   display: none;
