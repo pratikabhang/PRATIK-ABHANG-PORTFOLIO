@@ -382,6 +382,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: var(--nav-shadow);
 }
 
 /* Logo Styling */
@@ -1879,10 +1880,11 @@ footer {
   border: 0;
 }
 
+
 /* Mobile devices (max-width: 768px) */
 @media (max-width: 768px) {
   .logo {
-    font-size: 1.5rem;          /* Smaller font size for mobile */
+    font-size: 1.7rem;          /* Smaller font size for mobile */
     padding: 0.3rem 0.6rem;   /* Adjust padding */
     margin: 0.5rem auto;      /* Center the logo horizontally */
     text-align: center;       /* Ensure text is centered */
