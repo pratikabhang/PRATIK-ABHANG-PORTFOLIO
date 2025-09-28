@@ -374,7 +374,7 @@ section {
    HEADER AND NAVIGATION STYLES
    =========================================== */
 header {
-  position: fixed;
+  position: flex;
   width: 100%;
   z-index: 1000;
   transition: all 0.3s ease;
@@ -572,7 +572,7 @@ header {
 #home {
   justify-content: center;
   align-items: center;
-  padding: 3.3rem;
+  padding: 2.8em;
   margin-bottom: 2rem;
   padding-top: 140px; /* Account for fixed header */
 }
