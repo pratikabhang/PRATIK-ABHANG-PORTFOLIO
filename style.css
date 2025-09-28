@@ -1336,18 +1336,19 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 20%;
-  background: var(--hover-color);
-  color: var(--text-color);
+  border-radius: 50%;       /* Optional: keeps a round clickable area */
+  background: transparent;  /* Remove background */
+  color: var(--text-color); /* Default icon color */
   font-size: 1.5rem;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth hover */
 }
 
 .contact-form .social-icons a:hover {
-  background: var(--primary-color);
-  color: white;
-  transform: scale(1.1);
+  transform: scale(1.3);        /* Zoom icon */
+  color: var(--primary-color);  /* Optional color change on hover */
+  background: transparent;      /* Ensure no bg on hover */
 }
+
 
 /* ===========================================
    FOOTER STYLES
