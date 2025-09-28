@@ -572,9 +572,9 @@ header {
 #home {
   justify-content: center;
   align-items: center;
-  padding: 2.8em;
+  padding: 1.8rem;
   margin-bottom: 2rem;
-  padding-top: 140px; /* Account for fixed header */
+  padding-top: 40px; /* Account for fixed header */
 }
 
 .profile__container {
