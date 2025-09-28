@@ -1413,6 +1413,7 @@ footer {
   background: var(--hover-color);
   z-index: 1000;
   transition: all 0.3s ease;
+  
 }
 
 .theme-toggle-nav {
@@ -1539,7 +1540,7 @@ footer {
   flex-direction: column;
   gap: 0.6rem;
   background: var(--hover-color);
-  padding: 0.6rem;
+ padding: 0.5rem;
   border-radius: 15px;
   box-shadow: var(--card-shadow);
   z-index: 1000;
