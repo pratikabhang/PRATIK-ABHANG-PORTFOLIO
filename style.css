@@ -572,9 +572,9 @@ header {
 #home {
   justify-content: center;
   align-items: center;
-  padding: 3rem;
+  padding: 2.2rem;
   margin-bottom: 2rem;
-  padding-top: 120px; /* Account for fixed header */
+  padding-top: 140px; /* Account for fixed header */
 }
 
 .profile__container {
@@ -1400,10 +1400,10 @@ footer {
    =========================================== */
 .theme-nav-container {
   position: fixed;
-  top: 50%;
+  top: 48%;
   left: 2.5rem;
   transform: translateY(-50%);
-  display: flex;
+  display: flex
   flex-direction: column;
   align-items: center;
   gap: 1rem;
@@ -1533,7 +1533,7 @@ footer {
    =========================================== */
 .section-nav-container {
   position: fixed;
-  top: 50%;
+  top: 48%;
   right: 2.5rem;
   transform: translateY(-50%);
   display: flex;
