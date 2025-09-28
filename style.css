@@ -730,7 +730,7 @@ header {
 #about {
   justify-content: center;
   align-items: center;
-  padding: auto;
+  padding: 2rem;
   margin-bottom: -3rem;
 }
 
@@ -868,77 +868,6 @@ header {
 #education {
   justify-content: center;
   align-items: center;
-  padding: auto;
-}
-
-.education-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-#education .section-title {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-#education .section-title h3 {
-  font-size: 2rem;
-  display: inline-block;
-  color: var(--text-color);
-  position: relative;
-}
-
-#education .section-title h3::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: var(--primary-color);
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-#education .section-title h3:hover::after {
-  background: var(--secondary-color);
-  width: 120px;
-}
-
-.education-card {
-  display: flex;
-  flex-direction: column;
-  background: var(--card-bg);
-  border: 3px solid var(--border-color);
-  border-radius: 1rem;
-  padding: 2rem;
-  box-shadow: var(--card-shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s ease forwards;
-  margin-bottom: 2rem;
-}
-
-.education-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--hover-shadow);
-}
-
-.education-card h4 {
-  font-size: 1.5rem;
-  color: var(--primary-color);
-  margin-bottom: 0.5rem;
-}
-
-.education-details p {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-  color: var(--text-color);
-  font-size: 1rem;
 }
 
 .education-location {
