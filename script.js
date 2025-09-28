@@ -93,13 +93,19 @@ document.addEventListener('DOMContentLoaded', function () {
   // ===========================================
   
   var typed = new Typed("#typed-text", {
-    strings: [
-      "Computer Engineer",
-      "Full Stack Developer",
-      "Web Developer",
-      "Software Developer",
-      "Data Analyst"
-    ],
+strings: [
+  "Passionate Computer Engineer",
+  "Full Stack Developer",
+  "Creative Web Developer",
+  "Software Developer",
+  "Data Analyst",
+  "Insightful  Cloud Computing Enthusiast",
+  "Artificial Intelligence Explorer",
+  "Cybersecurity",
+  "Data Protection",
+  "System Design"
+],
+
     typeSpeed: 80,
     backSpeed: 40,
     backDelay: 800,
