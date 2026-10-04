@@ -1,445 +1,650 @@
 /**
  * PORTFOLIO WEBSITE JAVASCRIPT
  * Author: Pratik Abhang
+ * Version: 2.0 - Premium Optimized
  * Description: Handles theme switching, animations, form submission, and interactive elements
- * Version: 1.0
  */
 
-// Wait for DOM to be fully loaded before executing scripts
-document.addEventListener('DOMContentLoaded', function () {
-  
-  // ===========================================
-  // MOBILE MENU TOGGLE FUNCTIONALITY
-  // ===========================================
-  
-  /**
-   * Toggles the mobile navigation menu
-   */
-  function toggleMenu() {
-    const menuLinks = document.querySelector('.menu-links');
-    const hamburgerIcon = document.querySelector('.hamburger-icon');
-    menuLinks.classList.toggle('open');
-    hamburgerIcon.classList.toggle('open');
-    
-    // Update aria-expanded attribute for accessibility
-    const isExpanded = menuLinks.classList.contains('open');
-    hamburgerIcon.setAttribute('aria-expanded', isExpanded);
-  }
+(function () {
+  'use strict';
 
   // ===========================================
-  // THEME SWITCHING FUNCTIONALITY
+  // UTILITY FUNCTIONS
   // ===========================================
-  
-  const themeSwitch = document.getElementById('theme-switch-nav');
-  const colorOptions = document.querySelectorAll('.color-option-nav');
 
-  // Get saved theme preference or default to light theme
-  const savedTheme = localStorage.getItem('theme') || 'light';
-  const savedColor = localStorage.getItem('color') || 'black';
+  const $ = (selector, context = document) => context.querySelector(selector);
+  const $$ = (selector, context = document) => Array.from(context.querySelectorAll(selector));
 
-  // Apply saved theme on page load
-  if (savedTheme === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    if (themeSwitch) themeSwitch.checked = true;
-  } else {
-    document.documentElement.setAttribute('data-theme', 'light');
-    if (themeSwitch) themeSwitch.checked = false;
-  }
+  // Check for reduced motion preference
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Apply saved color on page load
-  document.documentElement.setAttribute('data-color', savedColor);
+  // ===========================================
+  // DOM READY
+  // ===========================================
 
-  // Theme switch event listener
-  if (themeSwitch) {
-    themeSwitch.addEventListener('change', function () {
-      if (this.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
+  document.addEventListener('DOMContentLoaded', function () {
+
+    // ===========================================
+    // MOBILE MENU TOGGLE FUNCTIONALITY
+    // ===========================================
+
+    const menuLinks = $('.menu-links');
+    const hamburgerIcon = $('.hamburger-icon');
+
+    window.toggleMenu = function () {
+      if (!menuLinks || !hamburgerIcon) return;
+
+      menuLinks.classList.toggle('open');
+      hamburgerIcon.classList.toggle('open');
+
+      const isExpanded = menuLinks.classList.contains('open');
+      hamburgerIcon.setAttribute('aria-expanded', isExpanded);
+
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = isExpanded ? 'hidden' : '';
+    };
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function (e) {
+      if (menuLinks && menuLinks.classList.contains('open')) {
+        const isClickInsideMenu = menuLinks.contains(e.target);
+        const isClickOnHamburger = hamburgerIcon && hamburgerIcon.contains(e.target);
+
+        if (!isClickInsideMenu && !isClickOnHamburger) {
+          menuLinks.classList.remove('open');
+          hamburgerIcon.classList.remove('open');
+          hamburgerIcon.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        }
       }
-      // Update navigation arrow colors after theme change
-      syncArrowColor();
     });
-  }
 
-  // Color options event listeners
-  colorOptions.forEach(option => {
-    option.addEventListener('click', function () {
-      const color = this.getAttribute('data-color');
+    // Close menu on escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menuLinks && menuLinks.classList.contains('open')) {
+        menuLinks.classList.remove('open');
+        hamburgerIcon.classList.remove('open');
+        hamburgerIcon.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        hamburgerIcon.focus();
+      }
+    });
+
+    // ===========================================
+    // THEME SWITCHING FUNCTIONALITY
+    // ===========================================
+
+    const themeSwitch = $('#theme-switch-nav');
+    const colorOptions = $$('.color-option-nav');
+
+    // Get saved preferences or defaults
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    const savedColor = localStorage.getItem('color') || 'black';
+
+    // Apply saved theme on page load
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      if (themeSwitch) {
+        themeSwitch.checked = theme === 'dark';
+      }
+      localStorage.setItem('theme', theme);
+    }
+
+    // Apply saved color on page load
+    function applyColor(color) {
       document.documentElement.setAttribute('data-color', color);
       localStorage.setItem('color', color);
-      // Update navigation arrow colors after color change
-      syncArrowColor();
-    });
-  });
 
-  // ===========================================
-  // HEADER SCROLL EFFECT
-  // ===========================================
-  
-  const header = document.getElementById('header');
-  window.addEventListener('scroll', function () {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
+      // Update active state on color options
+      colorOptions.forEach(opt => {
+        opt.classList.toggle('active', opt.getAttribute('data-color') === color);
+      });
     }
-  });
 
-  // ===========================================
-  // TYPED.JS ANIMATION FOR PROFESSION TITLES
-  // ===========================================
-  
-  var typed = new Typed("#typed-text", {
-strings: [
-  "Passionate Computer Engineer",
-  "Full Stack Developer",
-  "Creative Web Developer",
-  "Software Developer",
-  "Data Analyst",
-  "Insightful  Cloud Computing Enthusiast",
-  "Artificial Intelligence Explorer",
-  "Cybersecurity",
-  "Data Protection",
-  "System Design"
-],
+    // Initialize theme and color
+    applyTheme(savedTheme);
+    applyColor(savedColor);
 
-    typeSpeed: 80,
-    backSpeed: 40,
-    backDelay: 800,
-    startDelay: 400,
-    loop: true,
-    showCursor: true,
-    cursorChar: "|",
-  });
+    // Theme switch event listener
+    if (themeSwitch) {
+      themeSwitch.addEventListener('change', function () {
+        applyTheme(this.checked ? 'dark' : 'light');
+        syncArrowColor();
+      });
+    }
 
-  // ===========================================
-  // DATE AND TIME DISPLAY
-  // ===========================================
-  
-  /**
-   * Updates the current date and time in the footer
-   */
-  function updateDateTime() {
-    const currentDate = new Date();
-    const options = { day: 'numeric', month: 'long', year: 'numeric' };
-    const formattedDate = currentDate.toLocaleDateString('en-GB', options);
-    const formattedTime = currentDate.toLocaleTimeString('en-GB', {
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      hour12: false
+    // Color options event listeners
+    colorOptions.forEach(option => {
+      option.addEventListener('click', function () {
+        const color = this.getAttribute('data-color');
+        applyColor(color);
+        syncArrowColor();
+      });
     });
 
-    document.getElementById("current-date").textContent = formattedDate;
-    document.getElementById("current-time").textContent = formattedTime;
-  }
+    // ===========================================
+    // HEADER SCROLL EFFECT
+    // ===========================================
 
-  // Initialize and update date/time every second
-  updateDateTime();
-  setInterval(updateDateTime, 1000);
+    const header = $('#header');
+    let lastScrollY = window.scrollY;
 
-  // ===========================================
-  // SMOOTH SCROLLING FOR ANCHOR LINKS
-  // ===========================================
-  
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
+    function handleHeaderScroll() {
+      if (!header) return;
 
-      const targetId = this.getAttribute('href');
-      if (targetId !== '#' && targetId.length > 1) {
-        const targetElement = document.querySelector(targetId);
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+
+      lastScrollY = currentScrollY;
+    }
+
+    window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+
+    // ===========================================
+    // TYPED.JS ANIMATION
+    // ===========================================
+
+    const typedElement = $('#typed-text');
+
+    if (typedElement && typeof Typed !== 'undefined') {
+      new Typed('#typed-text', {
+        strings: [
+          "Passionate Computer Engineer",
+          "Full Stack Developer",
+          "Creative Web Developer",
+          "Software Developer",
+          "Data Analyst",
+          "Cloud Computing Enthusiast",
+          "Artificial Intelligence Explorer",
+          "Cybersecurity Specialist",
+          "Data Protection Expert",
+          "System Design Architect"
+        ],
+        typeSpeed: 80,
+        backSpeed: 40,
+        backDelay: 800,
+        startDelay: 400,
+        loop: true,
+        showCursor: true,
+        cursorChar: "|",
+        smartBackspace: true
+      });
+    }
+
+    // ===========================================
+    // DATE AND TIME DISPLAY
+    // ===========================================
+
+    const dateElement = $('#current-date');
+    const timeElement = $('#current-time');
+
+    function updateDateTime() {
+      if (!dateElement || !timeElement) return;
+
+      const now = new Date();
+      const dateOptions = { day: 'numeric', month: 'long', year: 'numeric' };
+      const formattedDate = now.toLocaleDateString('en-GB', dateOptions);
+      const formattedTime = now.toLocaleTimeString('en-GB', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      });
+
+      dateElement.textContent = formattedDate;
+      timeElement.textContent = formattedTime;
+    }
+
+    // Update immediately and then every second
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+
+    // ===========================================
+    // SMOOTH SCROLLING FOR ANCHOR LINKS
+    // ===========================================
+
+    $$('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+
+        if (targetId === '#' || targetId.length <= 1) return;
+
+        const targetElement = $(targetId);
+
         if (targetElement) {
-          const header = document.getElementById('header');
+          e.preventDefault();
+
           const headerHeight = header ? header.offsetHeight : 0;
           const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight;
 
-          // Smooth scroll with a custom duration
-          smoothScrollTo(targetPosition, 800);
+          if (prefersReducedMotion) {
+            window.scrollTo(0, targetPosition);
+          } else {
+            smoothScrollTo(targetPosition, 800);
+          }
+
+          // Update URL hash without jumping
+          history.pushState(null, '', targetId);
+        }
+      });
+    });
+
+    /**
+     * Custom smooth scroll with easing
+     */
+    function smoothScrollTo(targetPosition, duration) {
+      const start = window.scrollY;
+      const distance = targetPosition - start;
+      let startTime = null;
+
+      function easeInOutCubic(t) {
+        return t < 0.5
+          ? 4 * t * t * t
+          : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      }
+
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        const eased = easeInOutCubic(progress);
+
+        window.scrollTo(0, start + distance * eased);
+
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation);
+        } else {
+          window.scrollTo(0, targetPosition);
         }
       }
-    });
-  });
 
-  /**
-   * Smooth scroll to a target position
-   * @param {number} targetPosition - The vertical position to scroll to
-   * @param {number} duration - Duration in milliseconds
-   */
-  function smoothScrollTo(targetPosition, duration) {
-    const start = window.scrollY;
-    const distance = targetPosition - start;
-    let startTime = null;
-
-    function animation(currentTime) {
-      if (startTime === null) startTime = currentTime;
-      const timeElapsed = currentTime - startTime;
-
-      // Ease-in-out function
-      const ease = easeInOutCubic(timeElapsed, start, distance, duration);
-
-      window.scrollTo(0, ease);
-
-      if (timeElapsed < duration) {
-        requestAnimationFrame(animation);
-      } else {
-        window.scrollTo(0, targetPosition); // Ensure final position
-      }
+      requestAnimationFrame(animation);
     }
 
-    function easeInOutCubic(t, b, c, d) {
-      t /= d / 2;
-      if (t < 1) return c / 2 * t * t * t + b;
-      t -= 2;
-      return c / 2 * (t * t * t + 2) + b;
-    }
+    // ===========================================
+    // CONTACT FORM SUBMISSION
+    // ===========================================
 
-    requestAnimationFrame(animation);
-  }
+    const form = $('#contactForm');
+    const sendBtn = $('#sendBtn');
 
-  // ===========================================
-  // CONTACT FORM SUBMISSION
-  // ===========================================
-  
-  const form = document.getElementById('contactForm');
-  const sendBtn = document.getElementById('sendBtn');
+    if (form && sendBtn) {
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
 
-  if (form && sendBtn) {
-    form.addEventListener('submit', async function (e) {
-      e.preventDefault();
+        // Validate form
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
 
-      // Remove any existing status messages
-      const oldStatus = form.querySelector('.form-status');
-      if (oldStatus) oldStatus.remove();
+        // Get form status element
+        const formStatus = $('.form-status', form);
 
-      // Button elements
-      const btnIcon = sendBtn.querySelector('.btn-icon i');
-      const btnText = sendBtn.querySelector('.btn-text');
+        // Button elements
+        const btnIcon = $('.btn-icon i', sendBtn);
+        const btnText = $('.btn-text', sendBtn);
 
-      // Start loading animation
-      sendBtn.classList.add('sending');
-      btnIcon.className = 'fas fa-spinner fa-spin';
-      btnText.textContent = 'Sending...';
+        // Store original content
+        const originalIconClass = btnIcon ? btnIcon.className : 'fas fa-paper-plane';
+        const originalText = btnText ? btnText.textContent : 'Send Message';
 
-      const formData = new FormData(form);
-      const formStatus = document.createElement('p');
-      formStatus.className = 'form-status';
+        // Start loading state
+        sendBtn.disabled = true;
+        sendBtn.classList.add('sending');
 
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
+        if (btnIcon) btnIcon.className = 'fas fa-spinner fa-spin';
+        if (btnText) btnText.textContent = 'Sending...';
+
+        if (formStatus) {
+          formStatus.textContent = '';
+          formStatus.className = 'form-status';
+        }
+
+        try {
+          const formData = new FormData(form);
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (response.ok) {
+            if (formStatus) {
+              formStatus.textContent = '✓ Message sent successfully! I\'ll get back to you soon.';
+              formStatus.classList.add('success', 'show');
+            }
+            form.reset();
+          } else {
+            throw new Error('Form submission failed');
+          }
+        } catch (error) {
+          console.error('Form submission error:', error);
+          if (formStatus) {
+            formStatus.textContent = '✗ Oops! There was a problem. Please try again or email me directly.';
+            formStatus.classList.add('error', 'show');
+          }
+        } finally {
+          // Reset button
+          sendBtn.disabled = false;
+          sendBtn.classList.remove('sending');
+
+          if (btnIcon) btnIcon.className = originalIconClass;
+          if (btnText) btnText.textContent = originalText;
+
+          // Auto-hide status after 6 seconds
+          if (formStatus) {
+            setTimeout(() => {
+              formStatus.classList.remove('show');
+            }, 6000);
+          }
+        }
+      });
+
+      // Real-time validation feedback
+      $$('input, textarea', form).forEach(field => {
+        field.addEventListener('blur', function () {
+          if (this.value && !this.checkValidity()) {
+            this.style.borderColor = '#e74c3c';
+          } else {
+            this.style.borderColor = '';
+          }
         });
 
-        if (response.ok) {
-          formStatus.textContent = 'Message sent successfully!';
-          formStatus.classList.add('success');
-          form.reset();
-        } else {
-          throw new Error('Failed to send');
-        }
-      } catch (error) {
-        formStatus.textContent = 'Oops! There was a problem sending your message.';
-        formStatus.classList.add('error');
-        console.error(error);
-      } finally {
-        // Reset button
-        sendBtn.classList.remove('sending');
-        btnIcon.className = 'fas fa-paper-plane';
-        btnText.textContent = 'Send Message';
+        field.addEventListener('input', function () {
+          if (this.checkValidity()) {
+            this.style.borderColor = '';
+          }
+        });
+      });
+    }
 
-        // Append & show status message
-        form.appendChild(formStatus);
-        setTimeout(() => formStatus.classList.add('show'), 100);
+    // ===========================================
+    // AGE CALCULATION
+    // ===========================================
 
-        // Auto-remove status after 5s
-        setTimeout(() => {
-          formStatus.classList.remove('show');
-          setTimeout(() => formStatus.remove(), 500);
-        }, 5000);
+    function calculateAge(birthDate) {
+      const today = new Date();
+      let ageYears = today.getFullYear() - birthDate.getFullYear();
+      let ageMonths = today.getMonth() - birthDate.getMonth();
+      let ageDays = today.getDate() - birthDate.getDate();
+
+      if (ageDays < 0) {
+        ageMonths--;
+        ageDays += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
       }
-    });
-  }
 
-  // ===========================================
-  // AGE CALCULATION
-  // ===========================================
-  
-  /**
-   * Calculates age based on birth date
-   * @param {Date} birthDate - The birth date
-   * @returns {Object} Age in years, months, and days
-   */
-  function calculateAge(birthDate) {
-    const today = new Date();
-    let ageYears = today.getFullYear() - birthDate.getFullYear();
-    let ageMonths = today.getMonth() - birthDate.getMonth();
-    let ageDays = today.getDate() - birthDate.getDate();
+      if (ageMonths < 0) {
+        ageYears--;
+        ageMonths += 12;
+      }
 
-    if (ageDays < 0) {
-      ageMonths--;
-      ageDays += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+      return { years: ageYears, months: ageMonths, days: ageDays };
     }
 
-    if (ageMonths < 0) {
-      ageYears--;
-      ageMonths += 12;
+    const ageElement = $('#age');
+    if (ageElement) {
+      const birthDate = new Date('2003-11-21');
+      const age = calculateAge(birthDate);
+      ageElement.textContent = `${age.years} years, ${age.months} months, ${age.days} days old`;
     }
 
-    return {
-      years: ageYears,
-      months: ageMonths,
-      days: ageDays
-    };
-  }
+    // ===========================================
+    // SCROLL ANIMATION FOR ELEMENTS
+    // ===========================================
 
-  // Calculate and display age
-  const birthDate = new Date('2003-11-21');
-  const age = calculateAge(birthDate);
-  document.getElementById('age').textContent = `${age.years} years, ${age.months} months, ${age.days} days Old`;
-
-  // ===========================================
-  // SCROLL ANIMATION FOR ELEMENTS
-  // ===========================================
-  
-  /**
-   * Animates elements when they come into view during scrolling
-   */
-  function animateOnScroll() {
-    const elements = document.querySelectorAll(
+    const animatedElements = $$(
       '.about-card, .details-card, .education-card, ' +
       '.skill-card, .project-card, .experience-card'
     );
 
-    const windowHeight = window.innerHeight;
-    const scrollPosition = window.scrollY + windowHeight;
-
-    elements.forEach((element, index) => {
-      const elementPosition = element.offsetTop;
-
-      if (scrollPosition > elementPosition + 100 && !element.classList.contains('animate')) {
-        const delay = index * 0.1;
-        element.style.animationDelay = `${delay}s`;
-        element.classList.add('animate');
+    // Set initial state for animation
+    animatedElements.forEach(element => {
+      if (!prefersReducedMotion) {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(30px)';
+        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       }
     });
-  }
 
-  // Initialize elements for animation
-  document.querySelectorAll(
-    '.about-card, .details-card, .education-card, ' +
-    '.skill-card, .project-card, .experience-card'
-  ).forEach(element => {
-    element.style.opacity = '0';
-    element.style.transform = 'translateY(20px)';
-    element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-  });
+    // Intersection Observer for better performance
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -50px 0px',
+      threshold: 0.1
+    };
 
-  // Run animation on scroll and on page load
-  animateOnScroll();
-  window.addEventListener('scroll', animateOnScroll);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          const element = entry.target;
 
-  // ===========================================
-  // SKILL CARDS ANIMATION
-  // ===========================================
-  
-  const skillCards = document.querySelectorAll('.skill-card');
-  skillCards.forEach((card, index) => {
-    const delay = Math.random() * 2;
-    card.style.animationDelay = `${delay}s`;
+          // Add stagger delay based on index
+          const delay = Math.min(index * 0.1, 0.5);
 
-    const duration = 3 + Math.random() * 3;
-    card.style.animationDuration = `${duration}s`;
-  });
+          setTimeout(() => {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+            element.classList.add('animate');
+          }, prefersReducedMotion ? 0 : delay * 1000);
 
-  // ===========================================
-  // SECTION NAVIGATION BUTTONS
-  // ===========================================
-  
-  const sections = ['home','about','skills','experience','projects','contact'];
-  const upBtn = document.querySelector('.up-btn');
-  const downBtn = document.querySelector('.down-btn');
+          observer.unobserve(element);
+        }
+      });
+    }, observerOptions);
 
-  /**
-   * Gets the index of the current section in view
-   * @returns {number} Index of the current section
-   */
-  function getCurrentSectionIndex() {
-    const scrollPos = window.scrollY + window.innerHeight / 2;
-    for (let i=0;i<sections.length;i++) {
-      const sec = document.getElementById(sections[i]);
-      if(sec.offsetTop <= scrollPos && sec.offsetTop + sec.offsetHeight > scrollPos) return i;
-    }
-    return 0;
-  }
-
-  // Up button click handler
-  upBtn.addEventListener('click', ()=>{ 
-    const idx = getCurrentSectionIndex(); 
-    if(idx>0) document.getElementById(sections[idx-1]).scrollIntoView({behavior:'smooth'});
-  });
-
-  // Down button click handler
-  downBtn.addEventListener('click', ()=>{
-    const idx = getCurrentSectionIndex(); 
-    if(idx<sections.length-1) document.getElementById(sections[idx+1]).scrollIntoView({behavior:'smooth'});
-  });
-
-  // ===========================================
-  // NAVIGATION ARROW COLOR SYNC WITH THEME
-  // ===========================================
-  
-  /**
-   * Synchronizes navigation arrow colors with current theme
-   */
-  function syncArrowColor() {
-    const color = getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim();
-    const bg = document.documentElement.getAttribute('data-theme') === 'dark' ? '#111' : '#fff';
-    
-    [upBtn, downBtn].forEach(btn=>{
-      btn.style.backgroundColor = color;
-      btn.style.border = `1px solid ${color}`;
-      btn.style.color = bg;
-      btn.style.boxShadow = `0 4px 10px ${document.documentElement.getAttribute('data-theme') === 'dark' ? 'rgba(0,0,0,0.7)' : 'rgba(0,0,0,0.25)'}`;
+    animatedElements.forEach(element => {
+      observer.observe(element);
     });
-  }
 
-  // Initialize arrow colors
-  syncArrowColor();
+    // ===========================================
+    // SECTION NAVIGATION BUTTONS
+    // ===========================================
 
-  // ===========================================
-  // MAKE TOGGLEMENU FUNCTION GLOBALLY AVAILABLE
-  // ===========================================
-  
-  window.toggleMenu = toggleMenu;
-});
+    const sections = ['home', 'about', 'skills', 'experience', 'projects', 'contact'];
+    const upBtn = $('.up-btn');
+    const downBtn = $('.down-btn');
 
-// Prevent zooming with keyboard shortcuts (Ctrl + / Ctrl -) and mouse wheel
-window.addEventListener('wheel', function(e) {
-  if (e.ctrlKey) {
-    e.preventDefault();
-  }
-}, { passive: false });
+    function getCurrentSectionIndex() {
+      const scrollPos = window.scrollY + window.innerHeight / 2;
 
-window.addEventListener('keydown', function(e) {
-  if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '=')) {
-    e.preventDefault();
-  }
-});
+      for (let i = 0; i < sections.length; i++) {
+        const section = $('#' + sections[i]);
+        if (section) {
+          const top = section.offsetTop;
+          const bottom = top + section.offsetHeight;
 
-// Prevent pinch zoom on touch devices
-window.addEventListener('touchmove', function(e) {
-  if (e.scale !== undefined && e.scale !== 1) {
-    e.preventDefault();
-  }
-}, { passive: false });
+          if (scrollPos >= top && scrollPos < bottom) {
+            return i;
+          }
+        }
+      }
+      return 0;
+    }
 
-// Optional: set viewport to prevent scaling
-const meta = document.createElement('meta');
-meta.name = "viewport";
-meta.content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no";
-document.head.appendChild(meta);
+    if (upBtn) {
+      upBtn.addEventListener('click', () => {
+        const idx = getCurrentSectionIndex();
+        if (idx > 0) {
+          const targetSection = $('#' + sections[idx - 1]);
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+          }
+        }
+      });
+    }
+
+    if (downBtn) {
+      downBtn.addEventListener('click', () => {
+        const idx = getCurrentSectionIndex();
+        if (idx < sections.length - 1) {
+          const targetSection = $('#' + sections[idx + 1]);
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+          }
+        }
+      });
+    }
+
+    // ===========================================
+    // NAVIGATION ARROW COLOR SYNC
+    // ===========================================
+
+    function syncArrowColor() {
+      const color = getComputedStyle(document.documentElement)
+        .getPropertyValue('--primary-color').trim();
+
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      const bg = isDark ? '#111' : '#fff';
+
+      [upBtn, downBtn].forEach(btn => {
+        if (btn) {
+          btn.style.background = `linear-gradient(180deg, ${color}, ${color})`;
+          btn.style.color = bg;
+        }
+      });
+    }
+
+    syncArrowColor();
+
+    // ===========================================
+    // SCROLL TO TOP BUTTON
+    // ===========================================
+
+    const scrollTopBtn = $('#scrollTopBtn');
+
+    if (scrollTopBtn) {
+      function toggleScrollTopBtn() {
+        if (window.scrollY > 500) {
+          scrollTopBtn.classList.add('visible');
+        } else {
+          scrollTopBtn.classList.remove('visible');
+        }
+      }
+
+      window.addEventListener('scroll', toggleScrollTopBtn, { passive: true });
+
+      scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: prefersReducedMotion ? 'auto' : 'smooth'
+        });
+      });
+    }
+
+    // ===========================================
+    // ACTIVE NAVIGATION INDICATOR
+    // ===========================================
+
+    const navLinks = $$('.nav-links a, .footer-links a');
+
+    function updateActiveNav() {
+      const scrollPos = window.scrollY + 100;
+
+      sections.forEach((sectionId, index) => {
+        const section = $('#' + sectionId);
+        if (!section) return;
+
+        const top = section.offsetTop;
+        const bottom = top + section.offsetHeight;
+
+        if (scrollPos >= top && scrollPos < bottom) {
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + sectionId);
+          });
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    updateActiveNav();
+
+    // ===========================================
+    // SKILL CARD STAGGER ANIMATION
+    // ===========================================
+
+    const skillCards = $$('.skill-card');
+    skillCards.forEach((card, index) => {
+      card.style.animationDelay = `${(index % 10) * 0.05}s`;
+    });
+
+    // ===========================================
+    // PARALLAX EFFECT FOR HERO SHAPES
+    // ===========================================
+
+    if (!prefersReducedMotion) {
+      const shapes = $$('.floating-shape');
+
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+
+        shapes.forEach((shape, index) => {
+          const speed = 0.02 + (index * 0.01);
+          shape.style.transform = `translateY(${scrollY * speed}px)`;
+        });
+      }, { passive: true });
+    }
+
+    // ===========================================
+    // LAZY LOADING IMAGES
+    // ===========================================
+
+    if ('loading' in HTMLImageElement.prototype) {
+      // Native lazy loading supported
+      $$('img[loading="lazy"]').forEach(img => {
+        img.loading = 'lazy';
+      });
+    } else {
+      // Fallback with Intersection Observer
+      const lazyImages = $$('img:not([loading])');
+
+      const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src || img.src;
+            imageObserver.unobserve(img);
+          }
+        });
+      });
+
+      lazyImages.forEach(img => imageObserver.observe(img));
+    }
+
+    // ===========================================
+    // HANDLE RESIZE EVENTS
+    // ===========================================
+
+    let resizeTimeout;
+
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        // Close mobile menu on resize to desktop
+        if (window.innerWidth > 768 && menuLinks && menuLinks.classList.contains('open')) {
+          menuLinks.classList.remove('open');
+          hamburgerIcon.classList.remove('open');
+          hamburgerIcon.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        }
+
+        // Recalculate arrow colors
+        syncArrowColor();
+      }, 250);
+    });
+
+    // ===========================================
+    // INITIALIZATION COMPLETE
+    // ===========================================
+
+    console.log('%c✨ Portfolio Loaded Successfully', 'color: #2ecc71; font-weight: bold;');
+    console.log('%c👨‍💻 Designed by Pratik Abhang', 'color: #3498db;');
+
+  });
+
+})();

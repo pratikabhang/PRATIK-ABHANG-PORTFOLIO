@@ -1,70 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="description" content="Pratik Abhang - Computer Engineer and Full Stack Developer Portfolio">
-  <meta name="keywords" content="Pratik Abhang, Computer Engineer, Full Stack Developer, Web Developer, Portfolio">
-  <title>PRATIK ABHANG - Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Pratik Abhang - Computer Engineer and Full Stack Developer Portfolio. Explore my projects, skills, and experience in web development, AI, and cybersecurity.">
+  <meta name="keywords"
+    content="Pratik Abhang, Computer Engineer, Full Stack Developer, Web Developer, Portfolio, React, Node.js, Python">
+  <meta name="author" content="Pratik Abhang">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Pratik Abhang - Full Stack Developer Portfolio">
+  <meta property="og:description"
+    content="Explore my projects, skills, and experience in web development, AI, and cybersecurity.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pratikabhang.netlify.app/">
+  <meta property="og:image" content="./files/profile.jpg">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pratik Abhang - Full Stack Developer Portfolio">
+  <meta name="twitter:description"
+    content="Explore my projects, skills, and experience in web development, AI, and cybersecurity.">
+  <meta name="twitter:image" content="./files/profile.jpg">
+
+  <title>Pratik Abhang | Full Stack Developer Portfolio</title>
   <link rel="icon" href="./files/profile.jpg" type="image/x-icon">
+
+  <!-- Preconnect for Performance -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <!-- Skip to Main Content (Accessibility) -->
+  <a href="#home" class="skip-link">Skip to main content</a>
+
   <!-- Header Navigation Section -->
   <header id="header" role="banner">
-    <div class="logo" aria-label="Pratik Abhang Portfolio">&lt;pratik abhang/&gt;</div>
+    <div class="logo" aria-label="Pratik Abhang Portfolio">
+      <span class="logo-bracket">&lt;</span>pratik abhang<span class="logo-bracket">/&gt;</span>
+    </div>
 
     <!-- Desktop Navigation -->
     <nav id="desktop-nav" aria-label="Main Navigation">
       <ul class="nav-links">
-        <li><a href="#home" aria-label="Home"><i class="fas fa-house" aria-hidden="true"></i> Home</a></li>
-        <li><a href="#about" aria-label="About"><i class="fas fa-user-tie" aria-hidden="true"></i> About</a></li>
-        <li><a href="#skills" aria-label="Skills"><i class="fas fa-brain" aria-hidden="true"></i> Skills</a></li>
-        <li><a href="#experience" aria-label="Experience"><i class="fas fa-briefcase" aria-hidden="true"></i> Experience</a></li>
-        <li><a href="#projects" aria-label="Projects"><i class="fas fa-code" aria-hidden="true"></i> Projects</a></li>
-        <li><a href="#contact" aria-label="Contact"><i class="fas fa-id-card" aria-hidden="true"></i> Contact</a></li>
+        <li><a href="#home" aria-label="Home"><i class="fas fa-house" aria-hidden="true"></i> <span>Home</span></a></li>
+        <li><a href="#about" aria-label="About"><i class="fas fa-user-tie" aria-hidden="true"></i>
+            <span>About</span></a></li>
+        <li><a href="#skills" aria-label="Skills"><i class="fas fa-brain" aria-hidden="true"></i>
+            <span>Skills</span></a></li>
+        <li><a href="#experience" aria-label="Experience"><i class="fas fa-briefcase" aria-hidden="true"></i>
+            <span>Experience</span></a></li>
+        <li><a href="#projects" aria-label="Projects"><i class="fas fa-code" aria-hidden="true"></i>
+            <span>Projects</span></a></li>
+        <li><a href="#contact" aria-label="Contact"><i class="fas fa-id-card" aria-hidden="true"></i>
+            <span>Contact</span></a></li>
       </ul>
     </nav>
 
     <!-- Mobile Navigation -->
-    <!--<nav id="hamburger-nav" aria-label="Mobile Navigation">
+    <nav id="hamburger-nav" aria-label="Mobile Navigation">
       <div class="hamburger-menu">
-        <button class="hamburger-icon" onclick="toggleMenu()" aria-expanded="false" aria-controls="menu-links" aria-label="Toggle menu">
+        <button class="hamburger-icon" onclick="toggleMenu()" aria-expanded="false" aria-controls="menu-links"
+          aria-label="Toggle navigation menu">
           <span></span>
           <span></span>
           <span></span>
         </button>
         <div class="menu-links" id="menu-links" role="menu">
-          <li role="none"><a href="#home" onclick="toggleMenu()" role="menuitem"><i class="fas fa-house" aria-hidden="true"></i> Home</a></li>
-          <li role="none"><a href="#about" onclick="toggleMenu()" role="menuitem"><i class="fas fa-user-tie" aria-hidden="true"></i> About</a></li>
-          <li role="none"><a href="#skills" onclick="toggleMenu()" role="menuitem"><i class="fas fa-brain" aria-hidden="true"></i> Skills</a></li>
-          <li role="none"><a href="#experience" onclick="toggleMenu()" role="menuitem"><i class="fas fa-briefcase" aria-hidden="true"></i> Experience</a></li>
-          <li role="none"><a href="#projects" onclick="toggleMenu()" role="menuitem"><i class="fas fa-code" aria-hidden="true"></i> Projects</a></li>
-          <li role="none"><a href="#contact" onclick="toggleMenu()" role="menuitem"><i class="fas fa-id-card" aria-hidden="true"></i> Contact</a></li>
+          <a href="#home" onclick="toggleMenu()" role="menuitem"><i class="fas fa-house" aria-hidden="true"></i>
+            Home</a>
+          <a href="#about" onclick="toggleMenu()" role="menuitem"><i class="fas fa-user-tie" aria-hidden="true"></i>
+            About</a>
+          <a href="#skills" onclick="toggleMenu()" role="menuitem"><i class="fas fa-brain" aria-hidden="true"></i>
+            Skills</a>
+          <a href="#experience" onclick="toggleMenu()" role="menuitem"><i class="fas fa-briefcase"
+              aria-hidden="true"></i> Experience</a>
+          <a href="#projects" onclick="toggleMenu()" role="menuitem"><i class="fas fa-code" aria-hidden="true"></i>
+            Projects</a>
+          <a href="#contact" onclick="toggleMenu()" role="menuitem"><i class="fas fa-id-card" aria-hidden="true"></i>
+            Contact</a>
         </div>
       </div>
-    </nav>-->
+    </nav>
   </header>
 
   <main>
     <!-- Home/Hero Section -->
     <section id="home" aria-labelledby="home-title">
+      <div class="hero-bg-animation" aria-hidden="true">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="floating-shape shape-4"></div>
+      </div>
+
       <div class="profile__container">
         <!-- Social Media Links -->
         <div class="socials__vertical" aria-label="Social Media Links">
-          <a href="https://pratikabhang.netlify.app/" class="social-icon portfolio" aria-label="Portfolio Website"><i class="fas fa-globe" aria-hidden="true"></i></a>
-          <a href="https://linkedin.com/in/pratikabhang/" class="social-icon linkedin" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-          <a href="https://github.com/pratikabhang/" class="social-icon github" aria-label="GitHub Profile"><i class="fab fa-github" aria-hidden="true"></i></a>
-          <a href="https://www.instagram.com/pratikabhang1/" class="social-icon instagram" aria-label="Instagram Profile"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-          <a href="https://www.youtube.com/@pratikabhang" class="social-icon youtube" aria-label="YouTube Channel"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+          <a href="https://pratikabhang.netlify.app/" class="social-icon portfolio" aria-label="Portfolio Website"
+            target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-globe" aria-hidden="true"></i>
+          </a>
+          <a href="https://linkedin.com/in/pratikabhang/" class="social-icon linkedin" aria-label="LinkedIn Profile"
+            target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+          <a href="https://github.com/pratikabhang/" class="social-icon github" aria-label="GitHub Profile"
+            target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.instagram.com/pratikabhang1/" class="social-icon instagram"
+            aria-label="Instagram Profile" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.youtube.com/@pratikabhang" class="social-icon youtube" aria-label="YouTube Channel"
+            target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-youtube" aria-hidden="true"></i>
+          </a>
         </div>
 
         <!-- Theme Toggle & Color Picker -->
-        <div class="theme-nav-container">
+        <div class="theme-nav-container" aria-label="Theme Settings">
           <div class="theme-toggle-nav">
             <input type="checkbox" id="theme-switch-nav" class="theme-switch-nav" aria-label="Toggle dark mode">
             <label for="theme-switch-nav" class="theme-label-nav">
@@ -73,12 +146,13 @@
               <span class="theme-ball-nav"></span>
             </label>
           </div>
-          <div class="color-picker-nav" aria-label="Color theme picker">
-            <button class="color-option-nav" data-color="black" aria-label="Black theme"></button>
-            <button class="color-option-nav" data-color="red" aria-label="Red theme"></button>
-            <button class="color-option-nav" data-color="yellow" aria-label="Yellow theme"></button>
-            <button class="color-option-nav" data-color="blue" aria-label="Blue theme"></button>
-            <button class="color-option-nav" data-color="green" aria-label="Green theme"></button>
+          <div class="color-picker-nav" role="group" aria-label="Color theme picker">
+            <button class="color-option-nav" data-color="black" aria-label="Black theme" title="Black theme"></button>
+            <button class="color-option-nav" data-color="red" aria-label="Red theme" title="Red theme"></button>
+            <button class="color-option-nav" data-color="yellow" aria-label="Yellow theme"
+              title="Yellow theme"></button>
+            <button class="color-option-nav" data-color="blue" aria-label="Blue theme" title="Blue theme"></button>
+            <button class="color-option-nav" data-color="green" aria-label="Green theme" title="Green theme"></button>
           </div>
         </div>
 
@@ -88,11 +162,13 @@
           <h1 class="titleh" id="home-title">Pratik Abhang</h1>
           <p class="section__text__p2"><span id="typed-text" aria-live="polite"></span></p>
           <div class="btn-container">
-            <button class="btn btn-color-2" onclick="window.open('https://flowcv.com/resume/9ivpkstiaeqd', '_blank')" aria-label="View Resume">
+            <button class="btn btn-color-2" onclick="window.open('https://flowcv.com/resume/9ivpkstiaeqd', '_blank')"
+              aria-label="View Resume">
               <span class="btn-icon"><i class="fa-solid fa-eye" aria-hidden="true"></i></span>
               <span class="btn-text">Resume</span>
             </button>
-            <button class="btn btn-color-1" onclick="location.href='./#contact'" aria-label="Hire Me">
+            <button class="btn btn-color-1"
+              onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" aria-label="Hire Me">
               <span class="btn-icon"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></span>
               <span class="btn-text">Hire Me</span>
             </button>
@@ -101,28 +177,38 @@
 
         <!-- Profile Image -->
         <div class="section__pic-container">
-          <img src="./files/profile.jpg" alt="Pratik Abhang Profile Picture" class="profile-img" />
+          <img src="./files/profile.jpg" alt="Pratik Abhang Profile Picture" class="profile-img" loading="eager"
+            width="400" height="400" />
         </div>
       </div>
 
-      <!-- Section Navigation Buttons -->
-      <div class="section-nav-container">
-        <button class="section-nav-btn up-btn" aria-label="Go to Previous Section"><i class="fa-solid fa-arrow-up-long"></i></button>
-        <button class="section-nav-btn down-btn" aria-label="Go to Next Section"><i class="fa-solid fa-arrow-down-long"></i></button>
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <span></span>
       </div>
     </section>
+
+    <!-- Section Navigation Buttons -->
+    <div class="section-nav-container" aria-label="Section Navigation">
+      <button class="section-nav-btn up-btn" aria-label="Go to Previous Section"><i
+          class="fa-solid fa-arrow-up-long"></i></button>
+      <button class="section-nav-btn down-btn" aria-label="Go to Next Section"><i
+          class="fa-solid fa-arrow-down-long"></i></button>
+    </div>
 
     <!-- About Section -->
     <section id="about" aria-labelledby="about-title">
       <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title" id="about-title">About Me</h1>
+      <h2 class="title" id="about-title">About Me</h2>
 
       <div class="about-container">
         <!-- About Card -->
         <div class="about-card">
           <div class="about-content">
             <p>
-              I am a Computer Engineer with strong technical skills and solid fundamentals, experienced in Cloud Computing, Artificial Intelligence, Cybersecurity, and Data Protection. I continuously learn and stay updated on emerging technology trends to enhance productivity and deepen my technical expertise.
+              I am a Computer Engineer with strong technical skills and solid fundamentals, experienced in Cloud
+              Computing, Artificial Intelligence, Cybersecurity, and Data Protection. I continuously learn and stay
+              updated on emerging technology trends to enhance productivity and deepen my technical expertise.
             </p>
           </div>
         </div>
@@ -131,15 +217,18 @@
         <div class="details-grid">
           <div class="details-card">
             <div class="details-item">
-              <span class="details-icon"><i class="fas fa-flag" aria-hidden="true"></i></span> Indian
+              <span class="details-icon"><i class="fas fa-flag" aria-hidden="true"></i></span>
+              <span>Indian</span>
             </div>
             <div class="details-item">
-              <span class="details-icon"><i class="fas fa-language" aria-hidden="true"></i></span> English, Marathi, Hindi
+              <span class="details-icon"><i class="fas fa-language" aria-hidden="true"></i></span>
+              <span>English, Marathi, Hindi</span>
             </div>
           </div>
           <div class="details-card">
             <div class="details-item">
-              <span class="details-icon"><i class="fas fa-calendar-days" aria-hidden="true"></i></span> <span id="age"></span>
+              <span class="details-icon"><i class="fas fa-calendar-days" aria-hidden="true"></i></span>
+              <span id="age">Loading...</span>
             </div>
             <div class="details-item">
               <span class="details-icon"><i class="fa-solid fa-face-grin-hearts" aria-hidden="true"></i></span>
@@ -155,32 +244,33 @@
           </div>
 
           <!-- Bachelor -->
-          <div class="about-card">
+          <div class="about-card education-card">
             <div class="about-content">
-              <h4><i class="fas fa-book"></i> Bachelor of Engineering in Computer</h4>
-              <p><i class="fas fa-university"></i> STES, Sinhgad Institute of Technology and Science</p>
-              <p><i class="fas fa-star"></i> CGPA: 8.21 / 10 | SPPU</p>
-              <p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra, India</p>
+              <h4><i class="fas fa-book" aria-hidden="true"></i> Bachelor of Engineering in Computer</h4>
+              <p><i class="fas fa-university" aria-hidden="true"></i> STES, Sinhgad Institute of Technology and Science
+              </p>
+              <p><i class="fas fa-star" aria-hidden="true"></i> CGPA: 8.21 / 10 | SPPU</p>
+              <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Pune, Maharashtra, India</p>
             </div>
           </div>
 
           <!-- Higher Secondary (12th) -->
-          <div class="about-card">
+          <div class="about-card education-card">
             <div class="about-content">
-              <h4><i class="fas fa-book"></i> Higher Secondary School Certificate (12th)</h4>
-              <p><i class="fas fa-university"></i> RSS, R.B. Narayanrao Borawake College</p>
-              <p><i class="fas fa-star"></i> Percentage: 82.17 / 100 | MSBSHSE</p>
-              <p><i class="fas fa-map-marker-alt"></i> Shrirampur, Maharashtra, India</p>
+              <h4><i class="fas fa-book" aria-hidden="true"></i> Higher Secondary School Certificate (12th)</h4>
+              <p><i class="fas fa-university" aria-hidden="true"></i> RSS, R.B. Narayanrao Borawake College</p>
+              <p><i class="fas fa-star" aria-hidden="true"></i> Percentage: 82.17 / 100 | MSBSHSE</p>
+              <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Shrirampur, Maharashtra, India</p>
             </div>
           </div>
 
           <!-- Secondary (10th) -->
-          <div class="about-card">
+          <div class="about-card education-card">
             <div class="about-content">
-              <h4><i class="fas fa-book"></i> Secondary School Certificate (10th)</h4>
-              <p><i class="fas fa-university"></i> VMSS, De Paul English Medium High School</p>
-              <p><i class="fas fa-star"></i> Percentage: 72.20 / 100 | MSBSHSE</p>
-              <p><i class="fas fa-map-marker-alt"></i> Shrirampur, Maharashtra, India</p>
+              <h4><i class="fas fa-book" aria-hidden="true"></i> Secondary School Certificate (10th)</h4>
+              <p><i class="fas fa-university" aria-hidden="true"></i> VMSS, De Paul English Medium High School</p>
+              <p><i class="fas fa-star" aria-hidden="true"></i> Percentage: 72.20 / 100 | MSBSHSE</p>
+              <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Shrirampur, Maharashtra, India</p>
             </div>
           </div>
         </div>
@@ -190,46 +280,151 @@
     <!-- Skills Section -->
     <section id="skills" aria-labelledby="skills-title">
       <p class="section__text__p1">Explore My</p>
-      <h1 class="title" id="skills-title">Skills</h1>
+      <h2 class="title" id="skills-title">Skills</h2>
       <div class="skills-container">
         <div class="skills-grid">
           <!-- Technical Skills -->
-          <div class="skill-card" data-skill="java" tabindex="0"><i class="fab fa-java" aria-hidden="true"></i><p>Java</p></div>
-          <div class="skill-card" data-skill="python" tabindex="0"><i class="fab fa-python" aria-hidden="true"></i><p>Python</p></div>
-          <div class="skill-card" data-skill="sql" tabindex="0"><i class="fas fa-database" aria-hidden="true"></i><p>SQL</p></div>
-          <div class="skill-card" data-skill="mysql" tabindex="0"><i class="fas fa-database" aria-hidden="true"></i><p>MySQL</p></div>
-          <div class="skill-card" data-skill="html" tabindex="0"><i class="fab fa-html5" aria-hidden="true"></i><p>HTML</p></div>
-          <div class="skill-card" data-skill="css" tabindex="0"><i class="fab fa-css3-alt" aria-hidden="true"></i><p>CSS</p></div>
-          <div class="skill-card" data-skill="javascript" tabindex="0"><i class="fab fa-js" aria-hidden="true"></i><p>JavaScript</p></div>
-          <div class="skill-card" data-skill="mongodb" tabindex="0"><i class="fas fa-server" aria-hidden="true"></i><p>MongoDB</p></div>
-          <div class="skill-card" data-skill="react" tabindex="0"><i class="fab fa-react" aria-hidden="true"></i><p>React.js</p></div>
-          <div class="skill-card" data-skill="express" tabindex="0"><i class="fas fa-server" aria-hidden="true"></i><p>Express.js</p></div>
-          <div class="skill-card" data-skill="nodejs" tabindex="0"><i class="fab fa-node-js" aria-hidden="true"></i><p>Node.js</p></div>
-          <div class="skill-card" data-skill="springboot" tabindex="0"><i class="fas fa-leaf" aria-hidden="true"></i><p>Spring Boot</p></div>
-          <div class="skill-card" data-skill="django" tabindex="0"><i class="fab fa-python" aria-hidden="true"></i><p>Django</p></div>
-          <div class="skill-card" data-skill="firebase" tabindex="0"><i class="fas fa-fire" aria-hidden="true"></i><p>Firebase</p></div>
-          <div class="skill-card" data-skill="redis" tabindex="0"><i class="fas fa-database" aria-hidden="true"></i><p>Redis</p></div>
-          <div class="skill-card" data-skill="github" tabindex="0"><i class="fab fa-github" aria-hidden="true"></i><p>GitHub</p></div>
-          <div class="skill-card" data-skill="vscode" tabindex="0"><i class="fas fa-code" aria-hidden="true"></i><p>VS Code</p></div>
-          <div class="skill-card" data-skill="postman" tabindex="0"><i class="fas fa-envelope-open-text" aria-hidden="true"></i><p>Postman</p></div>
-          <div class="skill-card" data-skill="docker" tabindex="0"><i class="fab fa-docker" aria-hidden="true"></i><p>Docker</p></div>
-          <div class="skill-card" data-skill="google" tabindex="0"><i class="fab fa-google" aria-hidden="true"></i><p>Google</p></div>
-          <div class="skill-card" data-skill="microsoft" tabindex="0"><i class="fab fa-microsoft" aria-hidden="true"></i><p>Microsoft</p></div>
-          <div class="skill-card" data-skill="oop" tabindex="0"><i class="fas fa-cubes" aria-hidden="true"></i><p>OOP</p></div>
-          <div class="skill-card" data-skill="dsa" tabindex="0"><i class="fas fa-sitemap" aria-hidden="true"></i><p>DSA</p></div>
-          <div class="skill-card" data-skill="dbms" tabindex="0"><i class="fas fa-database" aria-hidden="true"></i><p>DBMS</p></div>
-          <div class="skill-card" data-skill="sdlc" tabindex="0"><i class="fas fa-project-diagram" aria-hidden="true"></i><p>SDLC</p></div>
-          <div class="skill-card" data-skill="restapi" tabindex="0"><i class="fas fa-cloud" aria-hidden="true"></i><p>REST APIs</p></div>
-          <div class="skill-card" data-skill="cloud" tabindex="0"><i class="fas fa-cloud-upload-alt" aria-hidden="true"></i><p>Cloud Computing</p></div>
-          <div class="skill-card" data-skill="systemdesign" tabindex="0"><i class="fas fa-network-wired" aria-hidden="true"></i><p>System Design</p></div>
-          <div class="skill-card" data-skill="cybersecurity" tabindex="0"><i class="fas fa-shield-alt" aria-hidden="true"></i><p>Cybersecurity</p></div>
-          <div class="skill-card" data-skill="ai" tabindex="0"><i class="fas fa-robot" aria-hidden="true"></i><p>AI</p></div>
+          <div class="skill-card" data-skill="java" tabindex="0" role="listitem"><i class="fab fa-java"
+              aria-hidden="true"></i>
+            <p>Java</p>
+          </div>
+          <div class="skill-card" data-skill="python" tabindex="0" role="listitem"><i class="fab fa-python"
+              aria-hidden="true"></i>
+            <p>Python</p>
+          </div>
+          <div class="skill-card" data-skill="sql" tabindex="0" role="listitem"><i class="fas fa-database"
+              aria-hidden="true"></i>
+            <p>SQL</p>
+          </div>
+          <div class="skill-card" data-skill="mysql" tabindex="0" role="listitem"><i class="fas fa-database"
+              aria-hidden="true"></i>
+            <p>MySQL</p>
+          </div>
+          <div class="skill-card" data-skill="html" tabindex="0" role="listitem"><i class="fab fa-html5"
+              aria-hidden="true"></i>
+            <p>HTML</p>
+          </div>
+          <div class="skill-card" data-skill="css" tabindex="0" role="listitem"><i class="fab fa-css3-alt"
+              aria-hidden="true"></i>
+            <p>CSS</p>
+          </div>
+          <div class="skill-card" data-skill="javascript" tabindex="0" role="listitem"><i class="fab fa-js"
+              aria-hidden="true"></i>
+            <p>JavaScript</p>
+          </div>
+          <div class="skill-card" data-skill="mongodb" tabindex="0" role="listitem"><i class="fas fa-server"
+              aria-hidden="true"></i>
+            <p>MongoDB</p>
+          </div>
+          <div class="skill-card" data-skill="react" tabindex="0" role="listitem"><i class="fab fa-react"
+              aria-hidden="true"></i>
+            <p>React.js</p>
+          </div>
+          <div class="skill-card" data-skill="express" tabindex="0" role="listitem"><i class="fas fa-server"
+              aria-hidden="true"></i>
+            <p>Express.js</p>
+          </div>
+          <div class="skill-card" data-skill="nodejs" tabindex="0" role="listitem"><i class="fab fa-node-js"
+              aria-hidden="true"></i>
+            <p>Node.js</p>
+          </div>
+          <div class="skill-card" data-skill="springboot" tabindex="0" role="listitem"><i class="fas fa-leaf"
+              aria-hidden="true"></i>
+            <p>Spring Boot</p>
+          </div>
+          <div class="skill-card" data-skill="django" tabindex="0" role="listitem"><i class="fab fa-python"
+              aria-hidden="true"></i>
+            <p>Django</p>
+          </div>
+          <div class="skill-card" data-skill="firebase" tabindex="0" role="listitem"><i class="fas fa-fire"
+              aria-hidden="true"></i>
+            <p>Firebase</p>
+          </div>
+          <div class="skill-card" data-skill="redis" tabindex="0" role="listitem"><i class="fas fa-database"
+              aria-hidden="true"></i>
+            <p>Redis</p>
+          </div>
+          <div class="skill-card" data-skill="github" tabindex="0" role="listitem"><i class="fab fa-github"
+              aria-hidden="true"></i>
+            <p>GitHub</p>
+          </div>
+          <div class="skill-card" data-skill="vscode" tabindex="0" role="listitem"><i class="fas fa-code"
+              aria-hidden="true"></i>
+            <p>VS Code</p>
+          </div>
+          <div class="skill-card" data-skill="postman" tabindex="0" role="listitem"><i class="fas fa-envelope-open-text"
+              aria-hidden="true"></i>
+            <p>Postman</p>
+          </div>
+          <div class="skill-card" data-skill="docker" tabindex="0" role="listitem"><i class="fab fa-docker"
+              aria-hidden="true"></i>
+            <p>Docker</p>
+          </div>
+          <div class="skill-card" data-skill="google" tabindex="0" role="listitem"><i class="fab fa-google"
+              aria-hidden="true"></i>
+            <p>Google</p>
+          </div>
+          <div class="skill-card" data-skill="microsoft" tabindex="0" role="listitem"><i class="fab fa-microsoft"
+              aria-hidden="true"></i>
+            <p>Microsoft</p>
+          </div>
+          <div class="skill-card" data-skill="oop" tabindex="0" role="listitem"><i class="fas fa-cubes"
+              aria-hidden="true"></i>
+            <p>OOP</p>
+          </div>
+          <div class="skill-card" data-skill="dsa" tabindex="0" role="listitem"><i class="fas fa-sitemap"
+              aria-hidden="true"></i>
+            <p>DSA</p>
+          </div>
+          <div class="skill-card" data-skill="dbms" tabindex="0" role="listitem"><i class="fas fa-database"
+              aria-hidden="true"></i>
+            <p>DBMS</p>
+          </div>
+          <div class="skill-card" data-skill="sdlc" tabindex="0" role="listitem"><i class="fas fa-project-diagram"
+              aria-hidden="true"></i>
+            <p>SDLC</p>
+          </div>
+          <div class="skill-card" data-skill="restapi" tabindex="0" role="listitem"><i class="fas fa-cloud"
+              aria-hidden="true"></i>
+            <p>REST APIs</p>
+          </div>
+          <div class="skill-card" data-skill="cloud" tabindex="0" role="listitem"><i class="fas fa-cloud-upload-alt"
+              aria-hidden="true"></i>
+            <p>Cloud Computing</p>
+          </div>
+          <div class="skill-card" data-skill="systemdesign" tabindex="0" role="listitem"><i class="fas fa-network-wired"
+              aria-hidden="true"></i>
+            <p>System Design</p>
+          </div>
+          <div class="skill-card" data-skill="cybersecurity" tabindex="0" role="listitem"><i class="fas fa-shield-alt"
+              aria-hidden="true"></i>
+            <p>Cybersecurity</p>
+          </div>
+          <div class="skill-card" data-skill="ai" tabindex="0" role="listitem"><i class="fas fa-robot"
+              aria-hidden="true"></i>
+            <p>AI</p>
+          </div>
           <!-- Soft Skills -->
-          <div class="skill-card" data-skill="communication" tabindex="0"><i class="fas fa-comments" aria-hidden="true"></i><p>Communication</p></div>
-          <div class="skill-card" data-skill="teamwork" tabindex="0"><i class="fas fa-users" aria-hidden="true"></i><p>Teamwork</p></div>
-          <div class="skill-card" data-skill="critical-thinking" tabindex="0"><i class="fas fa-brain" aria-hidden="true"></i><p>Critical Thinking</p></div>
-          <div class="skill-card" data-skill="adaptability" tabindex="0"><i class="fas fa-sync-alt" aria-hidden="true"></i><p>Adaptability</p></div>
-          <div class="skill-card" data-skill="organizational" tabindex="0"><i class="fas fa-tasks" aria-hidden="true"></i><p>Organizational</p></div>
+          <div class="skill-card" data-skill="communication" tabindex="0" role="listitem"><i class="fas fa-comments"
+              aria-hidden="true"></i>
+            <p>Communication</p>
+          </div>
+          <div class="skill-card" data-skill="teamwork" tabindex="0" role="listitem"><i class="fas fa-users"
+              aria-hidden="true"></i>
+            <p>Teamwork</p>
+          </div>
+          <div class="skill-card" data-skill="critical-thinking" tabindex="0" role="listitem"><i class="fas fa-brain"
+              aria-hidden="true"></i>
+            <p>Critical Thinking</p>
+          </div>
+          <div class="skill-card" data-skill="adaptability" tabindex="0" role="listitem"><i class="fas fa-sync-alt"
+              aria-hidden="true"></i>
+            <p>Adaptability</p>
+          </div>
+          <div class="skill-card" data-skill="organizational" tabindex="0" role="listitem"><i class="fas fa-tasks"
+              aria-hidden="true"></i>
+            <p>Organizational</p>
+          </div>
         </div>
       </div>
     </section>
@@ -237,32 +432,41 @@
     <!-- Experience Section -->
     <section id="experience" aria-labelledby="experience-title">
       <p class="section__text__p1">Browse My</p>
-      <h1 class="title" id="experience-title">Professional Experience</h1>
+      <h2 class="title" id="experience-title">Professional Experience</h2>
       <div class="experience-container">
         <div class="experience-card animate">
           <div class="experience-details">
             <h3>Cybersecurity Analyst</h3>
-            <p class="experience-company">Forage (TCS) | Jul 2025 - Sep 2025</p>
+            <p class="experience-company"><i class="fas fa-building" aria-hidden="true"></i> Forage (TCS) | Jul 2025 -
+              Sep 2025</p>
             <p class="experience-desc">
-              Completed a cybersecurity simulation focusing on IAM fundamentals, assessment, and platform integration. Acquired expertise in IAM principles, cybersecurity best practices, and strategic alignment with business objectives.
+              Completed a cybersecurity simulation focusing on IAM fundamentals, assessment, and platform integration.
+              Acquired expertise in IAM principles, cybersecurity best practices, and strategic alignment with business
+              objectives.
             </p>
           </div>
         </div>
         <div class="experience-card animate">
           <div class="experience-details">
             <h3>Software Developer Intern</h3>
-            <p class="experience-company">Cognifyz Technologies | Oct 2024 - Nov 2024</p>
+            <p class="experience-company"><i class="fas fa-building" aria-hidden="true"></i> Cognifyz Technologies | Oct
+              2024 - Nov 2024</p>
             <p class="experience-desc">
-              Designed and deployed full-stack MERN applications, improving performance, scalability, and system reliability. Enhanced software quality through rigorous testing, reducing defects and accelerating delivery cycles.
+              Designed and deployed full-stack MERN applications, improving performance, scalability, and system
+              reliability. Enhanced software quality through rigorous testing, reducing defects and accelerating
+              delivery cycles.
             </p>
           </div>
         </div>
         <div class="experience-card animate">
           <div class="experience-details">
             <h3>Web Developer Intern</h3>
-            <p class="experience-company">Elite Softwares | Dec 2023 - Jan 2024</p>
+            <p class="experience-company"><i class="fas fa-building" aria-hidden="true"></i> Elite Softwares | Dec 2023
+              - Jan 2024</p>
             <p class="experience-desc">
-              Developed responsive web applications using modern frameworks, ensuring accessibility across multiple platforms. Boosted user engagement by lowering bounce rates and enhancing cross-device compatibility and performance.
+              Developed responsive web applications using modern frameworks, ensuring accessibility across multiple
+              platforms. Boosted user engagement by lowering bounce rates and enhancing cross-device compatibility and
+              performance.
             </p>
           </div>
         </div>
@@ -272,57 +476,89 @@
     <!-- Projects Section -->
     <section id="projects" aria-labelledby="projects-title">
       <p class="section__text__p1">My Recent</p>
-      <h1 class="title" id="projects-title">Projects</h1>
+      <h2 class="title" id="projects-title">Projects</h2>
       <div class="projects-container">
         <div class="project-card">
           <div class="project-details">
             <h3>CREDBUD: The Student Platform</h3>
-            <p class="project-tech">React | Node.js | Express | MongoDB | JWT</p>
+            <p class="project-tech"><i class="fas fa-code" aria-hidden="true"></i> React | Node.js | Express | MongoDB |
+              JWT</p>
             <p class="project-desc">
-              A complete student management platform with smart attendance tracking, role-based dashboards for teachers and students, performance analytics, and communication tools — making academic management seamless.
+              A complete student management platform with smart attendance tracking, role-based dashboards for teachers
+              and students, performance analytics, and communication tools — making academic management seamless.
             </p>
             <div class="project-links">
-              <a href="https://github.com/pratikabhang/CREDBUD--The-Student-Platform" target="_blank" aria-label="View CREDBUD project on GitHub"><i class="fab fa-github"></i> Code</a>
-              <a href="https://credbudstudent.netlify.app" target="_blank" aria-label="View CREDBUD live demo"><i class="fas fa-external-link-alt"></i> Live</a>
+              <a href="https://github.com/pratikabhang/CREDBUD--The-Student-Platform" target="_blank"
+                rel="noopener noreferrer" aria-label="View CREDBUD project on GitHub">
+                <i class="fab fa-github" aria-hidden="true"></i> Code
+              </a>
+              <a href="https://credbudstudent.netlify.app" target="_blank" rel="noopener noreferrer"
+                aria-label="View CREDBUD live demo">
+                <i class="fas fa-external-link-alt" aria-hidden="true"></i> Live
+              </a>
             </div>
           </div>
         </div>
         <div class="project-card">
           <div class="project-details">
             <h3>PAYCIRCLE: Group Expense Record</h3>
-            <p class="project-tech">Node.js | Express | MongoDB | Bootstrap | REST API</p>
+            <p class="project-tech"><i class="fas fa-code" aria-hidden="true"></i> Node.js | Express | MongoDB |
+              Bootstrap | REST API</p>
             <p class="project-desc">
-              A modern web app to simplify tracking and managing group expenses. Features include bill splitting, shared expense history, summaries, and notifications for friends or group members.
+              A modern web app to simplify tracking and managing group expenses. Features include bill splitting, shared
+              expense history, summaries, and notifications for friends or group members.
             </p>
             <div class="project-links">
-              <a href="https://github.com/pratikabhang/PAYCIRCLE--Group-Expense-Record" target="_blank" aria-label="View PAYCIRCLE project on GitHub"><i class="fab fa-github"></i> Code</a>
-              <a href="#" target="_blank" aria-label="View PAYCIRCLE live demo"><i class="fas fa-external-link-alt"></i> Live </a>
+              <a href="https://github.com/pratikabhang/PAYCIRCLE--Group-Expense-Record" target="_blank"
+                rel="noopener noreferrer" aria-label="View PAYCIRCLE project on GitHub">
+                <i class="fab fa-github" aria-hidden="true"></i> Code
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="View PAYCIRCLE live demo (coming soon)"
+                class="disabled-link">
+                <i class="fas fa-external-link-alt" aria-hidden="true"></i> Live
+              </a>
             </div>
           </div>
         </div>
         <div class="project-card">
           <div class="project-details">
             <h3>DOCVIEW: AI Document Analyzer</h3>
-            <p class="project-tech">Python | AI/ML | TensorFlow | OpenCV | Docker</p>
+            <p class="project-tech"><i class="fas fa-code" aria-hidden="true"></i> Python | AI/ML | TensorFlow | OpenCV
+              | Docker</p>
             <p class="project-desc">
-              An AI-powered document analyzer that extracts, classifies, and summarizes content from various document formats. Useful for automating data extraction and improving document workflows.
+              An AI-powered document analyzer that extracts, classifies, and summarizes content from various document
+              formats. Useful for automating data extraction and improving document workflows.
             </p>
             <div class="project-links">
-              <a href="https://github.com/pratikabhang/DOCVIEW--AI-Document-Analyzer" target="_blank" aria-label="View DOCVIEW project on GitHub"><i class="fab fa-github"></i> Code</a>
-              <a href="#" target="_blank" aria-label="View DOCVIEW demo"><i class="fas fa-external-link-alt"></i> Live</a>
+              <a href="https://github.com/pratikabhang/DOCVIEW--AI-Document-Analyzer" target="_blank"
+                rel="noopener noreferrer" aria-label="View DOCVIEW project on GitHub">
+                <i class="fab fa-github" aria-hidden="true"></i> Code
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="View DOCVIEW live demo (coming soon)"
+                class="disabled-link">
+                <i class="fas fa-external-link-alt" aria-hidden="true"></i> Live
+              </a>
             </div>
           </div>
         </div>
         <div class="project-card">
           <div class="project-details">
             <h3>CLASSWORK</h3>
-            <p class="project-tech">HTML | CSS | JavaScript | Bootstrap | jQuery</p>
+            <p class="project-tech"><i class="fas fa-code" aria-hidden="true"></i> HTML | CSS | JavaScript | Bootstrap |
+              jQuery</p>
             <p class="project-desc">
-              An educational toolkit for students featuring tools like marks-to-percentage converter, QR code generator, to-do tasks, age calculator, and more — designed for practical classroom and learning use.
+              An educational toolkit for students featuring tools like marks-to-percentage converter, QR code generator,
+              to-do tasks, age calculator, and more — designed for practical classroom and learning use.
             </p>
             <div class="project-links">
-              <a href="https://github.com/pratikabhang/CLASSWORK" target="_blank" aria-label="View CLASSWORK project on GitHub"><i class="fab fa-github"></i> Code</a>
-              <a href="https://classworktool.netlify.app/" target="_blank" aria-label="View CLASSWORK live demo"><i class="fas fa-external-link-alt"></i> Live</a>
+              <a href="https://github.com/pratikabhang/CLASSWORK" target="_blank" rel="noopener noreferrer"
+                aria-label="View CLASSWORK project on GitHub">
+                <i class="fab fa-github" aria-hidden="true"></i> Code
+              </a>
+              <a href="https://classworktool.netlify.app/" target="_blank" rel="noopener noreferrer"
+                aria-label="View CLASSWORK live demo">
+                <i class="fas fa-external-link-alt" aria-hidden="true"></i> Live
+              </a>
             </div>
           </div>
         </div>
@@ -332,21 +568,24 @@
     <!-- Contact Section -->
     <section id="contact" aria-labelledby="contact-title">
       <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title" id="contact-title">Contact Me</h1>
+      <h2 class="title" id="contact-title">Contact Me</h2>
       <div class="contact-container">
         <!-- Contact Form -->
-        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xwpowbev" method="POST">
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xwpowbev" method="POST" novalidate>
           <div class="form-group">
-            <label for="name" class="visually-hidden"><i class="fa-solid fa-user"></i> Your Name</label>
-            <input type="text" id="name" name="name" placeholder="Your Name" required />
+            <label for="name" class="visually-hidden">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required autocomplete="name"
+              aria-required="true" />
           </div>
           <div class="form-group">
-            <label for="email" class="visually-hidden"><i class="fa-solid fa-envelope"></i> Your Email</label>
-            <input type="email" id="email" name="email" placeholder="Your Email" required />
+            <label for="email" class="visually-hidden">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required autocomplete="email"
+              aria-required="true" />
           </div>
           <div class="form-group">
-            <label for="message" class="visually-hidden"><i class="fa-solid fa-comment-dots"></i> Your Message</label>
-            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+            <label for="message" class="visually-hidden">Your Message</label>
+            <textarea id="message" name="message" placeholder="Your Message" rows="5" required
+              aria-required="true"></textarea>
           </div>
           <div class="form-submit">
             <button type="submit" class="btn btn-color-1" id="sendBtn">
@@ -354,25 +593,30 @@
               <span class="btn-text">Send Message</span>
             </button>
           </div>
+          <!-- Form Status Message -->
+          <p class="form-status" role="status" aria-live="polite"></p>
           <!-- Social Media Icons -->
           <div class="social-icons">
-            <a href="https://pratikabhang.netlify.app/" target="_blank" aria-label="Website">
-              <i class="fas fa-globe"></i>
+            <a href="https://pratikabhang.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Website">
+              <i class="fas fa-globe" aria-hidden="true"></i>
             </a>
-            <a href="https://linkedin.com/in/pratikabhang" target="_blank" aria-label="LinkedIn">
-              <i class="fab fa-linkedin-in"></i>
+            <a href="https://linkedin.com/in/pratikabhang" target="_blank" rel="noopener noreferrer"
+              aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in" aria-hidden="true"></i>
             </a>
-            <a href="https://github.com/pratikabhang" target="_blank" aria-label="GitHub">
-              <i class="fab fa-github"></i>
+            <a href="https://github.com/pratikabhang" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i class="fab fa-github" aria-hidden="true"></i>
             </a>
-            <a href="https://www.instagram.com/pratikabhang1" target="_blank" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
+            <a href="https://www.instagram.com/pratikabhang1" target="_blank" rel="noopener noreferrer"
+              aria-label="Instagram">
+              <i class="fab fa-instagram" aria-hidden="true"></i>
             </a>
-            <a href="https://www.youtube.com/@pratikabhang" target="_blank" aria-label="YouTube">
-              <i class="fab fa-youtube"></i>
+            <a href="https://www.youtube.com/@pratikabhang" target="_blank" rel="noopener noreferrer"
+              aria-label="YouTube">
+              <i class="fab fa-youtube" aria-hidden="true"></i>
             </a>
-            <a href="https://t.me/discusswithpratik" target="_blank" aria-label="Telegram">
-              <i class="fab fa-telegram-plane"></i>
+            <a href="https://t.me/discusswithpratik" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+              <i class="fab fa-telegram-plane" aria-hidden="true"></i>
             </a>
           </div>
         </form>
@@ -387,9 +631,11 @@
         <li><a href="#home" aria-label="Home"><i class="fas fa-house" aria-hidden="true"></i> Home</a></li>
         <li><a href="#about" aria-label="About"><i class="fa-solid fa-user-tie" aria-hidden="true"></i> About</a></li>
         <li><a href="#skills" aria-label="Skills"><i class="fa-solid fa-brain" aria-hidden="true"></i> Skills</a></li>
-        <li><a href="#experience" aria-label="Experience"><i class="fas fa-briefcase" aria-hidden="true"></i> Experience</a></li>
-        <li><a href="#projects" aria-label="Projects"><i class="fas fa-code" aria-hidden="true"></i>Projects</a></li>
-        <li><a href="#contact" aria-label="Contact"><i class="fa-solid fa-id-card" aria-hidden="true"></i> Contact</a></li>
+        <li><a href="#experience" aria-label="Experience"><i class="fas fa-briefcase" aria-hidden="true"></i>
+            Experience</a></li>
+        <li><a href="#projects" aria-label="Projects"><i class="fas fa-code" aria-hidden="true"></i> Projects</a></li>
+        <li><a href="#contact" aria-label="Contact"><i class="fa-solid fa-id-card" aria-hidden="true"></i> Contact</a>
+        </li>
       </ul>
     </div>
     <p class="footer-copy">
@@ -397,6 +643,12 @@
     </p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Scroll to Top Button -->
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="script.js" defer></script>
 </body>
+
 </html>
