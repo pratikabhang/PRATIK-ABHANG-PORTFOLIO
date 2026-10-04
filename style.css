@@ -1,7 +1,7 @@
 /* ===========================================
    PORTFOLIO WEBSITE STYLESHEET
    Author: Pratik Abhang
-   Version: 2.0 - Premium Optimized
+   Version: 2.1 - Clean & Optimized
    Description: Modern, responsive portfolio with theme switching
    =========================================== */
 
@@ -284,6 +284,11 @@ body {
   min-height: 100vh;
 }
 
+body.loaded .loader {
+  opacity: 0;
+  visibility: hidden;
+}
+
 /* Skip Link for Accessibility */
 .skip-link {
   position: absolute;
@@ -300,6 +305,47 @@ body {
 
 .skip-link:focus {
   top: 0;
+}
+
+/* ===========================================
+   LOADING SCREEN
+   =========================================== */
+.loader {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loader-content {
+  text-align: center;
+}
+
+.loader-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.loader-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--border-color);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* ===========================================
@@ -425,6 +471,65 @@ section {
 .title:hover::after {
   background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
   width: 120px;
+}
+
+/* ===========================================
+   HERO TEXT — FULLY CENTERED
+   =========================================== */
+.section__text--center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section__text--center .section__text__p1 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.section__text--center .titleh {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.section__text--center .titleh::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section__text--center .section__text__p2 {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+}
+
+/* ===========================================
+   BUTTON CONTAINER — CENTERED
+   =========================================== */
+.btn-container--center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-container--center .btn {
+  min-width: 10rem;
+  max-width: 260px;
 }
 
 /* ===========================================
@@ -719,12 +824,6 @@ header.scrolled {
   opacity: 0;
   animation: fadeIn 1s ease forwards 0.5s;
   min-width: 0;
-}
-
-.section__text__p1 {
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-  margin-bottom: 0.5rem;
-  color: var(--text-color);
 }
 
 .section__text__p2 {
@@ -1166,6 +1265,35 @@ header.scrolled {
   margin: 0 auto;
 }
 
+/* Skills Filter */
+.skills-filter {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.5rem;
+  border: 2px solid var(--border-color);
+  border-radius: 2rem;
+  background: transparent;
+  color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--primary-color);
+  color: var(--btn-text-color);
+  border-color: var(--primary-color);
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 120px), 1fr));
@@ -1185,7 +1313,8 @@ header.scrolled {
     transform var(--transition-base),
     box-shadow var(--transition-base),
     background-color var(--transition-base),
-    border-color var(--transition-base);
+    border-color var(--transition-base),
+    opacity var(--transition-base);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1197,6 +1326,10 @@ header.scrolled {
   position: relative;
   cursor: default;
   overflow: hidden;
+}
+
+.skill-card.hidden {
+  display: none;
 }
 
 .skill-card::before {
@@ -1245,7 +1378,7 @@ header.scrolled {
   color: var(--primary-color);
 }
 
-/* Dark mode adjustments — keeps icons bright & readable */
+/* Dark mode adjustments */
 [data-theme="dark"] .skill-card i {
   color: var(--primary-color);
   filter: brightness(1.15);
@@ -1973,30 +2106,6 @@ footer {
   }
 }
 
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 @keyframes smoothFloat {
   0% {
     transform: translateY(0);
@@ -2028,26 +2137,6 @@ footer {
 
   75% {
     transform: translate(-20px, -10px) scale(1.05);
-  }
-}
-
-@keyframes spin-border {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-
-  100% {
-    background-position: 200% 0;
   }
 }
 
@@ -2271,6 +2360,17 @@ footer {
     min-width: auto;
   }
 
+  .btn-container--center {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .btn-container--center .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
   .socials__vertical {
     gap: 0.5rem;
   }
@@ -2350,7 +2450,6 @@ footer {
   .form-group textarea {
     padding: 0.8rem;
     font-size: 16px;
-    /* Prevents iOS zoom */
   }
 
   .contact-form .social-icons {
@@ -2495,7 +2594,8 @@ footer {
   .scroll-top-btn,
   .socials__vertical,
   .hero-bg-animation,
-  .scroll-indicator {
+  .scroll-indicator,
+  .loader {
     display: none !important;
   }
 

@@ -9,6 +9,7 @@
   <meta name="keywords"
     content="Pratik Abhang, Computer Engineer, Full Stack Developer, Web Developer, Portfolio, React, Node.js, Python">
   <meta name="author" content="Pratik Abhang">
+  <meta name="theme-color" content="#1a1a1a">
 
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Pratik Abhang - Full Stack Developer Portfolio">
@@ -25,8 +26,8 @@
     content="Explore my projects, skills, and experience in web development, AI, and cybersecurity.">
   <meta name="twitter:image" content="./files/profile.jpg">
 
-  <title>Pratik Abhang | Full Stack Developer Portfolio</title>
-  <link rel="icon" href="./files/profile.jpg" type="image/x-icon">
+  <title>PRATIK ABHANG</title>
+  <link rel="icon" href="./files/title.png" type="image/x-icon">
 
   <!-- Preconnect for Performance -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
@@ -50,6 +51,16 @@
 <body>
   <!-- Skip to Main Content (Accessibility) -->
   <a href="#home" class="skip-link">Skip to main content</a>
+
+  <!-- Loading Screen -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-content">
+      <div class="loader-logo">
+        <span class="logo-bracket">&lt;</span>pratik abhang<span class="logo-bracket">/&gt;</span>
+      </div>
+      <div class="loader-spinner"></div>
+    </div>
+  </div>
 
   <!-- Header Navigation Section -->
   <header id="header" role="banner">
@@ -157,11 +168,11 @@
         </div>
 
         <!-- Hero Text Content -->
-        <div class="section__text">
+        <div class="section__text section__text--center">
           <p class="section__text__p1">Hello, I'm</p>
           <h1 class="titleh" id="home-title">Pratik Abhang</h1>
           <p class="section__text__p2"><span id="typed-text" aria-live="polite"></span></p>
-          <div class="btn-container">
+          <div class="btn-container btn-container--center">
             <button class="btn btn-color-2" onclick="window.open('https://flowcv.com/resume/9ivpkstiaeqd', '_blank')"
               aria-label="View Resume">
               <span class="btn-icon"><i class="fa-solid fa-eye" aria-hidden="true"></i></span>
@@ -282,148 +293,175 @@
       <p class="section__text__p1">Explore My</p>
       <h2 class="title" id="skills-title">Skills</h2>
       <div class="skills-container">
+        <!-- Skill Filter -->
+        <div class="skills-filter" role="group" aria-label="Filter skills">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="technical">Technical</button>
+          <button class="filter-btn" data-filter="soft">Soft Skills</button>
+        </div>
+
         <div class="skills-grid">
           <!-- Technical Skills -->
-          <div class="skill-card" data-skill="java" tabindex="0" role="listitem"><i class="fab fa-java"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="java" data-category="technical" tabindex="0" role="listitem">
+            <i class="fab fa-java" aria-hidden="true"></i>
             <p>Java</p>
           </div>
-          <div class="skill-card" data-skill="python" tabindex="0" role="listitem"><i class="fab fa-python"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="python" data-category="technical" tabindex="0" role="listitem">
+            <i class="fab fa-python" aria-hidden="true"></i>
             <p>Python</p>
           </div>
-          <div class="skill-card" data-skill="sql" tabindex="0" role="listitem"><i class="fas fa-database"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="sql" data-category="technical" tabindex="0" role="listitem">
+            <i class="fas fa-database" aria-hidden="true"></i>
             <p>SQL</p>
           </div>
-          <div class="skill-card" data-skill="mysql" tabindex="0" role="listitem"><i class="fas fa-database"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="mysql" data-category="technical" tabindex="0" role="listitem">
+            <i class="fas fa-database" aria-hidden="true"></i>
             <p>MySQL</p>
           </div>
-          <div class="skill-card" data-skill="html" tabindex="0" role="listitem"><i class="fab fa-html5"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="html" data-category="technical" tabindex="0" role="listitem">
+            <i class="fab fa-html5" aria-hidden="true"></i>
             <p>HTML</p>
           </div>
-          <div class="skill-card" data-skill="css" tabindex="0" role="listitem"><i class="fab fa-css3-alt"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="css" data-category="technical" tabindex="0" role="listitem">
+            <i class="fab fa-css3-alt" aria-hidden="true"></i>
             <p>CSS</p>
           </div>
-          <div class="skill-card" data-skill="javascript" tabindex="0" role="listitem"><i class="fab fa-js"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="javascript" data-category="technical" tabindex="0" role="listitem">
+            <i class="fab fa-js" aria-hidden="true"></i>
             <p>JavaScript</p>
           </div>
-          <div class="skill-card" data-skill="mongodb" tabindex="0" role="listitem"><i class="fas fa-server"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="mongodb" data-category="technical" tabindex="0" role="listitem">
+            <i class="fas fa-server" aria-hidden="true"></i>
             <p>MongoDB</p>
           </div>
-          <div class="skill-card" data-skill="react" tabindex="0" role="listitem"><i class="fab fa-react"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="react" data-category="technical" tabindex="0" role="listitem">
+            <i class="fab fa-react" aria-hidden="true"></i>
             <p>React.js</p>
           </div>
-          <div class="skill-card" data-skill="express" tabindex="0" role="listitem"><i class="fas fa-server"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="express" data-category="technical" tabindex="0" role="listitem">
+            <i class="fas fa-server" aria-hidden="true"></i>
             <p>Express.js</p>
           </div>
-          <div class="skill-card" data-skill="nodejs" tabindex="0" role="listitem"><i class="fab fa-node-js"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="nodejs" data-category="technical" tabindex="0" role="listitem">
+            <i class="fab fa-node-js" aria-hidden="true"></i>
             <p>Node.js</p>
           </div>
-          <div class="skill-card" data-skill="springboot" tabindex="0" role="listitem"><i class="fas fa-leaf"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="springboot" data-category="technical" tabindex="0" role="listitem">
+            <i class="fas fa-leaf" aria-hidden="true"></i>
             <p>Spring Boot</p>
           </div>
-          <div class="skill-card" data-skill="django" tabindex="0" role="listitem"><i class="fab fa-python"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="django" data-category="technical" tabindex="0" role="listitem">
+            <i class="fab fa-python" aria-hidden="true"></i>
             <p>Django</p>
           </div>
-          <div class="skill-card" data-skill="firebase" tabindex="0" role="listitem"><i class="fas fa-fire"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="firebase" data-category="technical" tabindex="0" role="listitem">
+            <i class="fas fa-fire" aria-hidden="true"></i>
             <p>Firebase</p>
           </div>
-          <div class="skill-card" data-skill="redis" tabindex="0" role="listitem"><i class="fas fa-database"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="redis" data-category="technical" tabindex="0" role="listitem">
+            <i class="fas fa-database" aria-hidden="true"></i>
             <p>Redis</p>
           </div>
-          <div class="skill-card" data-skill="github" tabindex="0" role="listitem"><i class="fab fa-github"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="github" data-category="technical" tabindex="0" role="listitem">
+            <i class="fab fa-github" aria-hidden="true"></i>
             <p>GitHub</p>
           </div>
-          <div class="skill-card" data-skill="vscode" tabindex="0" role="listitem"><i class="fas fa-code"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="vscode" data-category="technical" tabindex="0" role="listitem">
+            <i class="fas fa-code" aria-hidden="true"></i>
             <p>VS Code</p>
           </div>
-          <div class="skill-card" data-skill="postman" tabindex="0" role="listitem"><i class="fas fa-envelope-open-text"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="postman" data-category="technical" tabindex="0" role="listitem">
+            <i class="fas fa-envelope-open-text" aria-hidden="true"></i>
             <p>Postman</p>
           </div>
-          <div class="skill-card" data-skill="docker" tabindex="0" role="listitem"><i class="fab fa-docker"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="docker" data-category="technical" tabindex="0" role="listitem">
+            <i class="fab fa-docker" aria-hidden="true"></i>
             <p>Docker</p>
           </div>
-          <div class="skill-card" data-skill="google" tabindex="0" role="listitem"><i class="fab fa-google"
-              aria-hidden="true"></i>
-            <p>Google</p>
+          <div class="skill-card" data-skill="google" data-category="technical" tabindex="0" role="listitem">
+            <i class="fab fa-google" aria-hidden="true"></i>
+            <p>Google Cloud</p>
           </div>
-          <div class="skill-card" data-skill="microsoft" tabindex="0" role="listitem"><i class="fab fa-microsoft"
-              aria-hidden="true"></i>
-            <p>Microsoft</p>
+          <div class="skill-card" data-skill="microsoft" data-category="technical" tabindex="0" role="listitem">
+            <i class="fab fa-microsoft" aria-hidden="true"></i>
+            <p>Azure</p>
           </div>
-          <div class="skill-card" data-skill="oop" tabindex="0" role="listitem"><i class="fas fa-cubes"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="oop" data-category="technical" tabindex="0" role="listitem">
+            <i class="fas fa-cubes" aria-hidden="true"></i>
             <p>OOP</p>
           </div>
-          <div class="skill-card" data-skill="dsa" tabindex="0" role="listitem"><i class="fas fa-sitemap"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="dsa" data-category="technical" tabindex="0" role="listitem">
+            <i class="fas fa-sitemap" aria-hidden="true"></i>
             <p>DSA</p>
           </div>
-          <div class="skill-card" data-skill="dbms" tabindex="0" role="listitem"><i class="fas fa-database"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="dbms" data-category="technical" tabindex="0" role="listitem">
+            <i class="fas fa-database" aria-hidden="true"></i>
             <p>DBMS</p>
           </div>
-          <div class="skill-card" data-skill="sdlc" tabindex="0" role="listitem"><i class="fas fa-project-diagram"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="sdlc" data-category="technical" tabindex="0" role="listitem">
+            <i class="fas fa-project-diagram" aria-hidden="true"></i>
             <p>SDLC</p>
           </div>
-          <div class="skill-card" data-skill="restapi" tabindex="0" role="listitem"><i class="fas fa-cloud"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="restapi" data-category="technical" tabindex="0" role="listitem">
+            <i class="fas fa-cloud" aria-hidden="true"></i>
             <p>REST APIs</p>
           </div>
-          <div class="skill-card" data-skill="cloud" tabindex="0" role="listitem"><i class="fas fa-cloud-upload-alt"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="cloud" data-category="technical" tabindex="0" role="listitem">
+            <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
             <p>Cloud Computing</p>
           </div>
-          <div class="skill-card" data-skill="systemdesign" tabindex="0" role="listitem"><i class="fas fa-network-wired"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="systemdesign" data-category="technical" tabindex="0" role="listitem">
+            <i class="fas fa-network-wired" aria-hidden="true"></i>
             <p>System Design</p>
           </div>
-          <div class="skill-card" data-skill="cybersecurity" tabindex="0" role="listitem"><i class="fas fa-shield-alt"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="cybersecurity" data-category="technical" tabindex="0" role="listitem">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
             <p>Cybersecurity</p>
           </div>
-          <div class="skill-card" data-skill="ai" tabindex="0" role="listitem"><i class="fas fa-robot"
-              aria-hidden="true"></i>
-            <p>AI</p>
+          <div class="skill-card" data-skill="ai" data-category="technical" tabindex="0" role="listitem">
+            <i class="fas fa-robot" aria-hidden="true"></i>
+            <p>AI/ML</p>
+          </div>
+          <div class="skill-card" data-skill="git" data-category="technical" tabindex="0" role="listitem">
+            <i class="fab fa-git-alt" aria-hidden="true"></i>
+            <p>Git</p>
+          </div>
+          <div class="skill-card" data-skill="linux" data-category="technical" tabindex="0" role="listitem">
+            <i class="fab fa-linux" aria-hidden="true"></i>
+            <p>Linux</p>
           </div>
           <!-- Soft Skills -->
-          <div class="skill-card" data-skill="communication" tabindex="0" role="listitem"><i class="fas fa-comments"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="communication" data-category="soft" tabindex="0" role="listitem">
+            <i class="fas fa-comments" aria-hidden="true"></i>
             <p>Communication</p>
           </div>
-          <div class="skill-card" data-skill="teamwork" tabindex="0" role="listitem"><i class="fas fa-users"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="teamwork" data-category="soft" tabindex="0" role="listitem">
+            <i class="fas fa-users" aria-hidden="true"></i>
             <p>Teamwork</p>
           </div>
-          <div class="skill-card" data-skill="critical-thinking" tabindex="0" role="listitem"><i class="fas fa-brain"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="critical-thinking" data-category="soft" tabindex="0" role="listitem">
+            <i class="fas fa-brain" aria-hidden="true"></i>
             <p>Critical Thinking</p>
           </div>
-          <div class="skill-card" data-skill="adaptability" tabindex="0" role="listitem"><i class="fas fa-sync-alt"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="adaptability" data-category="soft" tabindex="0" role="listitem">
+            <i class="fas fa-sync-alt" aria-hidden="true"></i>
             <p>Adaptability</p>
           </div>
-          <div class="skill-card" data-skill="organizational" tabindex="0" role="listitem"><i class="fas fa-tasks"
-              aria-hidden="true"></i>
+          <div class="skill-card" data-skill="organizational" data-category="soft" tabindex="0" role="listitem">
+            <i class="fas fa-tasks" aria-hidden="true"></i>
             <p>Organizational</p>
+          </div>
+          <div class="skill-card" data-skill="leadership" data-category="soft" tabindex="0" role="listitem">
+            <i class="fas fa-user-tie" aria-hidden="true"></i>
+            <p>Leadership</p>
+          </div>
+          <div class="skill-card" data-skill="problem-solving" data-category="soft" tabindex="0" role="listitem">
+            <i class="fas fa-puzzle-piece" aria-hidden="true"></i>
+            <p>Problem Solving</p>
+          </div>
+          <div class="skill-card" data-skill="time-management" data-category="soft" tabindex="0" role="listitem">
+            <i class="fas fa-clock" aria-hidden="true"></i>
+            <p>Time Management</p>
           </div>
         </div>
       </div>

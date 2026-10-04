@@ -1,7 +1,7 @@
 /**
  * PORTFOLIO WEBSITE JAVASCRIPT
  * Author: Pratik Abhang
- * Version: 2.0 - Premium Optimized
+ * Version: 2.1 - Clean & Optimized
  * Description: Handles theme switching, animations, form submission, and interactive elements
  */
 
@@ -23,6 +23,29 @@
   // ===========================================
 
   document.addEventListener('DOMContentLoaded', function () {
+
+    // ===========================================
+    // LOADING SCREEN
+    // ===========================================
+
+    const loader = $('#loader');
+
+    window.addEventListener('load', function () {
+      document.body.classList.add('loaded');
+      if (loader) {
+        setTimeout(() => {
+          loader.style.display = 'none';
+        }, 500);
+      }
+    });
+
+    // Fallback: Hide loader after 3 seconds max
+    setTimeout(() => {
+      document.body.classList.add('loaded');
+      if (loader && loader.style.display !== 'none') {
+        loader.style.display = 'none';
+      }
+    }, 3000);
 
     // ===========================================
     // MOBILE MENU TOGGLE FUNCTIONALITY
@@ -127,20 +150,15 @@
     // ===========================================
 
     const header = $('#header');
-    let lastScrollY = window.scrollY;
 
     function handleHeaderScroll() {
       if (!header) return;
 
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > 50) {
+      if (window.scrollY > 50) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
       }
-
-      lastScrollY = currentScrollY;
     }
 
     window.addEventListener('scroll', handleHeaderScroll, { passive: true });
@@ -395,6 +413,35 @@
     }
 
     // ===========================================
+    // SKILLS FILTER
+    // ===========================================
+
+    const filterBtns = $$('.filter-btn');
+    const skillCards = $$('.skill-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function () {
+        const filter = this.getAttribute('data-filter');
+
+        // Update active button
+        filterBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        // Filter skill cards
+        skillCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+
+          if (filter === 'all' || category === filter) {
+            card.classList.remove('hidden');
+            card.style.animation = 'fadeInUp 0.5s ease forwards';
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // ===========================================
     // SCROLL ANIMATION FOR ELEMENTS
     // ===========================================
 
@@ -546,7 +593,7 @@
     function updateActiveNav() {
       const scrollPos = window.scrollY + 100;
 
-      sections.forEach((sectionId, index) => {
+      sections.forEach((sectionId) => {
         const section = $('#' + sectionId);
         if (!section) return;
 
@@ -568,7 +615,6 @@
     // SKILL CARD STAGGER ANIMATION
     // ===========================================
 
-    const skillCards = $$('.skill-card');
     skillCards.forEach((card, index) => {
       card.style.animationDelay = `${(index % 10) * 0.05}s`;
     });
