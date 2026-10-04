@@ -1181,7 +1181,11 @@ header.scrolled {
   border-radius: 1rem;
   padding: clamp(0.75rem, 2vw, 1.5rem);
   box-shadow: var(--card-shadow);
-  transition: transform var(--transition-base), box-shadow var(--transition-base), background-color var(--transition-base), border-color var(--transition-base);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    background-color var(--transition-base),
+    border-color var(--transition-base);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1220,11 +1224,13 @@ header.scrolled {
 .skill-card i {
   font-size: clamp(1.75rem, 4vw, 3rem);
   margin-bottom: 0.75rem;
+  color: var(--primary-color);
   transition: color var(--transition-slow), transform var(--transition-slow);
 }
 
 .skill-card:hover i {
   transform: scale(1.1) rotate(5deg);
+  color: var(--secondary-color);
 }
 
 .skill-card p {
@@ -1235,149 +1241,18 @@ header.scrolled {
   line-height: 1.3;
 }
 
-/* Skill-specific Icon Colors */
-.skill-card[data-skill="java"] i {
-  color: #FF8C00;
+.skill-card:hover p {
+  color: var(--primary-color);
 }
 
-.skill-card[data-skill="python"] i {
-  color: #3776AB;
-}
-
-.skill-card[data-skill="sql"] i {
-  color: #e38c00;
-}
-
-.skill-card[data-skill="mysql"] i {
-  color: #00758F;
-}
-
-.skill-card[data-skill="javascript"] i {
-  color: #F7DF1E;
-}
-
-.skill-card[data-skill="html"] i {
-  color: #E34F26;
-}
-
-.skill-card[data-skill="css"] i {
-  color: #1572B6;
-}
-
-.skill-card[data-skill="react"] i {
-  color: #61DAFB;
-}
-
-.skill-card[data-skill="nodejs"] i {
-  color: #339933;
-}
-
-.skill-card[data-skill="express"] i {
-  color: #000000;
-}
-
-.skill-card[data-skill="springboot"] i {
-  color: #6DB33F;
-}
-
-.skill-card[data-skill="django"] i {
-  color: #092E20;
-}
-
-.skill-card[data-skill="firebase"] i {
-  color: #FFCA28;
-}
-
-.skill-card[data-skill="redis"] i {
-  color: #DC382D;
-}
-
-.skill-card[data-skill="docker"] i {
-  color: #2496ED;
-}
-
-.skill-card[data-skill="github"] i {
-  color: #181717;
-}
-
-.skill-card[data-skill="vscode"] i {
-  color: #007ACC;
-}
-
-.skill-card[data-skill="postman"] i {
-  color: #FF6C37;
-}
-
-.skill-card[data-skill="google"] i {
-  color: #4285F4;
-}
-
-.skill-card[data-skill="microsoft"] i {
-  color: #737373;
-}
-
-.skill-card[data-skill="mongodb"] i {
-  color: #47A248;
-}
-
-.skill-card[data-skill="oop"] i {
-  color: #9C27B0;
-}
-
-.skill-card[data-skill="dsa"] i {
-  color: #00ACC1;
-}
-
-.skill-card[data-skill="dbms"] i {
-  color: #336791;
-}
-
-.skill-card[data-skill="sdlc"] i {
-  color: #3F51B5;
-}
-
-.skill-card[data-skill="restapi"] i {
-  color: #607D8B;
-}
-
-.skill-card[data-skill="cloud"] i {
-  color: #00C853;
-}
-
-.skill-card[data-skill="systemdesign"] i {
-  color: #FF5722;
-}
-
-.skill-card[data-skill="cybersecurity"] i {
-  color: #607D8B;
-}
-
-.skill-card[data-skill="ai"] i {
-  color: #00BFA5;
-}
-
-.skill-card[data-skill="communication"] i {
-  color: #2196F3;
-}
-
-.skill-card[data-skill="teamwork"] i {
-  color: #4CAF50;
-}
-
-.skill-card[data-skill="critical-thinking"] i {
-  color: #FF9800;
-}
-
-.skill-card[data-skill="adaptability"] i {
-  color: #9C27B0;
-}
-
-.skill-card[data-skill="organizational"] i {
-  color: #795548;
-}
-
+/* Dark mode adjustments — keeps icons bright & readable */
 [data-theme="dark"] .skill-card i {
-  filter: brightness(1.3);
+  color: var(--primary-color);
+  filter: brightness(1.15);
+}
+
+[data-theme="dark"] .skill-card:hover i {
+  color: var(--secondary-color);
 }
 
 /* ===========================================
