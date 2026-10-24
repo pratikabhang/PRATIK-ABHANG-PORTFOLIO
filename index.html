@@ -9,9 +9,8 @@
   <meta name="keywords"
     content="Pratik Abhang, Computer Engineer, Full Stack Developer, Web Developer, Portfolio, React, Node.js, Python">
   <meta name="author" content="Pratik Abhang">
-  <meta name="theme-color" content="#1a1a1a">
+  <meta name="theme-color" content="#ffffff">
 
-  <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Pratik Abhang - Full Stack Developer Portfolio">
   <meta property="og:description"
     content="Explore my projects, skills, and experience in web development, AI, and cybersecurity.">
@@ -19,80 +18,77 @@
   <meta property="og:url" content="https://pratikabhang.netlify.app/">
   <meta property="og:image" content="./files/profile.jpg">
 
-  <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Pratik Abhang - Full Stack Developer Portfolio">
   <meta name="twitter:description"
     content="Explore my projects, skills, and experience in web development, AI, and cybersecurity.">
   <meta name="twitter:image" content="./files/profile.jpg">
 
-  <title>PRATIK ABHANG</title>
+  <title>PRATIK ABHANG | Full Stack Developer</title>
   <link rel="icon" href="./files/title.png" type="image/x-icon">
 
-  <!-- Preconnect for Performance -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Typed.js -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
-
-  <!-- Custom Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- Skip to Main Content (Accessibility) -->
   <a href="#home" class="skip-link">Skip to main content</a>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-  <!-- Loading Screen -->
+  <!-- Ripple Follower (new, replaces cursor) -->
+  <div class="ripple-follower" id="rippleFollower" aria-hidden="true"></div>
+
+  <!-- Loader -->
   <div class="loader" id="loader" aria-hidden="true">
     <div class="loader-content">
       <div class="loader-logo">
         <span class="logo-bracket">&lt;</span>pratik abhang<span class="logo-bracket">/&gt;</span>
       </div>
       <div class="loader-spinner"></div>
+      <div class="loader-text">Loading portfolio...</div>
     </div>
   </div>
 
-  <!-- Header Navigation Section -->
   <header id="header" role="banner">
-    <div class="logo" aria-label="Pratik Abhang Portfolio">
+    <a href="#home" class="logo" aria-label="Pratik Abhang Portfolio">
       <span class="logo-bracket">&lt;</span>pratik abhang<span class="logo-bracket">/&gt;</span>
-    </div>
+    </a>
 
-    <!-- Desktop Navigation -->
     <nav id="desktop-nav" aria-label="Main Navigation">
       <ul class="nav-links">
-        <li><a href="#home" aria-label="Home"><i class="fas fa-house" aria-hidden="true"></i> <span>Home</span></a></li>
-        <li><a href="#about" aria-label="About"><i class="fas fa-user-tie" aria-hidden="true"></i>
-            <span>About</span></a></li>
-        <li><a href="#skills" aria-label="Skills"><i class="fas fa-brain" aria-hidden="true"></i>
-            <span>Skills</span></a></li>
-        <li><a href="#experience" aria-label="Experience"><i class="fas fa-briefcase" aria-hidden="true"></i>
-            <span>Experience</span></a></li>
-        <li><a href="#projects" aria-label="Projects"><i class="fas fa-code" aria-hidden="true"></i>
-            <span>Projects</span></a></li>
-        <li><a href="#contact" aria-label="Contact"><i class="fas fa-id-card" aria-hidden="true"></i>
-            <span>Contact</span></a></li>
+        <li><a href="#home" aria-label="Home"><i class="fas fa-house" aria-hidden="true"></i><span>Home</span></a></li>
+        <li><a href="#about" aria-label="About"><i class="fas fa-user-tie" aria-hidden="true"></i><span>About</span></a>
+        </li>
+        <li><a href="#skills" aria-label="Skills"><i class="fas fa-brain" aria-hidden="true"></i><span>Skills</span></a>
+        </li>
+        <li><a href="#experience" aria-label="Experience"><i class="fas fa-briefcase"
+              aria-hidden="true"></i><span>Experience</span></a></li>
+        <li><a href="#projects" aria-label="Projects"><i class="fas fa-code"
+              aria-hidden="true"></i><span>Projects</span></a></li>
+        <li><a href="#certificates" aria-label="Certificates"><i class="fas fa-certificate"
+              aria-hidden="true"></i><span>Certificates</span></a></li>
+        <li><a href="#achievements" aria-label="Achievements"><i class="fas fa-trophy"
+              aria-hidden="true"></i><span>Achievements</span></a></li>
+        <li><a href="#contact" aria-label="Contact"><i class="fas fa-id-card"
+              aria-hidden="true"></i><span>Contact</span></a></li>
       </ul>
     </nav>
 
-    <!-- Mobile Navigation -->
     <nav id="hamburger-nav" aria-label="Mobile Navigation">
       <div class="hamburger-menu">
         <button class="hamburger-icon" onclick="toggleMenu()" aria-expanded="false" aria-controls="menu-links"
           aria-label="Toggle navigation menu">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
         <div class="menu-links" id="menu-links" role="menu">
           <a href="#home" onclick="toggleMenu()" role="menuitem"><i class="fas fa-house" aria-hidden="true"></i>
@@ -105,6 +101,10 @@
               aria-hidden="true"></i> Experience</a>
           <a href="#projects" onclick="toggleMenu()" role="menuitem"><i class="fas fa-code" aria-hidden="true"></i>
             Projects</a>
+          <a href="#certificates" onclick="toggleMenu()" role="menuitem"><i class="fas fa-certificate"
+              aria-hidden="true"></i> Certificates</a>
+          <a href="#achievements" onclick="toggleMenu()" role="menuitem"><i class="fas fa-trophy"
+              aria-hidden="true"></i> Achievements</a>
           <a href="#contact" onclick="toggleMenu()" role="menuitem"><i class="fas fa-id-card" aria-hidden="true"></i>
             Contact</a>
         </div>
@@ -113,583 +113,640 @@
   </header>
 
   <main>
-    <!-- Home/Hero Section -->
+    <!-- HOME -->
     <section id="home" aria-labelledby="home-title">
       <div class="hero-bg-animation" aria-hidden="true">
         <div class="floating-shape shape-1"></div>
         <div class="floating-shape shape-2"></div>
         <div class="floating-shape shape-3"></div>
         <div class="floating-shape shape-4"></div>
+        <div class="floating-shape shape-5"></div>
+        <div class="floating-shape shape-6"></div>
+        <div class="grid-overlay"></div>
       </div>
 
       <div class="profile__container">
-        <!-- Social Media Links -->
+        <!-- Socials (CV REMOVED HERE) -->
         <div class="socials__vertical" aria-label="Social Media Links">
-          <a href="https://pratikabhang.netlify.app/" class="social-icon portfolio" aria-label="Portfolio Website"
-            target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-globe" aria-hidden="true"></i>
-          </a>
-          <a href="https://linkedin.com/in/pratikabhang/" class="social-icon linkedin" aria-label="LinkedIn Profile"
-            target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-          </a>
-          <a href="https://github.com/pratikabhang/" class="social-icon github" aria-label="GitHub Profile"
-            target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github" aria-hidden="true"></i>
-          </a>
-          <a href="https://www.instagram.com/pratikabhang1/" class="social-icon instagram"
-            aria-label="Instagram Profile" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-instagram" aria-hidden="true"></i>
-          </a>
-          <a href="https://www.youtube.com/@pratikabhang" class="social-icon youtube" aria-label="YouTube Channel"
-            target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-youtube" aria-hidden="true"></i>
-          </a>
+          <a href="https://pratikabhang.netlify.app/" class="social-icon" aria-label="Portfolio Website" target="_blank"
+            rel="noopener noreferrer" title="Portfolio"><i class="fas fa-globe" aria-hidden="true"></i></a>
+          <a href="https://linkedin.com/in/pratikabhang/" class="social-icon" aria-label="LinkedIn Profile"
+            target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"
+              aria-hidden="true"></i></a>
+          <a href="https://github.com/pratikabhang/" class="social-icon" aria-label="GitHub Profile" target="_blank"
+            rel="noopener noreferrer" title="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/pratikabhang1/" class="social-icon" aria-label="Instagram Profile"
+            target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"
+              aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/@pratikabhang" class="social-icon" aria-label="YouTube Channel"
+            target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fab fa-youtube"
+              aria-hidden="true"></i></a>
+          <a href="https://t.me/discusswithpratik" class="social-icon" aria-label="Telegram" target="_blank"
+            rel="noopener noreferrer" title="Telegram"><i class="fab fa-telegram-plane" aria-hidden="true"></i></a>
         </div>
 
-        <!-- Theme Toggle & Color Picker -->
+        <!-- Theme Settings -->
         <div class="theme-nav-container" aria-label="Theme Settings">
           <div class="theme-toggle-nav">
             <input type="checkbox" id="theme-switch-nav" class="theme-switch-nav" aria-label="Toggle dark mode">
-            <label for="theme-switch-nav" class="theme-label-nav">
+            <label for="theme-switch-nav" class="theme-label-nav" title="Toggle theme">
               <i class="fas fa-moon" aria-hidden="true"></i>
               <i class="fas fa-sun" aria-hidden="true"></i>
               <span class="theme-ball-nav"></span>
             </label>
           </div>
           <div class="color-picker-nav" role="group" aria-label="Color theme picker">
-            <button class="color-option-nav" data-color="black" aria-label="Black theme" title="Black theme"></button>
-            <button class="color-option-nav" data-color="red" aria-label="Red theme" title="Red theme"></button>
-            <button class="color-option-nav" data-color="yellow" aria-label="Yellow theme"
-              title="Yellow theme"></button>
-            <button class="color-option-nav" data-color="blue" aria-label="Blue theme" title="Blue theme"></button>
-            <button class="color-option-nav" data-color="green" aria-label="Green theme" title="Green theme"></button>
+            <button class="color-option-nav" data-color="black" aria-label="Black theme" title="Black"></button>
+            <button class="color-option-nav" data-color="red" aria-label="Red theme" title="Red"></button>
+            <button class="color-option-nav" data-color="yellow" aria-label="Yellow theme" title="Yellow"></button>
+            <button class="color-option-nav" data-color="blue" aria-label="Blue theme" title="Blue"></button>
+            <button class="color-option-nav" data-color="green" aria-label="Green theme" title="Green"></button>
+            <button class="color-option-nav" data-color="purple" aria-label="Purple theme" title="Purple"></button>
+            <button class="color-option-nav" data-color="orange" aria-label="Orange theme" title="Orange"></button>
           </div>
         </div>
 
-        <!-- Hero Text Content -->
+        <!-- Hero Text -->
         <div class="section__text section__text--center">
-
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span>Available for opportunities</span>
+          </div>
           <p class="section__text__p1">Hello, I'm</p>
-
-          <h1 class="titleh" id="home-title">
-            Pratik Abhang
-          </h1>
-
-          <p class="section__text__p2">
-            <span id="typed-text" aria-live="polite"></span>
-          </p>
-
+          <h1 class="titleh" id="home-title">Pratik Abhang</h1>
+          <p class="section__text__p2"><span id="typed-text" aria-live="polite"></span></p>
           <div class="btn-container btn-container--center">
-
-            <button class="btn btn-color-2" type="button"
-              onclick="window.open('https://flowcv.com/resume/9ivpkstiaeqd', '_blank')" aria-label="View Resume">
-              <span class="btn-icon">
-                <i class="fa-solid fa-eye" aria-hidden="true"></i>
-              </span>
+            <a href="https://flowcv.com/resume/9ivpkstiaeqd" target="_blank" rel="noopener noreferrer"
+              class="btn btn-primary" aria-label="View Resume">
+              <span class="btn-icon"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></span>
               <span class="btn-text">Resume</span>
-            </button>
-
-            <button class="btn btn-color-1" type="button"
+            </a>
+            <a href="https://pratikabhang.cv/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"
+              aria-label="View CV">
+              <span class="btn-icon"><i class="fas fa-file-alt" aria-hidden="true"></i></span>
+              <span class="btn-text">CV</span>
+            </a>
+            <button class="btn btn-accent" type="button"
               onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" aria-label="Hire Me">
-              <span class="btn-icon">
-                <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
-              </span>
+              <span class="btn-icon"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></span>
               <span class="btn-text">Hire Me</span>
             </button>
-
           </div>
-
         </div>
 
-        <!-- Profile Image -->
         <div class="section__pic-container">
+          <div class="profile-ring"></div>
+          <div class="profile-ring-2"></div>
           <img src="./files/profile.jpg" alt="Pratik Abhang Profile Picture" class="profile-img" loading="eager"
             width="400" height="400" />
+          <div class="profile-glow"></div>
         </div>
       </div>
 
-      <!-- Scroll Indicator -->
-      <div class="scroll-indicator" aria-hidden="true">
-        <span></span>
-      </div>
+      <div class="scroll-indicator" aria-hidden="true"><span></span></div>
     </section>
 
-    <!-- Section Navigation Buttons -->
     <div class="section-nav-container" aria-label="Section Navigation">
-      <button class="section-nav-btn up-btn" aria-label="Go to Previous Section"><i
-          class="fa-solid fa-arrow-up-long"></i></button>
-      <button class="section-nav-btn down-btn" aria-label="Go to Next Section"><i
-          class="fa-solid fa-arrow-down-long"></i></button>
+      <button class="section-nav-btn up-btn" aria-label="Previous Section"><i
+          class="fa-solid fa-chevron-up"></i></button>
+      <button class="section-nav-btn down-btn" aria-label="Next Section"><i
+          class="fa-solid fa-chevron-down"></i></button>
     </div>
 
-    <!-- About Section -->
+    <!-- ABOUT -->
     <section id="about" aria-labelledby="about-title">
       <p class="section__text__p1">Get To Know More</p>
       <h2 class="title" id="about-title">About Me</h2>
 
       <div class="about-container">
-        <!-- About Card -->
         <div class="about-card">
           <div class="about-content">
-            <p>
-              I am a Computer Engineer with strong technical skills and solid fundamentals, experienced in Cloud
+            <p>I am a Computer Engineer with strong technical skills and solid fundamentals, experienced in Cloud
               Computing, Artificial Intelligence, Cybersecurity, and Data Protection. I continuously learn and stay
-              updated on emerging technology trends to enhance productivity and deepen my technical expertise.
-            </p>
+              updated on emerging technology trends to enhance productivity and deepen my technical expertise. Currently
+              pursuing ACC in High Performance Computing - AI at ACTS CDAC, Pune.</p>
           </div>
         </div>
 
-        <!-- Personal Details -->
         <div class="details-grid">
           <div class="details-card">
-            <div class="details-item">
-              <span class="details-icon"><i class="fas fa-flag" aria-hidden="true"></i></span>
-              <span>Indian</span>
+            <div class="details-item"><span class="details-icon"><i class="fas fa-flag"></i></span><span>Indian</span>
             </div>
-            <div class="details-item">
-              <span class="details-icon"><i class="fas fa-language" aria-hidden="true"></i></span>
-              <span>English, Marathi, Hindi</span>
-            </div>
+            <div class="details-item"><span class="details-icon"><i class="fas fa-language"></i></span><span>English,
+                Marathi, Hindi, German</span></div>
           </div>
           <div class="details-card">
-            <div class="details-item">
-              <span class="details-icon"><i class="fas fa-calendar-days" aria-hidden="true"></i></span>
-              <span id="age">Loading...</span>
-            </div>
-            <div class="details-item">
-              <span class="details-icon"><i class="fa-solid fa-face-grin-hearts" aria-hidden="true"></i></span>
-              <span>Photography, Music, Movie, Puzzle, Cricket</span>
-            </div>
+            <div class="details-item"><span class="details-icon"><i class="fas fa-calendar-days"></i></span><span
+                id="age">Loading...</span></div>
+            <div class="details-item"><span class="details-icon"><i
+                  class="fa-solid fa-face-grin-hearts"></i></span><span>Photography, Music, Movie, Puzzle,
+                Cricket</span></div>
           </div>
         </div>
 
-        <!-- Education Section -->
         <div id="education" aria-labelledby="education-title">
           <div class="section-title">
-            <h3 id="education-title"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Education</h3>
+            <h3 id="education-title"><i class="fas fa-graduation-cap"></i> Education</h3>
           </div>
 
-          <!-- Bachelor -->
           <div class="about-card education-card">
             <div class="about-content">
-              <h4><i class="fas fa-book" aria-hidden="true"></i> Bachelor of Engineering in Computer</h4>
-              <p><i class="fas fa-university" aria-hidden="true"></i> STES, Sinhgad Institute of Technology and Science
-              </p>
-              <p><i class="fas fa-star" aria-hidden="true"></i> CGPA: 8.21 / 10 | SPPU</p>
-              <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Pune, Maharashtra, India</p>
+              <h4><i class="fas fa-microchip"></i> ACC in High Performance Computing - AI</h4>
+              <p><i class="fas fa-university"></i> ACTS CDAC, Pune</p>
+              <p><i class="fas fa-calendar"></i> 07/2026 – Present</p>
+              <p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra, India</p>
             </div>
           </div>
 
-          <!-- Higher Secondary (12th) -->
           <div class="about-card education-card">
             <div class="about-content">
-              <h4><i class="fas fa-book" aria-hidden="true"></i> Higher Secondary School Certificate (12th)</h4>
-              <p><i class="fas fa-university" aria-hidden="true"></i> RSS, R.B. Narayanrao Borawake College</p>
-              <p><i class="fas fa-star" aria-hidden="true"></i> Percentage: 82.17 / 100 | MSBSHSE</p>
-              <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Shrirampur, Maharashtra, India</p>
+              <h4><i class="fas fa-book"></i> Bachelor of Engineering in Computer Engineering</h4>
+              <p><i class="fas fa-university"></i> Sinhgad Institute of Technology and Science, Pune</p>
+              <p><i class="fas fa-star"></i> CGPA: 8.21 / 10</p>
+              <p><i class="fas fa-calendar"></i> 07/2021 – 07/2025</p>
+              <p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra, India</p>
             </div>
           </div>
 
-          <!-- Secondary (10th) -->
           <div class="about-card education-card">
             <div class="about-content">
-              <h4><i class="fas fa-book" aria-hidden="true"></i> Secondary School Certificate (10th)</h4>
-              <p><i class="fas fa-university" aria-hidden="true"></i> VMSS, De Paul English Medium High School</p>
-              <p><i class="fas fa-star" aria-hidden="true"></i> Percentage: 72.20 / 100 | MSBSHSE</p>
-              <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Shrirampur, Maharashtra, India</p>
+              <h4><i class="fas fa-book"></i> Higher Secondary Certificate (12th)</h4>
+              <p><i class="fas fa-university"></i> R. B. Narayanrao Borawake College, Shrirampur</p>
+              <p><i class="fas fa-star"></i> Percentage: 82.17 / 100</p>
+              <p><i class="fas fa-calendar"></i> 05/2020 – 05/2021</p>
+              <p><i class="fas fa-map-marker-alt"></i> Shrirampur, Maharashtra, India</p>
+            </div>
+          </div>
+
+          <div class="about-card education-card">
+            <div class="about-content">
+              <h4><i class="fas fa-book"></i> Secondary School Certificate (10th)</h4>
+              <p><i class="fas fa-university"></i> De Paul English Medium High School, Shrirampur</p>
+              <p><i class="fas fa-star"></i> Percentage: 72.20 / 100</p>
+              <p><i class="fas fa-calendar"></i> 06/2018 – 06/2019</p>
+              <p><i class="fas fa-map-marker-alt"></i> Shrirampur, Maharashtra, India</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- SKILLS -->
     <section id="skills" aria-labelledby="skills-title">
       <p class="section__text__p1">Explore My</p>
       <h2 class="title" id="skills-title">Skills</h2>
       <div class="skills-container">
-        <!-- Skill Filter -->
         <div class="skills-filter" role="group" aria-label="Filter skills">
           <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="technical">Technical</button>
+          <button class="filter-btn" data-filter="programming">Programming</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="database">Database</button>
+          <button class="filter-btn" data-filter="ai">AI & ML</button>
+          <button class="filter-btn" data-filter="hpc">HPC & Cloud</button>
+          <button class="filter-btn" data-filter="tools">Tools</button>
           <button class="filter-btn" data-filter="soft">Soft Skills</button>
         </div>
 
         <div class="skills-grid">
-          <!-- Technical Skills -->
-          <div class="skill-card" data-skill="java" data-category="technical" tabindex="0" role="listitem">
-            <i class="fab fa-java" aria-hidden="true"></i>
-            <p>Java</p>
-          </div>
-          <div class="skill-card" data-skill="python" data-category="technical" tabindex="0" role="listitem">
-            <i class="fab fa-python" aria-hidden="true"></i>
+          <div class="skill-card" data-skill="python" data-category="programming" tabindex="0"><i
+              class="fab fa-python"></i>
             <p>Python</p>
           </div>
-          <div class="skill-card" data-skill="sql" data-category="technical" tabindex="0" role="listitem">
-            <i class="fas fa-database" aria-hidden="true"></i>
-            <p>SQL</p>
+          <div class="skill-card" data-skill="java" data-category="programming" tabindex="0"><i class="fab fa-java"></i>
+            <p>Java</p>
           </div>
-          <div class="skill-card" data-skill="mysql" data-category="technical" tabindex="0" role="listitem">
-            <i class="fas fa-database" aria-hidden="true"></i>
-            <p>MySQL</p>
+          <div class="skill-card" data-skill="cpp" data-category="programming" tabindex="0"><i class="fas fa-code"></i>
+            <p>C++</p>
           </div>
-          <div class="skill-card" data-skill="html" data-category="technical" tabindex="0" role="listitem">
-            <i class="fab fa-html5" aria-hidden="true"></i>
-            <p>HTML</p>
-          </div>
-          <div class="skill-card" data-skill="css" data-category="technical" tabindex="0" role="listitem">
-            <i class="fab fa-css3-alt" aria-hidden="true"></i>
-            <p>CSS</p>
-          </div>
-          <div class="skill-card" data-skill="javascript" data-category="technical" tabindex="0" role="listitem">
-            <i class="fab fa-js" aria-hidden="true"></i>
+          <div class="skill-card" data-skill="javascript" data-category="programming" tabindex="0"><i
+              class="fab fa-js"></i>
             <p>JavaScript</p>
           </div>
-          <div class="skill-card" data-skill="mongodb" data-category="technical" tabindex="0" role="listitem">
-            <i class="fas fa-server" aria-hidden="true"></i>
-            <p>MongoDB</p>
+          <div class="skill-card" data-skill="html" data-category="web" tabindex="0"><i class="fab fa-html5"></i>
+            <p>HTML</p>
           </div>
-          <div class="skill-card" data-skill="react" data-category="technical" tabindex="0" role="listitem">
-            <i class="fab fa-react" aria-hidden="true"></i>
+          <div class="skill-card" data-skill="css" data-category="web" tabindex="0"><i class="fab fa-css3-alt"></i>
+            <p>CSS</p>
+          </div>
+          <div class="skill-card" data-skill="react" data-category="web" tabindex="0"><i class="fab fa-react"></i>
             <p>React.js</p>
           </div>
-          <div class="skill-card" data-skill="express" data-category="technical" tabindex="0" role="listitem">
-            <i class="fas fa-server" aria-hidden="true"></i>
-            <p>Express.js</p>
+          <div class="skill-card" data-skill="bootstrap" data-category="web" tabindex="0"><i
+              class="fab fa-bootstrap"></i>
+            <p>Bootstrap</p>
           </div>
-          <div class="skill-card" data-skill="nodejs" data-category="technical" tabindex="0" role="listitem">
-            <i class="fab fa-node-js" aria-hidden="true"></i>
+          <div class="skill-card" data-skill="nodejs" data-category="web" tabindex="0"><i class="fab fa-node-js"></i>
             <p>Node.js</p>
           </div>
-          <div class="skill-card" data-skill="springboot" data-category="technical" tabindex="0" role="listitem">
-            <i class="fas fa-leaf" aria-hidden="true"></i>
-            <p>Spring Boot</p>
+          <div class="skill-card" data-skill="express" data-category="web" tabindex="0"><i class="fas fa-server"></i>
+            <p>Express.js</p>
           </div>
-          <div class="skill-card" data-skill="django" data-category="technical" tabindex="0" role="listitem">
-            <i class="fab fa-python" aria-hidden="true"></i>
-            <p>Django</p>
+          <div class="skill-card" data-skill="flask" data-category="web" tabindex="0"><i class="fas fa-flask"></i>
+            <p>Flask</p>
           </div>
-          <div class="skill-card" data-skill="firebase" data-category="technical" tabindex="0" role="listitem">
-            <i class="fas fa-fire" aria-hidden="true"></i>
-            <p>Firebase</p>
-          </div>
-          <div class="skill-card" data-skill="redis" data-category="technical" tabindex="0" role="listitem">
-            <i class="fas fa-database" aria-hidden="true"></i>
-            <p>Redis</p>
-          </div>
-          <div class="skill-card" data-skill="github" data-category="technical" tabindex="0" role="listitem">
-            <i class="fab fa-github" aria-hidden="true"></i>
-            <p>GitHub</p>
-          </div>
-          <div class="skill-card" data-skill="vscode" data-category="technical" tabindex="0" role="listitem">
-            <i class="fas fa-code" aria-hidden="true"></i>
-            <p>VS Code</p>
-          </div>
-          <div class="skill-card" data-skill="postman" data-category="technical" tabindex="0" role="listitem">
-            <i class="fas fa-envelope-open-text" aria-hidden="true"></i>
-            <p>Postman</p>
-          </div>
-          <div class="skill-card" data-skill="docker" data-category="technical" tabindex="0" role="listitem">
-            <i class="fab fa-docker" aria-hidden="true"></i>
-            <p>Docker</p>
-          </div>
-          <div class="skill-card" data-skill="google" data-category="technical" tabindex="0" role="listitem">
-            <i class="fab fa-google" aria-hidden="true"></i>
-            <p>Google Cloud</p>
-          </div>
-          <div class="skill-card" data-skill="microsoft" data-category="technical" tabindex="0" role="listitem">
-            <i class="fab fa-microsoft" aria-hidden="true"></i>
-            <p>Azure</p>
-          </div>
-          <div class="skill-card" data-skill="oop" data-category="technical" tabindex="0" role="listitem">
-            <i class="fas fa-cubes" aria-hidden="true"></i>
-            <p>OOP</p>
-          </div>
-          <div class="skill-card" data-skill="dsa" data-category="technical" tabindex="0" role="listitem">
-            <i class="fas fa-sitemap" aria-hidden="true"></i>
-            <p>DSA</p>
-          </div>
-          <div class="skill-card" data-skill="dbms" data-category="technical" tabindex="0" role="listitem">
-            <i class="fas fa-database" aria-hidden="true"></i>
-            <p>DBMS</p>
-          </div>
-          <div class="skill-card" data-skill="sdlc" data-category="technical" tabindex="0" role="listitem">
-            <i class="fas fa-project-diagram" aria-hidden="true"></i>
-            <p>SDLC</p>
-          </div>
-          <div class="skill-card" data-skill="restapi" data-category="technical" tabindex="0" role="listitem">
-            <i class="fas fa-cloud" aria-hidden="true"></i>
+          <div class="skill-card" data-skill="restapi" data-category="web" tabindex="0"><i class="fas fa-cloud"></i>
             <p>REST APIs</p>
           </div>
-          <div class="skill-card" data-skill="cloud" data-category="technical" tabindex="0" role="listitem">
-            <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
-            <p>Cloud Computing</p>
+          <div class="skill-card" data-skill="mysql" data-category="database" tabindex="0"><i
+              class="fas fa-database"></i>
+            <p>MySQL</p>
           </div>
-          <div class="skill-card" data-skill="systemdesign" data-category="technical" tabindex="0" role="listitem">
-            <i class="fas fa-network-wired" aria-hidden="true"></i>
-            <p>System Design</p>
+          <div class="skill-card" data-skill="mongodb" data-category="database" tabindex="0"><i class="fas fa-leaf"></i>
+            <p>MongoDB</p>
           </div>
-          <div class="skill-card" data-skill="cybersecurity" data-category="technical" tabindex="0" role="listitem">
-            <i class="fas fa-shield-alt" aria-hidden="true"></i>
-            <p>Cybersecurity</p>
+          <div class="skill-card" data-skill="firebase" data-category="database" tabindex="0"><i
+              class="fas fa-fire"></i>
+            <p>Firebase</p>
           </div>
-          <div class="skill-card" data-skill="ai" data-category="technical" tabindex="0" role="listitem">
-            <i class="fas fa-robot" aria-hidden="true"></i>
-            <p>AI/ML</p>
+          <div class="skill-card" data-skill="supabase" data-category="database" tabindex="0"><i
+              class="fas fa-bolt"></i>
+            <p>Supabase</p>
           </div>
-          <div class="skill-card" data-skill="git" data-category="technical" tabindex="0" role="listitem">
-            <i class="fab fa-git-alt" aria-hidden="true"></i>
-            <p>Git</p>
+          <div class="skill-card" data-skill="ml" data-category="ai" tabindex="0"><i class="fas fa-brain"></i>
+            <p>Machine Learning</p>
           </div>
-          <div class="skill-card" data-skill="linux" data-category="technical" tabindex="0" role="listitem">
-            <i class="fab fa-linux" aria-hidden="true"></i>
+          <div class="skill-card" data-skill="dl" data-category="ai" tabindex="0"><i class="fas fa-network-wired"></i>
+            <p>Deep Learning</p>
+          </div>
+          <div class="skill-card" data-skill="nlp" data-category="ai" tabindex="0"><i class="fas fa-comment-dots"></i>
+            <p>NLP</p>
+          </div>
+          <div class="skill-card" data-skill="rag" data-category="ai" tabindex="0"><i class="fas fa-search"></i>
+            <p>RAG</p>
+          </div>
+          <div class="skill-card" data-skill="numpy" data-category="ai" tabindex="0"><i class="fas fa-calculator"></i>
+            <p>NumPy</p>
+          </div>
+          <div class="skill-card" data-skill="pandas" data-category="ai" tabindex="0"><i class="fas fa-table"></i>
+            <p>Pandas</p>
+          </div>
+          <div class="skill-card" data-skill="sklearn" data-category="ai" tabindex="0"><i class="fas fa-robot"></i>
+            <p>Scikit-learn</p>
+          </div>
+          <div class="skill-card" data-skill="matplotlib" data-category="ai" tabindex="0"><i
+              class="fas fa-chart-line"></i>
+            <p>Matplotlib</p>
+          </div>
+          <div class="skill-card" data-skill="linux" data-category="hpc" tabindex="0"><i class="fab fa-linux"></i>
             <p>Linux</p>
           </div>
-          <!-- Soft Skills -->
-          <div class="skill-card" data-skill="communication" data-category="soft" tabindex="0" role="listitem">
-            <i class="fas fa-comments" aria-hidden="true"></i>
+          <div class="skill-card" data-skill="slurm" data-category="hpc" tabindex="0"><i class="fas fa-server"></i>
+            <p>SLURM</p>
+          </div>
+          <div class="skill-card" data-skill="openmp" data-category="hpc" tabindex="0"><i class="fas fa-microchip"></i>
+            <p>OpenMP</p>
+          </div>
+          <div class="skill-card" data-skill="mpi" data-category="hpc" tabindex="0"><i class="fas fa-network-wired"></i>
+            <p>MPI</p>
+          </div>
+          <div class="skill-card" data-skill="cuda" data-category="hpc" tabindex="0"><i
+              class="fas fa-tachometer-alt"></i>
+            <p>CUDA</p>
+          </div>
+          <div class="skill-card" data-skill="openstack" data-category="hpc" tabindex="0"><i class="fas fa-cloud"></i>
+            <p>OpenStack</p>
+          </div>
+          <div class="skill-card" data-skill="docker" data-category="hpc" tabindex="0"><i class="fab fa-docker"></i>
+            <p>Docker</p>
+          </div>
+          <div class="skill-card" data-skill="kubernetes" data-category="hpc" tabindex="0"><i class="fas fa-cubes"></i>
+            <p>Kubernetes</p>
+          </div>
+          <div class="skill-card" data-skill="git" data-category="tools" tabindex="0"><i class="fab fa-git-alt"></i>
+            <p>Git</p>
+          </div>
+          <div class="skill-card" data-skill="github" data-category="tools" tabindex="0"><i class="fab fa-github"></i>
+            <p>GitHub</p>
+          </div>
+          <div class="skill-card" data-skill="vscode" data-category="tools" tabindex="0"><i class="fas fa-code"></i>
+            <p>VS Code</p>
+          </div>
+          <div class="skill-card" data-skill="jetbrains" data-category="tools" tabindex="0"><i
+              class="fas fa-laptop-code"></i>
+            <p>JetBrains</p>
+          </div>
+          <div class="skill-card" data-skill="postman" data-category="tools" tabindex="0"><i
+              class="fas fa-envelope-open-text"></i>
+            <p>Postman</p>
+          </div>
+          <div class="skill-card" data-skill="selenium" data-category="tools" tabindex="0"><i class="fas fa-vial"></i>
+            <p>Selenium</p>
+          </div>
+          <div class="skill-card" data-skill="jenkins" data-category="tools" tabindex="0"><i class="fas fa-tools"></i>
+            <p>Jenkins</p>
+          </div>
+          <div class="skill-card" data-skill="cmake" data-category="tools" tabindex="0"><i class="fas fa-cogs"></i>
+            <p>CMake</p>
+          </div>
+          <div class="skill-card" data-skill="jupyter" data-category="tools" tabindex="0"><i
+              class="fas fa-book-open"></i>
+            <p>Jupyter</p>
+          </div>
+          <div class="skill-card" data-skill="communication" data-category="soft" tabindex="0"><i
+              class="fas fa-comments"></i>
             <p>Communication</p>
           </div>
-          <div class="skill-card" data-skill="teamwork" data-category="soft" tabindex="0" role="listitem">
-            <i class="fas fa-users" aria-hidden="true"></i>
+          <div class="skill-card" data-skill="teamwork" data-category="soft" tabindex="0"><i class="fas fa-users"></i>
             <p>Teamwork</p>
           </div>
-          <div class="skill-card" data-skill="critical-thinking" data-category="soft" tabindex="0" role="listitem">
-            <i class="fas fa-brain" aria-hidden="true"></i>
+          <div class="skill-card" data-skill="critical-thinking" data-category="soft" tabindex="0"><i
+              class="fas fa-brain"></i>
             <p>Critical Thinking</p>
           </div>
-          <div class="skill-card" data-skill="adaptability" data-category="soft" tabindex="0" role="listitem">
-            <i class="fas fa-sync-alt" aria-hidden="true"></i>
+          <div class="skill-card" data-skill="adaptability" data-category="soft" tabindex="0"><i
+              class="fas fa-sync-alt"></i>
             <p>Adaptability</p>
           </div>
-          <div class="skill-card" data-skill="organizational" data-category="soft" tabindex="0" role="listitem">
-            <i class="fas fa-tasks" aria-hidden="true"></i>
-            <p>Organizational</p>
-          </div>
-          <div class="skill-card" data-skill="leadership" data-category="soft" tabindex="0" role="listitem">
-            <i class="fas fa-user-tie" aria-hidden="true"></i>
-            <p>Leadership</p>
-          </div>
-          <div class="skill-card" data-skill="problem-solving" data-category="soft" tabindex="0" role="listitem">
-            <i class="fas fa-puzzle-piece" aria-hidden="true"></i>
-            <p>Problem Solving</p>
-          </div>
-          <div class="skill-card" data-skill="time-management" data-category="soft" tabindex="0" role="listitem">
-            <i class="fas fa-clock" aria-hidden="true"></i>
+          <div class="skill-card" data-skill="time-management" data-category="soft" tabindex="0"><i
+              class="fas fa-clock"></i>
             <p>Time Management</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- EXPERIENCE -->
     <section id="experience" aria-labelledby="experience-title">
       <p class="section__text__p1">Browse My</p>
       <h2 class="title" id="experience-title">Professional Experience</h2>
       <div class="experience-container">
         <div class="experience-card animate">
           <div class="experience-details">
+            <h3>Artificial Intelligence Intern</h3>
+            <p class="experience-company"><i class="fas fa-building"></i> Infosys Springboard | 11/2025 – 01/2026</p>
+            <p class="experience-desc">Developed an AI-driven cybersecurity threat prediction platform using machine
+              learning to detect, classify, and predict cyber threats. Built data preprocessing, model training, threat
+              analysis, and visualization modules for real-time security monitoring. Collaborated on application
+              development, testing, debugging, documentation, and version control using Git and GitHub.</p>
+          </div>
+        </div>
+        <div class="experience-card animate">
+          <div class="experience-details">
             <h3>Cybersecurity Analyst</h3>
-            <p class="experience-company"><i class="fas fa-building" aria-hidden="true"></i> Forage (TCS) | Jul 2025 -
-              Sep 2025</p>
-            <p class="experience-desc">
-              Completed a cybersecurity simulation focusing on IAM fundamentals, assessment, and platform integration.
-              Acquired expertise in IAM principles, cybersecurity best practices, and strategic alignment with business
-              objectives.
-            </p>
+            <p class="experience-company"><i class="fas fa-building"></i> Forage (TCS) | Jul 2025 - Sep 2025</p>
+            <p class="experience-desc">Completed a cybersecurity simulation focusing on IAM fundamentals, assessment,
+              and platform integration. Acquired expertise in IAM principles, cybersecurity best practices, and
+              strategic alignment with business objectives.</p>
           </div>
         </div>
         <div class="experience-card animate">
           <div class="experience-details">
             <h3>Software Developer Intern</h3>
-            <p class="experience-company"><i class="fas fa-building" aria-hidden="true"></i> Cognifyz Technologies | Oct
-              2024 - Nov 2024</p>
-            <p class="experience-desc">
-              Designed and deployed full-stack MERN applications, improving performance, scalability, and system
-              reliability. Enhanced software quality through rigorous testing, reducing defects and accelerating
-              delivery cycles.
+            <p class="experience-company"><i class="fas fa-building"></i> Cognifyz Technologies | Oct 2024 - Nov 2024
             </p>
+            <p class="experience-desc">Designed and deployed full-stack MERN applications, improving performance,
+              scalability, and system reliability. Enhanced software quality through rigorous testing, reducing defects
+              and accelerating delivery cycles.</p>
           </div>
         </div>
         <div class="experience-card animate">
           <div class="experience-details">
             <h3>Web Developer Intern</h3>
-            <p class="experience-company"><i class="fas fa-building" aria-hidden="true"></i> Elite Softwares | Dec 2023
-              - Jan 2024</p>
-            <p class="experience-desc">
-              Developed responsive web applications using modern frameworks, ensuring accessibility across multiple
-              platforms. Boosted user engagement by lowering bounce rates and enhancing cross-device compatibility and
-              performance.
-            </p>
+            <p class="experience-company"><i class="fas fa-building"></i> Elite Softwares | Dec 2023 - Jan 2024</p>
+            <p class="experience-desc">Developed responsive web applications using modern frameworks, ensuring
+              accessibility across multiple platforms. Boosted user engagement by lowering bounce rates and enhancing
+              cross-device compatibility and performance.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- PROJECTS (GitHub only) -->
     <section id="projects" aria-labelledby="projects-title">
       <p class="section__text__p1">My Recent</p>
       <h2 class="title" id="projects-title">Projects</h2>
       <div class="projects-container">
         <div class="project-card">
           <div class="project-details">
-            <h3>CREDBUD: The Student Platform</h3>
-            <p class="project-tech"><i class="fas fa-code" aria-hidden="true"></i> React | Node.js | Express | MongoDB |
-              JWT</p>
-            <p class="project-desc">
-              A complete student management platform with smart attendance tracking, role-based dashboards for teachers
-              and students, performance analytics, and communication tools — making academic management seamless.
+            <h3>HPCPredict: AI-Driven Job Resource Recommendation</h3>
+            <p class="project-tech"><i class="fas fa-code"></i> SLURM | OpenMP | MPI | Machine Learning | Flask | SQL
             </p>
+            <p class="project-desc">A machine learning system that predicts high-performance computing job performance
+              to recommend suitable resources and reduce inefficient allocations. Recommended computational
+              configurations using predictive analytics to improve resource allocation, enhance scheduling efficiency,
+              and maximize HPC cluster utilization.</p>
             <div class="project-links">
-              <a href="https://github.com/pratikabhang/CREDBUD--The-Student-Platform" target="_blank"
-                rel="noopener noreferrer" aria-label="View CREDBUD project on GitHub">
-                <i class="fab fa-github" aria-hidden="true"></i> Code
-              </a>
-              <a href="https://credbudstudent.netlify.app" target="_blank" rel="noopener noreferrer"
-                aria-label="View CREDBUD live demo">
-                <i class="fas fa-external-link-alt" aria-hidden="true"></i> Live
-              </a>
+              <a href="https://github.com/pratikabhang" target="_blank" rel="noopener noreferrer"
+                aria-label="View HPCPredict on GitHub"><i class="fab fa-github"></i> GitHub</a>
             </div>
           </div>
         </div>
         <div class="project-card">
           <div class="project-details">
-            <h3>PAYCIRCLE: Group Expense Record</h3>
-            <p class="project-tech"><i class="fas fa-code" aria-hidden="true"></i> Node.js | Express | MongoDB |
-              Bootstrap | REST API</p>
-            <p class="project-desc">
-              A modern web app to simplify tracking and managing group expenses. Features include bill splitting, shared
-              expense history, summaries, and notifications for friends or group members.
+            <h3>ThreatPredict: AI-Driven Threat Detection</h3>
+            <p class="project-tech"><i class="fas fa-code"></i> React.js | Node.js | TypeScript | Python | Tailwind CSS
+              | Supabase | Vite | REST APIs | WebSockets</p>
+            <p class="project-desc">A cybersecurity monitoring platform that analyzes threat intelligence to identify
+              emerging risks and support proactive security assessments. Delivered a real-time security dashboard
+              featuring automated alerts, AI-generated insights, WebSocket-based updates, and role-based access control.
             </p>
             <div class="project-links">
-              <a href="https://github.com/pratikabhang/PAYCIRCLE--Group-Expense-Record" target="_blank"
-                rel="noopener noreferrer" aria-label="View PAYCIRCLE project on GitHub">
-                <i class="fab fa-github" aria-hidden="true"></i> Code
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="View PAYCIRCLE live demo (coming soon)"
-                class="disabled-link">
-                <i class="fas fa-external-link-alt" aria-hidden="true"></i> Live
-              </a>
+              <a href="https://github.com/pratikabhang" target="_blank" rel="noopener noreferrer"
+                aria-label="View ThreatPredict on GitHub"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-details">
+            <h3>CREDBUD: The Student Platform</h3>
+            <p class="project-tech"><i class="fas fa-code"></i> JavaScript | React.js | Node.js | Chakra UI | Firebase |
+              Flutter | Dart</p>
+            <p class="project-desc">A cross-platform student management application that simplifies attendance tracking
+              through QR codes, centralized records, and role-based permissions. Integrated student analytics,
+              attendance reports, and real-time data synchronization across responsive web and mobile interfaces to
+              streamline administration.</p>
+            <div class="project-links">
+              <a href="https://github.com/pratikabhang/CREDBUD--The-Student-Platform" target="_blank"
+                rel="noopener noreferrer" aria-label="View CREDBUD on GitHub"><i class="fab fa-github"></i> GitHub</a>
             </div>
           </div>
         </div>
         <div class="project-card">
           <div class="project-details">
             <h3>DOCVIEW: AI Document Analyzer</h3>
-            <p class="project-tech"><i class="fas fa-code" aria-hidden="true"></i> Python | AI/ML | TensorFlow | OpenCV
-              | Docker</p>
-            <p class="project-desc">
-              An AI-powered document analyzer that extracts, classifies, and summarizes content from various document
-              formats. Useful for automating data extraction and improving document workflows.
-            </p>
+            <p class="project-tech"><i class="fas fa-code"></i> React.js | Node.js | Material UI | Redis | Firebase |
+              NLP | RAG</p>
+            <p class="project-desc">An AI-powered document analyzer supporting document uploads, automated
+              summarization, multilingual content analysis, and conversational question answering. Integrated NLP and
+              RAG to generate context-aware responses, while Redis caching improved data retrieval efficiency and
+              Firebase supported user authentication.</p>
             <div class="project-links">
               <a href="https://github.com/pratikabhang/DOCVIEW--AI-Document-Analyzer" target="_blank"
-                rel="noopener noreferrer" aria-label="View DOCVIEW project on GitHub">
-                <i class="fab fa-github" aria-hidden="true"></i> Code
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="View DOCVIEW live demo (coming soon)"
-                class="disabled-link">
-                <i class="fas fa-external-link-alt" aria-hidden="true"></i> Live
-              </a>
+                rel="noopener noreferrer" aria-label="View DOCVIEW on GitHub"><i class="fab fa-github"></i> GitHub</a>
             </div>
           </div>
         </div>
         <div class="project-card">
           <div class="project-details">
-            <h3>CLASSWORK</h3>
-            <p class="project-tech"><i class="fas fa-code" aria-hidden="true"></i> HTML | CSS | JavaScript | Bootstrap |
-              jQuery</p>
-            <p class="project-desc">
-              An educational toolkit for students featuring tools like marks-to-percentage converter, QR code generator,
-              to-do tasks, age calculator, and more — designed for practical classroom and learning use.
-            </p>
+            <h3>PAYCIRCLE: Group Expense Record</h3>
+            <p class="project-tech"><i class="fas fa-code"></i> HTML | CSS | JavaScript | MongoDB | Express.js |
+              React.js | Node.js | Tailwind CSS</p>
+            <p class="project-desc">A full-stack expense management application that tracks shared spending, individual
+              contributions, and outstanding balances among group members. Simplified expense reconciliation through
+              transaction histories, settlement calculations, and a responsive interface for transparent group expense
+              management.</p>
             <div class="project-links">
-              <a href="https://github.com/pratikabhang/CLASSWORK" target="_blank" rel="noopener noreferrer"
-                aria-label="View CLASSWORK project on GitHub">
-                <i class="fab fa-github" aria-hidden="true"></i> Code
-              </a>
-              <a href="https://classworktool.netlify.app/" target="_blank" rel="noopener noreferrer"
-                aria-label="View CLASSWORK live demo">
-                <i class="fas fa-external-link-alt" aria-hidden="true"></i> Live
-              </a>
+              <a href="https://github.com/pratikabhang/PAYCIRCLE--Group-Expense-Record" target="_blank"
+                rel="noopener noreferrer" aria-label="View PAYCIRCLE on GitHub"><i class="fab fa-github"></i> GitHub</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- CERTIFICATES -->
+    <section id="certificates" aria-labelledby="certificates-title">
+      <p class="section__text__p1">My Achievements</p>
+      <h2 class="title" id="certificates-title">Certificates</h2>
+      <div class="certificates-container">
+        <div class="certificate-card">
+          <div class="certificate-icon"><i class="fas fa-certificate"></i></div>
+          <h3>Web Development</h3>
+          <p>Internshala Trainings</p>
+        </div>
+        <div class="certificate-card">
+          <div class="certificate-icon"><i class="fas fa-certificate"></i></div>
+          <h3>Introduction to Artificial Intelligence</h3>
+          <p>Infosys Springboard</p>
+        </div>
+        <div class="certificate-card">
+          <div class="certificate-icon"><i class="fas fa-certificate"></i></div>
+          <h3>Operating Systems Basics</h3>
+          <p>Cisco Networking Academy</p>
+        </div>
+        <div class="certificate-card">
+          <div class="certificate-icon"><i class="fas fa-certificate"></i></div>
+          <h3>Software Conceptual Design</h3>
+          <p>NPTEL</p>
+        </div>
+        <div class="certificate-card">
+          <div class="certificate-icon"><i class="fas fa-certificate"></i></div>
+          <h3>Introduction to Cybersecurity</h3>
+          <p>Cisco Networking Academy</p>
+        </div>
+        <div class="certificate-card">
+          <div class="certificate-icon"><i class="fas fa-certificate"></i></div>
+          <h3>Agile Project Management</h3>
+          <p>HP Life</p>
+        </div>
+        <div class="certificate-card">
+          <div class="certificate-icon"><i class="fas fa-certificate"></i></div>
+          <h3>TCS iON Career Edge - Young Professional</h3>
+          <p>TCS iON</p>
+        </div>
+        <div class="certificate-card">
+          <div class="certificate-icon"><i class="fas fa-certificate"></i></div>
+          <h3>Introduction to Cloud Computing</h3>
+          <p>Simplilearn</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" aria-labelledby="achievements-title">
+      <p class="section__text__p1">What I've Done</p>
+      <h2 class="title" id="achievements-title">Achievements</h2>
+      <div class="achievements-container">
+        <div class="achievement-card">
+          <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
+          <h3>LeetCode Problem Solving</h3>
+          <p>Solved 80+ coding problems on LeetCode and actively working toward the 200+ milestone, strengthening
+            problem-solving skills and proficiency in Data Structures and Algorithms (DSA).</p>
+        </div>
+        <div class="achievement-card">
+          <div class="achievement-icon"><i class="fas fa-medal"></i></div>
+          <h3>HackerRank Badge</h3>
+          <p>Earned a Programming Language Badge on HackerRank for demonstrating programming proficiency.</p>
+        </div>
+        <div class="achievement-card">
+          <div class="achievement-icon"><i class="fas fa-globe"></i></div>
+          <h3>Portfolio Website</h3>
+          <p>Designed, developed, and deployed a responsive personal portfolio website to showcase technical skills,
+            projects, and professional achievements.</p>
+        </div>
+        <div class="achievement-card">
+          <div class="achievement-icon"><i class="fas fa-lightbulb"></i></div>
+          <h3>IDEAZZZ 2K25</h3>
+          <p>Presented innovative project ideas at IDEAZZZ 2K25, a technical innovation and idea presentation
+            competition.</p>
+        </div>
+        <div class="achievement-card">
+          <div class="achievement-icon"><i class="fas fa-microphone"></i></div>
+          <h3>National Conference</h3>
+          <p>Attended the National Conference on Innovation & Research in Science & Technology, gaining insights into
+            emerging technologies and industry trends.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
     <section id="contact" aria-labelledby="contact-title">
       <p class="section__text__p1">Get in Touch</p>
       <h2 class="title" id="contact-title">Contact Me</h2>
       <div class="contact-container">
-        <!-- Contact Form -->
         <form class="contact-form" id="contactForm" action="https://formspree.io/f/xwpowbev" method="POST" novalidate>
           <div class="form-group">
             <label for="name" class="visually-hidden">Your Name</label>
             <input type="text" id="name" name="name" placeholder="Your Name" required autocomplete="name"
               aria-required="true" />
+            <span class="input-icon"><i class="fas fa-user"></i></span>
           </div>
           <div class="form-group">
             <label for="email" class="visually-hidden">Your Email</label>
             <input type="email" id="email" name="email" placeholder="Your Email" required autocomplete="email"
               aria-required="true" />
+            <span class="input-icon"><i class="fas fa-envelope"></i></span>
+          </div>
+          <div class="form-group">
+            <label for="subject" class="visually-hidden">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Subject" autocomplete="off" />
+            <span class="input-icon"><i class="fas fa-tag"></i></span>
           </div>
           <div class="form-group">
             <label for="message" class="visually-hidden">Your Message</label>
             <textarea id="message" name="message" placeholder="Your Message" rows="5" required
               aria-required="true"></textarea>
+            <span class="input-icon"><i class="fas fa-comment"></i></span>
           </div>
           <div class="form-submit">
-            <button type="submit" class="btn btn-color-1" id="sendBtn">
-              <span class="btn-icon"><i class="fas fa-paper-plane" aria-hidden="true"></i></span>
+            <button type="submit" class="btn btn-accent btn-full" id="sendBtn">
+              <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
               <span class="btn-text">Send Message</span>
             </button>
           </div>
-          <!-- Form Status Message -->
           <p class="form-status" role="status" aria-live="polite"></p>
-          <!-- Social Media Icons -->
           <div class="social-icons">
-            <a href="https://pratikabhang.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Website">
-              <i class="fas fa-globe" aria-hidden="true"></i>
-            </a>
-            <a href="https://linkedin.com/in/pratikabhang" target="_blank" rel="noopener noreferrer"
-              aria-label="LinkedIn">
-              <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-            </a>
-            <a href="https://github.com/pratikabhang" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <i class="fab fa-github" aria-hidden="true"></i>
-            </a>
+            <a href="https://pratikabhang.netlify.app/" target="_blank" rel="noopener noreferrer" title="Portfolio"><i
+                class="fas fa-globe"></i></a>
+            <a href="https://linkedin.com/in/pratikabhang" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i
+                class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/pratikabhang" target="_blank" rel="noopener noreferrer" title="GitHub"><i
+                class="fab fa-github"></i></a>
             <a href="https://www.instagram.com/pratikabhang1" target="_blank" rel="noopener noreferrer"
-              aria-label="Instagram">
-              <i class="fab fa-instagram" aria-hidden="true"></i>
-            </a>
-            <a href="https://www.youtube.com/@pratikabhang" target="_blank" rel="noopener noreferrer"
-              aria-label="YouTube">
-              <i class="fab fa-youtube" aria-hidden="true"></i>
-            </a>
-            <a href="https://t.me/discusswithpratik" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-              <i class="fab fa-telegram-plane" aria-hidden="true"></i>
-            </a>
+              title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@pratikabhang" target="_blank" rel="noopener noreferrer" title="YouTube"><i
+                class="fab fa-youtube"></i></a>
+            <a href="https://pratikabhang.cv/" target="_blank" rel="noopener noreferrer" title="CV Website"><i
+                class="fas fa-file-alt"></i></a>
+            <a href="https://t.me/discusswithpratik" target="_blank" rel="noopener noreferrer" title="Telegram"><i
+                class="fab fa-telegram-plane"></i></a>
           </div>
         </form>
       </div>
     </section>
   </main>
 
-  <!-- Footer Section -->
   <footer role="contentinfo">
     <div class="footer-navigation">
       <ul class="footer-links">
-        <li><a href="#home" aria-label="Home"><i class="fas fa-house" aria-hidden="true"></i> Home</a></li>
-        <li><a href="#about" aria-label="About"><i class="fa-solid fa-user-tie" aria-hidden="true"></i> About</a></li>
-        <li><a href="#skills" aria-label="Skills"><i class="fa-solid fa-brain" aria-hidden="true"></i> Skills</a></li>
-        <li><a href="#experience" aria-label="Experience"><i class="fas fa-briefcase" aria-hidden="true"></i>
-            Experience</a></li>
-        <li><a href="#projects" aria-label="Projects"><i class="fas fa-code" aria-hidden="true"></i> Projects</a></li>
-        <li><a href="#contact" aria-label="Contact"><i class="fa-solid fa-id-card" aria-hidden="true"></i> Contact</a>
-        </li>
+        <li><a href="#home"><i class="fas fa-house"></i> Home</a></li>
+        <li><a href="#about"><i class="fa-solid fa-user-tie"></i> About</a></li>
+        <li><a href="#skills"><i class="fa-solid fa-brain"></i> Skills</a></li>
+        <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+        <li><a href="#projects"><i class="fas fa-code"></i> Projects</a></li>
+        <li><a href="#certificates"><i class="fas fa-certificate"></i> Certificates</a></li>
+        <li><a href="#achievements"><i class="fas fa-trophy"></i> Achievements</a></li>
+        <li><a href="#contact"><i class="fa-solid fa-id-card"></i> Contact</a></li>
       </ul>
     </div>
     <p class="footer-copy">
@@ -697,9 +754,8 @@
     </p>
   </footer>
 
-  <!-- Scroll to Top Button -->
   <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
-    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    <i class="fas fa-arrow-up"></i>
   </button>
 
   <script src="script.js" defer></script>
